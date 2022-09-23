@@ -1,0 +1,178 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Is {{D}} divisible by 6? | Check Divisibility Rules of 6 To Find {{D}} divisible 6 - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Finding is {{D}} divisible by 6 is pretty simple taking the help of an online divisible by 6 calculator. This tool checks whether {{D}} is divisible by 6 or not in seconds and provide results with detailed solution.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Is {{D}} divisible by 6? | Check Divisibility Rules of 6 To Find {{D}} divisible 6 - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Finding is {{D}} divisible by 6 is pretty simple taking the help of an online divisible by 6 calculator. This tool checks whether {{D}} is divisible by 6 or not in seconds and provide results with detailed solution. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Is {{D}} divisible by 6? | Check Divisibility Rules of 6 To Find {{D}} divisible 6 - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Finding is {{D}} divisible by 6 is pretty simple taking the help of an online divisible by 6 calculator. This tool checks whether {{D}} is divisible by 6 or not in seconds and provide results with detailed solution. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Is {{D}} divisible by 6? | Check Divisibility Rules of 6 To Find {{D}} divisible 6 - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Finding is {{D}} divisible by 6 is pretty simple taking the help of an online divisible by 6 calculator. This tool checks whether {{D}} is divisible by 6 or not in seconds and provide results with detailed solution." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">What Is {{D}} divisible by 6?</h1>
+    </div>
+    <div class="card-body">
+      <p>Want to know if the number {{D}} is divisible by 6 or not? Use rounding calculator.guru handy divisible by 6 calculator tool and check is {{D}} divisible by 6. The output is {{Ans}}, <strong>{{D}} is {% if Ans == "no" %} not {% endif %} divisible by 6</strong> learn why from this detailed steps page.</p>
+      <ul class="messages">
+        {% if message %}
+        <p  id="message_container" class="alert alert-danger text-center" 
+            style="color:red">{{ message }}</p>
+        {% endif %}   
+
+        </ul>
+
+        <form action="" method="POST" id="my_form" >
+            {% csrf_token %}
+            <div class="col-auto">
+                
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><strong>Number: </strong></div>
+                    </div>
+                    <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required="" placeholder="Number to check is divisible By 6"  class="form-control" name="D" {% if D or D == 0 %} value="{{D}}"  {% else %} value="24"  {% endif %}>
+
+                </div>
+
+                <div class=" center col">
+                    <center><button type="submit" class="btn btn-primary" name="f1" value="f1">Calculate</button>
+                    </center>
+                </div>
+
+        </form>
+        <br>
+        {% if f1 %}
+        <h2>How to Find if {{D}} is Divisible by 6?</h2>
+        <p>Simply check the detailed solution of {{D}} divisible by 6 here and follow the instructions for
+            another number to check if it is divisibility by 6 or not:</p>
+        <p>Given number is {{D}}</p>
+        <p>Now, we have to see if is {{D}} divisible by 6 yes or no by using the divisibility rule of 6.</p>
+        <p>If you want that {{D}} to be divisible by 6, it should satisfy two criteria ie.,</p>
+        <ol type="i">
+            <li><p>The number {{D}} has to be an even number</p></li>
+            <li><p>The sum of its digits needs to be divisible by 3</p></li>
+        </ol>
+        <p>Here, we can see that {{D}} is
+            {% if Even == "even"  %} an even number, which means it meets the first criteria.
+            {% else %} a odd number, which means it does not meet the first criteria.
+            {% endif %}
+
+            and
+            {% if Divi3 == "yes"  %} the sum of its digits is {{Sum}} which is divisible by 3.
+            {% else %}the sum of its digits is {{Sum}} which is not divisible by 3.
+            {% endif %}
+            Thus,
+
+            {% if Divi3 == "no" and Even == "odd"  %}it fails in the both criterion.
+            {% elif Divi3 == "no"  %}it fails in the second criterion.
+            {% elif Even == "odd"  %}it fails in the first criterion.
+            {% else %} it meets in the both criterion.
+            {% endif %}
+            </p>
+        <p><strong >Hence,
+            {% if Ans == "yes"  %} {{D}} is divisible by 6.
+            {% else %}{{D}} is not divisible by 6.
+            {% endif %}
+        </strong></p>
+        <h3>FAQs on Is {{D}} Divisible by 6?</h3>
+        <ol>
+            <li><p> <strong>Is {{D}} divisible by any number?</strong></p>
+                <p>Yes, {{D}} is divisible by
+                    {%  for i in Fact %}
+                        {% if forloop.last  %} and {% endif %}
+                        {{i}}
+                        {% if not forloop.last  %},{% endif %}
+                    {% endfor %}
+                      because the factors of {{D}} are {%  for i in Fact %}
+                        {% if forloop.last  %} and {% endif %}
+                        {{i}}
+                        {% if not forloop.last  %},{% endif %}
+                    {% endfor %}.</li></p>
+            <li> <p><strong>Is {{D}} divisible by 3 yes or no?</strong></p>
+
+                <p>
+                    {% if Remider3 == 0  %}Yes, {{D}} is divisible by 3 as its results in {{Ansdiv3}}.
+                    {% else %}No, {{D}} is not divisible by 3 as its results in {{Ansdiv3}} with the remainder of {{ Remider3 }} when divided {{D}} by 3.
+
+                    {% endif %}
+            </li></p>
+
+            <li> <p><strong>Is {{D}} prime or composite?</strong></p>
+                <p>
+                    {% if Fact|length > 2 %}
+                    As we know that {{D}} has more than 2 factors so {{D}} is a composite number.
+                    {% elif Fact|length == 2 %}
+                    As we know that {{D}} has only 2 factors 1 and {{D}} itself so {{D}} is a prime number.
+                    {% endif %}
+            </li></p>
+        </ol>
+        {% endif %}
+      </div></div></div>
+          
+      </div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

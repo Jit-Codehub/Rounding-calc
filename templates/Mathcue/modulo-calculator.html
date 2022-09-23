@@ -1,0 +1,170 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS -->
+<title>Modulo Calculator Online - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Modulo Calculator is one of the easiest ways to find the remainder of x and y. X mod Y calculator is a free online tool that provides you the instant result.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS -->
+
+<!-- FACEBOOK -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Modulo Calculator Online - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Modulo Calculator is one of the easiest ways to find the remainder of x and y. X mod Y calculator is a free online tool that provides you the instant result. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Modulo Calculator Online - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Modulo Calculator is one of the easiest ways to find the remainder of x and y. X mod Y calculator is a free online tool that provides you the instant result. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin -->
+<meta property='og:title' content="Modulo Calculator Online - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Modulo Calculator is one of the easiest ways to find the remainder of x and y. X mod Y calculator is a free online tool that provides you the instant result." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+
+{% endblock %}
+
+{% block content %}
+
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Modulo Calculator Online</h1>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+
+            <ul class="messages">
+                {% if messages %}
+                <p id="message_container" class="alert alert-danger text-center" style="color:red">{{ messages }}</p>
+                {% endif %}
+            </ul>
+
+            <form action="" method="POST" id="my_form">
+                {% csrf_token %}
+               
+                <table width="300" height="100" align="center" border="0" cellspacing="0" cellpadding="4"
+                    style="background-color:#ffffff;border:1px #000000 solid; border-bottom: 2px solid">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <table width="150" height="100" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+
+                                    <td style=" border-bottom:2px #000000 solid;">
+                                <input type="number" size="10" tabindex="1" min="1" step="any" max="9999"
+                                    oninput="validateNumber(this);" required="" placeholder="" id="aa" name="aa" {% if aa %} value="{{aa}}" {% else %} value="27" {% endif %}>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" size="10" tabindex="4" min="any" step="1" max="9999"
+                                oninput="validateNumber(this);" required="" placeholder="" id="cc" name="cc" {% if cc %}
+                                value="{{cc}}" {% else %} value="4" {% endif%}>
+                        </td>
+
+
+                    </tr>
+                </table>
+                </td>
+                </tr>
+                </table>
+                <br>
+
+
+
+                <div class=" center col mt-2 ">
+                    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                        <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                            class="btn btn-danger">Reset</button>
+                    </center>
+                </div>
+
+            </form> <br>
+
+
+
+        </div>
+          <p>A Modulo Calculator is used to find the solution of the expression x and y. Calculate x mod y for the positive numbers. The online modulo operation finds the remainder when dividing x by y, we can say that x mod y = z.</p>
+          <h2>How to do a modulo calculation?</h2>
+          <p>The modulo calculator finds the remainder of x divided by y. Enter the values of x and y in the empty fields and note the remainder. Find x mod y and check your answer with the modulo calculator online. Go through this article to know how to calculate the modulo calculator.</p>
+          <h3>How to use Modulo Calculator?</h3>
+          <p>Follow the below steps to know how to use Modulo Calculator.</p>
+          <p>1. First enter the value of x.</p>
+          <p>2. First enter the value of y.</p>
+          <p>3. Click on the calculate button to find x mod y.</p>
+          <p>4. It generates the value of the remainder z.</p>
+          <h3>FAQs on X Mod Y Calculator</h3>
+          <p><strong>1. How do you find X mod Y using Online Calculator?</strong></p>
+          <p>You can find the module of X and Y to get the remainder x mod y = z</p>
+          <p><strong>2. What is x mod y?</strong></p>
+          <p>The number x mod y is the remainder when x is divided by y.</p>
+          <p><strong>3. How to calculate the modulo?</strong></p>
+          <p>1. Start by choosing the initial number.</p>
+          <p>2. Choose the first number x and the second number y.</p>
+          <p>3. Divide x by y.</p>
+          <p>4. The value obtained is the result of the modulo.</p>
+        </div>
+    </div>
+</div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+  {% endblock %}

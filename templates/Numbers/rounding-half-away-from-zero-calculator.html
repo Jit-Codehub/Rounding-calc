@@ -1,0 +1,309 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding Half Away From Zero Calculator | Steps to Round Half Away From 0</title>
+<meta name="description"
+  content="Free Rounding Half Away From Zero Calculator helps to round numbers half away from 0. Check the rules, steps to round half away from zero with solved questions." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding Half Away From Zero Calculator | Steps to Round Half Away From 0" />
+<meta property="og:description"
+  content="Free Rounding Half Away From Zero Calculator helps to round numbers half away from 0. Check the rules, steps to round half away from zero with solved questions." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding Half Away From Zero Calculator | Steps to Round Half Away From 0" />
+<meta name="twitter:description"
+  content="Free Rounding Half Away From Zero Calculator helps to round numbers half away from 0. Check the rules, steps to round half away from zero with solved questions." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding Half Away From Zero Calculator | Steps to Round Half Away From 0" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property='og:description'
+  content="Free Rounding Half Away From Zero Calculator helps to round numbers half away from 0. Check the rules, steps to round half away from zero with solved questions." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+      What is round half away from zero?
+      ","acceptedAnswer": {"@type": "Answer","text":" Rounding half away from zero is a symmetric rounding technique that rounds the half way numbers further away from zero."}	}, {"@type": "Question","name":"2.
+      What is 0.5 rounded to the nearest whole number?
+      ","acceptedAnswer": {"@type": "Answer","text":" The number which has 0.5 as decimal part s rounded up. So, 0.5 rounded to the nearest whole number is 1."}	}, {"@type": "Question","name":"3.
+      How do you round a number half away from 0?
+      ","acceptedAnswer": {"@type": "Answer","text":" Give the number as input for the Round Half Away From Zero Calculator and tap on the ca;culate button to avail the result shortly."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding Half Away From Zero Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Rounding Half Away From Zero Calculator is a free tool that helps to round off the numbers half away from zero.
+        It just takes thew number as input and produces the rounded numbers away from 0 as output.</p>
+
+      <div>
+        <div class="box">
+          <p id="error">
+            {% if error %}
+          <p><b>!! Incorrect values !! Please enter correct values</b></p>
+          {%endif%}
+          </p>
+          <form method="POST" id="my_form">
+            {% csrf_token %}
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                <label for="input1">Value to be rounded up:</label>
+              </div>
+            </div>
+
+
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center>
+
+                  <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                    placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp" {% if inp %}
+                    value="{{inp}}" {% else %} value="34.234238737" {% endif %}>
+                </center>
+              </div>
+            </div>
+
+
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center><button type="submit" class="btn btn-primary">Round</button>
+                  <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                    class="btn btn-danger">Reset</button>
+                </center>
+
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-half-towards-zero-calculator/">Round Half towards Zero Calculator</a></li>
+        <li><a href="/rounding-half-up-rounding-calculator/">Round Half Up Calculator</a></li>
+        <li><a href="/rounding-half-down-rounding-calculator/">Round Half Down Calculator</a></li>
+        <li><a href="/rounding-half-to-even-calculator/">Round Half to Even Calculator</a></li>
+        <li><a href="/rounding-half-to-odd-calculator/">Round Half to Odd Calculator</a></li>
+
+
+
+
+      </ul>
+      <p><strong>Round Half Away From Zero Calculator: </strong>Know the simple steps to round off a number away from
+        the zero on this page. We have also given the best Half Away From Zero Calculator that gives instant results
+        easily. Check the definition, rules and solved examples on rounding off numbers half away from 0 from the
+        following sections.</p>
+    </div>
+  </div>
+
+  <div id="clear">
+    {% if result %}
+    <div class="card" id="result1">
+      <div class="card-header">
+        <h2 class="h2">Result of rounding half away from zero for {{inp}} :</h2>
+      </div>
+
+      <div class="card-body">
+        &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+      </div>
+    </div>
+
+    <div class="card" id="result">
+      <div class="card-header">
+        <h2 class="h2">Calculation of Half away from Zero Rounding calculator:</h2>
+      </div>
+
+      <div class="card-body">
+        <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+        <!-- <p>To be rounded in  : nearest  <b>billionth</b></p> -->
+        <br>
+        <p>
+          In round half away from zero calculator, we round the input values to nearest value without decimal,
+          approaching away from 0.
+        </p>
+
+        {% if whole_number %}
+        <p>
+          Here, input is {{inp}}, which is already a value without decimal part.<br>
+          So, result will be same as input.<br>
+        </p>
+        {% else %}
+
+        <p>
+        <ul>
+          <li>When fractional part of input is <b>less than 0.5</b>, we omit the fractional part from input and give
+            result.</li>
+          <li>When fractional part of input is <b>greater than 0.5</b>, we add 1 to integral part of input and give
+            result.</li>
+          <li>When fractional part of input is <b>equal to 0.5</b>, then we always increment integral part of input to
+            next integral value, as it always seems to be away from zero.</li>
+        </ul>
+        </p>
+
+        <p>
+          Here, input is {{inp}}, which has some decimal part associated with it.<br>
+          In {{inp}}, fractional part is {{frac_part}}, which is <b>{{comp_type}}</b> 0.5.<br>
+        </p>
+        <p>
+          So, we round {{inp}} to {{res}}.
+        </p>
+        {% endif %}
+
+        <p>
+          So finally, <b>{{inp}}</b>, when rounded half away from zero , results in <b>{{res}}</b>.
+        </p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Meant By Rounding Half Away From Zero?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding half away from zero is a rounding technique that rounds the numbers further away from zero.</p>
+      <p> The rules for rounding half away from 0 are listed here:</p>
+      <p> If the decimal part of the number is 5, 6, 7, 8, 9, then round up the number.</p>
+      <p> If the decimal part of the number is 0, 1, 2, 3, 4, then round down the number.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Steps for Rounding Half Away From 0</h3>
+    </div>
+    <div class="card-body">
+      <p>Go through the following detailed step by step process to round off a number half away from zero easily. Follow
+        these guidelines and instructions to obtain the rounded number.</p>
+      <ul>
+        <li>At first, observe the given number. </li>
+        <li>When the decimal part of the number is equal to 5 or more, then round up the number.</li>
+        <li>If the decimal part of the number is less than 5, then round down the number.</li>
+        <li>Finally, rounded number is the number that is half away from zero.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Round Half Away From Zero Examples</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Question 1:</strong> Find the rounding half away from zero of number 568.5?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given number is 568.5</p>
+      <p>Here the decimla part of the number is 5. So, round up the number. </p>
+      <p>Thus, 568.5 rounded half away from 0 is 569.</p>
+      <p><strong>Question 2: </strong>Find the rounding half away from zero of number -1000.1?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given number is -1000.1</p>
+      <p>Here the decimla part of the number is 1. So, round down the number. </p>
+      <p>Thus, -1000.1 rounded half away from 0 is -1000.</p>
+      <p>Avail <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> and calculate all your lengthy
+        calculations in the easiest way by taking the help of handy online rounding concept calculators. You can also
+        get the free calculators to round off to the nearest whole number, tenths and others.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Round Half Away From Zero Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong> 1. What is round half away from zero?</strong></p>
+      <p class="answer">Rounding half away from zero is a symmetric rounding technique that rounds the half way numbers
+        further away from zero.</p>
+      <hr>
+      <p class="question"><strong>2. What is 0.5 rounded to the nearest whole number?</strong></p>
+      <p class="answer">The number which has 0.5 as decimal part s rounded up. So, 0.5 rounded to the nearest whole
+        number is 1.</p>
+      <hr>
+      <p class="question"><strong>3. How do you round a number half away from 0?</strong></p>
+      <p class="answer">Give the number as input for the Round Half Away From Zero Calculator and tap on the ca;culate
+        button to avail the result shortly.</p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    {% if error %}
+    document.getElementById("error").innerHTML = "";
+    {% endif %}
+    document.getElementsByName("inp")[0].value = "";
+    // document.getElementById("result").innerHTML = "";
+    // document.getElementById("result1").innerHTML = "";
+    document.getElementById("clear").innerHTML = "";
+  }
+</script>
+
+{%endblock%}

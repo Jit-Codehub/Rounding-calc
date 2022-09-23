@@ -1,0 +1,285 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest 1/32 Calculator Tool Online| Procedure to round the nearest 1/32</title>
+<meta name="description"
+  content="Free online rounding to the nearest 1/32 calculator tool to calculate the nearest fraction and provides you with many detailed information." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title"
+  content="Rounding to the Nearest 1/32 Calculator Tool Online| Procedure to round the nearest 1/32" />
+<meta property="og:description"
+  content="Free online rounding to the nearest 1/32 calculator tool to calculate the nearest fraction and provides you with many detailed information." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-1-32.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+  content="Rounding to the Nearest 1/32 Calculator Tool Online| Procedure to round the nearest 1/32" />
+<meta name="twitter:description"
+  content="Free online rounding to the nearest 1/32 calculator tool to calculate the nearest fraction and provides you with many detailed information." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-1-32.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title'
+  content="Rounding to the Nearest 1/32 Calculator Tool Online| Procedure to round the nearest 1/32" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-1-32.jpeg" />
+<meta property='og:description'
+  content="Free online rounding to the nearest 1/32 calculator tool to calculate the nearest fraction and provides you with many detailed information." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to use this round to the nearest 1/32?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        All you need to do is give the decimal number as input and click the calculate button and you will see the output in fraction of seconds."}	}, {"@type": "Question","name":"2
+        What is the best tool to round the number to nearest 1/32?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding to the nearest 1/32 calculator is the best tool to round the nearest 1/32 easily and quickly that is available on roundingcalculator.guru."}	}, {"@type": "Question","name":"3
+        Round 3.33 to the nearest 1/32?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        3.33 rounded to he nearest 1/32 is 3(11/32)."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest 1/32 Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Endure this round to the nearest 1/32 calculator tool to round off the fraction 1/32 and provide you the
+        immediate result. Simply, you just need to give the input and hit the calculate button and that displays you
+        output and get instant outcomes.</p>
+
+
+      <div class="box">
+        {% if error %}
+        <p><b>!! Incorrect values !! Please enter correct values</b></p>
+        {%endif%}
+        <form method="POST" id="my_form">
+          {% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Value to be rounded up:</label>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+
+                <input type="text" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                  placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp" {% if inp %}
+                  value="{{inp}}" {% else %} value="34.45" {% endif %}>
+              </center>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center><button type="submit" class="btn btn-primary">Round</button>
+                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                  class="btn btn-danger">Reset</button>
+              </center>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/round-to-the-nearest-1-2-calculator/">Rounding to nearest 1/2 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-4-calculator/">Rounding to nearest 1/4 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-16-calculator/">Rounding to nearest 1/16 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-8-calculator/">Rounding to nearest 1/8 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-64-calculator/">Rounding to nearest 1/64 Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest 1/32 Calculator:</strong> Working hard to calculate the round to the nearest
+        1/32? Then you are the right place. And round to the nearest 1/32 calculator provides the nearest number to
+        1/32. Get to know that, we gave the calculator with step by step process along with solved examples that helps
+        you to round the nearest number by yourself without taking much time.</p>
+    </div>
+  </div>
+
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+      <div class="card-header">
+        <h2 class="h2">Result of Rounding to nearest 1/32:</h2>
+      </div>
+
+      <div class="card-body">
+        <strong>Result - Round off value = {{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub>
+          {% endif %}</strong>
+      </div>
+    </div>
+
+    <div class="card" id="result">
+      <div class="card-header">
+        <h2 class="h2">Result of Rounding to nearest 1/32:</h2>
+      </div>
+
+      <div class="card-body">
+        <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+        <p>To be rounded in : nearest &nbsp; <b><sup>1</sup>&frasl;<sub>{{calcval}}</sub></b></p>
+        {% if frac %}
+        <p>The fractional part is {{deci}}. </p>
+        <p>This value is nearest to {{deci_round}}.</p>
+        <p>And, {{deci_round}} in fraction of {{calcval}} is equivalent to
+          <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}.</sub></p>
+        {% else %}
+        <p>Since, given input is nearest to an integer {{res}}.</p>
+        <p>It's rounding result will be same as {{res}}.</p>
+        {% endif %}
+        <p>So finally, <b>{{inp}}</b>, when rounded to nearest &nbsp; <sup>1</sup>&frasl;<sub>{{calcval}}</sub> ,
+          results in <b>{{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %}</b>.
+        </p>
+      </div>
+
+
+    </div>
+
+    {% endif %}
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round off the Number to Nearest 1/32?</h2>
+    </div>
+    <div class="card-body">
+      <p>Round the number is making the number much simpler and rounded to its nearest number. In the same way, rounding
+        to the nearest 1/32 is estimating the number that is nearest to 1/32. </p>
+      <ul>
+        <li>Primarily, you need to checkout the fractional part of the given number.</li>
+        <li>Then, you need to round the number to nearest multiple of 1/32.</li>
+        <li>After that, acquired number in fraction of 32.</li>
+        <li>At last write the acquired equivalent number into fractional part.</li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Solved Examples for Rounding to the Nearest 1/32</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Example</strong></p>
+      <p><strong>Question :</strong> Round 42.67 to the nearest 1/32?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given, Value is 42.67</p>
+      <p>Fractional part of the given value is 0.67</p>
+      <p>0.67 is the nearest multiple of 0.6562</p>
+      <p>Thus, 0.6562 is the nearest fraction of 1/32 that is equivalent to 21/32</p>
+      <p>42.6562 in farctional part is 42(21/32).</p>
+      <p>Finally, 42.67 rounded to the nearest 1/32 is 42(21/32).</p>
+      <p>Use this <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> website to complete your
+        assignments for any type of rounding numbers.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs for Rounding Off to the Nearest 1/32 Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How to use this round to the nearest 1/32?</strong></p>
+      <p class="answer">All you need to do is give the decimal number as input and click the calculate button and you
+        will see the output in fraction of seconds.</p>
+      <hr>
+      <p class="question"><strong>2. What is the best tool to round the number to nearest 1/32?</strong></p>
+      <p class="answer">Rounding to the nearest 1/32 calculator is the best tool to round the nearest 1/32 easily and
+        quickly that is available on roundingcalculator.guru.</p>
+      <hr>
+      <p class="question"><strong>3. Round 3.33 to the nearest 1/32?</strong></p>
+      <p class="answer">3.33 rounded to he nearest 1/32 is 3(11/32).</p>
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+          fist_input = elem.value;
+      } else {
+          elem.value = fist_input;
+      }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    {% if error %}
+        document.getElementById('error').innerHTML = "";
+        {% endif %}
+      document.getElementsByName("inp")[0].value = "";
+      {% if result %}
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result1").innerHTML = "";
+      {% endif %}
+
+  }
+</script>
+
+{%endblock%}

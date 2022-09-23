@@ -1,0 +1,274 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Feet Inch calculator| How to Round to the Nearest Feet Inch?</title>
+<meta name="description"
+  content="Free tool to round off the value to the nearest feet inch is rounding to the nearest feet inch calculator. We have also explained step by step process. " />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title"
+  content="Rounding to the Nearest Feet Inch calculator| How to Round to the Nearest Feet Inch?" />
+<meta property="og:description"
+  content="Free tool to round off the value to the nearest feet inch is rounding to the nearest feet inch calculator. We have also explained step by step process." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Feet-Inch-Calculator.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+  content="Rounding to the Nearest Feet Inch calculator| How to Round to the Nearest Feet Inch?" />
+<meta name="twitter:description"
+  content="Free tool to round off the value to the nearest feet inch is rounding to the nearest feet inch calculator. We have also explained step by step process." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Feet-Inch-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title'
+  content="Rounding to the Nearest Feet Inch calculator| How to Round to the Nearest Feet Inch?" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Feet-Inch-Calculator.jpeg" />
+<meta property='og:description'
+  content="Free tool to round off the value to the nearest feet inch is rounding to the nearest feet inch calculator. We have also explained step by step process." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How do we use round to the nearest feet inch calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        All you need to do is enter the numbers as input in the input fields then press the calculate button and get answers instantly."}	}, {"@type": "Question","name":"2
+        What is the best tool to round off the nearest Feet Inch?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding to the nearest feet inch calculator is the best tool available on Roundingcalculator.guru."}	}, {"@type": "Question","name":"3
+        What is 6.46 Rounded to the Nearest Feet Inch?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        6.46 rounded to the nearest feet inch is 6."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Feet Inch Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Utilize this easy to use round to the nearest feet inch calculator tool to round off the value to the nearest
+        feet inch unit in split seconds. Simple thing is just you need to provide value in the given input fields and
+        press the calculate button and see the answer in no time.</p>
+
+
+      <div class="box">
+
+        <form method="POST" id="my_form" onsubmit="handleSubmit();">
+          {% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Enter Feet(')</label>
+            </div>
+          </div>
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+                <input type="number" id="Ib1" class="form-control mt-1" min="0" name="num1"
+                value="{{num1}}" required>
+              </center>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Enter Inches("")</label>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+
+                <input type="number" min="0" max="12" id="Ib2" class="form-control mt-1" name="num2"
+                                        value="{{num2}}" placeholder="0-12" required>
+              </center>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+                <input type="submit" class="btn btn-primary" value="Round" onclick="myFunction()">
+                <input type="button" class="btn btn-danger" onclick="Clean();ClearFields();" value="Reset"
+                  style="margin-top: 8px;">
+              </center>
+
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="rounding-to-the-nearest-feet-calculator/">Rounding to the Nearest feet calculator</a></li>
+      
+      <li><a href="/rounding-to-the-nearest-meter-calculator/">Rounding to the Nearest meters</a></li>
+      </ul>
+      <p><strong>Rounding to the Nearest Feet Inch Calculator: </strong>Facing trouble to round the nearest feet inch?
+        our rounding to the nearest feet inch calculator tool helps you a lot. In this page, we not only given you the
+        calculator but also we have given detailed information like how to round the nearest feet inch easily with some
+        simple steps by hand.</p>
+    </div>
+  </div>
+
+  {%if cas %}
+  <div class="container" id="cards">
+      <div class="card">
+          <h1 class="card-header" style="background-color:#00BFFF;color: white;">Rounding off {{num1}} Feet {{num2}}
+              Inches to nearest Feet</h1>
+          <div class="card-body">
+              <p>{{num1}}'{{num2}}'' = {{resf}}'{{resi}}'' Feet</p>
+          </div>
+      </div>
+  </div>
+  {% endif%}
+  {%if cas1 %}
+  <div class="container" id="cards1">
+      <div class="card">
+          <h1 class="card-header" style="background-color:#00BFFF;color: white;">Steps to Round off {{num1}} Feet
+              {{num2}} Inches to nearest Feet</h1>
+          <div class="card-body">
+              <p>Rounding the Feet-Inch input to Nearest Feet</p>
+              <h5>Given Value = {{num1}}'{{num2}}''. It is read as {{num1}} Feet {{num2}} Inches </h5>
+              <p>Steps to Round {{num1}}'{{num2}}'' Feet</p>
+              <ul>
+                  <li>
+                      <p>Consider the inches. Here it is {{num2}}</p>
+                  </li>
+                  <li>
+                      <p>If inches is greater than or equal to 6, then round up the feet</p>
+                  </li>
+                  <li>
+                      <p>If inches is less than 6, then round down the feet</p>
+                  </li>
+              </ul>
+              <p>Here the inches {{num2}} is {{msg}}. So, {{ro}}. Hence the feet becomes {{resf}}</p>
+              <p>The Round off value is </p>
+              <h4><b>{{num1}}'{{num2}}'' = {{resf}}'{{resi}}'' Feet</b></h4>
+          </div>
+      </div>
+  </div>
+  {% endif%}
+
+
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">Rules for Rounding off to the Nearest Feet Inch</h2>
+    </div>
+    <div class="card-body">
+      <p>By adhering the simple steps which is given below, we can easily round the values to the nearest feet inch.</p>
+      <ul>
+        <li>In the given decimal value, check for the tenths place.</li>
+        <li>Then, if the value is >=5 then we need to round up the value by adding +1 and remove all the digits.</li>
+        <li>If the value is <=4, just simply remove all the digits after the decimal point.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Solved Question to Round off the Nearest Feet Inch</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Example</strong></p>
+      <p><strong>Question:</strong> Round off the 6.79 to the Nearest Feet Inch?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given, input values are 6.79</p>
+      <p>6.79- Here after the decimal point we have 7 which is >5, add the value by one and remove all the digits after
+        the decimal point.</p>
+      <p>Thus, 6.79 rounded to the nearest feet inch is 7</p>
+      <p>Get this best rounding calculator tools on <a
+          href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> website and get with detailed information.
+      </p>
+      <!-- <img src="{% static 'images/Numbers/Rounding-to-the-Nearest-Feet-Inch-Calculator.jpeg' %}"
+        alt='Rounding to the Nearest Feet Inch Calculator'> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Round to the Nearest Feet Inch</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How do we use round to the nearest feet inch calculator?</strong></p>
+      <p class="answer">All you need to do is enter the numbers as input in the input fields then press the calculate
+        button and get answers instantly.</p>
+      <hr>
+      <p class="question"><strong>2. What is the best tool to round off the nearest Feet Inch?</strong></p>
+      <p class="answer">Rounding to the nearest feet inch calculator is the best tool available on <a
+          href="https://roundingcalculator.guru/">Roundingcalculator.guru</a></p>
+      <hr>
+      <p class="question"><strong>3. What is 6.46 rounded to the nearest feet inch?</strong></p>
+      <p class="answer">6.46 rounded to the nearest feet inch is 6.</p>
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var scrollDiv = document.getElementById("cards").offsetTop;
+  window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+  
+</script>
+
+<script>
+  function Clean() {
+    document.getElementById('cards').innerHTML = ''
+    document.getElementById('cards1').innerHTML = ''
+  }
+  function handleSubmit(event) {
+    if (!validate()) {
+      event.preventDefault();
+    }
+    return;
+  }
+  function ClearFields() {
+    document.getElementById("Ib1").value = "";
+    document.getElementById("Ib2").value = "";
+  }
+</script>
+{%endblock%}

@@ -1,0 +1,217 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Rounding Down Numbers Calculator | How To Round Off Numbers Down? </title>
+    <meta name="description" content="Rounding Down Numbers Calculator provide accurate results along with detailed steps. Also, see rule to follow when rounding the numbers down."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Rounding Down Numbers Calculator | How To Round Off Numbers Down? "/>
+        <meta property="og:description" content="Rounding Down Numbers Calculator provide accurate results along with detailed steps. Also, see rule to follow when rounding the numbers down."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-million.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Rounding Down Numbers Calculator | How To Round Off Numbers Down? "/>
+        <meta name="twitter:description" content="Rounding Down Numbers Calculator provide accurate results along with detailed steps. Also, see rule to follow when rounding the numbers down."/>
+        <meta name="twitter:image:src" content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-million.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Rounding Down Numbers Calculator | How To Round Off Numbers Down? "/>
+        <meta property='og:image' content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-million.jpeg"/>
+        <meta property='og:description' content="Rounding Down Numbers Calculator provide accurate results along with detailed steps. Also, see rule to follow when rounding the numbers down."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you round down numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":"The general rule to round down numbers is if the rounding number is followed by 0, 1, 2, 3, or 4, round the number down. For instance, 434 rounded to the nearest ten is 430."} }, {"@type": "Question","name":"2.
+        What is round down in math?
+        ","acceptedAnswer": {"@type": "Answer","text":"When the rounding number is between 0-4, you have to round down to the next lowest number. This is called round down in math."} }, {"@type": "Question","name":"3.
+        What is the 2.4623 Rounded Down value?
+        ","acceptedAnswer": {"@type": "Answer","text":"2.4623 round down value is 2."} }]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Rounding Down Numbers Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Make use of this handy and user-friendly Rounding Down Numbers Calculator and perform your calculations effortlessly &amp; faster. Just give your value to be rounded down in the input box and hit the Round button to avail the result in no time.</p>              <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="4232.169" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                          <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                          <optgroup label="Whole Number Places">
+                              <option value="-9" >Billions</option>
+                              <option value="-8" >Hundred Millions</option>
+                              <option value="-7" >Ten Millions</option>
+                              <option value="-6" >Millions</option>
+                              <option value="-5" >Hundred Thousands</option>
+                              <option value="-4" >Ten Thousands</option>
+                              <option value="-3" >Thousands</option>
+                              <option value="-2" >Hundreds</option>
+                              <option value="-1" >Tens</option>
+                              <option value="0" >Ones</option>
+                          </optgroup>
+                          <optgroup label="Decimal Places">
+                              <option value="1" >Tenths (1)</option>
+                              <option value="2" selected>Hundredths (2)</option>
+                              <option value="3" >Thousandths (3)</option>
+                              <option value="4" >Ten Thousandths (4)</option>
+                              <option value="5" >Hundred Thousandths (5)</option>
+                              <option value="6" >Millionths (6)</option>
+                              <option value="7" >Ten Millionths (7)</option>
+                              <option value="8" >Hundred Millionths (8)</option>
+                              <option value="9" >Billionths (9)</option>
+                          </optgroup>
+                      </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                    </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                        <li><a href="/numbers/rounding-decimals-to-the-nearest-tenths/">Rounding Decimals to the Nearest Tenths</a></li>
+                                        
+                                        
+                                      </ul>
+                                      <p><strong>Rounding Down Numbers Calculator:</strong> Need any of the help to understand the concept of rounding numbers down to nearest ones, tens, hundreds, tenth, thousandth, etc. Let's take the help from this free online Round Down Calculator which works outstandingly while dealing with complex rounding problems. Check out the extra information like what it means, rules to round down, and some worked-out examples in the further modules.</p>                 
+                </div>
+        <div class="card">
+          <div class="card-header">
+                <h2 class="h2">What is Rounding Down Number or Decimal?</h2>
+            </div>
+          <div class="card-body">
+            <p>Rounding down the numbers or decimals means estimating the approximate value to the nearest 1, 10, 100, 10th, 100th, 1000th, etc. When the right to the nearest given digit is less than 5 then, the number rounds down to the desired answer.</p>       
+          </div>
+        </div>     
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Rule to Follow While Rounding Down the Numbers</h2>
+        </div>
+	    <div class="card-body">
+            <p>There are specific rules for rounding down the numbers. Here we have listed them to round off the numbers down for the integers 10, 100, 1000, so on or decimals 10th, 100th, 1000th, etc.</p>
+            <ul>
+            <li>First and foremost, we have to check the given number is a whole number or decimals.</li>
+            <li>For any type of number, the rule to round down the number is the same.</li>
+            <li>If the right digit of the nearest value is less than 5 or ends with 0, 1, 2, 3, 4, then round down the number.</li>
+            <li>At last, the desired rounded down number will be availed.</li>
+            </ul>
+</div>
+</div>  
+<div class="card">
+    <div class="card-header">
+        <h2 class="h3">Solved Examples on Round Off Numbers Down</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Example 1:</strong></p>
+<p>Round down the decimal number 34.524 to the nearest tenth?</p>
+<p><strong>Solution:</strong></p>
+<p>Given decimal input is 34.524</p>
+<p>To round down the number to the nearest tenth, take the right digit to the tenth place (ie., hundredth place value).</p>
+<p>Here, 2 is the tenth place value and 4 is the hundredth place.</p>
+<p>The rule to follow is if the number is less than 5 then round down the number.</p>
+<p>Here, the number is less than 5, so keep the tenth digit as it is and remove all the digits after tenth place.</p>
+<p>Therefore, the answer for rounding down decimal number 34.524 to the nearest tenth is <strong>34.52</strong></p>
+<p><strong>Example 2:</strong></p>
+<p>What is 57123 rounding down the number to the nearest tens?</p>
+<p><strong>Solution:</strong></p>
+<p>Given number is 57123</p>
+<p>Value in the tens place is 2</p>
+<p>Consider the value in the hundreds place to round off the number to the nearest ones.</p>
+<p>Here, 1 is in the hundreds place value and it is less than five so we have to round down the number.</p>
+<p>Hence, the round down value 57123 to the nearest tens is <strong>57120.</strong></p>
+<p>Also, visit our <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> website for plenty of online rounding calculator tools which make your calculations much easier and faster for free of cost.</p>
+</div>
+</div>   
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Online Round Down Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you round down numbers?</strong></p>
+     	<p class="answer">The general rule to round down numbers is if the rounding number is followed by 0, 1, 2, 3, or 4, round the number down. For instance, 434 rounded to the nearest ten is 430.</p><hr>
+     	<p class="question"><strong>2. What is round down in math?</strong></p>
+     	<p class="answer">When the rounding number is between 0-4, you have to round down to the next lowest number. This is called round down in math.        </p><hr>  
+        <p class="question"><strong>3. What is the 2.4623 Rounded Down value?</strong></p>
+        <p class="answer">2.4623 round down value is 2.</p><hr>
+    </div>
+    </div>
+    </div>
+{%endblock%}

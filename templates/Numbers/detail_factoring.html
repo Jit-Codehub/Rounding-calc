@@ -1,0 +1,155 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{% static 'images/logo/Online-Calculator-Guru-Fevicon.png' %}" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Factoring Calculator to find factors of the number {{inputEnter}} Step by Step</title>
+    <meta name="description" content="Factoring Calculator determines the factors of number {{inputEnter}} i.e. {{finalAnswer}} numbers that evenly divide and leaves a remainder zero explained in detail.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}" >
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Factoring Calculator to find factors of the number {{inputEnter}} Step by Step"/>
+    <meta property="og:description" content="Factoring Calculator determines the factors of number {{inputEnter}} i.e. {{finalAnswer}} numbers that evenly divide and leaves a remainder zero explained in detail."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Factoring-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Factoring Calculator to find factors of the number {{inputEnter}} Step by Step"/>
+    <meta name="twitter:description" content="Factoring Calculator determines the factors of number {{inputEnter}} i.e. {{finalAnswer}} numbers that evenly divide and leaves a remainder zero explained in detail."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Factoring-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Factoring Calculator to find factors of the number {{inputEnter}} Step by Step"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Factoring-Calculator.jpeg"/>
+    <meta property='og:description' content="Factoring Calculator determines the factors of number {{inputEnter}} i.e. {{finalAnswer}} numbers that evenly divide and leaves a remainder zero explained in detail."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<script>
+    window.MathJax = {
+        jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
+        extensions: ["mml2jax.js","MathMenu.js","MathZoom.js"],
+        MathML: { extensions: ["mml3.js"]}
+    };
+  
+  (function(d, script) {
+        script = d.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.onload = function(){
+            // remote script has loaded
+        };
+       script.src = 'https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js';
+        d.getElementsByTagName('head')[0].appendChild(script);
+    }(document));
+  </script>
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to find factors of number {{inputEnter}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check for the numbers that evenly divide the number {{inputEnter}} and leave a remainder zero."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the factors of {{inputEnter}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Factors of {{inputEnter}} are {{finalAnswer}}."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you factor {{inputEnter}} on a calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All you have to do is provide the input value {{inputEnter}} and tap on the enter button next to the input field to obtain the factors."
+        }
+      }]
+  }
+</script>
+  {%endblock%}
+  {%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Finding the factors of number {{inputEnter}}</h1>
+  </div>
+  <div class="card-body">
+    <p>Factoring Calculator will help you find the factors of {{inputEnter}} i.e. {{finalAnswer}} the numbers that when divided results in a whole number and a zero remainder.</p>
+    <p><b>Ex:</b> 3844 or 5680 or 9240</p>
+    <form action="{% url 'factoring' %}" method="POST" id="my_form" name="reg_to_scientific" onsubmit="go();">
+        {% csrf_token %}
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">Factors</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Factors of: </strong></div>
+              </div>
+              <input type="text" class="form-control" name="input1" id="inlineFormInputGroup" placeholder="Enter numbers" value="{{inputEnter}}">
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+          </div>
+        </div>
+    </form>
+</div></div>
+<div class="card">
+    <div class="card-header">
+<h2 class="h2">Detailed Solution to find factors of the number {{inputEnter}}</h2>
+</div>
+<div class="card-body">
+{% autoescape off %}
+{{ detailStep }}
+{% endautoescape %}
+</div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h3 class="h3">Frequently Asked Questions on Prime Factorization of {{inputEnter}}</h3>
+  </div>
+  <div class="card-body">
+      <p class="question"><strong>1. How to find factors of number {{inputEnter}}?</strong></p>
+      <p class="answer">Check for the numbers that evenly divide the number {{inputEnter}} and leave a remainder zero.</p><hr>
+
+
+        <p class="question"><strong>2. What are the factors of {{inputEnter}}?</strong></p>
+        <p class="answer">Factors of {{inputEnter}} are {{finalAnswer}}.</p><hr>
+
+
+        <p class="question"><strong>3. How do you factor {{inputEnter}} on a calculator?</strong></p>
+        <p class="answer">All you have to do is provide the input value {{inputEnter}} and tap on the enter button next to the input field to obtain the factors.</p><hr>
+  </div>
+</div>
+</div>
+{%endblock%}

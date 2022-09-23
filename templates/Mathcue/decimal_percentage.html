@@ -1,0 +1,183 @@
+{% extends 'base/numbers_base3.html' %}
+
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Online Calculator Guru Site Fevicon -->
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+    type="icon">
+<!-- Online Calculator Guru Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Meta Title, Description and Canonical URL Starts -->
+<title>Decimal to percent Calculator | Free Calculator to find Decimal to percent </title>
+<meta name="description" content="Decimal to percent  Calculator makes it easy for you to find Decimal to percent ." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Decimal to percent  Calculator | Free Calculator to find Decimal to percent " />
+<meta property="og:description" content="Decimal to percent  Calculator" />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Chemistry/ohms-law-calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Decimal to percent  Calculator | Free Calculator to find Decimal to percent " />
+<meta name="twitter:description" content="Decimal to percent  Calculator" />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Chemistry/ohms-law-calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<title> Decimal to percent Calculator</title>
+<meta property='og:title' content="Decimal to percent  Calculatorr | Decimal to percent " />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/ohms-law-calculator.jpeg" />
+<meta property='og:description' content="Decimal to percent  Calculator." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+
+{%endblock%}
+
+{%block content%}
+
+
+<style>
+    input {
+        text-align: right;
+    }
+</style>
+
+
+<div class="container" style="height: auto !important;">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Decimal to percent Calculator</h1>
+        </div>
+
+        <div class="card-body">
+
+            <ul class="messages">
+                {% if messages %}
+                <p id="message_container" class="alert alert-danger text-center" style="color:red">{{ message }}</p>
+                {% endif %}
+            </ul>
+
+            <form action="" method="POST" id="my_form">
+                {% csrf_token %}
+                <p>Convert decimals to percentages with this calculator. Input a decimal number to convert both the whole number and decimal part of the number to a percent value.
+
+                </p>
+                <div class="input-group mb-2">
+
+
+                    <input type="number" min="0.0000001" step="any" max="99999999" oninput="validateNumber(this);"
+                        id="inlineFormInputGroup" required="" placeholder="Enter number" class="form-control" id="aa"
+                        name="aa" {% if aa %} value="{{aa}}" {% else %} value="0.96" {% endif %}>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" style="padding: 4px 50px;"><strong> decimal to %</strong></div>
+                    </div>
+                </div>
+
+
+                <div class=" center col mt-2 ">
+                    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                        <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                            class="btn btn-danger">Reset</button>
+                    </center>
+                </div>
+
+
+            </form> <br>
+
+       
+
+</div>
+</div>
+
+
+
+
+
+<div id="clear">
+
+
+    <div class="card" id="magnetic-Change in temperature">
+        <div class="card-header">
+            <h2 class="h2"> Convert Decimal to percent using a calculator?</h2>
+        </div>
+
+
+        <div class="card-body">
+            <p>A decimal is a number that consists of both the whole number part and the fraction part. Go through the steps given below to know how to use the Decimal to percent calculator.            </p>
+            <ol>
+                <li>Enter the decima value x in the relevant input place.</li>
+                <li>Now click on the calculate button.</li>
+                <li>After a few seconds the result will be obtained in percent form.</li>
+                <li>Hit the RESET button to enter new values and continue the process</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+    <div class="card" id="magnetic-Change in temperature">
+        <div class="card-header">
+            <h2 class="h2">How do you convert Decimal to percent?</h2>
+        </div>
+
+
+        <div class="card-body">
+            <p>You can convert the Decimal to a percent by multiplying the given number by 100</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    {% if id == 1 %}
+
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    console.log(scrollDiv)
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+    {% endif %}
+
+</script>
+
+<script>
+    function myFunction() {
+
+        document.getElementsByName("aa")[0].value = "";
+    }
+</script>
+<br>
+
+</div>
+</div>
+{% endblock %}

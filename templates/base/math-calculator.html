@@ -1,0 +1,691 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+{%block meta%}
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+{%block css%}
+<link rel="stylesheet" href="/static/style.css">
+{%endblock%}
+
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- META DATA STARTS --->
+<title>Rounding Calculator | Rules, Steps to Round off Numbers</title>
+<meta name="description"
+  content="Online Rounding Calculators helps to round off a number based on the given conditions. Check the detailed steps for rounding a number easily & quickly.">
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding Calculator | Rules, Steps to Round off Numbers" />
+<meta property="og:description"
+  content="Online Rounding Calculators helps to round off a number based on the given conditions. Check the detailed steps for rounding a number easily & quickly." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/base/Math-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding Calculator | Rules, Steps to Round off Numbers" />
+<meta name="twitter:description"
+  content="Online Rounding Calculators helps to round off a number based on the given conditions. Check the detailed steps for rounding a number easily & quickly." />
+<meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/base/Math-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding Calculator | Rules, Steps to Round off Numbers" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/base/Math-Calculator.jpeg" />
+<meta property='og:description'
+  content="Online Rounding Calculators helps to round off a number based on the given conditions. Check the detailed steps for rounding a number easily & quickly." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+  What is rounding of numbers?
+  ","acceptedAnswer": {"@type": "Answer","text":" Rounding means replacing the number with an approximate value that has a shorter representation. It is done to obtain a value that is easier to report and communicate than the original one. It is process of making a number simpler but keeping its value close to the original value."}	}, {"@type": "Question","name":"2.
+  What is called rounding up and rounding down of numbers?
+  ","acceptedAnswer": {"@type": "Answer","text":" The process of rounding up of numbers means if the decimal form and followed by the numbers 5, 6, 7, 8 and 9 after the decimal point, then round the numbers up to the nearest whole number greater than the original. If a rounding number is followed by 0, 1, 2, 3, 4 then the round numbers down is called rounding down of numbers."}	}, {"@type": "Question","name":"3.
+  What are the rules in rounding decimal numbers?
+  ","acceptedAnswer": {"@type": "Answer","text":" The two important rules of rounding decimal numbers are rounding up and rounding down."}	}, {"@type": "Question","name":"4.
+  How do you round numbers on a calculator?
+  ","acceptedAnswer": {"@type": "Answer","text":" Give the numbers in the specified input field of the calculator and hit on the calculate button to get the rounded value in a fraction of seconds."}	}]}</script>
+<!-- FAQ SCHEMA ENDS -->
+{%endblock%}
+{%block content%}
+  <div class="container rounded-2 pl-3 pr-3 pt-2 pb-2" style="border:1px solid rgb(240, 236, 236)">
+    
+    <p class="pt-1">Free Rounding Calculator makes it easy for you to do calculations easily. Get the rules for rounding decimal numbers or fractions or mixed numbers and so on. This Round off Calculator helps for rounding the numbers in a short span of time and provides the detailed explanation. So, make use of our handy <a href="/rounding-calculator/">Rounding Calculator</a>  to solve your questions effortlessly and get grip on the concept.</p>
+    <h1>Rounding Numbers, Decimals, Money, Unit Calculator</h1>
+    <p>Rounding means estimating and finding the approximate values. Here, you can access the respective concept Online Round Calculators with the help of the below links and make your calculations easier and faster. Get the accurate results along with a explanation for your rounding problems.</p>
+    <h2>Rounding Calculators List</h2>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center"><a href="/rounding-numbers-calculator/">Rounding Numbers Calculator</a></h3>
+          <div class="card-body">
+            <ul  style="list-style-type:none;">
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-whole-number-calculator/" title="Rounding to the Nearest Whole Number Calculator">Rounding to the Nearest Whole Number Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-ones-calculator/" title="Rounding to the Nearest Ones Place Calculator">Rounding to the Nearest Ones Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-tens-calculator/" title="Rounding to the Nearest Tens Place Calculator">Rounding to the Nearest Tens Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-hundred-calculator/" title="Rounding to the Nearest Hundred Calculator">Rounding to the Nearest Hundred Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-thousand-calculator/" title="Rounding to the Nearest Thousand Calculator">Rounding to the Nearest Thousand Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-ten-thousand-calculator/" title="Rounding to the Nearest Ten Thousand Calculator">Rounding to the Nearest Ten Thousand Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-hundred-thousand-calculator/" title="Rounding to the Nearest Hundred Thousand Calculator">Rounding to the Nearest Hundred Thousand Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-million-calculator/" title="Rounding to the Nearest Million Calculator">Rounding to the Nearest Million Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-ten-millions-calculator/" title="Rounding to the Nearest Ten Million Calculator">Rounding to the Nearest Ten Million Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-hundred-million-calculator/" title="Rounding to the Nearest Hundred Million Calculator">Rounding to the Nearest Hundred Million Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-billion-calculator/" title="Rounding to the Nearest Billion Calculator">Rounding to the Nearest Billion Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-significant-figure-calculator/" title="Rounding Significant Figures Calculator">Rounding Significant Figures Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-sig-fig-calculator/">Sig Fig Rounding Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-off-calculator/" title="Rounding off Numbers Calculator">Rounding off Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-up-calculator/" title="Rounding up Numbers Calculator">Rounding up Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-down-numbers-calculator/" title="Rounding down Numbers Calculator">Rounding down Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-half-up-rounding-calculator/" title="Rounding half up Numbers Calculator">Rounding half up Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-half-down-rounding-calculator/" title="Rounding half down Numbers Calculator">Rounding half down Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-half-to-even-calculator/" title="Rounding half even Numbers Calculator">Rounding half even Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-half-to-odd-calculator/" title="Rounding half odd Numbers Calculator">Rounding half odd Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-number-ceiling-calculator/" title="Round Number Ceiling Calculator">Round Number Ceiling Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-number-flooring-calculator/" title="Round Number Flooring Calculator">Round Number Flooring Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-half-away-from-zero-calculator/" title="Rounding half away from zero calculator">Rounding half away from zero calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-half-towards-zero-calculator/" title="Rounding half towards zero calculator">Rounding half towards zero calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-integer-calculator/" title="Rounding to the Nearest Integer Calculator">Rounding to the Nearest Integer Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-gpa-calculator/" title="GPA Rounding Calculator">GPA Rounding Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-time-clock-calculator/" title="Time Clock Rounding Calculator">Time Clock Rounding Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-time-clock-15-minutes-calculator/" title="Time Clock 15 Minutes Rounding Calculator">Time Clock 15 Minutes Rounding Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-time-clock-30-minutes-calculator/" title="Time Clock 30 Minutes Rounding Calculator">Time Clock 30 Minutes Rounding Calculator</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center"><a href="/rounding-decimals/">Rounding Decimals Calculator</a>
+          </h3>
+          <div class="card-body">
+            <ul  style="list-style-type:none;">
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-one-decimal-place-calculator/" title="Rounding to one decimal places calculator">Rounding to one decimal places calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-two-decimal-place-calculator/" title="Rounding to two decimal places calculator">Rounding to two decimal places calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-three-decimal-place-calculator/" title="Rounding to three decimal places calculator">Rounding to three decimal places calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-tenth-calculator/" title="Rounding to the Nearest Tenths Calculator">Rounding to the Nearest Tenths Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-nearest-hundredths-calculator/" title="Rounding to the Nearest Hundredths Calculator">Rounding to the Nearest Hundredths Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-nearest-thousandth-calculator/" title="Rounding to the Nearest Thousandths Calculator">Rounding to the Nearest Thousandths Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-ten-thousandth-calculator/" title="Rounding to the Nearest Ten Thousandth Calculator">Rounding to the Nearest Ten Thousandth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-hundred-thousandth-calculator/" title="Rounding to the Nearest Hundred Thousandth Calculator">Rounding to the Nearest Hundred Thousandth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-milllionth-calculator/" title="Rounding to the Nearest Millionth Calculator">Rounding to the Nearest Millionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-ten-milllionth-calculator/" title="Rounding to the Nearest Ten Millionth Calculator">Rounding to the Nearest Ten Millionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-hundred-milllionth-calculator/" title="Rounding to the Nearest Hundred Millionth Calculator">Rounding to the Nearest Hundred Millionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-billionth-calculator/" title="Rounding to the Nearest Billionth Calculator">Rounding to the Nearest Billionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-ten-billionth-calculator/" title="Rounding to the Nearest Ten Billionth Calculator">Rounding to the Nearest Ten Billionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-hundred-billionth-calculator/" title="Rounding to the Nearest Hundred Billionth Calculator">Rounding to the Nearest Hundred Billionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-trillionth-calculator/" title="Rounding to the Nearest Trillionth Calculator">Rounding to the Nearest Trillionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-ten-trillionth-calculator/" title="Rounding to the Nearest Ten Trillionth Calculator">Rounding to the Nearest Ten Trillionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-hundred-trillionth-calculator/" title="Rounding to the Nearest Hundred Trillionth Calculator">Rounding to the Nearest Hundred Trillionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-quadrillionth-calculator/" title="Rounding to the Nearest Quadrillionth Calculator">Rounding to the Nearest Quadrillionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-ten-quadrillionth-calculator/" title="Rounding to the Nearest Ten Quadrillionth Calculator">Rounding to the Nearest Ten Quadrillionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-nearest-hundred-quadrillionth-calculator/" title="Rounding to the Nearest Hundred Quadrillionth Calculator">Rounding to the Nearest Hundred Quadrillionth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-fractions-to-decimals-calculator/" title="Rounding Fractions Calculator">Rounding Fractions Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-1-4-calculator/" title="Rounding to the Nearest 1/4 Calculator">Rounding to the Nearest 1/4 Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-1-2-calculator/" title="Rounding to the Nearest 1/2 Calculator">Rounding to the Nearest 1/2 Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-1-8-calculator/" title="Rounding to the Nearest 1/8 Calculator">Rounding to the Nearest 1/8 Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-1-16-calculator/" title="Rounding to the Nearest 1/16 Calculator">Rounding to the Nearest 1/16 Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-1-32-calculator/" title="Rounding to the Nearest 1/32 Calculator">Rounding to the Nearest 1/32 Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-1-64-calculator/" title="Rounding to the Nearest 1/64 Calculator">Rounding to the Nearest 1/64 Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-mixed-number-to-nearest-number-calculator/" title="Rounding Mixed Numbers Calculator">Rounding Mixed Numbers Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-mixed-number-to-nearest-whole-number-calculator/" title="Rounding Mixed Numbers to the Nearest Whole Number Calculator">Rounding Mixed Numbers to the Nearest Whole Number Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-fractions-to-the-nearest-half-calculator/" title="Rounding Fractions to the Nearest Half Calculator">Rounding Fractions to the Nearest Half Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-fractions-to-the-nearest-hundredth-calculator/" title="Rounding Fractions to the Nearest Hundredth Calculator">Rounding Fractions to the Nearest Hundredth Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-fractions-to-the-nearest-tenth-calculator/" title="Rounding Fractions to the Nearest Tenth Calculator">Rounding Fractions to the Nearest Tenth Calculator</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-sm-6">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center"><a href="/rounding-money-calculator/" title="Rounding Money Calculator">Rounding Money Calculator</a></h3>
+          <div class="card-body">
+            <ul  style="list-style-type:none;">
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-cent/" title="Rounding to the Nearest Cent Calculator">Rounding to the Nearest Cent Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-5-cents/" title="Rounding to the Nearest 5 Cents Calculator">Rounding to the Nearest 5 Cents Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-10-cents/" title="Rounding to the Nearest 10 Cents Calculator">Rounding to the Nearest 10 Cents Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-25-cents/" title="Rounding to the Nearest 25 Cents Calculator">Rounding to the Nearest 25 Cents Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-dollar/" title="Rounding to the Nearest Dollar Calculator">Rounding to the Nearest Dollar Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-nearest-pounds-calculator/" title="Rounding to the Nearest Pound Calculator">Rounding to the Nearest Pound Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-euro-calculator/" title="Rounding to the Nearest Euro Calculator">Rounding to the Nearest Euro Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-yuan-calculator/" title="Rounding to the Nearest Yuan Calculator">Rounding to the Nearest Yuan Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-japanese-yen-calculator/" title="Rounding to the Japanese Yen Calculator">Rounding to the Japanese Yen Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-singapore-dollar-calculator/" title="Rounding to the Singapore Dollar Calculator">Rounding to the Singapore Dollar Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/round-to-the-nearest-australian-dollar-calculator/" title="Rounding to the Australian Dollar Calculator">Rounding to the Australian Dollar Calculator</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center"><a href="/round-to-nearest-unit-calculator/" title="Rounding to the Nearest Unit Calculator">Rounding to the Nearest Unit Calculator</a></h3>
+          <div class="card-body">
+            <ul  style="list-style-type:none;">
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-nearest-inch-calculator/" title="Rounding to the Nearest Inch Calculator">Rounding to the Nearest Inch Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-feet-calculator/" title="Rounding to the Nearest Feet Calculator">Rounding to the Nearest Feet Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-feet-inch-calculator/" title="Rounding to the Nearest Feet Inch Calculator">Rounding to the Nearest Feet Inch Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-meter-calculator/" title="Rounding to the Nearest Meter Calculator">Rounding to the Nearest Meter Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-centimeter-calculator/" title="Rounding to the Nearest Centimeter Calculator">Rounding to the Nearest Centimeter Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-kilometer-calculator/" title="Rounding to the Nearest Kilometer Calculator">Rounding to the Nearest Kilometer Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-millimeter-calculator/" title="Rounding to the Nearest Millimeter Calculator">Rounding to the Nearest Millimeter Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-micrometer-calculator/" title="Rounding to the Nearest Micrometer Calculator">Rounding to the Nearest Micrometer Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-nanometer-calculator/" title="Rounding to the Nearest Nanometer Calculator">Rounding to the Nearest Nanometer Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-yard-calculator/" title="Rounding to the Nearest Yard Calculator">Rounding to the Nearest Yard Calculator</a></li>
+              <li><i class="far fa-circle text-success mr-2"></i><a href="/rounding-to-the-nearest-mile-calculator/" title="Rounding to the Nearest Mile Calculator">Rounding to the Nearest Mile Calculator</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center">General Mathematics Calculators</h3>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/half-of-x-calculator/">Half Of X Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/modulo-calculator/">Modulo Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/x-of-y-calculator/">X Of Y Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/division-of-numbers-calculator/">Division Of Numbers Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/repeating-decimal-as-a-fraction-calculator/">Repeating Decimal As A Fraction Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/bag-and-marbles-calculator/">Bag And Marbles Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/bag-and-coins-calculator/">Bag And Coins Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/partners-profit-and-loss-calculator/">Partners Profit And Loss Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/gcf-of-polynomials-calculator/">Gcf Of Polynomials Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/international-number-system-calculator/">International Number System Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/x-is-y-percent-of-what-number-calculator/">X Is Y Percent Of What Number Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/pens-cost-calculator/">Pens Cost Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/x-divided-by-y-as-a-fraction-calculator/">X Divided By Y As A Fraction Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/x-percent-of-what-number-is-y-calculator/">X Percent Of What Number Is Y Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/fraction-to-mixed-number-calculator/">Fraction To Mixed Number Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/exponent-calculator/">Exponent Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/million-calculator/">Million Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/cusec-to-litres-calculator/">Cusec to litres Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/what-is-x-percent-of-y-calculator/">What Is X Percent Of Y Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/percent-to-fraction-calculator/">Percent To Fraction Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/decimal-to-fraction-calculator/">Decimal To Fraction Calculator</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/how-many-liters-in-quart/">How Many Liters In Quart</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/how-many-inches-in-feet/">How Many Inches In Feet</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/how-many-grams-in-kilogram/">How Many Grams In Kilogram</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/how-many-feet-in-meter/">How Many Feet In Meter</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/minutes-to-decimal-calculator/">Minutes To Decimal Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/simplifying-ratios-calculator/">Simplifying Ratios Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/simple-interest-calculator/">Simple Interest Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/area-of-circle-calculator/">Area Of Circle Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/antiderivative-calculator/">Antiderivative Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/24-hour-clock-conversion/">24 Hour Clock Conversion</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/dividing-fractions-calculator/">Dividing Fractions Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/multiplying-fractions-calculator/">Multiplying Fractions Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/adding-fractions-calculator/">Adding Fractions Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/percent-to-decimal-calculator/">Percent To Decimal Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/steps-to-miles-calculator/">Steps to Miles Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/miles-to-steps-calculator/">Miles to Steps Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/km-to-steps-calculator/">Steps to km Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/steps-to-km-calculator/">Km to Steps Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/8000-steps-to-miles/">8000 Steps to Miles</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/5-miles-to-steps/">5 Miles to Steps</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/10000-steps-to-km/">10000 Steps to km</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/6-km-to-steps/">6 Km to Steps</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center">Divisbility Calculator</h3>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rules/">Divisible by anything Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-1-calculator/">Divisible by 1 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-2-calculator/">Divisible by 2 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-3-calculator/">Divisible by 3 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-4-calculator/">Divisible by 4 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-5-calculator/">Divisible by 5 Calculator</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-6-calculator/">Divisible by 6 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-7-calculator/">Divisible by 7 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-8-calculator/">Divisible by 8 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-9-calculator/">Divisible by 9 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-10-calculator/">Divisible by 10 Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="divisible-by-11-calculator/">Divisible by 11 Calculator</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center">Division Calculators</h3>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/long-division-calculator/">Long Division Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divided-by-what-equals-calculator/">Divided By What Equals Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/dividend-divisor-and-quotient-calculator/">Dividend, Divisor, and Quotient Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/dividing-fractions-calculator/">Dividing Fractions Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisors-calculator/">Divisors Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/factor-checker/">Factor Checker</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/billion-divided-by-million-calculator/">Billion divided by Million Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/trillion-divided-by-billion-calculator/">Trillion divided by Billion Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/fraction-divided-by-number-calculator/">Fraction Divided By Number Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/greatest-common-divisor-calculator/">Greatest Common Divisor Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/modulo-calculator/">Modulo Calculator</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/negative-divided-by-negative-calculator/">Negative Divided By Negative Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/number-divided-by-fraction-calculator/">Number Divided By Fraction Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/pie-chart-with-sections-calculator/">Pie Chart with Sections Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/product-quotient-calculator/">Product Quotient Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/quotient-of-numbers-calculator/">Quotient of Numbers Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/three-digit-numbers-divisible-by-calculator/">Three Digit Numbers Divisible By Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/four-digit-numbers-divisible-by-calculator/">Four Digit Numbers Divisible By Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/five-digit-numbers-divisible-by-calculator/">Five Digit Numbers Divisible By Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/six-digit-numbers-divisible-by-calculator/">Six Digit Numbers Divisible By Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/what-divided-by-equals-calculator/">What Divided By Equals Calculator</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/what-divided-by-what-equals-calculator/">What Divided By What Equals Calculator</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class=" card radius-card mt-1"  style="border:1px solid #012A72">
+          <h3 class="card-title text-center">Divisbility Rules</h3>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rules/">Divisibility Rules</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-2/">Divisibility Rule for 2</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-3/">Divisibility Rule for 3</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-4/">Divisibility Rule for 4</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-5/">Divisibility Rule for 5</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-6/">Divisibility Rule for 6</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-7/">Divisibility Rule for 7</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-8/">Divisibility Rule for 8</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-9/">Divisibility Rule for 9</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-10/">Divisibility Rule for 10</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-11/">Divisibility Rule for 11</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-12/">Divisibility Rule for 12</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-13/">Divisibility Rule for 13</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul  style="list-style-type:none;">
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-14/">Divisibility Rule for 14</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-15/">Divisibility Rule for 15</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-16/">Divisibility Rule for 16</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-17/">Divisibility Rule for 17</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-18/">Divisibility Rule for 18</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-19/">Divisibility Rule for 19</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-20/">Divisibility Rule for 20</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-21/">Divisibility Rule for 21</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-22/">Divisibility Rule for 22</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-23/">Divisibility Rule for 23</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-24/">Divisibility Rule for 24</a></li>
+                  <li><i class="far fa-circle text-success mr-2"></i><a href="/divisibility-rule-for-25/">Divisibility Rule for 25</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+      <div class=" card radius-card mt-3"  style="border:1px solid #012A72">
+        <div class="card-body ml-3 mt-2">
+          <h3>Sig Fig Rounding Calculator</h3>
+          <p><strong>Example: Round 185263 to 4 significant figures.</strong></p>
+          <p>Given number is 185263</p>
+          <p>The number should be rounded to 4 significant figures</p>
+          <p>The digit should be rounded is 2 which is lesser than 5 so round down the number.</p>
+          <p>Therefore, 185263 is rounded to 4 significant figures is 185000.</p>
+          <h3>Rounding Fractions Calculator</h3>
+          <p><strong>Example: What is 15/6 rounded to the nearest whole number?</strong></p>
+          <p>Given fraction is 15/6</p>
+          <p>First, convert the fraction into a decimal number by dividing the numerator by denominator</p>
+          <p>15/6 = 2.5</p>
+          <p>Round the decimal number to the nearest whole number.</p>
+          <p>The decimal part 0.5 is equal to 0.5. So, add 1 to the integer part and eliminate decimal part</p>
+          <p>15/6 rounded to the nearest whole number is 3.</p>
+          <h3>Rounding Fractions to the Nearest Half Calculator</h3>
+          <p><strong>Example: Round 23/8 to the nearest half. </strong></p>
+          <p>Given fraction is 23/8</p>
+          <p>First, convert the fraction into a decimal number by dividing the numerator by denominator</p>
+          <p>23/8 = 2.875</p>
+          <p>Round the decimal number to the nearest half.</p>
+          <p>The decimal part 0.87 is above 0.75. So, add 1 to the integer part and eliminate decimal part</p>
+          <p>23/8 rounded to the nearest half is 3.</p>
+          <h3>Rounding Fractions to the Nearest Hundredth Calculator</h3>
+          <p><strong>Example: What is 41/9 rounded to the nearest hundredth?</strong></p>
+          <p>Given fraction is 41/9</p>
+          <p>Convert the fraction into a decimal number by dividing the numerator by denominator</p>
+          <p>41/9 = 4.555</p>
+          <p>There are two parts to the decimal number.</p>
+          <p>Integer part is 4 and fractional part is 555</p>
+          <p>Make the fractional part just two digits by using rounding rules.</p>
+          <p>Rounding rule says that if the last digit in the fractional part is 5 and the second digit in the fractional aprt is less than 9, then add 1 to the second digit and remove third digit.</p>
+          <p>So, 41/9 rounded to the nearest hundredth in decimal format is 4.56</p>
+          <p>4.56 in fractional format is 456/100.</p>
+          <h3>Rounding Fractions to the Nearest Tenth Calculator</h3>
+          <p><strong>Example: Round 15/8 to the nearest tenth.</strong></p>
+          <p>Given fraction is 15/8</p>
+          <p>Convert the fraction into a decimal number by dividing the numerator by denominator</p>
+          <p>15/8 = 1.87</p>
+          <p>There are two parts to the decimal number.</p>
+          <p>Integer part is 1 and fractional part is 87</p>
+          <p>Make the fractional part just one digit by using rounding rules.</p>
+          <p>Rounding rule says that if the second digit in the fractional part is more than 5 and the first digit in the fractional aprt is less than 9, then add 1 to the first digit and remove second digit.</p>
+          <p>So, 15/8 rounded to the nearest tenth in decimal format is 1.9</p>
+          <p>1.9 in fractional format is 19/10.</p>
+          <h3>Rounding Mixed Numbers Calculator</h3>
+          <p><strong>Example: What is 15(8/9) rounded to the nearest half?</strong></p>
+          <p>Given mixed number is 15(8/9)</p>
+          <p>Convert the mixed fraction to an improper fraction or fraction</p>
+          <p>15(8/9) = ((15x9)+8)/9</p>
+          <p>= 143/9</p>
+          <p>Divide the numerator by the denominator of the fraction</p>
+          <p>143/9 = 15.88</p>
+          <p>Round this decimal number using rounding rules.</p>
+          <p>If the number to the right of the decimal point is 75 or above, then we add 1 to the left side of the decimal point and make the right side 0.</p>
+          <p>88 is greater than 75. So, add 1 to the integer part and make decimal part as zero.</p>
+          <p>15 (8/9) rounded to the nearest half is 16.</p>
+          <h3>Rounding Mixed Numbers to the Nearest Whole Number Calculator</h3>
+          <p><strong>Example: Round 18(5/7) to the nearest whole number. </strong></p>
+          <p>Given mixed number is 18(5/7)</p>
+          <p>Convert the mixed fraction to an improper fraction or fraction</p>
+          <p>18(5/7) = ((18x7)+5)/7</p>
+          <p>= 131/7</p>
+          <p>Divide the numerator by the denominator the fraction</p>
+          <p>131/7 = 18.71</p>
+          <p>Round this decimal number using rounding rules.</p>
+          <p>If the number to the right of the decimal point is .5 or higher, then add 1 to the left of the decimal point.</p>
+          <p>0.71 is more than 0.5. So, add 1 to the left of the decimal point.</p>
+          <p>Therefore, 18(5/7) rounded to the nearest whole number is 19.</p>
+          <h3>Rounding to the Nearest Inch Calculator</h3>
+          <p><strong>Example: What is 8 (3/4)" rounded to the nearest inch?</strong></p>
+          <p>Given number is 8 (3/4)"</p>
+          <p>The fractional part is 3/4</p>
+          <p>3/4 is more than 1/2. Add 1 to the integer part</p>
+          <p>8 + 1 = 9</p>
+          <p>Therefore, 8 (3/4)" rounded to the nearest inch is 9.</p>
+          <h3>Rounding Decimals Calculator</h3>
+          <p><strong>Example: What is 158.623 rounded to the nearest whole number.</strong></p>
+          <p>Given decimal is 158.623</p>
+          <p>The tenths place digit is 6 so we round up and add 1 to the left of it.</p>
+          <p>Thus, 158.623 rounded to the whole number is 159.</p>
+          <p><strong>Example: Round 158.623 to the nearest tenths.</strong></p>
+          <p>Given decimal is 158.623</p>
+          <p>The hundredths place digit is 2 so we round down and remove all the digits next to the tenths place.</p>
+          <p>Thus, 158.623 rounded to the nearest tenths is 158.6</p>
+          <p><strong>Example: Round 158.623 to the nearest hundredths.</strong></p>
+          <p>Given decimal is 158.623</p>
+          <p>The thousandths place digit is 3 so we round down and remove all the digits next to the tenths place.</p>
+          <p>Thus, 158.623 rounded to the nearest hundredths is 158.62</p>
+          <h3>Rounding Numbers Calculator</h3>
+          <p><strong>Example: Round 385672 to the nearest tens.</strong></p>
+          <p>Given number is 385672</p>
+          <p>The number in the ones place is 2 which is less than 5. So, round down the number.</p>
+          <p>Rounded value of 385672 is 385670.</p>
+          <p>Therefore, 385672 is rounded to the nearest tens is 385670.</p>
+          <p><strong>Example: Round 36985.63 to the nearest ones.</strong></p>
+          <p>Given number is 36985.63</p>
+          <p>The number at the tenth's place is 6 which is above 5. So, round up the value.</p>
+          <p>rounded value of 36985.63 is 36986.</p>
+          <p>Therefore, 36985.63 rounded to the nearest ones is 36986.</p>
+          <p><strong>Example: Round 385672 to the nearest hundreds.</strong></p>
+          <p>Given number is 385672</p>
+          <p>The number in the tens place is 7 which is greater than 5. So, round up the number.</p>
+          <p>Rounded value of 385672 is 385700.</p>
+          <p>Therefore, 385672 is rounded to the nearest hundreds is 385700.</p>
+          <h3>Rounding to the Nearest Billion Calculator</h3>
+          <p><strong>Example: Round 5,268,934,750 to the nearest billions.</strong></p>
+          <p>Given number is 5,268,934,750</p>
+          <p>The digit at hundred millions place is 2 which less than 5. So, round down the number.</p>
+          <p>5,268,934,750 rounded to the nearest billions is 5,000,000,000.</p>
+          <h3>Rounding to the Nearest Tenth Calculator</h3>
+          <p><strong>Example: What is 896.35 rounded to the nearest tenths?</strong></p>
+          <p>Given number is 896.35</p>
+          <p>The number at hundredths place is 5 which is equal to 5. So, round up the number.</p>
+          <p>Therefore, 896.35 rounded to the nearest tenths is 896.4</p>
+          <h3>Rounding to the Nearest Hundredth Calculator</h3>
+          <p><strong>Example: What is 1356.8975 rounded to the nearest hundredths?</strong></p>
+          <p>Given number is 1356.8975</p>
+          <p>The number at thousandths place is 7 which is greater than 5. So round up the number.</p>
+          <p>Therefore, 1356.8975 rounded to the nearest hundredths is 1356.90.</p>
+          <h3>Rounding to the Nearest Thousandth Calculator</h3>
+          <p><strong>Example: What is 1206.0362 rounded to the nearest thousandths?</strong></p>
+          <p>Given number is 1206.0362</p>
+          <p>The number at the ten thousandths place is 2 which is less than 5. So round down the number</p>
+          <p>Therefore, 1206.0362 is rounded to the nearest thousandths is 1206.036.</p>
+          <h3>Rounding to the Nearest Ones Calculator</h3>
+          <p><strong>Example: What is 256.93 rounded to the nearest ones?</strong></p>
+          <p>Given number is 256.93</p>
+          <p>The number at the tenths place is 9 which is more than 5. So, round up the number.</p>
+          <p>Therefore, 256.93 is rounded to the nearest ones is 257.</p>
+          <h3>Rounding to the Nearest Tens Calculator</h3>
+          <p><strong>Example: Round 589 to the nearest tens. </strong></p>
+          <p>Given number is 589</p>
+          <p>The digit at ones place is 9 which is above 5. So, round up the number.</p>
+          <p>Therefore, 589 rounded to the nearest tens is 580.</p>
+          <h3>Rounding to the Nearest Eighth Calculator</h3>
+          <p><strong>Example: What is 569 rounded to the nearest eighth?</strong></p>
+          <p>Given number is 569</p>
+          <p>The nearest multiples of 569 are 560, 568, 576</p>
+          <p>Find the difference between each number and 569</p>
+          <p>560 - 569 = -9</p>
+          <p>568 - 569 = -1</p>
+          <p>576 - 569 = 7</p>
+          <p>Here, 568 produces less difference.</p>
+          <p>Therefore, 569 rounded to the nearest multiple of 8 is 568.</p>
+          <h3>Round to the Nearest Cent Calculator</h3>
+          <p><strong>Example: What is 563.961 rounded to the nearest cent?</strong></p>
+          <p>Given amount is 563.961</p>
+          <p>Firstly, check for the thousandths place</p>
+          <p>In this case, thousandths place is 1 and it is less than 5. So, round down.</p>
+          <p>Thus, 563.961 becomes 563.96</p>
+          <p>Therefore, 563.961 is rounded to the nearest cent is 563.96.</p>
+          <h3>Round to the Nearest 5 Cents Calculator</h3>
+          <p><strong>Example: Round $6.227 to the nearest 5 cents?</strong></p>
+          <p>Given amount is $6.227</p>
+          <p>$6.227 rounded to the nearest 5 cent value is $6.25.</p>
+          <h3>Round to the Nearest 10 Cents Calculator</h3>
+          <p><strong>Example: Round 109.63 to the nearest 10 cents.</strong></p>
+          <p>Given amount is 109.63</p>
+          <p>The digit at hundredths place is 3 which is below 5. So round down.</p>
+          <p>Thus, 109.63 rounded to the nearest 10 cents is 109.60.</p>
+          <h3>Round to the Nearest 25 Cents Calculator</h3>
+          <p><strong>Example: What is 530.63 rounded to the nearest 25 cents?</strong></p>
+          <p>Given amount is 530.63</p>
+          <p>Consider the value of xy i.e. two digits sequence next to the decimal value is 63</p>
+          <p>63 mod(25) = round up as the mod value is &gt; 12</p>
+          <p>So, 530.63 rounded to the nearest 25 cents or the quater's place is 53063.00</p>
+          <h3>Round to the Nearest Dollar Calculator</h3>
+          <p><strong>Example: Round the Amount $12.39 to the Nearest Dollar? </strong></p>
+          <p>Given amount is $12.39</p>
+          <p>The First Step is to identify the tenth's place</p>
+          <p>As the tenth's place value is 3 i.e. less than 4 simply eliminate all the digits to the right of the decimal separator.</p>
+          <p>Thus it becomes $ 12 or( $ 12.00)</p>
+          <p>Therefore, $12.39 rounded to the nearest dollar is $12</p>
+          <h3>Round to the Nearest Pound Calculator</h3>
+          <p><strong>Example: What is &pound;9.56 Rounded to the Nearest Pound?</strong></p>
+          <p>Given Amount &pound;9.56</p>
+          <p>Check for the tenths place in the amount given</p>
+          <p>As it is 5 add 1 the value in pound's ones place by 1 and remove all the digits after the decimal point.</p>
+          <p>&pound;9.56 rounded to the nearest pound is &pound;10.</p>
+          <h3>Round to the Nearest Whole Number Calculator</h3>
+          <p><strong>Example: Round 1256.53 to the nearest whole number.</strong></p>
+          <p>Given number is 1256.53</p>
+          <p>The digit at tenths place is 5 which is equal to 5. So, round up the number.</p>
+          <p>Therefore, 1256.53 rounded to the nearest whole number is 1257.</p>
+          <h3>Rounding Decimals to the Nearest Tenths Calculator</h3>
+          <p><strong>Example: What is 856.34 rounded to the nearest tenths?</strong></p>
+          <p>Given number is 856.34</p>
+          <p>The digit at hundredth place is 4 which is lesser than 5. So, round down the number.</p>
+          <p>Therefore, 856.34 rounded to the nearest tenths is 856.3.</p>
+          <h3>Rounding Decimals to the Nearest Hundredths Calculator</h3>
+          <p><strong>Example: Round 1542.369 to the nearest hundredths?</strong></p>
+          <p>Given number is 1542.369</p>
+          <p>The digit at thousandths place is 9 which is more than 5. So, round up the number.</p>
+          <p>Thus, 1542.369 rounded to the nearest hundredths is 1542.37.</p>
+          <h3>Round to the Nearest Integer Calculator</h3>
+          <p><strong>Example: What is 742.1 rounded to the nearest integer? </strong></p>
+          <p>Given number is 742.1</p>
+          <p>The digit at the tenths place is 1 which is less than 5. So, round down the number.</p>
+          <p>Thus, 742.1 rounded to the nearest integer is 742.</p>
+          <h3>Rounding to the Nearest Thousand Calculator</h3>
+          <p><strong>Example: Round 15206 to the nearest thousand.</strong></p>
+          <p>Given number is 15206</p>
+          <p>The digit at hundred place is 2 which is less than 5. So, round down the number.</p>
+          <p>Thus, 15206 to the nearest thousand is 15,000.</p>
+          <h3>Rounding to the Nearest Ten Thousand Calculator</h3>
+          <p><strong>Example: What is 185203 rounded to the nearest ten thousands place?</strong></p>
+          <p>Given number is 185203</p>
+          <p>As the number at the thousands place is 5, round up the number.</p>
+          <p>So, 185203 to the nearest ten thousand is 190000.</p>
+          <h3>Rounding to the Nearest Hundred Thousand Calculator</h3>
+          <p><strong>Example: Round 195215 to the nearest hundred thousands place.</strong></p>
+          <p>Given number is 195215</p>
+          <p>As the number at the ten thousands place is 9, the number should be rounded up.</p>
+          <p>Thus, 195215 rounded to the nearest hundred thousands is 200000.</p>
+          <h3>Rounding to one decimal places calculator</h3>
+          <p><strong>Example: What is 12.36 rounded to the one decimal place?</strong></p>
+          <p>Given number is 12.36</p>
+          <p>The digit at hundredths place is 6</p>
+          <p>Since 6 &gt; 5 we will round up.</p>
+          <p>Therefore, 12.36 rounded to the one decimal place is 12.4.</p>
+          <h3>Rounding to two decimal places calculator</h3>
+          <p><strong>Example: What is 25.639 rounded to the two decimal places? </strong></p>
+          <p>Given number is 25.639</p>
+          <p>The digit at thousandths place is 9</p>
+          <p>Since 9 &gt; 5 we will round up.</p>
+          <p>Therefore, 25.639 rounded to the one decimal place is 25.64.</p>
+          <h3>Rounding to three decimal places calculator</h3>
+          <p><strong>Example: What is 14.6872 rounded to the three decimal places?</strong></p>
+          <p>Given number is 14.6872</p>
+          <p>The digit at ten thousandths place is 2</p>
+          <p>Since 2 &lt; 5 we will round down.&lt;/</p>
+          <p>Therefore, 14.6872 rounded to the one decimal place is 14.687.</p>
+          <h3>Rounding up Calculator</h3>
+          <p><strong>Example: Round up the decimal number 81.6 to the Nearest Whole Numbers.</strong></p>
+          <p>Given number is 81.6</p>
+          <p>The number after the decimal point 6 which is greater than 5, so increase the value by 1 and simply remove all the digits after the decimal point.</p>
+          <p>So, 81.6 rounded to the Nearest Whole Numbers is 82.</p>
+          <h3>Rounding to 3 Significant Figures Calculator</h3>
+          <p><strong>Example: What is 5.657 rounded to three significant figures?</strong></p>
+          <p>Given number is 5.567</p>
+          <p>The fourth significant figure is 7 which is more than 5. So, round up the number.</p>
+          <p>Therefore, 5.657 rounded to three significant figures is 5.66.</p>
+          <h3>Rounding Money Calculator</h3>
+          <p><strong>Example: Round $53.86 to the nearest dollar?</strong></p>
+          <p>Given amount is $53.86</p>
+          <p>Look for the number right to the decimal point. i.e.8</p>
+          <p>As 8 is greater than 5, so we will round up to the nearest dollar.</p>
+          <p>Finally, $53.86 after rounding up to the nearest dollar, $54</p>
+          <h3>Rounding to the Nearest Unit Calculator</h3>
+          <p><strong>Example: Approximate 58.23 to the Nearest Unit?</strong></p>
+          <p>Given number is 58.23</p>
+          <p>The digit at tenths place is 2</p>
+          <p>So, round down</p>
+          <p>Therefore, 58.23 rounded to the nearest unit is 58.</p>
+          <h3>Time Clock Rounding Calculator</h3>
+          <p><strong>Example: What is 12:05 rounded to the 1/10th of an hour?</strong></p>
+          <p>Given time is 12:05</p>
+          <p>As we want to round to it 1/10th of an hour we will see whether it falls in the first or second class of 5-minute split interval</p>
+          <p>Since it is 05 minutes we will round up</p>
+          <p>Therefore, 12:05 rounded to the 1/10th of an hour is 13</p>
+          <h3>Time Clock 15 Minutes Rounding Calculator</h3>
+          <p><strong>Example: Estimate 18:20 to the nearest 15 minutes?</strong></p>
+          <p>Given time is 18:20</p>
+          <p>It means 18 hours 20 minutes</p>
+          <p>05 minutes is more than 7.5 minutes. So, round down the minutes</p>
+          <p>Therefore, 18:20 is rounded to the nearest quater hour is 18:15.</p>
+          <h3>Go Math Answer Key</h3>
+          <ul>
+            <li><a href=/go-math-grade-k-answer-key/ target=_blank rel="noopener">Go Math Kindergarten Answer Key</a></li>
+            <li><a href=/go-math-grade-1-answer-key/ target=_blank rel="noopener">Go Math Grade 1 Answer Key</a></li>
+            <li><a href=/go-math-grade-2-answer-key/ target=_blank rel="noopener">Go Math Grade 2 Answer Key</a></li>
+            <li><a href=/go-math-grade-3-answer-key/ target=_blank rel="noopener">Go Math Grade 3 Answer Key</a></li>
+            <li><a href=/go-math-grade-4-answer-key/ target=_blank rel="noopener">Go Math Grade 4 Answer Key</a></li>
+            <li><a href=/go-math-grade-5-answer-key/ target=_blank rel="noopener">Go Math Grade 5 Answer Key</a></li>
+            <li><a href=/go-math-grade-6-answer-key/ target=_blank rel="noopener">Go Math Grade 6 Answer Key</a></li>
+            <li><a href=/go-math-grade-7-answer-key/ target=_blank rel="noopener">Go Math Grade 7 Answer Key</a></li>
+            <li><a href=/go-math-grade-8-answer-key/ target=_blank rel="noopener">Go Math Grade 8 Answer Key</a></li>
+          </ul>
+          <h3><a id="Texas_Go_Math_Answer_Key"></a>Texas Go Math Answer Key</h3>
+          <ul>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-8-answer-key/">Texas Go Math Grade 8 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-7-answer-key/">Texas Go Math Grade 7 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-6-answer-key/">Texas Go Math Grade 6 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-5-answer-key/">Texas Go Math Grade 5 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-4-answer-key/">Texas Go Math Grade 4 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-3-answer-key/">Texas Go Math Grade 3 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-2-answer-key/">Texas Go Math Grade 2 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-grade-1-answer-key/">Texas Go Math Grade 1 Answer Key</a></li>
+          <li><a href="https://gomathanswerkey.com/texas-go-math-kindergarten-answer-key/">Texas Go Math Kindergarten Answer Key</a></li>
+          </ul>   
+        </div>
+      </div>
+    </div>
+  </div>
+        <div class="card radius-card mt-3"  style="border:1px solid #012A72">
+          <h3 class="mt-2 pl-3 pr-5 pb-1"><u>FAQs - RoundingCalcualtor.Guru</u></h3>
+          <div class="mt-2 pl-3 pr-5 pb-1">
+            <p><strong>1. What is rounding of numbers?</strong></p>
+            <p>Rounding means replacing the number with an approximate value that has a shorter representation. It is done to obtain a value that is easier to report and communicate than the original one. It is a process of making a number simpler but keeping its value close to the original value.</p>
+            <p><strong>2. What is called rounding up and rounding down of numbers?</strong></p>
+            <p>The process of rounding up of numbers means if the decimal form and followed by the numbers 5, 6, 7, 8, and 9 after the decimal point, then round the numbers up to the nearest whole number greater than the original. If a rounding number is followed by 0, 1, 2, 3, 4 then the round numbers down is called rounding down of numbers.</p>
+            <p><strong>3. What are the rules in rounding decimal numbers?</strong></p>
+            <p>The two important rules of rounding decimal numbers are rounding up and rounding down.</p>
+            <p><strong>4. How do you round numbers on a calculator?</strong></p>
+            <p>Give the numbers in the specified input field of the calculator and hit on the calculate button to get the rounded value in a fraction of seconds.</p>
+          </div>         
+        </div>
+  </div>
+{%endblock%}

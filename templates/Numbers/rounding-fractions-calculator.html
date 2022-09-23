@@ -1,0 +1,134 @@
+fra{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Rounding Fractions Calculator | How to round off fractions?</title>
+    <meta name="description" content="Free Rounding Fractions Calculator is used to round the fraction to the nearest hundredth, tenth. It gives the answer & detailed steps to round off fractions."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Rounding Fractions Calculator | How to round off fractions?"/>
+        <meta property="og:description" content="Free Rounding Fractions Calculator is used to round the fraction to the nearest hundredth, tenth. It gives the answer & detailed steps to round off fractions."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Rounding Fractions Calculator | How to round off fractions?"/>
+        <meta name="twitter:description" content="Free Rounding Fractions Calculator is used to round the fraction to the nearest hundredth, tenth. It gives the answer & detailed steps to round off fractions."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Rounding Fractions Calculator | How to round off fractions?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg"/>
+        <meta property='og:description' content="Free Rounding Fractions Calculator is used to round the fraction to the nearest hundredth, tenth. It gives the answer & detailed steps to round off fractions."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How to round a fraction to the nearest whole number?
+        ","acceptedAnswer": {"@type": "Answer","text":" To round a fraction to the nearest whole number, find the decimal value of fraction. And follow the rounding steps to get the whole number form."}	}, {"@type": "Question","name":"2.
+        What is meant by rounding fractions?
+        ","acceptedAnswer": {"@type": "Answer","text":" Rounding fractions is a kind of estimating them in the rounded form rather than the exact form. The rules for rounding numbers are if the digit is less than 5, don't change the rounding figure and replace all the digits right to it as zero. If the digit is gretaer than 5, add 1 to the rounding digit and place all the digits right to it as zeros."}	}, {"@type": "Question","name":"3.
+        How do you round fractions on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" You just need to enter the input fraction and select rounded to and hit on the calculate button to avail the rounded number easily."}	}, {"@type": "Question","name":"4.
+        What is fraction 5/8 rounded to the nearest tenths?
+        ","acceptedAnswer": {"@type": "Answer","text":" The decimal value of 5/8 is 0.625
+        The primary rule in rounding to the nearest tenths is check the hundredths digit i.e 2
+        As 2 is less than 5, tenths digit remains same.
+        So, rounded 5/8 to the nearest tenths is 0.6"}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Rounding Fractions Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take the help of free Rounding Fractions Calculator to round the given fractions. You have to provide the fraction value in the respective input field and tap on the calculate button to display the rounded value as output within less amount of time.</p>
+                
+
+
+                
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                        
+                                        <li><a href="/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>
+                                      </ul>
+                <p><strong>Round off Fractions Calculator: </strong>Are you bothered about a difficult fraction? Don't worry as you can use the online tool over here to round fractions to nearest whole number or nearest tenths or nearest hundredths and make your calculations quick. Have a look at the detailed step by step process for rounding  fractioncs along with the example questions to get a good grip on the topic.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Steps to Round Fractions</h2>
+        </div>
+	    <div class="card-body">
+            <p>Follow the below provided steps to rounding off fractions to the nearest whole number or nearest tenths, hundredths and thousandth number.</p>
+            <ul>
+                <li> Take any fraction.</li>
+                <li> Convert the given fraction into decimal by dividing numerator by denominator.</li>
+                <li> If the obtained number to the right of the decimal point is 0.5 or more, then add 1 to the left of the decimal point and remove the decimal part.</li>
+                <li> If the obtained number to the right of the decimal point is lesser than 0.5, then leave the number to left of decimal point and remove the decimal part.</li>
+                <li> Write the new number as rounded number.</li>
+           </ul>
+            <p><strong>Example</strong></p>
+<p>Question : What is 15/8 is rounded to the nearest whole number?</p>
+<p><strong>Solution:</strong></p>
+<p>Given fraction is 15/8</p>
+<p>  15/8 = 1.875</p>
+<p>  The number right of the decimal point is .8 which is greater than .5. So, add 1 to the left of the decimal point and remove decimal part.</p>
+<p>  1 + 1 = 2</p>
+<p>  Therefore, the rounded 15/8 to the nearest whole number is 2.</p>
+<p>Check out <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> to get an idea on the various mathematical concepts and its calculators. With the help of these handy free calculator tools, you can obtain the result at a faster pace and easily.</p>
+<img src="{% static 'images/Numbers/Round-to-the-Nearest-Cent.jpeg' %}" alt='Round to the Nearest Cent'>
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Rounding Fractions Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+          <p class="question"><strong>    1. How to round a fraction to the nearest whole number?</strong></p>
+          <p class="answer">To round a fraction to the nearest whole number, find the decimal value of fraction. And follow the rounding steps to get the whole number form.</p><hr>
+<p class="question"><strong>2. What is meant by rounding fractions?</strong></p>
+<p class="answer">Rounding fractions is a kind of estimating them in the rounded form rather than the exact form. The rules for rounding numbers are if the digit is less than 5, don't change the rounding figure and replace all the digits right to it as zero. If the digit is gretaer than 5, add 1 to the rounding digit and place all the digits right to it as zeros.</p><hr>
+<p class="question"><strong>3. How do you round fractions on a calculator?</strong></p>
+<p class="answer">You just need to enter the input fraction and select rounded to and hit on the calculate button to avail the rounded number easily.</p><hr>
+<p class="question"><strong>4. What is fraction 5/8 rounded to the nearest tenths?</strong></p>
+<p class="answer">The decimal value of 5/8 is 0.625</p>
+<p>The primary rule in rounding to the nearest tenths is check the hundredths digit i.e 2</p>
+<p>As 2 is less than 5, tenths digit remains same.</p>
+<p>So, rounded 5/8 to the nearest tenths is 0.6</p><hr>
+     
+    	</div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,152 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Divisible By 7 Calculator - What is the Divisibility of 7? - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Divisible By 7 Calculator free tool is helpful to check whether the given number is divisible by 7. Also, get the divisibility for 7 and example question.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Divisible By 7 Calculator - What is the Divisibility of 7? - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Divisible By 7 Calculator free tool is helpful to check whether the given number is divisible by 7. Also, get the divisibility for 7 and example question. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Divisible By 7 Calculator - What is the Divisibility of 7? - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Divisible By 7 Calculator free tool is helpful to check whether the given number is divisible by 7. Also, get the divisibility for 7 and example question. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Divisible By 7 Calculator - What is the Divisibility of 7? - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Divisible By 7 Calculator free tool is helpful to check whether the given number is divisible by 7. Also, get the divisibility for 7 and example question." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+{% block content %} 
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">Divisible By 7 Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Divisible By 7 is a free tool that is useful to tell whether the given number is divisible by seven or not. You just need to provide the input number and hit the calculate button to obtain the result i.e yes/no.</p>
+      <ul class="messages">
+        {% if message %}
+        <p  id="message_container" class="alert alert-danger text-center" 
+            style="color:red">{{ message }}</p>
+        {% endif %}   
+
+    </ul>
+    <form action="" method="POST" id="my_form" >
+      {% csrf_token %}
+      <div class="col-auto">
+          
+          <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>Number: </strong></div>
+              </div>
+              <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required="" placeholder="Number to check is divisible By 7"  class="form-control" name="D" {% if D or D == 0 %} value="{{D}}"  {% else %} value="24"  {% endif %}>
+
+          </div>
+
+          <div class=" center col mt-2 ">
+              <center><button type="submit" class="btn btn-primary" name="f1" value="f1">Calculate</button>
+              </center>
+          </div>
+
+  </form>
+      <p><strong>Is a Number Divisible By 7?:</strong> Here you can quickly determine whether a number is completely divided by 7. There is no need to check the divisibility rules by referring to our user-friendly divisible by 7 calculator. It displays the output in a matter of seconds with a better explanation. Read on to know the divisibility rule of 7 for large as well as small numbers, how to check if a number is divisible by 7, and others.</p>
+<h2><strong>What is the Divisibility Rule of 7?</strong></h2>
+<p>In mathematics, the divisibility rule is a method to determine whether the given number is divisible by another foxed number without doing a division calculation. So, here we are providing the divisibility rule of seven.</p>
+<p>The 7 divisibility rule states that if a number is divisible by 7, then the difference between the double unit digit of the divisor and the remaining part of the divisor should be a multiple of 7 or equal to 0.</p>
+<h3><strong>How to Tell if a Number is Divisible by 7?</strong></h3>
+<p>Here are the tips to tell if a number is divisible by 7 without performing an actual division operation.</p>
+<ul>
+<li aria-level="1">Get any number which is greater than 7.</li>
+<li aria-level="1">Take out the unit digit from the given number.</li>
+<li aria-level="1">Multiply the unit digit of the number by 2.</li>
+<li aria-level="1">Subtract the remaining portion of the given number from the product obtained in the above step.</li>
+<li aria-level="1">If the difference is 0 or a multiple of 7, then it is divided by 7.</li>
+<li aria-level="1">Or, if you get the difference as a large number, then repeat the process until you get a 2-digit number after subtraction.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Is 54672 divisible by 7?</p>
+<p>Solution:</p>
+<p>Given number is 54672</p>
+<p>The unit digit of the given number is 2</p>
+<p>So, double of 2 is 2 x 2 = 4</p>
+<p>Subtract 5467 from 4</p>
+<p>5467 - 4 = 5463</p>
+<p>As 5463 is a big number, again repeat the process.</p>
+<p>The double unit digit of the number 5463 is 3 x 2 = 6</p>
+<p>Subtract 6 from 5463</p>
+<p>5463 - 6 = 5457</p>
+<p>545 - (7 x 2) = 531</p>
+<p>53 - (1 x 2) = 53 - 2 = 51</p>
+<p>51 is not divisible by 7. So, 54672 is not divisible by 7.</p>
+<h3><strong>FAQs on Divisible by 7 Calculator</strong></h3>
+<ol>
+<li><strong> What are the numbers divisible by 7 from 1 to 100?</strong></li>
+</ol>
+<p>There are 14 numbers that are divisible by 7 between 1 and 100. They are 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, and 98.</p>
+<ol start="2">
+<li><strong> What is the divisibility rule of 7?</strong></li>
+</ol>
+<p>According to the divisibility rule of 7, the last digit of the given number is multiplied by 2, and the product is subtracted from the rest number. If the obtained value is 0 or a multiple of 7, then the given number is divisible by 7.</p>
+<ol start="3">
+<li><strong> Is 273 divisible by 7?</strong></li>
+</ol>
+<p>The last digit in the number 273 is 3 and its double is 6. Subtract 27 from 6 i.e 27 - 6 = 21. As 21 is a multiple of 7, 273 is divided by 7.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

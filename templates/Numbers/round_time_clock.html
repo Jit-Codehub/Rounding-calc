@@ -1,0 +1,294 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Time Clock Rounding Calculator | Types of Time Clock Rounding & their Rules</title>
+<meta name="description"
+    content="Time Clock Rounding Calculator will determine the rounded clock time based on clock time rounding rules in the blink of an eye." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/onlinecalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Time Clock Rounding Calculator | Types of Time Clock Rounding & their Rules" />
+<meta property="og:description"
+    content="Time Clock Rounding Calculator will determine the rounded clock time based on clock time rounding rules in the blink of an eye." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Time-Clock-Rounding-Calculator.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Time Clock Rounding Calculator | Types of Time Clock Rounding & their Rules" />
+<meta name="twitter:description"
+    content="Time Clock Rounding Calculator will determine the rounded clock time based on clock time rounding rules in the blink of an eye." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Time-Clock-Rounding-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Time Clock Rounding Calculator | Types of Time Clock Rounding & their Rules" />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/Time-Clock-Rounding-Calculator.jpeg" />
+<meta property='og:description'
+    content="Time Clock Rounding Calculator will determine the rounded clock time based on clock time rounding rules in the blink of an eye." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is Time Clock Rounding?
+        ","acceptedAnswer": {"@type": "Answer","text":" Time Clock Rounding is the process of rounding up or rounding down of employee working hours."}	}, {"@type": "Question","name":"2.
+        is it legal to round clock time?
+        ","acceptedAnswer": {"@type": "Answer","text":" Yes, it is legal to round clock time."}	}, {"@type": "Question","name":"3.
+        What are the 3 common clock time rounding rules?
+        ","acceptedAnswer": {"@type": "Answer","text":" The 3 common clock time rounding rules are 15-minute rounding, 5-minute rounding, 6-minute rounding or 1/10th of an hour."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+
+{%if go_to %} 
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+		});
+</script>
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Time Clock Rounding Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Take help from our free online time clock rounding calculator to round off the odd minutes and seconds in
+                your working schedules. All you have to do is simply enter the input clock time and press on the
+                calculate button to avail the rounded clock time in a split second.</p>
+
+
+                {% if error %}
+                <p><b>!! Incorrect values !! Hours must be in range(0-23) and Minutes in range(0-59)</b></p>
+                {%endif%}
+
+                <div class="box">
+                    <form method="POST" id="my_form">
+                        {% csrf_token %}
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                <label for="input1">Enter Hours & minutes respectively </label>
+                            </div>
+                        </div>
+    
+    
+                        <div class="row mx-auto my-auto">                           
+                            <div class="center col mt-2">
+                                <center>                                  
+                                        <input type="text" oninput="validateNumber(this);" pattern = [0-9]* title = "Hour should be an integer" id="inlineFormInputGroup" required=""
+                                        placeholder="Enter hours" maxlength="100" class="form-control"
+                                         name="inp" {% if inp %} value="{{inp}}" {% else %} value="3" {% endif %}>
+                                </center>
+                            </div>
+                        </div>                        
+
+                        <div class="row mx-auto my-auto">                            
+                            <div class="center col mt-2">
+                                <center>
+                                 
+                                    <input type="text" oninput="validateNumber(this);" pattern = [0-9]* title = "Minute should be an integer" id="inlineFormInputGroup" required=""
+                                    placeholder="Enter minutes" maxlength="100" class="form-control"
+                                     name="m" {% if m %} value="{{m}}" {% else %} value="28" {% endif %}>
+                                </center>
+                            </div>
+                        </div>
+    
+    
+                        <div class="row mx-auto my-auto">
+                            <div class="center col mt-2">
+                                <center><button type="submit" class="btn btn-primary">Round</button>
+                                    <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                        class="btn btn-danger">Reset</button>
+                                </center>
+                            </div>
+                        </div>
+                    </form>
+    
+                </div>
+
+
+
+
+
+
+
+
+            <p>Related Calculators:</p>
+            <ul>
+                <li><a href="/numbers/rounding-calculator/">Rounding Calculator</a></li>
+                <li><a href="/numbers/rounding-decimals/">Rounding Decimals</a></li>
+                <li><a href="/numbers/round-to-the-nearest-whole-number/">Round to the Nearest Whole Number</a></li>
+            </ul>
+            <p><strong>Time Clock Rounding Calculator: </strong> Handling Payroll becomes quite easy with the Time Clock
+                Rounding Calculator. Round off odd minutes and seconds outside the regular working hours in no time take
+                help of this free online tool.</p>
+            <p>In this article, you will get acquainted with details like What is meant by Time Clock Rounding, Step by
+                Step Procedure on How to Round Clock Time, Time Clock Rounding Rules for 5-minute rounding, 6-minute
+                rounding, 15-minute rounding, etc. all in one place. Check out Worked out Examples on Time Clock
+                Rounding in the below modules and learn how to solve similar kind of problems.</p>
+        </div>
+    </div>
+
+    <div id="clear">
+        {% if result %}
+        <div class="card" id="result">
+            <div class="card-header">
+                <h2 class="h2">Result of time clock rounding :</h2>
+            </div>
+    
+            <div class="card-body">
+                <b>{{inp}}:{{m}} {{meri}}</b> when rounded, results in <b>{{hr}}:{{minu}} {{meridian}}</b>. 
+            </div>
+                
+            
+        </div>
+    
+        {% endif %}
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What is Time Clock Rounding?</h2>
+        </div>
+        <div class="card-body">
+            <p>In a nutshell Time Clock Rounding is nothing but the process of rounding up or rounding down by set
+                increments. Depending on the situation you can choose from any of the time clock roundings available.
+                Common Clock Time Roundings include 5-minute increments, 6-minute increments, 15-minute increments or
+                quarter hour rounding, etc.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Common Clock Time Rounding Methods & Their Rules?</h3>
+        </div>
+        <div class="card-body">
+            <p>There are several rounding methods available to round the clock time. However, we have outlined some of
+                the common and most popularly used rounding techniques in the below modules. They are as under</p>
+            <p><strong>15-Minute Rounding:</strong> In case of 15-Minute Time Clock Rounding or Quarter Hour Time Clock
+                Rounding we will keep two thresholds for clock-ins and clock-outs whether to round up or round down. For
+                the first 7.5 minutes we will round down and for the second 7.5 minutes we will round up to full quarter
+                of an hour. For example: 15.8 rounded to 15 minutes is 15.15, 6.05 rounded to 15 minutes is 6.00 </p>
+            <p><strong>5-Minute Rounding:</strong> Just like 15-minute rounding process, 5-minute rounding method also
+                splits every 5 minutes into 2 parts of 2.5 minutes. For the first 2.5 minutes clock-in time we will
+                round down and for the second 2.5 minutes we will round up to the nearest 5 minutes. For example: 8.03
+                rounded to 5-minutes is 8.05 and 17.02 rounded to 5-minutes is 17.00 </p>
+            <p><strong>6-Minutes Rounding or Rounding to 1/10th of an Hour:</strong> Rounding to 1/10th of an hour uses
+                3-minute intervals. For the first 3-minutes we will round down the given time and for the second half of
+                3-minutes is rounded up to nearest 6 minutes. For example 7:28 rounded to nearest 6 minutes is 8:00 and
+                9:03 rounded to nearest 6 minutes is 9:00 </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Clock Time Rounding Examples</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Example 1:</strong> What is 15:03 rounded to 1/10th of an hour? </p>
+            <p><strong>Solution:</strong></p>
+            <p>Given Clock Time is 15:03</p>
+            <p>As we want to round to it 1/10th of an hour we will see whether it falls in the first or second class of
+                3-minute split interval</p>
+            <p>Since it is 03 minutes we will round down</p>
+            <p>Therefore, 15:03 rounded to the 1/10th of an hour is 15.</p>
+            <p><strong>Example 2:</strong> An Employee punches in the office at 8:56 AM? Find the office time rounded to
+                5-minutes? </p>
+            <p><strong>Solution:</strong></p>
+            <p>Given Clock Time is 8:56 AM</p>
+            <p>Since we want to round the clock time using 5-minute rounding we will first see whether the time falls
+                under first half of the 2.5 mins interval or second half of 2.5 minutes interval </p>
+            <p>8:52 AM rounded to 5-minutes is 8:50 AM</p>
+            <p><strong>Example 3:</strong> Round 7:05 to 1/4th of an hour? </p>
+            <p><strong>Solution:</strong></p>
+            <p>Given Clock Time = 7:05</p>
+            <p>Since we want to round to 1/4th of an hour we will see whether the given clock time falls in the first
+                half or second half of 7.5 minute split interval and thereby round up or round down accordingly.</p>
+            <p>Since 5 minutes falls in the first 7.5 minute interval we will round down i.e. 7:05 rounded to 15 minutes
+                is 7:00</p>
+            <p>Seek help regarding several mathematical concepts that you feel daunting from <a
+                    href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and understand them clearly in
+                no time.</p>
+            <!-- <img src="{% static 'images/Numbers/Clock-Time-Rounding-Calculator.jpeg' %}"
+                alt='Clock Time Rounding Calculator'> -->
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Clock Time Rounding</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. What is Time Clock Rounding?</strong></p>
+            <p class="answer">Time Clock Rounding is the process of rounding up or rounding down of employee working
+                hours.</p>
+            <hr>
+            <p class="question"><strong>2. Is it legal to round clock time?</strong></p>
+            <p class="answer"> Yes, it is legal to round clock time.</p>
+            <hr>
+            <p class="question"><strong>3. What are the 3 common clock time rounding rules?</strong></p>
+            <p class="answer">The 3 common clock time rounding rules are 15-minute rounding, 5-minute rounding, 6-minute
+                rounding or 1/10th of an hour.</p>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+        console.log(elem)
+        if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+        } else {
+            elem.value = fist_input;
+        }
+    }
+</script>
+
+<script>
+    function myFunction() {
+
+        document.getElementsByName("inp")[0].value = "";
+        document.getElementsByName("m")[0].value = "";
+        document.getElementById("result").innerHTML = "";
+        
+    }
+</script>
+{%endblock%}

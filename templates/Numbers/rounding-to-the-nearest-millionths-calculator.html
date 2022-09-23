@@ -1,0 +1,337 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Millionths Calculator | Rules to round off decimals</title>
+<meta name="description"
+  content="Free Rounding to the Nearest Millionths Calculator tool rounds off the given decimal to the nearest 1000000th. Check the steps & rules for rounding." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Millionths Calculator | Rules to round off decimals" />
+<meta property="og:description"
+  content="Free Rounding to the Nearest Millionths Calculator tool rounds off the given decimal to the nearest 1000000th. Check the steps & rules for rounding." />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-millionths.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Millionths Calculator | Rules to round off decimals" />
+<meta name="twitter:description"
+  content="Free Rounding to the Nearest Millionths Calculator tool rounds off the given decimal to the nearest 1000000th. Check the steps & rules for rounding." />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-millionths.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Millionths Calculator | Rules to round off decimals" />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-millionths.jpeg" />
+<meta property='og:description'
+  content="Free Rounding to the Nearest Millionths Calculator tool rounds off the given decimal to the nearest 1000000th. Check the steps & rules for rounding." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What is Millionths Rounding?
+        ","acceptedAnswer": {"@type": "Answer","text":"Millionths rounding is estimating the approx value to the nearest millionths place by applying the rounding rules."}	}, {"@type": "Question","name":"2. 
+        Where is the millionth place in a decimal?
+        ","acceptedAnswer": {"@type": "Answer","text":"1/1000000 or 0.000001 is the millionth place in decimals."}	}, {"@type": "Question","name":"3. 
+        How do you round to the nearest 1000000th?
+        ","acceptedAnswer": {"@type": "Answer","text":"To round to the nearest 1000000th (millionths), we have to consider the ten millionth place value and apply the rounding rules to the digit. Finally, the decimal will get rounded to its nearest millionth place."}   }, {"@type": "Question","name":"4. 
+        What is 23.9745786 rounded value to the nearest millionths?
+        ","acceptedAnswer": {"@type": "Answer","text":"The rounded decimal value of 23.9745786 to the nearest millionth is 23.974579. Here ten millionth place value is greater than 5 so we have rounded up the number to the nearest 1000000th."} }]}
+    </script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Millionths Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Rounding to the Nearest Millionths Calculator determines the given decimal rounded to the nearest 1000000th
+        using the rounding rules. It only takes the input number and gives the output with steps in just a matter of
+        seconds.</p>
+
+      <div>
+        <div class="box">
+          <p id="error">
+            {% if error %}
+          <p><b>!! Incorrect values !! Please enter correct values</b></p>
+          {%endif%}
+          </p>
+          <form method="POST" id="my_form">
+            {% csrf_token %}
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                <label for="input1">Value to be rounded up:</label>
+              </div>
+            </div>
+
+
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center>
+
+                  <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                    placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp" {% if inp %}
+                    value="{{inp}}" {% else %} value="34.2342344" {% endif %}>
+                </center>
+              </div>
+            </div>
+
+
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center><button type="submit" class="btn btn-primary">Round</button>
+                  <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                    class="btn btn-danger">Reset</button>
+                </center>
+
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+
+
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/round-to-nearest-billionth-calculator/">Rounding Nearest Billionths Calculator</a></li>
+
+        <li><a href="/round-to-nearest-trillionth-calculator/">Rounding Nearest Trillionths Calculator</a></li>
+
+        <li><a href="/round-to-nearest-quadrillionth-calculator/">Rounding Nearest Quadrillionth Calculator</a></li>
+
+
+      </ul>
+      <p><strong>Rounding to the Nearest Millionths Calculator:</strong> Do you need any assistance to round off the
+        decimals to the nearest 1000000th? You have come to the right page. Here, we have given the best &amp; fastest
+        online calculator to round decimals to the nearest millionths along with the definition, rules to follow, and
+        some
+        solved examples on rounding to the nearest millionths. Check out the further sections and get familiar with the
+        concept of rounding millionths.</p>
+    </div>
+  </div>
+</div>
+
+<div id="clear" class="container">
+  {% if result %}
+
+  <div class="card " id="result1">
+    <div class="card-header">
+      <h2 class="h2">Result of Rounding {{inp}} to nearest millionth :</h2>
+    </div>
+
+    <div class="card-body">
+      &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+    </div>
+  </div>
+
+  <div class="card " id="result">
+    <div class="card-header">
+      <h2 class="h2">Result of Rounding to nearest millionth:</h2>
+    </div>
+
+    <div class="card-body">
+      <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+
+      <p>
+        Since, 1 million = 1000000 (10<sup>6</sup>).<br>
+        So, 1 millionth = 0.000001 (10<sup>-6</sup>)
+      </p>
+
+      <p>
+        Therefore, while rounding to nearest millionth, we round the fractional part(or decimal part) upto 6 digits.
+      </p>
+
+      {% if lesdig %}
+      <p>
+        Here, In {{inp}}, number of digits after millionth place is less than 6, so we add trailing zeros upto 6 places
+        after decmal.
+      </p>
+      {% else %}
+      {% if dig9 %}
+      <p>
+        Here, Number of digits after decimal place is 6, so result is same as input.
+      </p>
+      {% else %}
+      <p>
+        Here, In {{inp}}, the digit after millionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+        So, {{bdig}} can be rounded to {{reslastdig}}.
+      </p>
+      {% endif %}
+
+      {% endif %}
+
+      <p>
+        So finally, <b>{{inp}}</b>, when rounded to nearest millionth results in <b>{{res}}</b>. </p>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Meant by Rounding to the Nearest Millionths?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding to the Nearest Millionths is the procedure to find the nearest 1000000th value of the given decimal
+        using the rounding rules. The sixth digit after the decimal point is the millionth place. In <a
+          href="https://ccssmathanswers.com/decimals/">decimals</a>, 1/1000000 or 0.000001 is the millionth value. Refer
+        to the below sections and gain more knowledge about rounding off to the nearest 1000000th.</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round Off Decimals to the Nearest Millionths?</h2>
+    </div>
+    <div class="card-body">
+      <p>The step-by-step process and rules to follow while rounding the decimals to the nearest 1000000th are outlined.
+        They are as follows:</p>
+      <ul>
+        <li>First and foremost, identify the given number. </li>
+        <li>The next step is to follow the <a href="https://roundingcalculator.guru/rounding-decimals/">rounding
+            decimals</a> rules and round off the given number to the closest millionths. </li>
+        <li>Identify the next digit to the millionth and check whether it is greater or equal to 5 or less than 5. </li>
+        <li>If it is less than 5, then round down the decimal to millionths.</li>
+        <li>If it is more than or equal to 5, then round up the decimal to millionths.</li>
+      </ul>
+      <p>However, visit our homepage <a href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and utilize
+        all the online calculator tools to make your calculations easier and faster. Here, we have also solved a few
+        examples on how to round and find the decimal value to its nearest millionths for an effective understanding of
+        the process.</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h3">Rounding Decimals to the Nearest 1000000th Examples</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Example 1:</strong></p>
+      <p>Round the decimal 3.6574328 to its nearest millionth place.</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given decimal is 3.6574328</p>
+      <p>Here, 2 is the digit in the millionth place.</p>
+      <p>Now, look at the digit in the ten millionth place which is 8.</p>
+      <p>Here, 8 is greater than 5 so round up the millionth value. Add 1 to the millionth place and remove rest of the
+        digits.</p>
+      <p>Therefore, the rounded value of the given decimal number 3.6574328 to its nearest millionth is
+        <strong>3.657433</strong>
+      </p>
+      <p><strong>Example 2:</strong></p>
+      <p>What is the rounded value to the nearest 1000000th for the following decimal: 456.8753241?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given decimal number is 456.8753241</p>
+      <p>In this number, 4 is the millionth place value and 1 is the next value to millionths.</p>
+      <p>For millionth rounding, take 1 (ten millionth value) into consideration and follow the rule.</p>
+      <p>The ten millionth value (1) is less than 5 we are rounding down the decimal and obtain value is the rounded
+        value to its nearest millionths.</p>
+      <p>Hence, 456.8753241 round off to the nearest millionth is <strong>456.875324</strong></p>
+      <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Millionths.jpeg' %}"
+          alt="Round to the Nearest Millionths" /></p> -->
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Handy Rounding Off to Millionths Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. What is Millionths Rounding?</strong></p>
+      <p class="answer">Millionths rounding is estimating the approx value to the nearest millionth place by applying
+        the rounding rules.</p>
+      <hr>
+      <p class="question"><strong>2. Where is the millionth place in a decimal?</strong></p>
+      <p class="answer">1/1000000 or 0.000001 is the millionth place in decimals.</p>
+      <hr>
+      <p class="question"><strong>3. How do you round to the nearest 1000000th?</strong></p>
+      <p class="answer">To round to the nearest 1000000th (millionths), we have to consider the ten millionth place
+        value and apply the rounding rules to the digit. Finally, the decimal will get rounded to its nearest millionth
+        place.</p>
+      <hr>
+      <p class="question"><strong>4. How do you round to the nearest 1000000th?</strong></p>
+      <p class="answer">The rounded decimal value of 23.9745786 to the nearest millionth is 23.974579. Here ten
+        millionth place value is greater than 5 so we have rounded up the number to the nearest 1000000th.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    document.getElementById('error').innerHTML = "";
+    document.getElementsByName("inp")[0].value = "";
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("result1").innerHTML = "";
+    document.getElementById("clear").innerHTML = "";
+  }
+</script>
+{%endblock%}

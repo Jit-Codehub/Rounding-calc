@@ -1,0 +1,701 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg"
+    type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Ones calculator | Round off to nearest 1 calculator</title>
+<meta name="description"
+    content="Make use of this Rounding to the Nearest Ones Calculator and find out the nearest whole number for the given decimals in less time with steps. " />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Ones calculator | Round off to nearest 1 calculator" />
+<meta property="og:description"
+    content="Make use of this Rounding to the Nearest Ones Calculator and find out the nearest whole number for the given decimals in less time with steps. " />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ones.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Ones calculator | Round off to nearest 1 calculator" />
+<meta name="twitter:description"
+    content="Make use of this Rounding to the Nearest Ones Calculator and find out the nearest whole number for the given decimals in less time with steps. " />
+<meta name="twitter:image:src"
+    content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ones.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Ones calculator | Round off to nearest 1 calculator" />
+<meta property='og:image'
+    content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ones.jpeg" />
+<meta property='og:description'
+    content="Make use of this Rounding to the Nearest Ones Calculator and find out the nearest whole number for the given decimals in less time with steps. " />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How do you round to the nearest 1?
+        ","acceptedAnswer": {"@type": "Answer","text":"To round to nearest ones, follow the set of rules discussed below:
+
+        If the rounding digit is 0, 1, 2, 3, or 4, change all digits to the right of it to zeroes.
+        If the rounding digit is 5, 6, 7, 8, or 9, add one to the rounding digit and change all digits to the right of it to zeroes."}	}, {"@type": "Question","name":"2. 
+        What is 3.5 rounded to the nearest one?
+        ","acceptedAnswer": {"After performing the rounding technique, 3.5 rounded to the nearest one is 4."}	}, {"@type": "Question","name":"3. 
+        How do you round a specified number to the nearest 1 or whole number?
+        ","acceptedAnswer": {"@type": "Answer","text":" By following the formula rules, we can easily round a particular number to the nearest ones. Also, you can verify the answers using online rounding to the nearest ones calculator from <a href="https://roundingcalculator.guru/">roundingcalculator.guru</a>."}, {"@type": "Question","name":"4. 
+        What is 1.1 rounded to the nearest whole number?
+        ","acceptedAnswer": {"@type": "Answer","text":"1.1 rounded to the nearest whole number is 1. "}, {"@type": "Question","name":"5. 
+        What is the Nearest Ones Whole Number Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"Nearest ones whole number calculator is a free tool that rounds the first digit before the decimal point of a number in short span of time."}	}]}
+    </script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding to the Nearest Ones Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Utilize our free &amp; handy tool ie., Rounding to the nearest ones calculator and make your calculations
+                of rounding to the nearest whole number at a faster pace. Just provide the input in the given fields and
+                tap the calculate button to get the output rounded to nearest 1 in a few seconds.</p>
+            <div class="box">
+                <ul class="messages">
+                    <p id="error" class="alert alert-danger text-center" style="color:red;display:none">Invalid value
+                    </p>
+                </ul>
+                <form method="POST" id="my_form" onsubmit="return function1()">
+                    {% csrf_token %}
+
+                    <div class="row mx-auto my-auto">
+                        <div class="cell center col mt-2">
+
+                            <input type="number" oninput="validateNumber(this);" id="inlineFormInputGroup" step="any"
+                                required="" class="form-control" maxlength="15" name="firstno" value="{{firstno}}">
+                        </div>
+
+                    </div>
+
+                    <div class="col-auto mt-2 ml-3">
+                        <div class=" center col mt-2 ">
+                            <center><button type="submit" class="btn btn-primary" name="f1">Round</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+
+                </form>
+            </div>
+            {%if detailStep%}
+            <hr>
+            <p><strong>Answer:</strong></p>
+            <div style="text-align: center;">
+                {% autoescape off %}
+                {{detailStep}}
+                {%endautoescape%}
+            </div>
+            <hr>
+            {%endif%}
+        </div>
+        
+        <br>
+        <p>Related Calculators:</p>
+        <ul>
+            <!-- <li><a href="/rounding-to-the-nearest-ones-calculator/">Round to the Nearest Ones Calculator</a></li> -->
+                <li><a href="/rounding-to-the-nearest-tens-calculator/">Round to the Nearest Tens Calculator</a></li>
+                <li><a href="/rounding-to-the-nearest-hundred-calculator/">Round to the Nearest Hundred Calculator</a></li>
+                <li><a href="/round-to-the-nearest-thousand-calculator/">Round to the Nearest Thousands Calculator</a></li>                        
+                <li><a href="/rounding-to-the-nearest-ten-thousand-calculator/">Round to the Nearest Ten Thousands Calculator</a></li>
+                
+        
+          </ul>
+        <p><strong>Rounding to the Nearest Ones Calculator:</strong> One of the best techniques to make any decimal
+            number simpler or shorter is rounding to the nearest 1 whole number. We have compiled the information about
+            rounding off numbers to nearest whole numbers on this page. Here, we will find details like what is round to
+            nearest one, how to round off to the nearest whole number, solved round numbers to nearest ones examples,
+            etc. Also, opt for our Rounding to the nearest ones online calculator and make your calculations easier and
+            faster.</p>
+    </div>
+</div>
+
+
+    {% if id == 1 %}
+    <div id="clear">
+        <div class="card" id="magnetic-force">
+            <div class="card-header">
+                <h2 class="h2">{{firstno}} Rounding to the Nearest Ones Calculator</h2>
+            </div>
+            <div class="card-body">
+                <p><b> Round off value = {{rounding}} </b></p>
+
+            </div>
+        </div>
+    </div>
+    {%endif%}
+
+    {% if id == 1 %}
+    <div id="clear1">
+        <div class="card" id="magnetic-force">
+            <div class="card-header">
+                <h2 class="h2">Steps involved in Rounding to the Nearest Ones Calculator</h2>
+            </div>
+            <div class="card-body">
+                <p> Given number is {{firstno}}
+                    <br>
+                    {% if rem >= .5 %}
+                    The number at the tenth's place is {{rem}} which is equal or above 5. So, round up the value.<br>
+
+                    rounded value of {{firstno}} is {{rounding}}.<br>
+
+                    <strong>Therefore, {{firstno}} rounded to the nearest ones is {{rounding}}.</strong>
+                    {% endif %}
+                    {% if rem < .5 %} The number at the tenth's place is {{rem}} which is less 5. So, round down the
+                        value.<br>
+
+                        rounded value of {{firstno}} is {{rounding}}.<br>
+                </p>
+
+
+                <strong> Therefore, {{firstno}} rounded to the nearest ones is<b> {{rounding}}.</b>
+                    {% endif %}</strong>
+
+            </div>
+        </div>
+    </div>
+    {%endif%}
+
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What Does it Mean to Round to the Nearest 1?</h2>
+        </div>
+        <div class="card-body">
+            <p>Take down the whole number that is immediately after the decimal number is called rounding to the nearest
+                ones whole number. For example, rounded value of 2.7 to the nearest ones is 3.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">Detailed Steps to Round Off Numbers to the Nearest Ones </h2>
+        </div>
+        <div class="card-body">
+            <p>To find the nearest whole number of a decimal number, we need to look at the tenth place digit, which is
+                the digit just after the decimal point. If that digit is equal to 5 or greater than 5, we add 1 to the
+                ones place digit of the number and remove the decimal part of the number. However, when that tenth place
+                digit is less than 5, we keep the digit at ones place as it is and remove the decimal part. Let us
+                understand this better with the help of an example.</p>
+            <p>If you want to find the nearest ones whole number for the given decimal number, then check out the steps
+                furnished below:</p>
+            <ul>
+                <li>First, look at the ones digit before the decimal point.</li>
+                <li>Now, take the tenth digit which is first position after the decimal point into consideration.</li>
+                <li>If the tenth digit is greater than 5 or equal to 5, then add 1 to the ones place and remove decimal
+                    point from the given number.</li>
+                <li>If it is less than 5, then keep the ones digit as it is and remove the decimal part.</li>
+            </ul>
+            <p>Take a look at the below table and understand the concept efficiently and perform the complex problems
+                manually with ease. Also, try using our other <strong>online rounding off decimals &amp; number &amp;
+                    fractions calculators</strong> from roundingcalculator.guru and get the result in split seconds.</p>
+            <h3>Rounding Off to Nearest Ones Whole Number Examples</h3>
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <th style="text-align: center;">Number</th>
+                        <th style="text-align: center;">Rounded to Nearest Ones</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1.1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1.2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1.3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1.4</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1.5</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>1.6</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>1.7</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>1.8</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>1.9</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2.1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2.2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2.3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2.4</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2.5</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2.6</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2.7</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2.8</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2.9</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3.1</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3.2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3.3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3.4</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3.5</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>3.6</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>3.7</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>3.8</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>3.9</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4.1</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4.2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4.3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4.4</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4.5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4.6</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4.7</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4.8</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4.9</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5.1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5.2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5.3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5.4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>5.5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>5.6</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>5.7</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>5.8</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>5.9</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6.1</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6.2</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6.3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6.4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6.5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>6.6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>6.7</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>6.8</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>6.9</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7.1</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7.2</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7.3</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7.4</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>7.6</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>7.7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>7.8</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>7.9</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8.1</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8.2</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8.3</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8.4</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8.5</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8.6</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>8.7</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>8.8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>8.9</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9.1</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9.2</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9.3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9.4</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9.5</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>9.6</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>9.7</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>9.8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>9.9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>10.1</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>10.2</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>10.3</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>10.4</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>10.5</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>10.6</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>10.7</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>10.8</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>10.9</td>
+                        <td>11</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Ones.jpeg' %}"
+                    alt="Round to the Nearest Ones" /></p> -->
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Free Online Rounding to the Nearest Whole Number Calculator</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. How do you round to the nearest 1? </strong></p>
+            <p class="answer">To round to nearest ones, follow the set of rules discussed below:</p>
+            <ul>
+                <li>If the rounding digit is 0, 1, 2, 3, or 4, change all digits to the right of it to zeroes.</li>
+                <li>If the rounding digit is 5, 6, 7, 8, or 9, add one to the rounding digit and change all digits to
+                    the right of it to zeroes.</li>
+            </ul>
+            </p>
+            <hr>
+            <p class="question"><strong>2. What is 3.5 rounded to the nearest one?</strong></p>
+            <p class="answer">After performing the rounding technique, 3.5 rounded to the nearest one is 4.</p>
+            <hr>
+            <p class="question"><strong>3. How do you round a specified number to the nearest 1 or whole
+                    number?</strong></p>
+            <p class="answer">By following the formula rules, we can easily round a particular number to the nearest
+                ones. Also, you can verify the answers using online rounding to the nearest ones calculator from <a
+                    href="https://roundingcalculator.guru/">roundingcalculator.guru</a>.</p>
+            <hr>
+            <p class="question"><strong>4. What is 1.1 rounded to the nearest whole number?</strong></p>
+            <p class="answer">1.1 rounded to the nearest whole number is 1.</p>
+            <hr>
+            <p class="question"><strong>5. What is the Nearest Ones Whole Number Calculator?</strong></p>
+            <p class="answer">Nearest ones whole number calculator is a free tool that rounds the first digit before the
+                decimal point of a number in short span of time.</p>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    {% if id == 1 %}
+
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+    {% endif %}
+
+    function myFunction() {
+        document.getElementsByName("firstno")[0].value = "";
+
+        document.getElementById("clear").innerHTML = "";
+        document.getElementById("clear1").innerHTML = "";
+
+
+    }
+</script>
+
+
+{%endblock%}

@@ -1,0 +1,132 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS -->
+<title>Factor Pairs Calculator | How to Find Factor Pairs of a Number?</title>
+<meta name=description 
+    content="Factor Pairs Calculator tool is useful to find the factor pairs of a number. Just enter your number and obtain the factor pairs as result. Check the steps to calculate factors.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS -->
+
+<!-- FACEBOOK -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Product Quotient Calculator - How is the Product Quotient Calculated? - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Product Quotient Calculator is a free online calculator that solves x and y variable problems in seconds and provides explanations with illustrated examples.  " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Product Quotient Calculator - How is the Product Quotient Calculated? - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Product Quotient Calculator is a free online calculator that solves x and y variable problems in seconds and provides explanations with illustrated examples.  " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin -->
+<meta property='og:title' content="Product Quotient Calculator - How is the Product Quotient Calculated? - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Product Quotient Calculator is a free online calculator that solves x and y variable problems in seconds and provides explanations with illustrated examples. " />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">Factor Pairs Calculator</h1>
+    </div>
+    <div class="card-body">
+        <p>Factor Pairs Calculator is a free tool that computes the different combinations of factor pairs for any given number. All you have to do is enter the number in the input box and tap on the calculate button to avail the output in the blink of an eye.</p>
+        <form method='POST' action=''>
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Enter a number</label>
+              <input type="number" class="form-control" id="num" placeholder="Enter a number" value=64 name='num' required min=1>
+              
+            </div>
+          <button type="submit" class="btn mb-4 btn-primary">Calculate</button>
+        </form>
+        <p><strong>Factor Pairs Calculator: </strong>This calculator determines the factors for a number and pair combinations that will equal your number. Here you can get useful information such as what are factor pairs, how to find them, and solved questions.</p>
+        <h2>What are Factor Pairs?</h2>
+        <p>Factor pair is defined as a set of two factors that when multiplied together gives the number. Or factor pair is a set of 2 numbers whose product is the original number. A number can have multiple factor pairs.</p>
+        <p><strong>Example: </strong>42 is the product of 6 and 7. So (6, 7) is the factor pair of 42.</p>
+        <h3>Steps to Compute Factor Pairs</h3>
+        <p>The detailed steps to calculate the factor pairs of a number are along the lines:</p>
+        <ul>
+        <li>Consider a number to get the factor pairs.</li>
+        <li>Find all the factors of the number.</li>
+        <li>List out the factor pairs whose product gives the original number.</li>
+        </ul>
+       
+        
+        <p><strong>Example:</strong></p>
+        <p>Find the factor pairs of 24.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Given number is 24</p>
+        <p>Factors of 24 are 1, 2, 3, 4, 6, 8, 12, 24</p>
+        <p>We can write 24 as a product of 1x24, 2x12, 3x8, 4x6</p>
+        <p>So, the factor pairs of 24 are (1, 24), (2, 12), (3, 8), (4, 6)</p>
+
+        
+
+
+        
+        
+
+       
+        <h3>FAQs on x/y as a Decimal Conversion</h3>
+        <p><strong>1. How do you find the factor pairs?</strong></p>
+        <p>To obtain the factor pairs of the number, we need to calculate the factors. Then identify the pairs whose product is the original number. Those pairs are factor pairs.</p>
+        <p><strong>2. What are the factor pairs of 21?</strong></p>
+        <p>The factor pairs of 21 are (1, 21), (3, 7).</p>
+        <p><strong>3. What is the easiest way to calculate factors?</strong></p>
+        <p>The easiest way to compute the factors of a number is to get two or more numbers that multiply to make the number.</p>
+        <p><strong>4. How to know how many factors a number has?</strong></p>
+        <p>To know the number of factors of a number, we have to find the factors and count them.</p>
+        
+        
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

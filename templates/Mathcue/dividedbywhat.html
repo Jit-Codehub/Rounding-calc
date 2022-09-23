@@ -1,0 +1,414 @@
+{% extends 'base/numbers_base3.html' %}
+
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Online Calculator Guru Site Fevicon -->
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+    type="icon">
+<!-- Online Calculator Guru Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Divided by what equals Calculator | Free Calculator to find Divided by what equals </title>
+<meta name="description"
+    content="Divided by what equals  Calculator makes it easy for you to find Divided by what equals ." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title"
+    content="Divided by what equals  Calculator | Free Calculator to find Divided by what equals " />
+<meta property="og:description" content="Divided by what equals  Calculator" />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Chemistry/ohms-law-calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+    content="Divided by what equals  Calculator | Free Calculator to find Divided by what equals " />
+<meta name="twitter:description" content="Divided by what equals  Calculator" />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Chemistry/ohms-law-calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<title> Divided by what equals Calculator</title>
+<meta property='og:title' content="Divided by what equals  Calculatorr | Divided by what equals " />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/ohms-law-calculator.jpeg" />
+<meta property='og:description' content="Divided by what equals  Calculator." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+
+{%endblock%}
+
+{%block content%}
+
+
+<style>
+    input {
+        text-align: right;
+    }
+
+
+    @media screen and (min-width: 768px) {
+
+
+        .solveout2 {
+            margin-left: 80px;
+        }
+
+        .box {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 10px;
+            width: 30%;
+            font-size: 18px;
+            line-height: 1.8;
+            background-color: white;
+            border-radius: 9px;
+            margin-left: 0px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            border-style: groove;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+    }
+
+
+    @media screen and (max-width: 768px) {
+
+        .solveout2 {
+            margin-left: 55px;
+        }
+
+        .box {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 10px;
+            width: 90%;
+            font-size: 18px;
+            line-height: 1.8;
+            background-color: white;
+            border-radius: 9px;
+            margin-left: 0px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            border-style: groove;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solveout {
+            margin-left: 30px;
+        }
+
+    }
+
+    .in1 {
+        padding-left: 5px;
+        width: 90px;
+        height: 35px;
+        text-align: left;
+        font-size: 16px;
+        outline: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .in11 {
+        padding-left: 5px;
+        width: 90px;
+        height: 50px;
+        text-align: left;
+        font-size: 16px;
+        outline: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .out {
+        padding-left: 5px;
+        width: 130px;
+        height: 35px;
+        text-align: left;
+        font-size: 16px;
+        outline: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        margin-bottom: 5px;
+    }
+
+    .fraction {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lines1 {
+        height: 3px;
+        border: none;
+        color: #000;
+        background-color: #000;
+        font-size: 2px;
+    }
+
+    .solve {
+        background-color: #3574e9;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 0px 15px 0px 15px;
+        -moz-border-radius: 10px;
+        height: 35px;
+        vertical-align: bottom;
+        margin-bottom: 5px;
+    }
+
+    .frac {
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        letter-spacing: 0.001em;
+        text-align: center;
+    }
+
+    .frac>span {
+        display: block;
+        padding: 0.1em;
+    }
+
+    .frac span.bottom {
+        border-top: thin solid black;
+    }
+
+    .frac span.symbol {
+        display: none;
+    }
+</style>
+
+
+<div class="container" style="height: auto !important;">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">What is {{aa}} mod {{cc}}?</h1>
+
+        </div>
+
+        <div class="card-body">
+
+            <ul class="messages">
+                {% if messages %}
+                <p id="message_container" class="alert alert-danger text-center" style="color:red">{{ messages }}</p>
+                {% endif %}
+            </ul>
+
+            <form action="" method="POST" id="my_form">
+                {% csrf_token %}
+                <p>{{aa}} Divided by What Equals {{cc}}? Find the answer to this question easily i.e. {{x}} taking the
+                    help
+                    of the <a href="/divided-by-what-equals-calculator/">Divided by What Equals Calculator</a> in the
+                    blink of an eye.
+                </p>
+                <br>
+                <table width="300" height="100" align="center" border="0" cellspacing="0" cellpDividing="4"
+                    style="background-color:#ffffff;border:1px #000000 solid; border-bottom: 2px solid">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <table width="150" height="100" border="0" cellspacing="0" cellpDividing="0"">
+                     <tr>
+
+                         <td style=" border-bottom:2px #000000 solid;">
+                                <input type="text" size="10" tabindex="1" min="1" step="any" max="9999"
+                                    oninput="validateNumber(this);" required="" placeholder="" id="aa" name="aa" {% if aa %}
+                                     value="{{aa}}" {% else %} value="20" {% endif %}>
+                        </td>
+                        <td rowspan="2" align="center" valign="middle">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" style="padding: 5px 35px;"><strong> = </strong></div>
+                            </div>
+                        </td>
+                        <td rowspan="2" align="center" valign="middle">
+                            <input type="text" size="10" tabindex="4" min="1" step="any" max="9999"
+                                oninput="validateNumber(this);" required="" placeholder="" id="cc" name="cc" {% if cc %}
+                                value="{{cc}}" {% else %} value="90" {% endif %}>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" style="padding: 5px 45px;"><strong> X </strong></div>
+                                </div>
+                               
+                        </td>
+                       
+
+                    </tr>
+                </table>
+                </td>
+                </tr>
+                </table>
+                <br>
+
+
+
+                <div class=" center col mt-2 ">
+                    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                        <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                            class="btn btn-danger">Reset</button>
+                    </center>
+                </div>
+
+            </form> <br>
+
+
+            <!-----------------------
+            
+            {% if check == True %}
+    <div class="card" id="magnetic-Change in temperature">
+        <div>
+        </div>
+        <div class="card-body">
+            <h5>Here are some samples of Divided by what equals calculations.</h5><br>
+
+           
+            {% for a,b,c,d in maped %}
+            <span class="bullet" style="padding: 20px 5px; font-size: 20px;"><a href="{% url 'fraction1' a b c d %}"style="text-decoration: none;">Addition of Fractions {{a}}/{{b}} and {{c}}/{{d}}</a></span>
+            {% endfor %}
+           
+            <br><br>
+        </div>
+    </div>
+    {% endif %}
+            -->
+
+
+        </div>
+    </div>
+
+
+
+
+    {% if id == 1 %}
+
+    <div id="clear">
+
+        <div class="card" id="magnetic-Change in temperature">
+            <div class="card-header">
+                <h2 class="h2">How to Calculate {{aa}} Divided by What Equals {{cc}}?</h2>
+            </div>
+
+
+            <div class="card-body">
+                <p>{{aa}} divided by what equals {{cc}}? In other words, you have {{aa}} and you divide it by something
+                    and then you get {{cc}}. What is that something?
+                </p>
+                <p>We will call that something "X". Here is the equation to find the solution:</p>
+                <p><span class="frac"><span>{{aa}}</span><span class="symbol">/</span><span
+                            class="bottom">X</span></span> = {{cc}}</p>
+                <p>First, multiply both sides by X to get rid of the X as denominator.</p>
+                <p><span class="frac"><span>{{aa}}(X)</span><span class="symbol">/</span><span
+                            class="bottom">X</span></span> = {{cc}}X</p>
+                <p>{{aa}} = {{cc}}X</p>
+                <p>Then, divide both sides by {{cc}} to get X by itself as follows:</p>
+                <p><span class="frac"><span>{{aa}}</span><span class="symbol">/</span><span
+                            class="bottom">{{cc}}</span></span> =
+                    <span class="frac"><span>{{cc}}X</span><span class="symbol">/</span><span
+                            class="bottom">{{cc}}</span></span>
+                </p>
+                <p>{{x}} = X</p> <br>
+                <p>Thus, the answer to "{{aa}} divided by what equals {{cc}}?" is {{x}}.</p>
+                <p>Note that our answers are rounded to the nearest thousandth if necessary. You can divide {{aa}} by
+                    {{x}} to check that we got the right answer.</p>
+
+                <br>
+
+            </div>
+
+        </div>
+
+
+        <div class="card" id="magnetic-Change in temperature">
+            <div class="card-header">
+                <h3 class="h2">FAQs on How do you Solve {{aa}} Divided by What Equals {{cc}}
+                </h3>
+            </div>
+
+
+            <div class="card-body">
+              <p><b>1. {{aa}} Divided by What Equals {{cc}}?</b></p>
+              <p>{{aa}} Divided by {{x}} Equals {{cc}}.</p>
+<hr>
+              <p><b>2.  How to Solve {{aa}} Divided by What Equals {{cc}}?</b></p>
+              <p>Substitute the values {{aa}}, and {{cc}} in the formula of Divided by What Equals <span class="frac"><span>z</span><span class="symbol">/</span><span
+                class="bottom">X</span></span> = Y i.e. <span class="frac"><span>{{aa}}</span><span class="symbol">/</span><span
+                class="bottom">X</span></span> =
+                {{cc}}, and simplify further to obtain the unknown value X</p>
+<hr>
+              <p><b>3. Where do I get step by step solution to solve {{aa}}/X = {{cc}}?</b></p>
+              <p>You can get the step-by-step solutions to solve <span class="frac"><span>{{aa}}</span><span class="symbol">/</span><span
+                class="bottom">X</span></span> = {{cc}} on our page.</p>
+                <hr>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    {% endif %}
+
+
+
+
+    <script>
+
+        {% if id == 1 %}
+
+        var scrollDiv = document.getElementById("clear").offsetTop;
+        console.log(scrollDiv)
+        window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+        {% endif %}
+
+    </script>
+
+    <script>
+        function myFunction() {
+            document.getElementById("clear").innerHTML = "";
+
+
+        }
+    </script>
+    <br>
+
+</div>
+</div>
+
+    {% endblock %}

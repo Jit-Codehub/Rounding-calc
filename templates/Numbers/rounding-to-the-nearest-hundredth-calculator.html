@@ -1,0 +1,300 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the nearest hundredth calculator | How to round to nearest 100</title>
+<meta name="description"
+  content="Rounding to the Nearest Hundredth Calculator helps students to round the given decimal to the nearest 100 in a few seconds & provide show work." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the nearest hundredth calculator | How to round to nearest 100" />
+<meta property="og:description"
+  content="Rounding to the Nearest Hundredth Calculator helps students to round the given decimal to the nearest 100 in a few seconds & provide show work." />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-hundredth.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the nearest hundredth calculator | How to round to nearest 100" />
+<meta name="twitter:description"
+  content="Rounding to the Nearest Hundredth Calculator helps students to round the given decimal to the nearest 100 in a few seconds & provide show work." />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-hundredth.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the nearest hundredth calculator | How to round to nearest 100" />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundredth.jpeg" />
+<meta property='og:description'
+  content="Rounding to the Nearest Hundredth Calculator helps students to round the given decimal to the nearest 100 in a few seconds & provide show work." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How do you round to the nearest hundredth?
+        ","acceptedAnswer": {"@type": "Answer","text":"To round to the nearest 100th, make use of our free online rounding to the nearest hundredth calculator and also learn how to round it manually with steps."}	}, {"@type": "Question","name":"2. 
+        What is 129.257 rounded to the nearest hundredth?
+        ","acceptedAnswer": {"@type": "Answer","text":"129.257 rounded to the nearest hundredth is 129.26"}	}, {"@type": "Question","name":"3. 
+        Where can I get handy online rounding off to the nearest hundredth calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Avail the handy online rounding off to the nearest hundredth calculator from a reliable and trusted website called roundingcalculator.guru"}	}]}
+    </script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Hundredth Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Want to speed up your calculations of rounding decimals to the nearest 100? Use our free online Rounding to the
+        Nearest Hundredth Calculator and round off the given decimal to the nearest 100th effortlessly. Just give the
+        input value and hit the calculate button to avail the results along with show work. </p>
+
+        <div>
+          <div class="box">
+            <p id="error">
+              {% if error %}
+              <p><b>!! Incorrect values !! Please enter correct values</b></p>
+              {%endif%}
+              </p>
+            <form method="POST" id="my_form">
+                {% csrf_token %}
+                <div class="row mx-auto my-auto">
+                    <div class="cell">
+                        <label for="input1">Value to be rounded up:</label>
+                    </div>
+                </div>
+
+
+                <div class="row mx-auto my-auto">
+                    <div class="center col mt-2">
+                        <center>                               
+
+                          <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                           name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.234" {% endif %}>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div class="row mx-auto my-auto">
+                    <div class="center col mt-2">
+                        <center><button type="submit" class="btn btn-primary">Round</button>
+                            <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                class="btn btn-danger">Reset</button>
+                        </center>
+                        
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        </div>
+
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-decimals-to-the-nearest-tenths/">Rounding Decimals to the Nearest Tenths</a></li>
+        <li><a href="/rounding-decimals-to-the-nearest-thousandths/">Rounding Decimals to the Nearest
+            Thousandths</a></li>
+        <li><a href="/rounding-decimals-calculator/">Rounding Decimals</a></li>
+        <li><a href="/rounding-calculator/">Rounding Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest Hundredth Calculator:&nbsp;</strong>Are you wondering how to learn round off
+        decimals to nearest hundredth easily? Check out this free online tool as we have discussed the concept of
+        rounding off to the nearest 100th completely like what it is, steps to round decimals to the nearest hundredth
+        with worked-out examples. Practice daily with the Rounding Calculator and find the required round off to the
+        nearest 100th values in a fraction of seconds.</p>
+    </div>
+  </div>
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding {{inp}} to nearest Hundredth :</h2>
+        </div>
+
+        <div class="card-body">
+            &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+        </div>        
+    </div>
+
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding to nearest Hundredth:</h2>
+        </div>
+
+        <div class="card-body">
+            <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+            
+            <p>
+                Since, 1 Hundred = 100 (10<sup>2</sup>).<br>
+                So, 1 hundredth = 0.01 (10<sup>-2</sup>)
+            </p>
+
+            <p>
+                Therefore, while rounding to nearest hundredth, we round the fractional part(or decimal part) upto 2 digits.
+            </p>
+
+            {% if lesdig %}
+            <p>
+                Here, In {{inp}}, number of digits after hundredth place is less than 2, so we add trailing zeros upto 2 places after decmal.
+            </p>
+            {% else %}
+                {% if dig9 %}
+                    <p>
+                        Here, Number of digits after decimal place is 2, so result is same as input.
+                    </p>
+                {% else %}
+                    <p>
+                        Here, In {{inp}}, the digit after hundredth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+                    So, {{bdig}} can be rounded to {{reslastdig}}.
+                    </p>
+                {% endif %}
+            
+            {% endif %}
+
+            <p>
+            So finally, <b>{{inp}}</b>, when rounded to nearest hundredth results in <b>{{res}}</b>. </p>
+        </div>        
+    </div>
+    {% endif %}
+</div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is meant by Rounding to the Nearest 100th? </h2>
+    </div>
+    <div class="card-body">
+      <p>In mathematics, <a href="https://ccssmathanswers.com/decimal-numbers/">Decimal numbers</a> are the numbers that
+        are in reference to the preceding powers of 10. It implies that, if we move from left to right, the place value
+        of the decimal number divides by 10.</p>
+      <p>As a result, it determines tenths, hundredths, thousandths, and so on. Here in decimals, hundredth means 1/100.
+        Rounding to the nearest hundredth is finding the rounded value nearest to the 100th value by following the
+        rounding decimal rules.</p>
+      <p>For example, 6.1342 is the given decimal and the rounded value to the nearest hundredth is 6.13. Want to learn
+        the process and do calculations on your own then refer to the below steps with examples.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">Detailed Steps to Round off to Nearest Hundredth by Hand</h2>
+    </div>
+    <div class="card-body">
+      <p>Here are the simple steps that you should focus on rounding off numbers to the nearest hundredth manually:</p>
+      <ul>
+        <li>First, identify the number in the hundredth place.</li>
+        <li>Now, observe the thousandths digit which is next to 100th place.</li>
+        <li>If the digit is more than or equal to 5, round up the 100th value.</li>
+        <li>If the digit is less than 5, round down the hundredth value by remaining the same digit in the hundredth
+          place and remove all the digits right to the hundredth place.</li>
+      </ul>
+      <p><strong>Example:</strong></p>
+      <p>Round 93.1857 to the Nearest Hundredth?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given decimal is 93. 1857</p>
+      <p>Here, 8 is the hundredth value and 5 is the thousandth value.</p>
+      <p>The thousandth value is equal to 5 so round up to the 100th value by adding 1 to the hundredth place.</p>
+      <p>Hence, 93.1857 rounded to the Nearest Hundredth is 93.19.</p>
+      <p>Get assistance for your math homework and assignments from <a
+          href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and gain more subject knowledge and
+        problem-solving skills.</p>
+      <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Hundredth.jpeg' %}"
+          alt="Round to the Nearest Hundredth" /></p> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding Decimals to the Nearest Hundredth Calculator </h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How do you round to the nearest hundredth? </strong></p>
+      <p class="answer">To round to the nearest 100th, make use of our free online rounding to the nearest hundredth
+        calculator and also learn how to round it manually with steps.</p>
+      <hr>
+      <p class="question"><strong>2. What is 129.257 rounded to the nearest hundredth?</strong></p>
+      <p class="answer">129.257 rounded to the nearest hundredth is 129.26 </p>
+      <hr>
+      <p class="question"><strong>3. Where can I get handy online rounding off to the nearest hundredth
+          calculator?</strong></p>
+      <p class="answer">Avail the handy online rounding off to the nearest hundredth calculator from a reliable and
+        trusted website called roundingcalculator.guru</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+          fist_input = elem.value;
+      } else {
+          elem.value = fist_input;
+      }
+  }
+</script>
+
+<script>
+  function myFunction() {
+      document.getElementById('error').innerHTML="";
+      document.getElementsByName("inp")[0].value = "";
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result1").innerHTML = "";
+  }
+</script>
+
+{%endblock%}

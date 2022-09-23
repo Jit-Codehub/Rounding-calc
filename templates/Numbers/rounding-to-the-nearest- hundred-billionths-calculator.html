@@ -1,0 +1,308 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Hundred Billionths Calculator - Roundingcalculator.guru</title>
+<meta name="description"
+  content="Rounding to the nearest hundred billionths calculator is used to calculate the rounded value of a number to the nearest hundred billionths." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Hundred Billionths Calculator - Roundingcalculator.guru" />
+<meta property="og:description"
+  content="Rounding to the nearest hundred billionths calculator is used to calculate the rounded value of a number to the nearest hundred billionths." />
+<meta content="" property="og:site_name" />
+<meta
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundred-Billionths-Calculator.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Hundred Billionths Calculator - Roundingcalculator.guru" />
+<meta name="twitter:description"
+  content="Rounding to the nearest hundred billionths calculator is used to calculate the rounded value of a number to the nearest hundred billionths." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundred-Billionths-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Hundred Billionths Calculator - Roundingcalculator.guru" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundred-Billionths-Calculator.jpeg" />
+<meta property='og:description'
+  content="Rounding to the nearest hundred billionths calculator is used to calculate the rounded value of a number to the nearest hundred billionths." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to Round off the number to the nearest hundred billionths?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        To round off the number to the nearest hundred billionths, we need check the hundred billionths and thousand billionths values and if the thousand billionths value is greater than or equal to 5 then the hundred billionths place digit increases by 1 and the digits right to it becomes zero. If it is less, then simply make it zeros right to the hundrend billionths place."}	}, {"@type": "Question","name":"2
+        How to use rounding to the nearest hundred billionths calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        All we need to do is simply, give the number in the fields given below and click on the calculate button and get the answer instantly."}	}, {"@type": "Question","name":"3
+        What is 4.154122224622 rounding to the nearest hundred billionths?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        4.154122224622 rounded to the nearest hundred billionths is 4.154122224620"}	}]}</script>
+{%endblock%}
+{%block content%}
+
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Hundred Billionths Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Take a quick look at our rounding to the nearest hundred billionths calculator to round off the number nearest
+        to hundred billionth. For that you need to do is give the value in the input field and select round to hundred
+        billionth and click on the calculate button to get the answer in fraction of seconds.</p>
+
+
+      <div class="box">
+        {% if error %}
+        <div id="error">
+          <p><b>!! Incorrect values !! Please enter correct values</b></p>
+        </div>
+
+        {%endif%}
+        <form method="POST" id="my_form">
+          {% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Value to be rounded up:</label>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+
+                <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                  placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp" {% if inp %}
+                  value="{{inp}}" {% else %} value="146.235648129145" {% endif %}>
+              </center>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center><button type="submit" class="btn btn-primary">Round</button>
+                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                  class="btn btn-danger">Reset</button>
+              </center>
+
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+
+        <li><a href="/rounding-to-the-nearest-hundred-milllionth-calculator/">Rounding to nearest Hundred Millionths
+          Calculator</a></li>      
+
+      <li><a href="/round-to-nearest-hundred-trillionth-calculator/">Rounding to nearest Hundred Trillionths
+          Calculator</a></li>
+      <li><a href="/round-to-nearest-hundred-quadrillionth-calculator/">Rounding to nearest Hundred Quadrillionths
+          Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest Hundred Billionths Calculator: </strong>Need to round the nearest hundred
+        billionths? Then use this round to the nearest hundred billionths calculator to round off the numbers to the
+        nearest hundred billionths quickly and easily. Moreover, you will learn more about the rounding to nearest
+        hundred billionths and solved examples and steps to round it by hand in this page.</p>
+    </div>
+  </div>
+
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+      <div class="card-header">
+        <h2 class="h2">Result of Rounding {{inp}} to nearest Hundred Billionth:</h2>
+      </div>
+
+      <div class="card-body">
+        &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+      </div>
+    </div>
+
+    <div class="card" id="result">
+      <div class="card-header">
+        <h2 class="h2">Result of Rounding to nearest Hundred Billionth:</h2>
+      </div>
+
+      <div class="card-body">
+        <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+
+        <p>
+          Since, 1 Hundred Billion = 100000000000 (10<sup>11</sup>).<br>
+          So, 1 hundred billionth = 0.00000000001 (10<sup>-11</sup>)
+        </p>
+
+        <p>
+          Therefore, while rounding to nearest hundred billionth, we round the fractional part(or decimal part) upto 11
+          digits.
+        </p>
+
+        {% if lesdig %}
+        <p>
+          Here, In {{inp}}, number of digits after billionth place is less than 11, so we add trailing zeros upto 11
+          places after decmal.
+        </p>
+        {% else %}
+        {% if dig9 %}
+        <p>
+          Here, Number of digits after decimal place is 11, so result is same as input.
+        </p>
+        {% else %}
+        <p>
+          Here, In {{inp}}, the digit after billionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+          So, {{bdig}} can be rounded to {{reslastdig}}.
+        </p>
+        {% endif %}
+
+        {% endif %}
+
+        <p>
+          So finally, <b>{{inp}}</b>, when rounded to nearest hundred billionth, results in <b>{{res}}</b>. </p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round to the Nearest Hundred Billionths?</h2>
+    </div>
+    <div class="card-body">
+      <p>Below are the steps to round to the nearest hundred billionths. Follow these steps and get the output easily
+        and quickly.</p>
+      <ul>
+        <li>First, you need to mark the value in hundred billionths place.</li>
+        <li>Then look for the thousand billionths value which is available right to the hundred billionths place.</li>
+        <li>If the thousand billionths value is greater than or equal to 5 then the hundred billionths place digit
+          increases by 1 and the digits right to it becomes zero.</li>
+        <li>If the value is 4 or below then remove all the digits after the hundred billionths place.</li>
+        <li>Finally, you will get the desired answer.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Rounding Off to the Nearest Hundred Billionths Examples</h2>
+    </div>
+    <div class="card-body">
+      <p><strong>Question:</strong> Round 722.738286458115 to the nearest hundred billionths?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given, Value is 722.738286458115</p>
+      <p>Look for the hundred billionths place digit i.e. 1</p>
+      <p>Now you need to see the thousand billionths place right to the hundred billionths place, that we are having 5
+      </p>
+      <p>According to the rules, if we have greater than or equal to 5, we need to increase the round off digit by 1 and
+        remaining numbers right to it should be zero.</p>
+      <p>Hence, 722.738286458115 round to the nearest hundred billionths is 722.738286458120</p>
+      <p>For any clarification of rounding decimals or whole numbers you can click on <a
+          href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and clear all your queries.</p>
+
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding to the Nearest Hundred Billionths</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How to Round off the number to the nearest hundred billionths?</strong></p>
+      <p class="answer">To round off the number to the nearest hundred billionths, we need check the hundred billionths
+        and thousand billionths values and if the thousand billionths value is greater than or equal to 5 then the
+        hundred billionths place digit increases by 1 and the digits right to it becomes zero. If it is less, then
+        simply make it zeros right to the hundred billionths place.</p>
+      <hr>
+      <p class="question"><strong>2. How to use rounding to the nearest hundred billionths calculator?</strong></p>
+      <p class="answer">All we need to do is simply, give the number in the fields given below and click on the
+        calculate button and get the answer instantly.</p>
+      <hr>
+      <p class="question"><strong>3. What is 4.154122224622 rounding to the nearest hundred billionths?</strong></p>
+      <p class="answer">4.154122224622 rounded to the nearest hundred billionths is 4.154122224620</p>
+      <hr>
+      <!-- <img src="{% static 'images/Numbers/Rounding-to-the-Nearest-Hundred-Billionths-Calculator.jpeg' %}"
+        alt='Rounding to the Nearest Hundred Bilionths Calculator'> -->
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    {% if error %}
+    document.getElementById("error").innerHTML = "";
+    {% endif %}
+    document.getElementsByName("inp")[0].value = "";
+
+    document.getElementById("clear").innerHTML = "";
+
+  }
+</script>
+
+{%endblock%}

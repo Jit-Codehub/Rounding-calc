@@ -1,0 +1,196 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+
+    <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Round to the Nearest 5 Cents | How to Round to the Nearest Five Cents?</title>
+    <meta name="description" content="Round to the Nearest 5 Cents Calculator provides the amount you entered to Nearest Five Cents instantly. Get steps to round off to the nearest five cents."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Round to the Nearest 5 Cents | How to Round to the Nearest Five Cents?"/>
+        <meta property="og:description" content="Round to the Nearest 5 Cents Calculator provides the amount you entered to Nearest Five Cents instantly. Get steps to round off to the nearest five cents."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-5-Cents.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Round to the Nearest 5 Cents | How to Round to the Nearest Five Cents?"/>
+        <meta name="twitter:description" content="Round to the Nearest 5 Cents Calculator provides the amount you entered to Nearest Five Cents instantly. Get steps to round off to the nearest five cents."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-5-Cents.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Round to the Nearest 5 Cents | How to Round to the Nearest Five Cents?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-5-Cents.jpeg"/>
+        <meta property='og:description' content="Round to the Nearest 5 Cents Calculator provides the amount you entered to Nearest Five Cents instantly. Get steps to round off to the nearest five cents."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How to use Round to the Nearest 5 Cents Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Simply provide the input value and click on the calculate button to round to the nearest 5 cents."}	}, {"@type": "Question","name":"2. 
+        How do you Round to the Nearest 5 Cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" In order to round to the nearest 5 cents round the cents to the nearest multiple of 5. For numbers ending in 1, 2, 6, 7 Round Down and for 3, 4, 8, 9 Round Up."}	}, {"@type": "Question","name":"3. 
+        What is 12.89 rounded to the nearest 5 cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" 12.89 rounded to the nearest 5 cents is 12.90"}	}, {"@type": "Question","name":"4. 
+        Where do I get a detailed Procedure to Round to the Nearest 5 Cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get a detailed Procedure to Round to the Nearest 5 Cents on our page."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Round to the Nearest 5 Cents</h1>
+            </div>
+            <div class="card-body">
+                <p>Make the most out of the Round to the Nearest 5 Cents tool as it displays the result instantly. Simply enter the input value and tap on the calculate button to get the value rounded to the nearest cent. Unlike other tools, you can get a detailed explanation involved in the concept too here.</p>
+                <div class="box">
+                    <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="8213.328" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                          <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                          <optgroup label="Decimal Places">
+                            <option value="cent" selected >5 Cents (Nickel)</option>
+                          </optgroup>
+                      </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                        <li><a href="/numbers/round-to-the-nearest-10-cents/">Round to the Nearest 10 Cents</a></li>
+                                        <li><a href="/numbers/round-to-the-nearest-25-cents/">Round to the Nearest 25 Cents</a></li>
+                                        <li><a href="/numbers/round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+                                        <li><a href="/numbers/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>
+                                      </ul>
+                <p><strong>Round to the Nearest 5 Cents: </strong>Rounding is necessary to make your calculations much simple. If you aren't clear about how to Round to the Nearest 5 Cents then make use of the tool over here. Just enter the value you want to round to the nearest 5 cents in the input provision and hit the calculate button to get the result in a fraction of seconds. To help you out we even listed a detailed process along with solved examples. Have a look at the further modules to know completely about the concept of rounding to the nearest 5 cents.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Procedure to Round to the Nearest 5 Cents</h2>
+        </div>
+	    <div class="card-body">
+            <p>If you are looking for help on how to round to the nearest 5 cents this is the right place. Check out the instructions listed below and round up or down to the nearest 5 cents. They are outlined as below</p>
+            <ul>
+                <li>The first and foremost step is to check the nearest cent value.</li>
+                <li>If it is 0 or 5 do nothing.</li>
+                <li>If it is 3, 4, 8, 9 round up to the nearest 5 cents or else round down to the nearest 5 cents.</li>
+           </ul>
+           <p>See One-One Mapping of Nearest Cent to Nearest Five Cents</p>
+<ul>
+ 	<li>0 → 0</li>
+ 	<li>1 → 0</li>
+ 	<li>2 → 0</li>
+ 	<li>3 → 5</li>
+ 	<li>4 → 5</li>
+ 	<li>5 → 5</li>
+ 	<li>6 → 5</li>
+ 	<li>7 → 5</li>
+ 	<li>8 → 0 increase the tenth place by 1</li>
+ 	<li>9 → 0 increase the tenth place by 1</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Question : Round the following amounts $1.13, $8.35, $ 6.227 to the Nearest 5 Cents?</p>
+<p><strong>Solution:</strong></p>
+<p>Given Amounts $1.13, $8.35, $ 6.227</p>
+<p>$1.13 - Rounding to the nearest 5 cents it becomes $1.15</p>
+<p>$8.35 - It remains the same as it has 5 at the end i.e. $8.35</p>
+<p>$ 6.227 - Nearest 5 Cent value is $ 6.25</p>
+<p>Get a comprehensive array of calculators regarding maths, physics, chemistry concepts from <a
+  href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and clear all your queries easily.</p>
+<!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-5-Cents.jpeg' %}" alt='Round to the Nearest 5 Cents'> -->
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Round to the Nearest 5 Cents</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How to use Round to the Nearest 5 Cents Calculator?</strong></p>
+     	<p class="answer">Simply provide the input value and click on the calculate button to round to the nearest 5 cents.</p><hr>
+     	<p class="question"><strong>2. How do you Round to the Nearest 5 Cents?</strong></p>
+     	<p class="answer">In order to round to the nearest 5 cents round the cents to the nearest multiple of 5. For numbers ending in 1, 2, 6, 7 Round Down and for 3, 4, 8, 9 Round Up.</p><hr>  
+        <p class="question"><strong>3. What is 12.89 rounded to the nearest 5 cents?</strong></p>
+        <p class="answer">12.89 rounded to the nearest 5 cents is 12.90.</p><hr>
+        <p class="question"><strong>4. Where do I get a detailed Procedure to Round to the Nearest 5 Cents?</strong></p>
+     	<p class="answer">You can get a detailed Procedure to Round to the Nearest 5 Cents on our page.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

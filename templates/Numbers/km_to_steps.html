@@ -1,0 +1,683 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+{%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style2.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Kilometers to Steps Calculator - Percentagecalculator.Guru </title>
+    <meta name="description" content="Using our kilometers to steps converter tool, convert any number of kilometers to steps easily and quickly also provided with some formulas and examples.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+{% endblock %} 
+{% block content %}
+
+<style>
+    .card {
+        border-bottom-left-radius: 10px!important;
+        border-bottom-right-radius: 10px!important;
+        border-top-left-radius: 10px!important;
+        border-top-right-radius: 10px!important;
+    }
+    .b1{
+        background-color: rgba(0, 0, 0, 0.015);
+    }
+    .b{
+        border-top-left-radius: 25px!important;
+        border-top-right-radius: 25px!important;
+    }
+    .col-sm-6{
+        width: 60%;
+    }
+    .col-sm-4{
+        width: 33%;
+    }
+    .col-sm-5{
+        width: 45%;
+    }
+    .button {
+    width: 80px;
+    height: 44px;
+    position: relative;
+    }
+
+    .button label,.button input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+
+    .button input[type="radio"] {
+    opacity: 0.011;
+    }
+
+    .button input[type="radio"]:checked + label {
+    background: #0080ff;
+    border-radius: 4px;
+    color:white;
+    }
+
+    .button label {
+    cursor: pointer;
+    line-height: 1.8em;
+    background-color: rgba(0, 0, 0, 0.081);
+    padding: 2px;
+    }
+    .s1{
+        width: 30px;
+    }
+    .btn{
+        background-color: rgb(236, 236, 236);
+    }
+    .active{
+        background-color: #0080ff;
+        color: white;
+    }
+    .btn.active:hover{
+        color: white;
+    }
+</style>
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header"><h1><strong>Kilometers to Steps Calculator</strong></h1></div>
+        <div class="card-body">
+            <p>
+                Make use of our online kilometers to steps calculator tool that helps you to convert kilometers to steps and find out how many steps in km easily within a fraction of a second. All you need to do is give the inputs of kilometers and then click on the calculate button. So that you will get the output instantaneously. 
+            </p>
+            <hr>
+            <div class="btn-group btn-group-sm">
+                <button type="button" class="btn rounded-bottom border-2 border-dark" style="border-radius: 15px;background-color:white;" onclick="location.href='/miles-to-steps-calculator'"><strong>Miles to steps</strong></button>
+                <button type="button" class="btn rounded-bottom border-2 border-dark" style="border-radius: 15px;background-color:white;" onclick="location.href='/steps-to-miles-calculator'"><strong>Steps to Miles</strong></button>
+                <button type="button" class="btn active rounded-bottom border-2 border-dark" style="border-radius: 15px;" onclick="location.href='/km-to-steps-calculator'"><strong>Km to Steps</strong></button>
+                <button type="button" class="btn rounded-bottom border-2 border-dark" style="border-radius: 15px;background-color:white;" onclick="location.href='/steps-to-km-calculator'"><strong>Steps to Km</strong></button>
+            </div>
+            
+            <div class="card b1" style="width:290px;">
+                <div class="card-body">
+                    <form name="form2" method="post">
+                        {% csrf_token %} 
+                        <input type="hidden" name="form_type" value="formTwo">
+                        <span style="font-size:14px;">Km to Steps</span>
+                        <div class="row" style="padding-bottom: 5px">
+                            <div class="col-sm-8">
+                                <input class="form-control" placeholder="km" type="number" name="mil" step="any" min="0" {%if mil %} value="{{mil}}"{%else%} value="6"{%endif%} required> 
+                                <br><button class="btn active" type="submit">Calculate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <p><strong>km in Steps Calculation Examples</strong></p>
+            <div class="row">
+                <div class="col-sm-6">
+                <ul>
+                    <li><a href="/1-km-to-steps/">1 KM is How Many Steps</a></li>
+                    <li><a href="/2-km-to-steps/">2 KM in Steps</a></li>
+                    <li><a href="/3-km-to-steps/">3 KM in Steps</a></li>
+                    <li><a href="/4-km-to-steps/">4 KM in Steps</a></li>
+                    <li><a href="/5-km-to-steps/">5 KM in Steps</a></li>
+                    <li><a href="/6-km-to-steps/">6 KM in Steps</a></li>
+                </ul>
+                </div>
+                <div class="col-sm-6">
+                <ul>
+                    <li><a href="/7-km-to-steps/">7 KM in Steps</a></li>  
+                    <li><a href="/8-km-to-steps/">8 KM in Steps</a></li>
+                    <li><a href="/9-km-to-steps/">9 KM in Steps</a></li>
+                    <li><a href="/10-km-to-steps/">10 KM in Steps</a></li>
+                    <li><a href="/11-km-to-steps/">11 KM in Steps</a></li>
+                    <li><a href="/12-km-to-steps/">12 KM in Steps</a></li>   
+                </ul>                   
+                </div>
+            </div>
+            <p><strong>Steps in km Calculation Examples</strong></p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="/1000-steps-to-km/">1000 Steps in km</a></li>
+                        <li><a href="/1200-steps-to-km/">1200 Steps in km</a></li>
+                        <li><a href="/1500-steps-to-km/">1500 Steps in km</a></li>
+                        <li><a href="/2000-steps-to-km/">2000 Steps in km</a></li>
+                        <li><a href="/2500-steps-to-km/">2500 Steps in km</a></li>
+                        <li><a href="/3000-steps-to-km/">3000 Steps in km</a></li>
+                        <li><a href="/4000-steps-to-km/">4000 Steps in km</a></li>
+                        <li><a href="/5000-steps-to-km/">5000 Steps in km</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="/6000-steps-to-km/">6000 Steps in km</a></li>
+                        <li><a href="/7000-steps-to-km/">7000 Steps in km</a></li>
+                        <li><a href="/8000-steps-to-km/">8000 Steps in km</a></li>
+                        <li><a href="/9000-steps-to-km/">9000 Steps in km</a></li>
+                        <li><a href="/10000-steps-to-km/">10000 Steps in km</a></li>
+                        <li><a href="/11000-steps-to-km/">11000 Steps in km</a></li>
+                        <li><a href="/12000-steps-to-km/">12000 Steps in km</a></li>
+                        <li><a href="/15000-steps-to-km/">15000 Steps in km</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p><strong>Kilometers to steps calculator:</strong> Are you feeling difficulty in converting kilometers to steps? Then, convert kilometers to steps easily using this kilometer to steps calculator tool on our page. Just by giving inputs, you will get the output. And we are also providing the solved examples, formulas, what is kilometers and steps and many more. Read the article to know more!!</p>
+            <hr>
+            <h2><strong>What are Kilometer and Steps?</strong></h2>
+            <p><strong>Kilometer:</strong></p>
+            <p><span>In the metric system, a kilometer is the unit of length. It means one kilometer is approximately equal to 1000 meters. And the SI unit of these kilometers is &ldquo;km&rdquo;.</span></p>
+            <p><strong>Steps:</strong></p>
+            <p><span>In roman units, a step is also a unit of length. One step is approximately equal to 0.762 meters or 2.5 feet as per standardization.</span></p>
+            <hr>
+            <h3><strong>Formula For Calculating Kilometers To Steps</strong></h3>
+            <p><span>Here we will look into the formula to calculate the kilometer to steps easily.</span></p>
+            <p><strong>Steps = km x conversion factor value</strong></p>
+            <p><span>Where,</span></p>
+            <p><span>km = kilometers</span></p>
+            <p><span>Conversion factor value = </span><span>1312.33595801.</span></p>
+            <hr>
+            <h3><strong>Kilometer to Steps Conversion Table</strong></h3>
+            <p><span>Have a look at the table that was given below as we have provided you with some kilometer and step conversions.</span></p>
+            <table class="table table-sm table-bordered table-responsive">
+            <tbody>
+            <tr>
+            <td><br />
+            <p><strong>Kilometer</strong></p>
+            </td>
+            <td>
+            <p><strong>Average walk</strong></p>
+            <p><strong>(5kph)</strong></p>
+            </td>
+            <td>
+            <p><strong>Brisk walk</strong></p>
+            <p><strong>(6.5kph)</strong></p>
+            </td>
+            <td>
+            <p><strong>Run</strong></p>
+            <p><strong>(9.5kph)</strong></p>
+            </td>
+            <td>
+            <p><strong>Fast run</strong></p>
+            <p><strong>(12kph)</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>1 km</span></p>
+            </td>
+            <td>
+            <p><span>1408 steps</span></p>
+            </td>
+            <td>
+            <p><span>1209 steps</span></p>
+            </td>
+            <td>
+            <p><span>1045 steps</span></p>
+            </td>
+            <td>
+            <p><span>875 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>2 km</span></p>
+            </td>
+            <td>
+            <p><span>2816 steps</span></p>
+            </td>
+            <td>
+            <p><span>2418 steps</span></p>
+            </td>
+            <td>
+            <p><span>2090 steps</span></p>
+            </td>
+            <td>
+            <p><span>1750 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>3 km</span></p>
+            </td>
+            <td>
+            <p><span>4224 steps</span></p>
+            </td>
+            <td>
+            <p><span>3627 steps</span></p>
+            </td>
+            <td>
+            <p><span>3135 steps</span></p>
+            </td>
+            <td>
+            <p><span>2625 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>4 km</span></p>
+            </td>
+            <td>
+            <p><span>5632 steps</span></p>
+            </td>
+            <td>
+            <p><span>4836 steps</span></p>
+            </td>
+            <td>
+            <p><span>4180 steps</span></p>
+            </td>
+            <td>
+            <p><span>3500 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>5 km</span></p>
+            </td>
+            <td>
+            <p><span>7040 steps</span></p>
+            </td>
+            <td>
+            <p><span>6045 steps</span></p>
+            </td>
+            <td>
+            <p><span>5225 steps</span></p>
+            </td>
+            <td>
+            <p><span>4375 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>6 km</span></p>
+            </td>
+            <td>
+            <p><span>8448 steps</span></p>
+            </td>
+            <td>
+            <p><span>7254 steps</span></p>
+            </td>
+            <td>
+            <p><span>6270 steps</span></p>
+            </td>
+            <td>
+            <p><span>5250 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>7 km</span></p>
+            </td>
+            <td>
+            <p><span>9856 steps</span></p>
+            </td>
+            <td>
+            <p><span>8463 steps</span></p>
+            </td>
+            <td>
+            <p><span>7315 steps</span></p>
+            </td>
+            <td>
+            <p><span>6125 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>8 km</span></p>
+            </td>
+            <td>
+            <p><span>11264 steps</span></p>
+            </td>
+            <td>
+            <p><span>9672 steps</span></p>
+            </td>
+            <td>
+            <p><span>8360 steps</span></p>
+            </td>
+            <td>
+            <p><span>7000 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>9 km</span></p>
+            </td>
+            <td>
+            <p><span>12672 steps</span></p>
+            </td>
+            <td>
+            <p><span>10881 steps</span></p>
+            </td>
+            <td>
+            <p><span>9405 steps</span></p>
+            </td>
+            <td>
+            <p><span>7875 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>10 km</span></p>
+            </td>
+            <td>
+            <p><span>14080 steps</span></p>
+            </td>
+            <td>
+            <p><span>12090 steps</span></p>
+            </td>
+            <td>
+            <p><span>10450 steps</span></p>
+            </td>
+            <td>
+            <p><span>8750 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>11 km</span></p>
+            </td>
+            <td>
+            <p><span>15488 steps</span></p>
+            </td>
+            <td>
+            <p><span>13299 steps</span></p>
+            </td>
+            <td>
+            <p><span>11495 steps</span></p>
+            </td>
+            <td>
+            <p><span>9625 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>12 km</span></p>
+            </td>
+            <td>
+            <p><span>16896 steps</span></p>
+            </td>
+            <td>
+            <p><span>14508 steps</span></p>
+            </td>
+            <td>
+            <p><span>12540 steps</span></p>
+            </td>
+            <td>
+            <p><span>10500 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>13 km</span></p>
+            </td>
+            <td>
+            <p><span>18304 steps</span></p>
+            </td>
+            <td>
+            <p><span>15717 steps</span></p>
+            </td>
+            <td>
+            <p><span>13585 steps</span></p>
+            </td>
+            <td>
+            <p><span>11375 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>14 km</span></p>
+            </td>
+            <td>
+            <p><span>19712 steps</span></p>
+            </td>
+            <td>
+            <p><span>16926 steps</span></p>
+            </td>
+            <td>
+            <p><span>14630 steps</span></p>
+            </td>
+            <td>
+            <p><span>12250 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>15 km</span></p>
+            </td>
+            <td>
+            <p><span>21120 steps</span></p>
+            </td>
+            <td>
+            <p><span>18135 steps</span></p>
+            </td>
+            <td>
+            <p><span>15675 steps</span></p>
+            </td>
+            <td>
+            <p><span>13125 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>16 km</span></p>
+            </td>
+            <td>
+            <p><span>22528 steps</span></p>
+            </td>
+            <td>
+            <p><span>19344 steps</span></p>
+            </td>
+            <td>
+            <p><span>16720 steps</span></p>
+            </td>
+            <td>
+            <p><span>14000 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>17 km</span></p>
+            </td>
+            <td>
+            <p><span>23936 steps</span></p>
+            </td>
+            <td>
+            <p><span>20553 steps</span></p>
+            </td>
+            <td>
+            <p><span>17765 steps</span></p>
+            </td>
+            <td>
+            <p><span>14875 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>18 km</span></p>
+            </td>
+            <td>
+            <p><span>25344 steps</span></p>
+            </td>
+            <td>
+            <p><span>21762 steps</span></p>
+            </td>
+            <td>
+            <p><span>18810 steps</span></p>
+            </td>
+            <td>
+            <p><span>15750 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>19 km</span></p>
+            </td>
+            <td>
+            <p><span>26752 steps</span></p>
+            </td>
+            <td>
+            <p><span>22971 steps</span></p>
+            </td>
+            <td>
+            <p><span>19855 steps</span></p>
+            </td>
+            <td>
+            <p><span>16625 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>20 km</span></p>
+            </td>
+            <td>
+            <p><span>28160 steps</span></p>
+            </td>
+            <td>
+            <p><span>24180 steps</span></p>
+            </td>
+            <td>
+            <p><span>20900 steps</span></p>
+            </td>
+            <td>
+            <p><span>17500 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>21 km</span></p>
+            </td>
+            <td>
+            <p><span>29568 steps</span></p>
+            </td>
+            <td>
+            <p><span>25389 steps</span></p>
+            </td>
+            <td>
+            <p><span>21945 steps</span></p>
+            </td>
+            <td>
+            <p><span>18375 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>22 km</span></p>
+            </td>
+            <td>
+            <p><span>30976 steps</span></p>
+            </td>
+            <td>
+            <p><span>26598 steps</span></p>
+            </td>
+            <td>
+            <p><span>22990 steps</span></p>
+            </td>
+            <td>
+            <p><span>19250 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>23 km</span></p>
+            </td>
+            <td>
+            <p><span>32384 steps</span></p>
+            </td>
+            <td>
+            <p><span>27807 steps</span></p>
+            </td>
+            <td>
+            <p><span>24035 steps</span></p>
+            </td>
+            <td>
+            <p><span>20125 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>24 km</span></p>
+            </td>
+            <td>
+            <p><span>33792 steps</span></p>
+            </td>
+            <td>
+            <p><span>29016 steps</span></p>
+            </td>
+            <td>
+            <p><span>25080 steps</span></p>
+            </td>
+            <td>
+            <p><span>21000 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>25 km</span></p>
+            </td>
+            <td>
+            <p><span>35200 steps</span></p>
+            </td>
+            <td>
+            <p><span>30225 steps</span></p>
+            </td>
+            <td>
+            <p><span>26125 steps</span></p>
+            </td>
+            <td>
+            <p><span>21875 steps</span></p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <hr>
+            <h3><strong>Steps to Calculate Kilometer To Steps</strong></h3>
+            <p><span>Following are the guidelines that are given below which will help you to know how to calculate kilometer to steps easily.</span></p>
+            <ul>
+            <li aria-level="1"><span>Write down the kilometers that was given in the problem.</span></li>
+            <li aria-level="1"><span>Then, you need to apply the formula to convert kilometers to steps.</span></li>
+            <li aria-level="1"><span>Substitute the values and simplify the equation.</span></li>
+            <li aria-level="1"><span>Finally, you will get the steps.</span></li>
+            </ul>
+            <hr>
+            <h3><strong>How To Convert Kilometer to Steps?</strong></h3>
+            <p><strong>Example:</strong></p>
+            <p><strong>Question 1:</strong><span> What is 6.3 km in steps?</span></p>
+            <p><strong>Solution:</strong></p>
+            <p><span>Given, a 6.3 km</span></p>
+            <p><span>Formula to convert kilometers to steps,</span></p>
+            <p><strong>Steps = km x conversion factor value</strong></p>
+            <p><span>As we already know that, conversion factor value = </span><span>1312.33595801</span></p>
+            <p><span>= 6.3 x</span> <span>1312.33595801</span></p>
+            <p><span>= 8267. 71653 steps.</span></p>
+            <p><span>Therefore, the steps for 6.3 km is 8267. <hr>
+            <h3><strong>FAQs on Kilometer to Steps Converter</strong></h3>
+            <ol>
+            <li><strong> What is the formula to convert kilometers to steps?</strong></li>
+            </ol>
+            <p><span>The formula to convert kilometers to steps is </span><strong>Steps = km x conversion factor value ( </strong><strong>1312.33595801).</strong></p>
+            
+            <ol start="2">
+            <li><strong> How to use this kilometer to steps calculator tool?</strong></li>
+            </ol>
+            <p><span>You just need to provide the input as a kilometer and then you need to click the calculate button which is in blue color. So that you will get the answer in seconds using the calculator tool.</span></p>
+            
+            <ol start="3">
+            <li><strong> How many steps do we have in 1 km of walking?</strong></li>
+            </ol>
+            <p><span>In 1 km of walking, we have approximately 1312 steps.</span></p>
+        </div>
+    </div>
+</div>
+{%endblock%}

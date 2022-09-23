@@ -1,0 +1,202 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+
+    <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Round to the Nearest 10 Cents | Rounding Amounts to Nearest Ten Cents?</title>
+    <meta name="description" content="Round to the Nearest 10 Cents Calculator rounds the amount entered by you & gives instant results. Check out How to Round a Number to the Nearest Ten Cents?"/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Round to the Nearest 10 Cents | Rounding Amounts to Nearest Ten Cents?"/>
+        <meta property="og:description" content="Round to the Nearest 10 Cents Calculator rounds the amount entered by you & gives instant results. Check out How to Round a Number to the Nearest Ten Cents?"/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-10-Cents.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Round to the Nearest 10 Cents | Rounding Amounts to Nearest Ten Cents?"/>
+        <meta name="twitter:description" content="Round to the Nearest 10 Cents Calculator rounds the amount entered by you & gives instant results. Check out How to Round a Number to the Nearest Ten Cents?"/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-10-Cents.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Round to the Nearest 10 Cents | Rounding Amounts to Nearest Ten Cents?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-10-Cents.jpeg"/>
+        <meta property='og:description' content="Round to the Nearest 10 Cents Calculator rounds the amount entered by you & gives instant results. Check out How to Round a Number to the Nearest Ten Cents?"/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How to use the Round to the Nearest 10 Cents Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" You just need to provide the input value in the allotted input section and click on the calculate button to avail the Value Rounded to the Nearest 10 Cents."}	}, {"@type": "Question","name":"2. 
+        How do you Round to the Nearest 10 Cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" If the nearest cent value is 0 don't do anything. If it is 1, 2, 3, 4 round down and change the second digit after decimal place to 0. If it is 6, 7, 8, 9 round up and change the second digit after decimal place to 0 and increase one's place by 1."}	}, {"@type": "Question","name":"3. 
+        Where do I get the Step by Step Procedure for Rounding to the Nearest 10 Cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get the Step by Step Procedure for Rounding to the Nearest 10 Cents on our page."}	}, {"@type": "Question","name":"4. 
+        What is 30.56 rounded to the nearest ten cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" 30.56 rounded to the nearest 10 cents is 30.60."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Round to the Nearest 10 Cents</h1>
+            </div>
+            <div class="card-body">
+                <p>Take help of the Round to the Nearest 10 Cents Calculator and determine the amount rounded to its nearest 10 cents in a matter of seconds. You just need to provide the amount value in the allotted input section and click on the calculate button to get the rounding nearest to 10 cents easily.</p>
+                <div class="box">
+                    <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="435.72" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                          <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                          <optgroup label="Decimal Places">
+                            <option value="cent" selected >10 Cents (Dime)</option>
+                          </optgroup>
+                      </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                      <li><a href="/round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+                                      <li><a href="/round-to-the-nearest-5-cents/">Round to the Nearest 5 Cents</a></li>
+                                      <li><a href="/round-to-the-nearest-25-cents/">Round to the Nearest 25 Cent</a></li>
+                                      <li><a href="/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>        
+                                      <li><a href="/round-to-the-nearest-euro-calculator/">Round to the Nearest Euro</a></li>
+                                      <li><a href="/round-to-the-nearest-japanese-yen-calculator/">Round to the Nearest Yens</a></li>
+                                      </ul>
+                <p><strong>Round to the Nearest 10 Cents: </strong>If you ever need assistance with Rounding to the Nearest 10 Cents take the help of the online tool. Simply enter the number you want to round off and our handy calculator does everything for you. The tool is quite easy to use and gives you a detailed explanation along with accurate results. Get to know the Step by Step Procedure to Round to the Nearest Cents and Solved Examples in the forthcoming modules.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Round to the Nearest 10 Cents?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Follow the simple and easy steps listed below in order to round off the amount to the nearest 10 cents. By going through these instructions you can solve the problems on your own.</p>
+            <ul>
+                <li>Firstly, check the nearest cent value if it is 0 you need not do anything.</li>
+                <li>If it is 1, 2, 3, 4 round down to the nearest 10 cents by changing the second digit next to the decimal value to 0.</li>
+                <li>If it is 5, 6, 7, 8, 9 round up the nearest 10 cents by changing the second digit right after the decimal value to 0 and increase the one's place value of the amount by 1.</li>
+           </ul>
+           <p>Check out the one-one mapping of the nearest cent to the nearest 10 cents</p>
+           <ul>
+                <li>0 → 0</li>
+                <li>1 → 0</li>
+                <li>2 → 0</li>
+                <li>3 → 0</li>
+                <li>4 → 0</li>
+                <li>5 → 0 *</li>
+                <li>6 → 0 *</li>
+                <li>7 → 0 *</li>
+                <li>8 → 0 *</li>
+                <li>9 → 0*</li>
+           </ul>
+           <p>* One's Place Value increases by 1</p>
+<p><strong>Example</strong></p>
+<p>Question : Round the Amounts given to the Nearest 1o Cents 16.228, 22.87, 109.09?</p>
+<p><strong>Solution:</strong></p>
+<p>Given Amounts are 16.228, 22.87, 109.09</p>
+<p>16.228 - As the value next to decimal place is 2, round down and change the second digit to 0.</p>
+<p>16.228 → 16.20</p>
+<p>22.87 - As the value next to decimal place is 7 round up and change the second digit to 0 and increase one's place by 1</p>
+<p>22.87 → 22.90</p>
+<p>109.09 - As the value next to decimal place is 9 round up and change the second digit to 0 and increase one's place by 1</p>
+<p>109.09 → 109.10</p>
+<p>Avail the handy tools available regarding maths, physics, chemistry concepts from <a
+  href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and clear all your queries during your homework or assignments.</p>
+<!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-10-Cents.jpeg' %}" alt='Round to the Nearest 10 Cents'> -->
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Round to the Nearest Ten Cents</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How to use the Round to the Nearest 10 Cents Calculator?</strong></p>
+     	<p class="answer">You just need to provide the input value in the allotted input section and click on the calculate button to avail the Value Rounded to the Nearest 10 Cents.</p><hr>
+     	<p class="question"><strong>2. How do you Round to the Nearest 10 Cents?</strong></p>
+     	<p class="answer">If the nearest cent value is 0 don't do anything. If it is 1, 2, 3, 4 round down and change the second digit after decimal place to 0. If it is 6, 7, 8, 9 round up and change the second digit after decimal place to 0 and increase one's place by 1.</p><hr>  
+        <p class="question"><strong>3. Where do I get the Step by Step Procedure for Rounding to the Nearest 10 Cents?</strong></p>
+        <p class="answer">You can get the Step by Step Procedure for Rounding to the Nearest 10 Cents on our page.</p><hr>
+        <p class="question"><strong>4. What is 30.56 rounded to the nearest ten cents?</strong></p>
+     	<p class="answer">30.56 rounded to the nearest 10 cents is 30.60.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,286 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest 1/4 Calculator | Rules to Round Numbers to Closest 1/4</title>
+<meta name="description"
+  content="Rounding to the Nearest 1/4 Calculator displays the nearest 1/4 for the given decimal number. Know the steps on how to round off numbers to the nearest one fourth?" />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest 1/4 Calculator | Rules to Round Numbers to Closest 1/4" />
+<meta property="og:description"
+  content="Rounding to the Nearest 1/4 Calculator displays the nearest 1/4 for the given decimal number. Know the steps on how to round off numbers to the nearest one fourth?" />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest 1/4 Calculator | Rules to Round Numbers to Closest 1/4" />
+<meta name="twitter:description"
+  content="Rounding to the Nearest 1/4 Calculator displays the nearest 1/4 for the given decimal number. Know the steps on how to round off numbers to the nearest one fourth?" />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest 1/4 Calculator | Rules to Round Numbers to Closest 1/4" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property='og:description'
+  content="Rounding to the Nearest 1/4 Calculator displays the nearest 1/4 for the given decimal number. Know the steps on how to round off numbers to the nearest one fourth?" />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+      How do you round to the nearest ¼(one-fourth)?
+      ","acceptedAnswer": {"@type": "Answer","text":" Give the decimal number as input for the calculator and press the calculate button to get the rounded value as an answer quickly."}	}, {"@type": "Question","name":"2.
+      What is the rule for rounding numbers to the closest 1/4?
+      ","acceptedAnswer": {"@type": "Answer","text":" The only rule to round a number to the nearest ¼ is find the equivalent fraction for the fractional part in the given number."}	}, {"@type": "Question","name":"3.
+      What is 48.65 rounded to the nearest 1/4th?
+      ","acceptedAnswer": {"@type": "Answer","text":" Given number is 48.65
+      The fractional part is 0.65 which is nearest to 0.75
+      And 0.75 in fraction of 4 is equivalent to ¾.
+      So, 48.65 rounded to nearest ¼ is 48¾."}	}, {"@type": "Question","name":"4.
+      Where can I find the best website that gives the rounded value to the nearest one fourth?
+      ","acceptedAnswer": {"@type": "Answer","text":" Visit Roundingcalculator.guru website to get the rounding calculators that rounds off a number to the neatest 1/4 easily."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %} 
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+		});
+
+    </script>
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to Nearest One-Fourth (1/4) Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Online Rounding to the Nearest 1/4 Calculator helps to round off the decimal numbers to the nearest one-fourth
+        value in a fraction of seconds. You just have to enter the decimal number in the given input section and tap on
+        the calculate button to obtain the result instantly.</p>
+     
+
+        <div class="box">
+          {% if error %}
+              <p><b>!! Incorrect values !! Please enter correct values</b></p>
+              {%endif%}
+          <form method="POST" id="my_form">
+              {% csrf_token %}
+              <div class="row mx-auto my-auto">
+                  <div class="cell">
+                      <label for="input1">Value to be rounded up:</label>
+                  </div>
+              </div>
+  
+  
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                      <center>
+  
+                        <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                            placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                             name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.45" {% endif %}>
+                      </center>
+                  </div>
+              </div>
+  
+  
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                      <center><button type="submit" class="btn btn-primary">Round</button>
+                          <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                              class="btn btn-danger">Reset</button>
+                      </center>
+                  </div>
+              </div>
+          </form>
+  
+      </div>
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/round-to-the-nearest-1-2-calculator/">Rounding to nearest 1/2 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-8-calculator/">Rounding to nearest 1/8 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-16-calculator/">Rounding to nearest 1/16 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-32-calculator/">Rounding to nearest 1/32 Calculator</a></li>
+        <li><a href="/round-to-the-nearest-1-64-calculator/">Rounding to nearest 1/64 Calculator</a></li>
+
+      </ul>
+      <p><strong>Round Decimal Numbers to Nearest ¼ Calculator: </strong>Do you want to find the nearest 1/4th for the
+        given number? If yes, you have reached the correct place. The user-friendly calculator provided here is useful
+        to find the rounded to the closest 1/4 for the given number. Along with the answer, get the detailed step by
+        step process to find the round off to the nearest ¼ in the following sections.</p>
+    </div>
+  </div>
+
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+      <div class="card-header">
+          <h2 class="h2">Result of Rounding to nearest one fourth(1/4):</h2>
+      </div>
+
+      <div class="card-body">
+        <strong>Result - Round off value = {{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %}</strong>
+        </div>
+        </div>
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding to nearest one fourth(1/4):</h2>
+        </div>
+
+        <div class="card-body">
+            <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+            <p>To be rounded in  : nearest   &nbsp; <b><sup>1</sup>&frasl;<sub>{{calcval}}</sub></b></p>
+            {% if frac %} 
+                <p>The fractional part is {{deci}}. </p><p>This value is nearest to {{deci_round}}.</p>
+                <p>And, {{deci_round}} in fraction of {{calcval}} is equivalent to <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}.</sub></p> 
+            {% else %}
+                <p>Since, given input is nearest to an integer {{res}}.</p> <p>It's rounding result will be same as {{res}}.</p>
+            {% endif %}
+            <p>So finally, <b>{{inp}}</b>, when rounded to nearest &nbsp; <sup>1</sup>&frasl;<sub>{{calcval}}</sub> , results in <b>{{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %}</b>. </p>
+        </div>
+            
+        
+    </div>
+
+    {% endif %}
+</div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Rounding to the Nearest ¼?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding to the nearest one-fourth means estimating the nearest ¼ value for any decimal number. Here we will
+        round the fractional part of the decimal to the closest 1/4th value.</p>
+      <p>Check out the below sections to know the process of rounding the decimal numbers to the nearest ¼ value.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Steps to Round off NUmbers to Nearest 1/4th</h3>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>At first, observe the fractional part of the given number.</li>
+        <li> Round the number fractional part to nearest multiple of ¼.</li>
+        <li> Represent the obtained number in the fraction of 4.</li>
+        <li> Finally, write the rounded to the nearest ¼ number.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Solved Questions on Round off to the Nearest 1/4</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Question 1:</strong> Find 56.345 rounded to the nearest one fourth?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given number is 56.345</p>
+      <p>The fractional part of the number is 0.345</p>
+      <p> 0.345 is nearest to 0.35</p>
+      <p> And 0.25 in frcation of 4 is equivalent to ¼</p>
+      <p> Therefore, 56.345 rounded to the nearest ¼ is 56¼.</p>
+      <p><strong>Question 2: </strong>What is 108.89 rounded to the nearest 1/4?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given number is 108.89</p>
+      <p> The given number is nearest to an integer 109.</p>
+      <p> It's rounding result will be same as 109.</p>
+      <p> So, 108.89 rounded to nearest 1/4 is 109.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding to Nearest 1/4 Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong> 1. How do you round to the nearest ¼(one-fourth)?</strong></p>
+      <p class="answer">Give the decimal number as input for the calculator and press the calculate button to get the
+        rounded value as an answer quickly.</p>
+      <p class="question"><strong> 2. What is the rule for rounding numbers to the closest 1/4?</strong></p>
+      <p class="answer">The only rule to round a number to the nearest ¼ is find the equivalent fraction for the
+        fractional part in the given number.</p>
+      <p class="question"><strong> 3. What is 48.65 rounded to the nearest 1/4th?</strong></p>
+      <p class="answer">Given number is 48.65</p>
+      <p class="answer">The fractional part is 0.65 which is nearest to 0.75</p>
+      <p>And 0.75 in fraction of 4 is equivalent to ¾.</p>
+      <p>So, 48.65 rounded to nearest ¼ is 48¾.</p>
+      <hr>
+      <p class="question"><strong> 4. Where can I find the best website that gives the rounded value to the nearest one
+          fourth?</strong></p>
+      <p class="answer">Visit <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> website to get the
+        rounding calculators that rounds off a number to the neatest 1/4 easily.</p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+          fist_input = elem.value;
+      } else {
+          elem.value = fist_input;
+      }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    {% if error %}
+        document.getElementById('error').innerHTML = "";
+        {% endif %}
+      document.getElementsByName("inp")[0].value = "";
+      {% if result %}
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result1").innerHTML = "";
+      {% endif %}
+      
+  }
+</script>
+{%endblock%}

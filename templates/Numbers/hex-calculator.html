@@ -1,0 +1,390 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Hex Calculator | Add, Subtract, Multiply, Divide Hexadecimal Numbers</title>
+    <meta name="description" content="Take the help of Hex Calculator to add, subtract, multiply & divide hexadecimal numbers. This tool converts hex numbers to decimal & does arithmetic operations."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Hex Calculator | Add, Subtract, Multiply, Divide Hexadecimal Numbers"/>
+        <meta property="og:description" content="Take the help of Hex Calculator to add, subtract, multiply & divide hexadecimal numbers. This tool converts hex numbers to decimal & does arithmetic operations."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Hex-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Hex Calculator | Add, Subtract, Multiply, Divide Hexadecimal Numbers"/>
+        <meta name="twitter:description" content="Take the help of Hex Calculator to add, subtract, multiply & divide hexadecimal numbers. This tool converts hex numbers to decimal & does arithmetic operations."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Hex-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Hex Calculator | Add, Subtract, Multiply, Divide Hexadecimal Numbers"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Hex-Calculator.jpeg"/>
+        <meta property='og:description' content="Take the help of Hex Calculator to add, subtract, multiply & divide hexadecimal numbers. This tool converts hex numbers to decimal & does arithmetic operations."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        Why is hex used?
+        ","acceptedAnswer": {"@type": "Answer","text":" Hex or hexadecimal is a base 16 system used to simplify how binary is represented. Each hex digit reflects a 4 bit binary sequence. This means you can easily write 8 bit binary numbers using only two different hex digits."}	}, {"@type": "Question","name":"2.
+        What is Meant by Hexadecimal Number?
+        ","acceptedAnswer": {"@type": "Answer","text":" The hexadecimal number system is called base 16 number system. It used the decimal numbers from 0 to 9 along with 6 symbols. They are A, B, C, d, E, F."}	}, {"@type": "Question","name":"3.
+        How do yo convert 23E to decimal?
+        ","acceptedAnswer": {"@type": "Answer","text":" Get the decimal form of E. And multiply the right most digit to 16^0, next digit to 16^1 so on.
+        E = 14
+        2 3 E = 2 x 16^2 + 3 x 16^1 + 14 x 16^0
+        = 2 x 256 + 48 + 14
+        = 512 + 62 = 574
+        (23E)16 = (574)10"}	}, {"@type": "Question","name":"4.
+        How to perform the arithmetic operation on hexadecimal numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":" You just need to enter two hex numbers in the input and hit the calculate button to get the addition, subtraction, multiplication, and division of those numbers in hexadecimal form easily."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+          });
+    </script>
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Hex Calculator</h1>
+            </div>
+            <div class="card-body">
+                {%if tag_id%}
+                <a href="{{tag_id}}" id="ddd"></a>
+                {%endif%}
+                <p>Make use of our free Hex Calculator tool to perform arithmetical operations on any two hexadecimal numbers easily. You just have to enter the input numbers, press on the calculate button to get the lengthy output as addition, subtraction, multiplication, division of the hexadecimal numbers and decimal form of those numbers.</p>
+                <div style="text-align: center;"><h5><strong>Hexadecimal Calculation</strong></h5></div>
+                <div class="box" id="hex_calc">
+                    <form action="{% url 'hex-calculator' %}" method="POST">{% csrf_token %}
+                      
+                      <table>
+                        <tr>
+                        <td >
+                          {%if input1%}
+                        <input name="input1" type="text" id="frfr1" onkeypress="return isNumberKey(event)" required maxlength="8" class="in11" value="{{input1}}">
+                        {%else%}
+                        <input name="input1" type="text" id="frfr1" onkeypress="return isNumberKey(event)" required maxlength="8" class="in11" value="14A">
+                        {%endif%}
+                        </td>
+                        <td ><br/>
+                        <select id="frfro" class="divider" name="operator">
+                        {%if operator%}
+                        <option value="{{operator}}" selected>{{operator}}</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="×">×</option>
+                        <option value="÷">÷</option>
+                        {%else%}
+                        <option value="+" selected>+</option>
+                        <option value="-">-</option>
+                        <option value="×">×</option>
+                        <option value="÷">÷</option>
+                        {%endif%}
+                        </select><br><br>
+                        </td>
+                        <td valign="middle">
+                          {%if input2%}
+                          <input name="input2" type="text" id="frfr2" onkeypress="return isNumberKey(event)" required maxlength="8" class="in11" value="{{input2}}">
+                          {%else%}
+                          <input name="input2" type="text" id="frfr2" onkeypress="return isNumberKey(event)" required maxlength="8" class="in11" value="1A2">
+                          {%endif%}
+                        </td>
+                      </tr>
+                     
+                        </table>
+                        <div class="col-auto mt-2 ml-3">
+                            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                          </div>
+                    </form>
+                        {%if input1%}
+                            {%if detailStep%}
+                                <hr>
+                                <p><strong>Answer:</strong></p>
+                                <div style="text-align: center;">
+                                {% autoescape off %}
+                                {{detailStep}}
+                                {%endautoescape%}
+                                </div>
+                                <hr>
+                            {%endif%}
+                        {%endif%}
+                    </div>
+                    {%if input1%}
+                    {% autoescape off %}
+                          {% if messages %}
+                              {% for message in messages %}
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <p class="alert alert-danger">{{message}}</p>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      {%endautoescape%}
+                      {%endif%}
+                  <br>
+                  <div style="text-align: center;"><h5><strong>Convert Hexadecimal to Decimal</strong></h5></div>
+                  <div class="box" id="hex_to_dec">
+                    <form action="{% url 'hex-calculator' %}" method="POST">{% csrf_token %}
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                <label for="input3">Hexadecimal Value: </label>
+                            </div>
+                          </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                          {%if input3%}
+                        <input name="input3" type="text" id="frfr1" onkeypress="return isNumberKey(event)" required maxlength="8" width="48"  value="{{input3}}">
+                        {%else%}
+                        <input name="input3" type="text" id="frfr1" onkeypress="return isNumberKey(event)" required maxlength="8" width="48"  value="1A2">
+                        {%endif%}
+                            </div>
+                        </div>
+                        <div class="col-auto mt-2 ml-3">
+                            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                          </div>
+                    </form>
+                    {%if input3%}
+                    {%if detailStep%}
+                        <hr>
+                        <p><strong>Answer:</strong></p>
+                        <div style="text-align: center;">
+                        {% autoescape off %}
+                        {{detailStep}}
+                        {%endautoescape%}
+                        </div>
+                        <hr>
+                    {%endif%}
+                    {%endif%}
+                    </div>
+                    {%if input3%}
+                    {% autoescape off %}
+                          {% if messages %}
+                              {% for message in messages %}
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <p class="alert alert-danger">{{message}}</p>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      {%endautoescape%}
+                      {%endif%}
+                    
+                    <br>
+                    <div style="text-align: center;"><h5><strong>Convert Decimal to Hexadecimal</strong></h5></div>
+                  <div class="box" id="dec_to_hex">
+                    <form action="{% url 'hex-calculator' %}" method="POST">{% csrf_token %}
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                <label for="input4">Decimal Value: </label>
+                            </div>
+                          </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                {%if input4%}
+                                    <input name="input4" type="tel" id="frfr1" onkeypress="return isNumberKey(event)" required maxlength="8" width="48"  value="{{input4}}">
+                                {%else%}
+                                    <input name="input4" type="tel" id="frfr1" onkeypress="return isNumberKey(event)" required maxlength="8" width="48"  value="2342">
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="col-auto mt-2 ml-3">
+                            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                          </div>
+                    </form>
+                    {%if input4%}
+                        {%if detailStep%}
+                            <hr>
+                            <p><strong>Answer:</strong></p>
+                            <div style="text-align: center;">
+                            {% autoescape off %}
+                            {{detailStep}}
+                            {%endautoescape%}
+                            </div>
+                            <hr>
+                        {%endif%}
+                    {%endif%}
+                    </div>
+                    {%if input4%}
+                    {% autoescape off %}
+                          {% if messages %}
+                              {% for message in messages %}
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <p class="alert alert-danger">{{message}}</p>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      {%endautoescape%}
+                      {%endif%}
+                <p><strong>Hex Calculator: </strong>This handy calculator tool is programmed to perform the basic arithmetic operations on hexadecimal numbers and it generates the output within no time. You can get the detailed explanation to convert the hexadecimal numbers to decimal numbers, add, multiply, subtract, and divide the two hexadecimal numbers. In addition to this, you can also learn how to perform arithmetic operations on hexadecimal numbers easily.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Perform Arithmetical Operations on Hexadecimal Numbers?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Below provided are the simple and easy steps which are helpful to you to calculate the basic arithmetic operations of hexadecimal numbers and decimal numbers and how to convert hexadecimal number to decimal number. Have a look at them and follow</p>
+            <p><strong>1. Addition of Hexadecimal Numbers</strong></p>
+            <ul>
+            <li>Let us take any two hexadecimal numbers.</li>
+            <li>     Write those numbers one after other in two different lines.</li>
+            <li>     Start addition from the right most digits.</li>
+            <li>     If the number is in the form of alphabets, convert it to the number and perform addition operation.</li>
+            <li>    After adding convert it to the hexadecimal number.</li>
+            <li>     Write the carry on the top of first number's next digit and sum on the bottom of second number's added digit.</li>
+                <li>Continue the process until you are left with nothing on the left side.</li>
+            </ul>
+            <p><strong>Example Question: 3F8 + 5B3 = ?</strong></p>
+            <p><strong>Solution:</strong></p>
+            <p>&nbsp&nbsp&nbsp  1</p>
+                <p>&nbsp&nbsp3 F 8</p>
+                    <p>+ 5 B 3</p>
+                        <p>= 9 A B</p>
+                            <p>8+3 = 11 which is B in hexadecimal</p>
+                                <p>3F8 + 5B3 = 9 A B</p>
+<p><strong>2. Subtraction of Hexadecimal Numbers</strong></p>
+<ul>
+    <li>Write the given two numbers in different lines one after other.</li>
+        <li>   Start the subtraction process from the rightmost digits of the numbers.</li>
+            <li>    Convert the alphabets into decimal numbers and perform subtraction operation and again convert the obtained decimal number to hex.</li>
+                <li>     If the first number digit is smaller than second number digit, then borrow from the next digit i.e left side digit.</li>
+                    <li>       The borrowed value is 16, because the base is 16 here. Add borrowed value and first number digit and subtract the result from second number digit.</li>
+                        <li>       Mention borrow value on the top of first number digit.</li>
+                            <li>     Now, the next digit of first number will become (digit - 1).</li>
+                                <li>    Repeat the procedure till you are left with nothing on the left side.</li>
+</ul>
+<p><strong>Example Question: 35A - 172 = ?</strong></p>
+<p><strong>Solution:</strong></p>
+<p>&nbsp 2  16</p>
+<p>    &nbsp  3 5 A</p>
+<p> - 1 7 2</p>
+<p> = 1 E 8</p>
+<p> A is 10. So, A-2 = 10-2 = 8</p>
+<p> 5+16 = 21 - 7 = 14 = E</p>
+<p> 3-1 = 2 -1 = 1</p>
+  <p><strong>3. Multiplication of Hexadecimal Numbers</strong></p>
+  <ul>
+      <li>First of all, multiply right most digit of second number with all the digits of first number (one by one).</li>
+      <li>    While multiplying, convert alphabets into numbers and perform the multiplication operation. Again reconvert the result to hexadecimal.</li>
+      <li>     If the multiplication output has two numbers, consider right most number as sum and left number as carry.</li>
+      <li>    Write carry on the top of next digit and add it to the next digit multiplication answer.</li>
+      <li>    Write the answers of the second number second digit below the answers of first digit and place 0 at the first value.</li>
+      <li>    Repeat this till you are left with nothing on the left side.</li>
+      <li>   Perform addition operation of all digits of second number multiplication values to get the final result.</li>
+  </ul>
+  <p><strong>Example Question: What is 4A1C x 53?</strong></p>
+            <p><strong>Solution:</strong></p>
+            <p>&nbsp&nbsp&nbsp  3   3</p>
+            <p>      &nbsp&nbsp  &nbsp 1    2</p>
+            <p>&nbsp 4 A 1 C</p>
+            <p>      &nbsp  x 5 3</p>
+            <p>    &nbsp  D E 5 4</p>
+            <p>   1 7 2 8 C</p>
+            <p>   = 2 5 0 E 0</p>
+              <p>   3 x C = 3 x 12 = 36 = 24</p>
+              <p><strong>4. Division of Hexadecimal Numbers</strong></p>
+              <ul>
+                  <li>Take dividend and divisor values.</li>
+                  <li>     Find out which number when multiplied with divisor gives the exact dividend value or the value near to the dividend.</li>
+                  <li>      Subtract the dividend from the obtained values.</li>
+                  <li>      Write quotient as the output.</li>
+              </ul>
+            <p><strong>Example Question: Find FACE / 12?</strong></p>
+            <p><strong>Solution:</strong></p>
+            <p>Dividend = FACE</p>
+                <p>      Divisor = 12</p>
+                <p>      12) F A C E ( D E F</p>
+                <p>     &nbsp&nbsp       - E A</p>
+              <p>           &nbsp&nbsp&nbsp &nbsp        1 0 C</p>
+                     <p>               &nbsp&nbsp&nbsp&nbsp&nbsp       F C</p>
+                       <p>                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       1 0 E</p>
+                           <p>                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       1 0 E</p>
+                            <p>                    &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp              0</p>
+                             <p>     Quotient = D E F</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+        <h3 class="h3">Steps to Convert Decimal Number to Hexadecimal Number</h3>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Divide the given decimal number by 16 and note down the remainder and quotient.</li>
+<li>Add the obtained quotient again by 16 till we get quotient zero or less than 16.</li>
+<li>Write the last quotient and remainders from top to bottom to get the hexadecimal conversion.</li>
+            </ul>
+            <p><strong>Example Question: Convert 2482 to hexadecimal form?</strong></p>
+            <p><strong>Solution:</strong></p>
+            <p>Given decimal number = 2482</p>
+            <p>      1 6 ) 2 4 8 2 ( 1 5 5</p>
+            <p>      &nbsp&nbsp&nbsp       1 6</p>
+            <p>              &nbsp&nbsp&nbsp &nbsp        8 8</p>
+            <p>                &nbsp&nbsp&nbsp &nbsp   8 0</p>
+            <p>                &nbsp&nbsp&nbsp &nbsp  &nbsp&nbsp                8 2</p>
+            <p>                    &nbsp&nbsp&nbsp &nbsp&nbsp  &nbsp&nbsp                  8 0</p>
+            <p> &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp                         2</p>
+            <p>      Again divide 155 by 16</p>
+            <p>      1 6 ) 1 5 5 ( 9</p>
+            <p>     &nbsp&nbsp&nbsp &nbsp    1 4 4</p>
+            <p>              &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp     1 1</p>
+            <p>                  (2 4 8 2)<sub>10</sub> = (9 11 2)<sub>16</sub></p>
+                            <p>You can get the information regarding decimal numbers arithmetical operations on our site <a href="https://onlinecalculator.guru/">Onlinecalculator.guru</a> that has different math concepts calculators at one page.</p>
+                            <img src="{% static 'images/Numbers/Hex-Calculator.jpeg' %}" alt='Hex Calculator'>
+            </div>
+    </div>
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">Frequently Asked Questions on Hex calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. Why is hex used?</strong></p>
+     	<p class="answer">Hex or hexadecimal is a base 16 system used to simplify how binary is represented. Each hex digit reflects a 4 bit binary sequence. This means you can easily write 8 bit binary numbers using only two different hex digits.</p><hr>
+     	<p class="question"><strong>2. What is Meant by Hexadecimal Number?</strong></p>
+     	<p class="answer">The hexadecimal number system is called base 16 number system. It uses the decimal numbers from 0 to 9 along with 6 symbols. They are A, B, C, d, E, F.</p><hr>  
+        <p class="question"><strong>3. How do yo convert 23E to decimal?</strong></p>
+        <p class="answer">Get the decimal form of E. And multiply the right most digit to 16<sup>0</sup>, next digit to 16<sup>1</sup> so on.</p>
+        <p>    E = 14</p>
+        <p>     2 3 E = 2 x 16<sup>2</sup> + 3 x 16<sup>1</sup> + 14 x 16<sup>0</sup></p>
+        <p>      = 2 x 256 + 48 + 14</p>
+        <p>     = 512 + 62 = 574</p>
+        <p>      (23E)<sub>16</sub> = (574)<sub>10</sub></p><hr>
+        <p class="question"><strong>4. How to perform the arithmetic operation on hexadecimal numbers?</strong></p>
+     	<p class="answer">You just need to enter two hex numbers in the input and hit the calculate button to get the addition, subtraction, multiplication, and division of those  numbers in hexadecimal form easily.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,232 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding Fractions to the Nearest Half Calculator | Rounding Calculator</title>
+<meta name="description"
+  content="Rounding Fractions to the Nearest Half Calculator rounds the fractions to nearest half & gives answer. Enter fraction to get fraction rounded to nearest half." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding Fractions to the Nearest Half Calculator | Rounding Calculator" />
+<meta property="og:description"
+  content="Rounding Fractions to the Nearest Half Calculator rounds the fractions to nearest half & gives answer. Enter fraction to get fraction rounded to nearest half." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding Fractions to the Nearest Half Calculator | Rounding Calculator" />
+<meta name="twitter:description"
+  content="Rounding Fractions to the Nearest Half Calculator rounds the fractions to nearest half & gives answer. Enter fraction to get fraction rounded to nearest half." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding Fractions to the Nearest Half Calculator | Rounding Calculator" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" />
+<meta property='og:description'
+  content="Rounding Fractions to the Nearest Half Calculator rounds the fractions to nearest half & gives answer. Enter fraction to get fraction rounded to nearest half." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is round half up?
+        ","acceptedAnswer": {"@type": "Answer","text":" Rounding up means adding 1 to the rounding digit and placing the numbers right to the rounding digits as zeros. The common method of rounding is to make 0.5 go up."}	}, {"@type": "Question","name":"2.
+        How do you round a fraction to the nearest half?
+        ","acceptedAnswer": {"@type": "Answer","text":" When rounding to the nearest half, round the fraction to whichever half the fraction is closest number. When a fraction is close to two different halves, then round fraction up."}	}, {"@type": "Question","name":"3.
+        Is 1/2 rounded up or down?
+        ","acceptedAnswer": {"@type": "Answer","text":" We already know that 1/2 = 0.5. So the fraction 1/2 is rounded up."}	}, {"@type": "Question","name":"4.
+        How to use Round Fractions to the Nearest Half Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" The simple process is to provide the fraction as input and press the calculate button to get the rounded half as answer in a fraction of seconds with explanation."}	}]}</script>
+
+{% endblock %}
+
+{% block content %}
+
+
+{% if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding Fractions To the Nearest Half Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Simply take the advantage of our handy Rounding Fractions to the Nearest Half Calculator to round off the given
+        fraction to the nearest half. Just enter your input such as fraction and click on the calculate button to get
+        the answer in a fraction of seconds.</p>
+
+
+      <ul class="messages">
+        <p id="error" class="alert alert-danger text-center" style="color:red;display:none">Value should not be zero</p>
+      </ul>
+      <div class="box">
+        <p id="error">
+          {% if error %}
+          <center><em><b>!! Incorrect values !! Please enter correct values !! Denominator can't be 0</b></em></center>
+          <br>
+          {% endif %}
+        </p>
+        <form method="POST">
+          {% csrf_token %}
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+                
+
+                <input type="number" id="inlineFormInputGroup" required="" placeholder="Enter value to be rounded"
+                  maxlength="100" class="form-control" name="nr" {% if nr %} value="{{nr}}" {% else %} value="8" {%
+                  endif %} style="height:50px;width: 180px; text-align:center; font-size:22pt; outline:none">
+
+                <hr style="height:2px;border:none;color:#4285f4;background-color:#4285f4; " width="190px">
+
+                
+
+                <input type="number" id="inlineFormInputGroup" required="" placeholder="Enter value to be rounded"
+                  maxlength="100" class="form-control" name="dr" {% if dr %} value="{{dr}}" {% else %} value="5" {%
+                  endif %} style="height:50px;width: 180px; text-align:center; font-size:22pt; outline:none">
+              </center>
+            </div>
+          </div>
+
+          <div class="col-auto mt-2 ml-3">
+            <center><button type="submit" class="btn btn-primary" name="f1">Round</button>
+              <button type="button" onclick="myFunction()" style="margin-top:8px;" class="btn btn-danger">Reset</button>
+            </center>
+          </div>
+        </form>
+      </div>
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+
+        <li><a href="/rounding-fractions-to-the-nearest-hundredth-calculator/">Round fraction to the Nearest Hundredth Calculator</a></li>
+                <li><a href="/rounding-fractions-to-decimals-calculator/">Round fraction to Decimals Calculator</a></li>
+                <!-- <li><a href="/rounding-fractions-to-the-nearest-half-calculator/">Round fraction to the Nearest Half Calculator</a></li> -->
+                <li><a href="/rounding-fractions-to-the-nearest-tenth-calculator/">Round fraction to the Nearest Tenth Calculator</a></li>
+      </ul>
+      <p><strong>Round off Fractions To the Nearest Half Calculator: </strong>It is one of the simplest ways to round a
+        fraction to the nearest half quickly. This free tool is useful to make your calculations faster and save
+        valuable time in solving the questions. Check the exact solution in addition to the detailed process of
+        calculating rounding fractions to the nearest half. You can check the solved examples in the following sections.
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">Process to Rounding Fractions To the Nearest Half</h2>
+    </div>
+    <div class="card-body">
+      <p>The following step by step process is useful to round fractions to the nearest half.</p>
+      <ul>
+        <li> Let us take any fraction and divide the numerator value by denominator.</li>
+        <li>Now you will get a decimal number.</li>
+        <li>Use rounding rules to round to fraction to the nearest half.</li>
+      </ul>
+      <p><strong>Example</strong></p>
+      <p>Question: What is 68/5 is rounded to the nearest half?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given fraction is 68/5</p>
+      <p> 68/5 = 13.6</p>
+      <p> The number right of the decimal point is .6 which is greater than .5. So, add 1 to the left of the decimal
+        point and remove decimal part.</p>
+      <p> 13 + 1 = 14</p>
+      <p> Therefore, the rounded 68/5 to the nearest half is 14.</p>
+      <p>Get instant help with mathematical concepts that you feel complex and never seemed to understand with crystal
+        clear explanation all under one page at <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a>.
+      </p>
+      <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Cent.jpeg' %}" alt='Round to the Nearest Cent'> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Frequently Asked Question's on Rounding Fractions</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong> 1. What is round half up?</strong></p>
+      <p class="answer">Rounding up means adding 1 to the rounding digit and placing the numbers right to the rounding
+        digits as zeros. The common method of rounding is to make 0.5 go up.</p>
+      <hr>
+      <p class="question"><strong>2. How do you round a fraction to the nearest half?</strong></p>
+      <p class="answer">When rounding to the nearest half, round the fraction to whichever half the fraction is closest
+        number. When a fraction is close to two different halves, then round fraction up.</p>
+      <hr>
+      <p class="question"><strong>3. Is 1/2 rounded up or down?</strong></p>
+      <p class="answer">We already know that 1/2 = 0.5. So the fraction 1/2 is rounded up.</p>
+      <hr>
+      <p class="question"><strong>4. How to use Round Fractions to the Nearest Half Calculator?</strong></p>
+      <p class="answer">The simple process is to provide the fraction as input and press the calculate button to get the
+        rounded half as answer in a fraction of seconds with explanation.</p>
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function myFunction() {
+    {% if error %}
+    document.getElementById("error").innerHTML = "";
+    {% endif %}
+    document.getElementsByName("nr")[0].value = "";
+    document.getElementsByName("dr")[0].value = "";
+    document.getElementById("clear").innerHTML = "";
+
+  }
+</script>
+
+
+{% endblock %}

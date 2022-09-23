@@ -1,0 +1,312 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Rounding Decimals Calculator | Check How to Round Off Decimal Number</title>
+    <meta name="description" content="Free Online Rounding Decimals Calculator that rounds the nearest whole number, tens, hundreds, thousand, ten thousand,.. with show work easily"/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Rounding Decimals Calculator | Check How to Round Off Decimal Number"/>
+        <meta property="og:description" content="Free Online Rounding Decimals Calculator that rounds the nearest whole number, tens, hundreds, thousand, ten thousand,.. with show work easily"/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Rounding Decimals Calculator | Check How to Round Off Decimal Number"/>
+        <meta name="twitter:description" content="Free Online Rounding Decimals Calculator that rounds the nearest whole number, tens, hundreds, thousand, ten thousand,.. with show work easily"/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Rounding Decimals Calculator | Check How to Round Off Decimal Number"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg"/>
+        <meta property='og:description' content="Free Online Rounding Decimals Calculator that rounds the nearest whole number, tens, hundreds, thousand, ten thousand,.. with show work easily"/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What are the basic rules in rounding off decimals?
+        ","acceptedAnswer": {"@type": "Answer","text":"If the number you are rounding is followed by 0, 1, 2, 3, or 4, round the number down.
+        If the number you are rounding is followed by 5, 6, 7, 8, or 9, round the number up."}	}, {"@type": "Question","name":"2. 
+        How do you round decimal answers?
+        ","acceptedAnswer": {"@type": "Answer","text":"<a href="https://www.youtube.com/watch?v=3MyIg9fxUQI">https://www.youtube.com/watch?v=3MyIg9fxUQI</a>"}	}, {"@type": "Question","name":"3. 
+        Should 0.5 be rounded up or down?
+        ","acceptedAnswer": {"@type": "Answer","text":" If the number is 0.5 then it should be rounded up. If other numbers (not end with 0.5) need to round to nearest ones or round even."}	}, {"@type": "Question","name":"4. 
+        How do you round decimals to the nearest whole number?
+        ","acceptedAnswer": {"@type": "Answer","text":" <img src="{% static 'images/Rounding/Rounding off decimal to nearest whole number.png' %}" alt='Rounding off decimal to nearest whole number'>"} }, {"@type": "Question","name":"5.
+        How do you round decimals on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"Visit the roundingcalculator.guru providing rounding decimals calculator and enter the input decimal in the given box. Now, select the respective option from dropdown list and tap on the calculate button. It displays the result of rounding decimals with steps in a fraction of seconds."}	}]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Rounding Decimals Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>One such quick and handy online tool that rounds off the given decimals to the nearest whole number, tens, hundreds, thousands, ten-thousand, one-tenth, one-hundredth, etc in a fraction of seconds. Enter your decimal number in the input box and click on the calculate button to avail the output with steps.</p>
+                <div class="box">
+                    <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="4232.169" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                          <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                          <optgroup label="Whole Number Places">
+                              <option value="-9" >Billions</option>
+                              <option value="-8" >Hundred Millions</option>
+                              <option value="-7" >Ten Millions</option>
+                              <option value="-6" >Millions</option>
+                              <option value="-5" >Hundred Thousands</option>
+                              <option value="-4" >Ten Thousands</option>
+                              <option value="-3" >Thousands</option>
+                              <option value="-2" >Hundreds</option>
+                              <option value="-1" >Tens</option>
+                              <option value="0" >Ones</option>
+                          </optgroup>
+                          <optgroup label="Decimal Places">
+                              <option value="1" >Tenths (1)</option>
+                              <option value="2" selected>Hundredths (2)</option>
+                              <option value="3" >Thousandths (3)</option>
+                              <option value="4" >Ten Thousandths (4)</option>
+                              <option value="5" >Hundred Thousandths (5)</option>
+                              <option value="6" >Millionths (6)</option>
+                              <option value="7" >Ten Millionths (7)</option>
+                              <option value="8" >Hundred Millionths (8)</option>
+                              <option value="9" >Billionths (9)</option>
+                          </optgroup>
+                      </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                        <li><a href="rounding-decimals-to-the-nearest-tenths/">Rounding Decimals to the Nearest Tenths</a></li>
+                                        <li><a href="rounding-decimals-to-the-nearest-thousandths/">Rounding Decimals to the Nearest Thousandths</a></li>
+                                        <!-- <li><a href="rounding-decimals/">Rounding Decimals</a></li>
+                                        <li><a href="rounding-calculator/">Rounding Calculator</a></li> -->
+                                        
+                                      </ul>
+                <p><strong>Rounding Decimals Calculator:</strong> Are you confused to solve the rounding off decimal numbers to nearest whole numbers then make use of this new &amp; advanced Rounding off decimals calculator tool. Once you get used to this rounding decimals calculator then make your complicated calculations much easier and faster. Moreover, you can learn what is rounding decimals and how to round off decimal numbers manually or using a free online calculator from here. Just dive into these further modules and practice more with our handy rounding decimals online calculator.</p>
+             </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+                <h2 class="h2">What is Meant by Rounding Decimals in Maths?</h2>
+            </div>
+          <div class="card-body">
+            <p>In Maths, Rounding decimals outline the method of rounding a decimal number to a certain degree of precision. We may round decimals to the nearest whole number or nearest tenths, nearest hundredth, and so on.</p>
+            <p>Whenever you round off the decimal number, take the next digit in the right place. If the digit value is greater than 5, then round up and if the digit is less than 5, round down.</p>
+            <p>For Example, round off the decimal number 11.345 to the nearest whole number. Here, consider the tenth place value which is 3. The value is less than 5, so the result of the given decimal 11.345 is 11. If the given decimal is 11.647, then the result of rounding decimals is 12 because the value in tenths place ie., 6 is greater than 5.</p>
+            
+    </div>
+    </div>     
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Round Off Decimals Numbers Manually?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Look at the instructions listed below to round decimals to the nearest whole numbers, tenths, hundredths with examples. Make use of them while preparing the concept and do complicated problems so easily.</p>
+            <h3>How to Round Off Decimals to Nearest Whole Number?</h3>
+            <ol>
+            <li>Initially, you need to check the tenths place value in the given decimal.</li>
+            <li>In case, it is equal to 5 or more than 5 then raise the whole number's one's place by 1 and eliminate the decimal point and the digits after it.</li>
+            <li>If it is equal to 4 or less than 5, then just eliminate all the digits along with the decimal separator.</li>
+            </ol>
+            <p><strong>Example:</strong></p>
+            <p>Round off 456.89 to the nearest whole number.</p>
+            <p><strong>Solution:</strong></p>
+            <p>The value in tenths place is greater than 5 ie., 8 and in one's place is 6.</p>
+            <p>Now, add 1 unit to the one's digit ie. 456.89 to 457.89 and remove the decimals points.</p>
+            <p>Therefore, the round off 456.89 to nearest whole number is <strong>457</strong></p>
+            <h3>How to Rounding Off a Decimal Number to Tenths?</h3>
+            <ol>
+            <li>Firstly, look at the given decimal and then verify the hundredths place value.</li>
+            <li>If the value in hundredths digit is less than 5 then round down the number to tenths place.</li>
+            <li>If the digit is greater than 5 then round up the number to the nearest tenths.</li>
+            </ol>
+            <p><strong>Example:</strong></p>
+            <p>Round off 57.33 to the nearest tenths.</p>
+            <p><strong>Solution:</strong></p>
+            <table border="1">
+            <tbody>
+            <tr>
+            <td>
+            <p><strong>Step Number</strong></p>
+            </td>
+            <td>
+            <p><strong>Observation</strong></p>
+            </td>
+            <td>
+            <p><strong>Working Out</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Step 1</p>
+            </td>
+            <td>
+            <p>57.33</p>
+            </td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>
+            <p>Step 2</p>
+            </td>
+            <td>
+            <p>We get 3 in the tenths column.</p>
+            </td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>
+            <p>Step 3</p>
+            </td>
+            <td>
+            <p>We get 3 in the hundredths place (right of 3)</p>
+            </td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>
+            <p>Step 4</p>
+            </td>
+            <td>
+            <p>We get 3 in Step 3.</p>
+            </td>
+            <td>
+            <p>Round-Down</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Step 5</p>
+            </td>
+            <td>
+            <p>57.3</p>
+            </td>
+            <td>
+            <p>We keep 3 as it is, and remove all the digits from the right of the tenths column.</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <h3>Steps to Rounding Decimal to the Nearest Hundredths&nbsp;</h3>
+            <p>The values that should be addressed to two places after decimal separator is said to be as Rounding off to the nearest hundredths. Follow the steps and find the round off decimal to nearest hundredths:</p>
+            <ol>
+            <li>First, we consider the number that we need to round and then look for the digit in the hundredths place to round off to nearest hundredths.</li>
+            <li>Now, check the digit to the right of the hundredths column ie., thousandths place.
+            <ul>
+            <li>(i) If the digit in the thousandths place is 0, 1, 2, 3 or 4, we will round down the hundredths place to the nearest hundredths.</li>
+            <li>(ii) If the digit in the thousandths column is 5, 6, 7, 8 or 9, we will round up the hundredths place to the nearest hundredths.</li>
+            </ul>
+            </li>
+            <li>Eliminate all the digits to the right of the hundredths place for the exact result.</li>
+            </ol>
+            <p><strong>Example:</strong></p>
+            <p>Rounding Off Decimal Number 4.762</p>
+            <p><strong>Solution:</strong></p>
+            <p>Consider the number 4.762 and round off to nearest hundredth</p>
+            <p>Here, 6 is followed by 2 and 2 is less than 5.</p>
+            <p>Hence, 4.762 rounded to nearest hundredth is 4.75</p>
+        </div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Free &amp; Handy Round Decimals Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What are the basic rules in rounding off decimals?</strong></p>
+     	<p class="answer"><ul>
+        <li>If the number you are rounding is followed by 0, 1, 2, 3, or 4, round the number down.</li>
+        <li>If the number you are rounding is followed by 5, 6, 7, 8, or 9, round the number up.</li>
+        </ul></p><hr>
+     	<p class="question"><strong>2. How do you round decimal answers?</strong></p>
+     	<p class="answer"><a href="https://www.youtube.com/watch?v=3MyIg9fxUQI">https://www.youtube.com/watch?v=3MyIg9fxUQI</a></p><hr>  
+        <p class="question"><strong>3. Should 0.5 be rounded up or down?</strong></p>
+        <p class="answer">If the number is 0.5 then it should be rounded up. If other numbers (not end with 0.5) need to round to nearest ones or round even.</p><hr>
+        <p class="question"><strong>4. What is 0.845 Rounded to the Nearest Hundredths?</strong></p>
+     	<!-- <p class="answer"><img src="{% static 'images/Rounding/Rounding off decimal to nearest whole number.png' %}" alt='Rounding off decimal to nearest whole number'></p><hr> -->
+       <hr>
+       <p class="question"><strong>5. How do you round decimals on a calculator?</strong></p>
+       <p class="answer">Visit the <a href="https://roundingcalculator.guru/">roundingcalculator.guru</a> providing rounding decimals calculator and enter the input decimal in the given box. Now, select the respective option from dropdown list and tap on the calculate button. It displays the result of rounding decimals with steps in a fraction of seconds.</p><hr>
+    </div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,412 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{% static 'images/logo/Online-Calculator-Guru-Fevicon.png' %}" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Factoring Calculator to find factors of a number | Factorization Procedure</title>
+    <meta name="description" content="Factoring Calculator determines the factors of given number easily and saves you plenty of time. Learn the method of factorization explained step by step.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Factoring Calculator to find factors of a number | Factorization Procedure"/>
+    <meta property="og:description" content="Factoring Calculator determines the factors of given number easily and saves you plenty of time. Learn the method of factorization explained step by step."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Factoring-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Factoring Calculator to find factors of a number | Factorization Procedure"/>
+    <meta name="twitter:description" content="Factoring Calculator determines the factors of given number easily and saves you plenty of time. Learn the method of factorization explained step by step."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Factoring-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Factoring Calculator to find factors of a number | Factorization Procedure"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Factoring-Calculator.jpeg"/>
+    <meta property='og:description' content="Factoring Calculator determines the factors of given number easily and saves you plenty of time. Learn the method of factorization explained step by step."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is meant by factoring?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The process of splitting the numbers into its factors is called factoring of numbers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the Factors of a number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Factors are the numbers you multiply together to get another number."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do I get Procedure for Factorization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will find the Procedure for Factorization explained pin to pin on our page. Make use of it to have a better grip on the concept of Factorization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the factors of 48?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Factors of 48 are 1,2,3,4,6,8,12,16,24,48. All these numbers evenly divide the number 48 and leave no remainder."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Factoring Calculator</h1>
+  </div>
+  <div class="card-body">
+    <p>Make use of the online tool Factoring Calculator during your calculations as it gives the factors for given inputs in a fraction of second. Simply provide the input in the input field provision and hit on the enter button to get the result.</p>
+    <br>
+    <p><b>Ex:</b> 3844 or 5680 or 9240</p>
+    <form action="{% url 'factoring' %}" method="POST" id="my_form" name="reg_to_scientific" onsubmit="go();">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Factors</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Factors of: </strong></div>
+          </div>
+          <input type="number"  min="1" max="9999999999" class="form-control" name="input1" id="inlineFormInputGroup" placeholder="Enter number" value="{{inputEnter}}">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+      </div>
+    </div>
+    </form>
+    {% autoescape off %}
+    {{error}}
+    {%endautoescape%}
+    <br>
+    <p><strong>Here are some samples of Factoring calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/factors-of-69/" title=''>
+            Factors of 69
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-70/" title=''>
+            Factors of 70
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-38/" title=''>
+            Factors of 38
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-72/" title=''>
+            Factors of 72
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-60/" title=''>
+            Factors of 60
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-58/" title=''>
+            Factors of 58
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-18/" title=''>
+            Factors of 18
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-98/" title=''>
+            Factors of 98
+            </a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/factors-of-66/" title=''>
+            Factors of 66
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-23/" title=''>
+            Factors of 23
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-76/" title=''>
+            Factors of 76
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-31/" title=''>
+            Factors of 31
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-74/" title=''>
+            Factors of 74
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-80/" title=''>
+            Factors of 80
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-65/" title=''>
+            Factors of 65
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-17/" title=''>
+            Factors of 17
+            </a></li>
+        
+        </ul>             
+      </div>
+      <div class="col-sm-4">
+      <ul>
+       
+          
+          <li><a  href="/lcmgcf/factors-of-319/" title=''>
+            Factors of 319
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-959/" title=''>
+            Factors of 959
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-200/" title=''>
+            Factors of 200
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-823/" title=''>
+            Factors of 823
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-922/" title=''>
+            Factors of 922
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-923/" title=''>
+            Factors of 923
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-589/" title=''>
+            Factors of 589
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-275/" title=''>
+            Factors of 275
+            </a></li>
+        
+      </ul>			
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/factors-of-6001/" title=''>
+            Factors of 6001
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-7408/" title=''>
+            Factors of 7408
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-8623/" title=''>
+            Factors of 8623
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-5333/" title=''>
+            Factors of 5333
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-4933/" title=''>
+            Factors of 4933
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-6499/" title=''>
+            Factors of 6499
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-6181/" title=''>
+            Factors of 6181
+            </a></li>
+          
+          <li><a  href="/lcmgcf/factors-of-3797/" title=''>
+            Factors of 3797
+            </a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/factors-of-27767/" title=''>
+            Factors of 27767
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-92345/" title=''>
+            Factors of 92345
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-92591/" title=''>
+            Factors of 92591
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-54965/" title=''>
+            Factors of 54965
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-99192/" title=''>
+            Factors of 99192
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-44265/" title=''>
+            Factors of 44265
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-77610/" title=''>
+            Factors of 77610
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-18969/" title=''>
+            Factors of 18969
+            </a></li>
+        
+        </ul>             
+      </div>
+      <div class="col-sm-4">
+      <ul>
+          
+          <li><a  href="/lcmgcf/factors-of-774268/" title=''>
+            Factors of 774268
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-460940/" title=''>
+            Factors of 460940
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-895718/" title=''>
+            Factors of 895718
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-187642/" title=''>
+            Factors of 187642
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-807953/" title=''>
+            Factors of 807953
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-103238/" title=''>
+            Factors of 103238
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-534548/" title=''>
+            Factors of 534548
+            </a></li>
+        
+          <li><a  href="/lcmgcf/factors-of-944006/" title=''>
+            Factors of 944006
+            </a></li>
+        
+        </ul>
+      </div>
+    </div>
+    <p><strong>Factoring Calculator:</strong>If you aren't sure about how to find Factors of a number you might be looking for some help? Factoring Calculator over here will help you find the factors of a number within less time. Take the help of this handy tool and determine the factors easily instead of struggling to find them everywhere. For your convenience, we even listed on details like what is factoring and how to find factors of a given number with step by step procedure.</p>
+</div></div></div>
+<div class="container">
+  <div class="card">
+    <div class="card-header"><h2 class="h2">What is Factoring?</h2></div>
+    <div class="card-body">
+      <p>Factoring of a number or factorization of a number is the process of breaking numbers which when multiplied together results in the original number. The process of splitting the numbers into its factors is called factoring of numbers. Factors are whole numbers that when multiplied together produce another number. If a x b = c then a, b are the factors of c. When you think of factors in the division, factors of a number include the numbers that evenly divide the given number leaving no remainder.</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-header"><h3 class="h3">How to find Factors?</h3></div>
+    <div class="card-body">
+      <p>Follow the simple guidelines to find the Factors of a Number and they are along the lines</p>
+      <ul>
+        <li>Find the square root of the integer number n and round to the closest whole number say it s.</li>
+        <li>Begin with 1 and find the corresponding factor pair n ÷ 1 = n so 1 an n is factor pairs as the division results in a whole number and leaves remainder zero.</li>
+        <li>Continue the same and test all the integers up through the square root rounded to s. Record the factor pairs in which division results in the whole number and remainder as zero.</li>
+        <li>By the time you reach n ÷ s, you must have noted all the factor pairs that successfully factored the number n.</li>
+      </ul>
+      <p>Whether it is an Improper Fraction or Mixed Number, Percentage or Cross Product, Area or Perimeter of any figure, you can calculate with the free tools provided at <a href="{%url 'home'%}">onlinecalculator.guru</a></p>
+      <img src="{% static 'images/Numbers/Factoring-Calculator.jpeg' %}" alt='Factoring Calculator'>
+    </div>
+  </div>
+</div>
+<div class=" container faq ">
+  <div class="card">
+      <div class="card-header">
+          <h3 class="h3">FAQs on Factoring Calculator</h3>
+      </div>
+      <div class="card-body">
+          <!-- Question & Answer Starts --->
+         <p class="question"><strong>1. What is meant by factoring?</strong></p>
+         <p class="answer">The process of splitting the numbers into its factors is called factoring of numbers.</p><hr>
+
+
+         <p class="question"><strong>2. What are the Factors of a number?</strong></p>
+         <p class="answer">Factors are the numbers you multiply together to get another number.</p><hr>
+
+
+         <p class="question"><strong>3. Where do I get Procedure for Factorization?</strong></p>
+         <p class="answer">You will find the Procedure for Factorization explained pin to pin on our page. Make use of it to have a better grip on the concept of Factorization.</p><hr>
+
+
+         <p class="question"><strong>4. What are the factors of 48?</strong></p>
+         <p class="answer">Factors of 48 are 1,2,3,4,6,8,12,16,24,48. All these numbers evenly divide the number 48 and leave no remainder.</p>
+      </div>
+   </div>
+</div>
+<!-- <div class="container">
+  <div class="card c1">
+    <div class="card-header"><h2>More Examples</h2></div>
+    <div class="card-body">
+      {%for post1 in post%}
+      <li><a href="{% url 'factoring-detail' post1.slug %}">{{post1.solutionTitle}}</a></li>
+      {%endfor%}
+    </div>
+  </div>
+</div> -->
+{%endblock%}

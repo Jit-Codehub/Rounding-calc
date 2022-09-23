@@ -1,0 +1,189 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Random Number Generator | Procedure to generate Random Numbers</title>
+    <meta name="description" content="Random Number Generator provides the random numbers for the maximum and minimum you entered. Check What are Random Numbers & how to generate Random Numbers."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Random Number Generator | Procedure to generate Random Numbers"/>
+        <meta property="og:description" content="Random Number Generator provides the random numbers for the maximum and minimum you entered. Check What are Random Numbers & how to generate Random Numbers."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Random-Number-Generator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Random Number Generator | Procedure to generate Random Numbers"/>
+        <meta name="twitter:description" content="Random Number Generator provides the random numbers for the maximum and minimum you entered. Check What are Random Numbers & how to generate Random Numbers."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Random-Number-Generator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Random Number Generator | Procedure to generate Random Numbers"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Random-Number-Generator.jpeg"/>
+        <meta property='og:description' content="Random Number Generator provides the random numbers for the maximum and minimum you entered. Check What are Random Numbers & how to generate Random Numbers."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What are Random Numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":" Random Numbers are a set of numbers arranged in Random Order."}	}, {"@type": "Question","name":"2. 
+        How to use Random Number Generator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Simply enter the maximum and minimum of the range and number of numbers you want to generate and click on the calculate button to get the Random Numbers."}	}, {"@type": "Question","name":"3. 
+        Where do I get step by step procedure to generate Random Numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get step by step procedure to generate Random Numbers on our page."}	}, {"@type": "Question","name":"4. 
+        Which website offers the Best Random Number Generator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Onlinecalculator.guru is a trusted portal where you can get the Best Random Number Generator."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Random Number Generator</h1>
+            </div>
+            <div class="card-body">
+                <p>Make use of the handy Random Number Generator over here to get one or more random numbers within a range you define. Enter the Maximum and Minimum of the range you want and also the number of numbers you want to generate. </p>
+                <div style="text-align: center;"><h5><strong>Random Numbers Generator</strong></h5></div>
+                <div class="box">
+                    <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Minimum Range:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="8" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                    <div class="cell">
+                        <label for="input2">Maximum Range:</label>
+                    </div>
+                  </div>
+                  <div class="row mx-auto my-auto">
+                    <div class="cell">
+                      {%if input2%}
+                        <input name="input2" id="input2" value="{{input2}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                      {%else%}
+                        <input name="input2" id="input2" value="67" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                      {%endif%}
+                    </div>
+                  </div>
+                  <div class="row mx-auto my-auto">
+                    <div class="cell">
+                        <label for="input3">Generate Numbers:</label>
+                    </div>
+                  </div>
+                  <div class="row mx-auto my-auto">
+                    <div class="cell">
+                      {%if input3%}
+                        <input name="input3" id="input3" value="{{input3}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                      {%else%}
+                        <input name="input3" id="input3" value="5" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                      {%endif%}
+                    </div>
+                  </div>
+                  <hr>
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                        <li><a href="/numbers/number-to-word-converter/">Number to Word Converter</a></li>
+                                        <li><a href="/numbers/round-to-the-nearest-25-cents/">Round to the Nearest 25 Cents</a></li>
+                                        <li><a href="/numbers/round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+                                        <li><a href="/numbers/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>
+                                      </ul>
+                <p><strong>Random Number Generator: </strong>If you want to Randomize Numbers and don't know how to do so take the help of the online tool. Provide the inputs like maximum and minimum of the range and also the number of numbers and then click on the calculate button to get the output. You can also sort the numbers from Lowest to Highest, Highest to Lowest, or Don't Sort Options available in the tool. Get to know the detailed procedure on how to generate Random Numbers, Solved Examples, etc. in the forthcoming modules. </p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Generate Random Numbers?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Learn all about Random Numbers and how to find them manually from here. </p>
+            <p>A Random Number is a number chosen from a pool of limited or unlimited numbers that have no pattern. The number pool is always independent of each other. However, at times they may follow a specific distribution. You can follow any method of Randomization that you are comfortable with to randomize numbers.</p>
+            <p><strong>Example</strong></p>
+<p>Question : Generate 4 Random Numbers within a range of 12 to 45?</p>
+<p><strong>Solution:</strong></p>
+<p>From given data Min = 12</p>
+<p>Max = 45</p>
+<p>4 Random Numbers within the given range is 38  18  35  15</p>
+<p>The Random Numbers generated follow no particular order and are independent of each other.</p>
+<img src="{% static 'images/Numbers/Random-Number-Generator.jpeg' %}" alt='Random Number Generator'>
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Random Numbers</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What are Random Numbers?</strong></p>
+     	<p class="answer">Random Numbers are a set of numbers arranged in Random Order.</p><hr>
+     	<p class="question"><strong>2. How to use Random Number Generator?</strong></p>
+     	<p class="answer">You can get a detailed procedure on Rounding Decimals to the Nearest Tenths on our page.Simply enter the maximum and minimum of the range and number of numbers you want to generate and click on the calculate button to get the Random Numbers.</p><hr>  
+        <p class="question"><strong>3. Where do I get step by step procedure to generate Random Numbers?</strong></p>
+        <p class="answer">You can get step by step procedure to generate Random Numbers on our page.</p><hr>
+        <p class="question"><strong>4. Which website offers the Best Random Number Generator?</strong></p>
+     	<p class="answer"><a href="https://onlinecalculator.guru/">Onlinecalculator.guru</a> is a trusted portal where you can get the Best Random Number Generator.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

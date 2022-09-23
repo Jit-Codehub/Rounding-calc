@@ -1,0 +1,299 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Time Clock 30 Minutes Rounding Calculator | Steps to Round Time Clock</title>
+<meta name="description"
+    content="Free Time Clock 30 Minutes Rounding Calculator determines the round off of the given time to the nearest 30 minutes quickly. Avail the steps to round time to 30 minutes." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Time Clock 30 Minutes Rounding Calculator | Steps to Round Time Clock" />
+<meta property="og:description"
+    content="Free Time Clock 30 Minutes Rounding Calculator determines the round off of the given time to the nearest 30 minutes quickly. Avail the steps to round time to 30 minutes." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Time Clock 30 Minutes Rounding Calculator | Steps to Round Time Clock" />
+<meta name="twitter:description"
+    content="Free Time Clock 30 Minutes Rounding Calculator determines the round off of the given time to the nearest 30 minutes quickly. Avail the steps to round time to 30 minutes." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Time Clock 30 Minutes Rounding Calculator | Steps to Round Time Clock" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property='og:description'
+    content="Free Time Clock 30 Minutes Rounding Calculator determines the round off of the given time to the nearest 30 minutes quickly. Avail the steps to round time to 30 minutes." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What are the three common time clock rounding rules?
+        ","acceptedAnswer": {"@type": "Answer","text":" The 3 common time clock rounding rules are 15-minute rounding which is 1/4th of an hour, 5-minute rounding and 6-minute rounding which is 1/10th of an hour."}	}, {"@type": "Question","name":"2.
+        What are the rounding options?
+        ","acceptedAnswer": {"@type": "Answer","text":" Three different rounding options are round down, round up and round to the nearest."}	}, {"@type": "Question","name":"3.
+        How do you calculate 30 minute lunch break?
+        ","acceptedAnswer": {"@type": "Answer","text":" If you work for 5 hours in a day, then you need to take at least  30 minutes meal break that must start before the end of the fifth hour of shift."}	}, {"@type": "Question","name":"4.
+        Find 15:17 rounded to the nearest 30 minutes?
+        ","acceptedAnswer": {"@type": "Answer","text":" 15:17 is rounded to the nearest 30 minutes time clock is 15:30."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Time Clock 30 Minutes Rounding Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Time Clock 30 Minutes Rounding Calculator is a handy and free tool that is useful to find the rounding of
+                the given time interval to the nearest 30 minutes or half-hour easily. You just need to provide the time
+                as input to check the rounded time to the closest 30 minutes as output by tapping the blue colour
+                calculate button.</p>
+           
+
+                <div class="box">      
+
+                    <form method="POST" id="my_form" onsubmit="handleSubmit();">
+                      {% csrf_token %}
+                      <div class="row mx-auto my-auto">
+                        <div class="cell">
+                          <label for="input1">Enter Time in HH:MM<br> (24-Hour Format):</label>
+                        </div>
+                      </div>
+            
+            
+                      <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                          <center>
+            
+                            <input type="time"  id="Ib" class="form-control mt-1" name="num1" value = "{{num1}}" placeholder = "00:00" required>
+                        </center>
+                        </div>
+                      </div>
+            
+            
+                      <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                          <center>
+                            <input type="submit" class="btn btn-primary" value="Round" onclick="myFunction()">
+                            <input type="button" class="btn btn-danger" onclick="Clean();ClearFields();" value="Reset"
+                              style="margin-top: 5px;">
+                          </center>
+            
+                        </div>
+                      </div>
+                    </form>
+                    {%if mcas%}
+                            <div class = "container" id = "cards">
+                              <center><p>{{msg}}</p></center>
+                            </div>
+                            {%endif%}
+            
+            
+                  </div>
+
+       
+            <br>
+            <p>Related Calculators:</p> 
+            <ul>
+                <li><a href="/rounding-time-clock-calculator/">Round time clock calculator </a></li>
+                <li><a href="/rounding-time-clock-15-minutes-calculator/">Round time clock 15 minutes calculator </a></li>
+
+            </ul>
+            <p><strong>Time Clock 30 Minutes Rounding Calculator: </strong>If you wanted to know the nearest 30 minutes
+                for a time interval, then you can use this free tool. It produces the rounded time clock value within
+                seconds by taking the required input. Check out the below modules to get clarity on what is rounding of
+                30 minutes time, and what are the steps to be followed to round off the time to the nearest 30 minutes.
+                Also, get the solved problems.</p>
+        </div>
+    </div>
+
+
+
+    {%if cas %}
+	<div id = "cards">
+    <div class="card">
+        <h1 class="card-header" style="background-color:#00BFFF;color: white;">Rounding off {{num1}} to Nearest 30 Minutes</h1>
+        <div class="card-body">
+            <p>Answer = {{final}}</p>
+        </div>
+    </div>
+	</div>
+{% endif%}
+        {%if cas %}
+        <div id = "cards1">
+        <div class="card">
+            <h1 class="card-header" style="background-color:#00BFFF;color: white;">Steps to Round off {{num1}} to Nearest 30 Minutes </h1>
+            <div class="card-body">
+              <p>Rounding to 30 minutes (or 1/2 hour) observes two thresholds that indicate whether the clock-ins and clock-outs are rounded up or down; The first 29 minutes is always rounded down while the second-half 29 minutes are rounded up to a full half of an hour </p>
+              <p>First we converted the given time to 24 hour Format. The given time in 24 Hour Format is {{num1}} </p>
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Minutes After the Hour</th>
+                        <th scope="col">Minute Mark To Round To</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0 – 30</td>
+                        <td>:30 (of the current hour)</td>
+                      </tr>
+                      <tr>
+                        
+                        <td>31 – 59</td>
+                        <td>:60</td>
+                    
+                      </tr>
+                    </tbody>
+                  </table><br>
+                  <p>Here, the minutes is {{min}}. So, according to the table, we round off to the nearest 30th minute</p>
+                  {%if scas%}
+                  <p>Here, in this case, the minute is in the range 31-59. Hence, we round off to next hour and to nearest 30th minute.<br>Hour is {{hour}}</p>
+                  {%endif%}
+                  <h4>Answer = {{final}}</h4>
+                </div>
+                </div>
+                </div>
+        {%endif%}
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What is Rounding Time Clock to 30 Minutes?</h2>
+        </div>
+        <div class="card-body">
+            <p>Time clock rounding to similar to the rounding numbers or decimals. Here you can round the given time to
+                the nearest 30 minutes. If the minutes part of the given number is equal to or above 15, then place 30
+                in the minutes part. When the minutes part of the given number is below 15, then place zero's in the
+                minutes part.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">How to Round Time Clock To 30 Minutes?</h3>
+        </div>
+        <div class="card-body">
+            <p>Get the detailed steps and rules on rounding time clock to the nearest 1/2 hour easily.</p>
+            <ul>
+                <li>Firstly, observe the given time interval.</li>
+                <li>When the number of minutes in the time is between 0 and 15 then replace the minutes by zeros. </li>
+                <li>If the number of minutes in the given time is between 30 and 45, then add 1 to the hours and place
+                    minutes by zero's. </li>
+                <li>If the number of minutes is between 15-30, then replace minutes by 30. </li>
+                <li>When the minutes is between 45-60, then add 1 to the hours and place minutes by zero's.</li>
+                <li>Finally obtained value is the rounded time. </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Rounding Time Clock to Half Hour Examples</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Question 1:</strong> Round 7:17 to the nearest 30 minutes?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given time is 7:17</p>
+            <p>The number of minutes is 17 which is above 15 minutes.</p>
+            <p>So, 7:17 rounded to the nearesy 30 minutes is 7:30.</p>
+            <p><strong>Question 2: </strong>Round 14:48 to the nearest 30 minutes?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given time 14:48</p>
+            <p>The number of minutes is 48 which is between 45-60</p>
+            <p>Thus, 14:48 is rounded to the closest 30 minutes is 15:00.</p>
+            <p>Check <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> website to round the decimal
+                numbers or fractions or mixed fractions or any other numbers esaily.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Time Clock 30 Minutes Rounding Calculator</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            1. What are the three common time clock rounding rules?
+            The 3 common time clock rounding rules are 15-minute rounding which is 1/4th of an hour, 5-minute rounding
+            and 6-minute rounding which is 1/10th of an hour.
+            2. What are the rounding options?
+            Three different rounding options are round down, round up and round to the nearest.
+            3. How do you calculate 30 minute lunch break?
+            If you work for 5 hours in a day, then you need to take at least 30 minutes meal break that must start
+            before the end of the fifth hour of shift.
+            4. Find 15:17 rounded to the nearest 30 minutes?
+            15:17 is rounded to the nearest 30 minutes time clock is 15:30.
+            <p class="question"><strong> 1. What is meant by rounding?</strong></p>
+            <p class="answer">Rounding a number means making it simpler by keeping its original value intact but closer
+                to the next number. Rounding off numbers is done to preserve the significant figures. </p>
+            <hr>
+            <p class="question"><strong>2. What is round half away from zero?</strong></p>
+            <p class="answer">Rounding half away from zero is a tie-breaking rounding method and it is used to round
+                numbers half away from zero. The positive number which has 0.5 are rounded up while the negative numbers
+                are rounded down.</p>
+            <hr>
+            <p class="question"><strong>3. How do you round the number towards zero?</strong></p>
+            <p class="answer">To round a number towards zero, we have to follow these rules. The numbers which have
+                digits from 0 to 4 as rounding digits are rounded down. And the numbers that have rounding digits as 5
+                to 9 are rounded up.</p>
+            <hr>
+            <p class="question"><strong>4. What is 56.5 rounded towards zero?</strong></p>
+            <p class="answer">56.5 rounded towards zero is 57.</p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollDiv = document.getElementById("cards").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+ 
+  </script>
+  <script>
+    function Clean() {
+      document.getElementById('cards').innerHTML = ''
+      document.getElementById('cards1').innerHTML = ''
+    }
+    function handleSubmit(event) {
+      if (!validate()) {
+        event.preventDefault();
+      }
+      return;
+    }
+    function ClearFields() {
+      document.getElementById("Ib").value = "";
+      document.getElementsByName("num1")[0].placeholder = "";
+    }
+  </script>
+
+{%endblock%}

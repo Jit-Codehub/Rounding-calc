@@ -1,0 +1,125 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Three Consecutive Integers have a Sum of {{input}} | How can I find three Consecutive Integers that have a Sum of {{input}}? - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Findwhat three Consecutive Integers have a Sum of {{input}} easily using a Three Consecutive Integers online tool and get wonderful results in just a few seconds ie., {{a}},{{b}},{{c}}">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-13{{a}}72098650589/" property="og:url" />
+<meta property="og:title" content="Three Consecutive Integers have a Sum of {{input}} | How can I find three Consecutive Integers that have a Sum of {{input}}? - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Findwhat three Consecutive Integers have a Sum of {{input}} easily using a Three Consecutive Integers online tool and get wonderful results in just a few seconds ie., {{a}},{{b}},{{c}} " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Three Consecutive Integers have a Sum of {{input}} | How can I find three Consecutive Integers that have a Sum of {{input}}? - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Findwhat three Consecutive Integers have a Sum of {{input}} easily using a Three Consecutive Integers online tool and get wonderful results in just a few seconds ie., {{a}},{{b}},{{c}} " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Three Consecutive Integers have a Sum of {{input}} | How can I find three Consecutive Integers that have a Sum of {{input}}? - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Findwhat three Consecutive Integers have a Sum of {{input}} easily using a Three Consecutive Integers online tool and get wonderful results in just a few seconds ie., {{a}},{{b}},{{c}}" />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">What Three Consecutive Integers have a Sum of {{input}}?</h1>
+    </div>
+    <div class="card-body">
+      <p>The three consecutive integers in mathematics have a never-ending list. Mainly focusing on What Three Consecutive Integers have a Sum of {{input}}? We have curated this detailed steps page. You can avail the desired result ie.,{{a}}, {{b}}, {{c}} in less time by using the Three consecutive integers calculator.</p>
+
+      <form method='POST' action={% url 'sumofInteger' %}>
+        {% csrf_token %}
+      
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" {% if input or input == 0 %} value={{input}} {% else %} value=12 {% endif %} id="sum" step="1" placeholder="Sum of three consecutive numbers equals:" name='sum' required>
+          <label for="floatingInput">Sum of three consecutive numbers equals</label>
+        </div>
+      <button type="submit" class="btn btn-primary">Calculate</button>
+      </form><br>
+
+      
+      {{detailSteps|safe}}
+
+      {% if result %}
+      <h3>FAQs on three Consecutive Integers have a Sum of {{input}}?</h3>
+      <ul>
+      <li><strong>What sum of three consecutive numbers is {{input}}, what is the smallest of these numbers?</strong></li>
+      </ul>
+      <p>The three consecutive terms <strong>{{a}}, {{b}}, and {{c}},</strong> give the sum of {{input}}, and the smallest among them is {{a}}.</p>
+      <ul>
+      <li><strong>Can the sum of three consecutive odd numbers be {{input}}?</strong></li>
+      </ul>
+      <p>There can be no three odd numbers that add up to {{input}}. So, no such phenomenon can happen.</p>
+      <ul>
+      <li><strong>Can the sum of three consecutive even numbers be {{input}}?</strong></li>
+      </ul>
+      <p>The three numbers are <strong>{{a1}},{{b}},{{c1}}</strong> which are consecutive and even in nature and when added give the sum of {{input}}.</p>
+      <ul>
+      <li><strong>Following which equation can I find out the sum of three consecutive numbers to be {{input}}?</strong></li>
+      </ul>
+      <p>The equation can be x + ( x+ 1) + ( x + 2 ) = {{input}}. Solving this equation step by step you can find out the three consecutive integers that sum up {{input}}.</p>
+      {% endif %}
+
+      <h3>Related Calculations</h3>
+      <ul>
+      {% for n in randomList %}
+        <li><a href="/what-three-consecutive-integers-have-a-sum-of-{{n}}/">What three consecutive integers have a sum of {{n}}?</a></li>
+        {% endfor %}
+       
+    </ul>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.{{b}}.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

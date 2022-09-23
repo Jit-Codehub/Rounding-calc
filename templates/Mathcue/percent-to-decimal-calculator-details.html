@@ -1,0 +1,256 @@
+{% extends 'base/numbers_base3.html' %}
+
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Online Calculator Guru Site Fevicon -->
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+    type="icon">
+<!-- Online Calculator Guru Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Meta Title, Description and Canonical URL Starts -->
+<title>Percent to Decimal Calculator | Free Calculator to find Percent to Decimal </title>
+<meta name="description" content="Percent to Decimal  Calculator makes it easy for you to find Percent to Decimal ." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!- Meta Title, Description and Canonical URL ENDS -->
+
+<!- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Percent to Decimal  Calculator | Free Calculator to find Percent to Decimal " />
+<meta property="og:description" content="Percent to Decimal  Calculator" />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Percent to Decimal  Calculator | Free Calculator to find Percent to Decimal " />
+<meta name="twitter:description" content="Percent to Decimal  Calculator" />
+<meta name="twitter:image:src"
+    content="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<title> Percent to Decimal Calculator</title>
+<meta property='og:title' content="Percent to Decimal  Calculatorr | Percent to Decimal " />
+<meta property='og:image' content="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg" />
+<meta property='og:description' content="Percent to Decimal  Calculator." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+
+{%endblock%}
+
+{%block content%}
+
+
+<style>
+    input {
+        text-align: right;
+    }
+</style>
+
+
+<div class="container" style="height: auto !important;">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">What is {{aa}} percent as decimal</h1>
+        </div>
+
+        <div class="card-body">
+
+            <ul class="messages">
+                {% if messages %}
+                <p id="message_container" class="alert alert-danger text-center" style="color:red">{{ message }}</p>
+                {% endif %}
+            </ul>
+
+            <form action="" method="POST" id="my_form">
+                {% csrf_token %}
+                <p>A Decimal is a number that contains both whole number and a part of the fractional number. Learn how
+                    to convert percentage to a decimal number here. Know what is {{aa}} <a href="/percent-to-decimal-calculator/">percent as a decimal</a>? Use
+                    percent to decimal conversions to get the answer for the given problem.</p>
+                <div class="input-group mb-2">
+                    
+                    <input type="number" min="0.0001" step="any" max="9999" oninput="validateNumber(this);"
+                        id="inlineFormInputGroup" required="" placeholder="Enter number" class="form-control" id="aa"
+                        name="aa" {% if aa %} value="{{aa}}" {% else %} value="96" {% endif %}>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="padding: 4px 50px;"><strong> % as a decimal</strong></div>
+                        </div>
+                </div>
+
+         
+                <div class=" center col mt-2 ">
+                    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                        <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                            class="btn btn-danger">Reset</button>
+                    </center>
+                </div>
+
+
+            </form> <br>
+            <h3>Example of percent to decimal calculator </h3>
+            <div class="container">
+                <div class="row">  
+                  
+                  <div class="col">  
+                    <ul>
+                      {% for a in randList1 %}
+                      
+                      <li>
+                        <a href="/{{a}}-percentage-as-a-decimal/">
+                         {{a}} percentage as a decimal
+                        </a>
+                     </li>
+                       {%endfor%} 
+                    </ul>
+                  </div>
+        
+                  </div>
+        
+        
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+    
+
+    <div id="clear">
+
+
+        <div class="card" id="magnetic-Change in temperature">
+            <div class="card-header">
+                <h2 class="h2">{{aa}} % as a decimal is {{x}}</h2>
+            </div>
+
+
+            <div class="card-body">
+                <p>What is {{aa}} percent as a decimal? Get the answer for the question using the percent to decimal
+                    conversion. {{aa}} percent to a decimal is {{x}}</p>
+                <p>The given number is : {{aa}} </p>
+                <p>Divide a percent by 100 and remove the percent sign to convert from a percent to a decimal. Another
+                    way is to move the decimal two places left. </p>
+                <p>The formula to convert percent to decimal is <b>d = p÷ 100</b> </p>
+                
+                <p>Let us convert {{aa}} percent as a decimal number with detailed explanation.
+                   </p>
+                <ol>
+                    <li>First write the percent in the form of fraction.
+                       <br> {{aa}}% = {{aa}}/100</li>  <br>
+                    <li>Now divide {{aa}} by 100 to write in the decimal form.
+                      <br>  {{aa}} ÷ 100 = {{x}}</li>
+                </ol>
+                <p>So, {{aa}}% as a decimal is equal to {{x}}</p>
+              
+            </div>
+
+        </div>
+ 
+        <div class="card" id="magnetic-Change in temperature">
+            <div class="card-header">
+                <h2 class="h2"> Percent as Decimal table</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="column col-sm-3">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="border: 2px solid;">Percent as(%) </th>
+                                    <th style="border: 2px solid;">Decimal</th>
+                                </tr>
+                            </thead>
+                            {% for key,value in dict1.items %}
+                            <tr>  
+                                <td>{{ key }} %</td>                     
+                                <td>{{value}}</td>     
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="column col-sm-3">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="border: 2px solid;">Percent as(%) </th>
+                                    <th style="border: 2px solid;">Decimal</th>
+                                </tr>
+                            </thead>
+                            {% for key,value in dict2.items %}
+                            <tr>  
+                                <td>{{ key }} %</td>                     
+                                <td>{{value}}</td>     
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="column col-sm-3">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="border: 2px solid;">Percent as(%) </th>
+                                    <th style="border: 2px solid;">Decimal</th>
+                                </tr>
+                            </thead>
+                            {% for key,value in dict3.items %}
+                            <tr>  
+                                <td>{{ key }} %</td>                     
+                                <td>{{value}}</td>     
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                  </div>
+              
+            </div>
+
+        </div>
+      <style>
+        .column{
+            margin: 10px;
+           
+        }
+      </style>
+
+
+
+    </div>
+    
+
+   
+
+    <script>
+        function myFunction() {
+            document.getElementById("clear").innerHTML = "";
+            document.getElementsByName("aa")[0].value = "";
+        }
+    </script>
+    <br>
+</div>
+</div>
+
+    {% endblock %}

@@ -1,0 +1,291 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg"
+    type="icon">
+<!-- Online Calculator Guru Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Tens Calculator | How to Round off to Nearest 10?</title>
+<meta name="description"
+  content="Rounding to the nearest tens calculator is a free online tool that rounds up or down to the nearest 10 in a few seconds & provide detail steps " />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Tens Calculator | How to Round off to Nearest 10?" />
+<meta property="og:description"
+  content="Rounding to the nearest tens calculator is a free online tool that rounds up or down to the nearest 10 in a few seconds & provide detail steps " />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-tens.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Tens Calculator | How to Round off to Nearest 10?" />
+<meta name="twitter:description"
+  content="Rounding to the nearest tens calculator is a free online tool that rounds up or down to the nearest 10 in a few seconds & provide detail steps " />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-tens.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Tens Calculator | How to Round off to Nearest 10?" />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-tens.jpeg" />
+<meta property='og:description'
+  content="Rounding to the nearest tens calculator is a free online tool that rounds up or down to the nearest 10 in a few seconds & provide detail steps " />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What is 356 rounded to the nearest ten (10)?
+        ","acceptedAnswer": {"@type": "Answer","text":" Shortly, 356 rounded to the nearest tens is 360."}	}, {"@type": "Question","name":"2. 
+        What is 436 rounded to the nearest tens without a calculator?
+        ","acceptedAnswer": {"To round the 436 to the nearest tens we have to follow the set of rules. Here, the digit to the right (6) is 5 or above. So, we add 1 to the tens place (3). The digit(s) at the right (6) becomes 0, thus we get 440 as the answer"}	}, {"@type": "Question","name":"3. 
+        What is rounding 536 to all nearest places?
+        ","acceptedAnswer": {"@type": "Answer","text":" 536 to the nearest thousands is 0
+        536 to the nearest hundreds is 500
+        536 to the nearest tens is 540
+        536 to the nearest whole number is 536
+        536 to the nearest tenths is 536.0
+        536 to the nearest hundredths is 536.00
+        536 to the nearest thousandths is 536.000"}, {"@type": "Question","name":"4. 
+        How do you round to the nearest 10 with an online calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"Visit roundingcalculator.guru and click on the rounding to the nearest tens calculator. Enter the input value and tap on the calculate button to get the rounded value to the nearest ten in a short time."}	}]}
+    </script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Tens Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Avail free online tool Rounding to the Nearest Tens Calculator and make your complex numbers of rounding easy &
+        quick. Just give your input value in the box and tap on the calculate button to get the output in split
+        seconds.  </p>
+      <div class="box">
+        <form method="POST" onsubmit="return function1()" id="my_form">
+          {% csrf_token %}
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+                <input type="number" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                  class="form-control" maxlength="15" name="firstno" value="{{firstno}}" step="any">
+              </center>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center><button type="submit" class="btn btn-primary" name="f1">Round</button>
+                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                  class="btn btn-danger">Reset</button>
+              </center>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      {% autoescape off %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="row">
+        <div class="col-md-6">
+          <p class="alert alert-danger">{{message}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {%endautoescape%}
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-to-the-nearest-ones-calculator/">Round to the Nearest Ones Calculator</a></li>
+           
+            <li><a href="/rounding-to-the-nearest-hundred-calculator/">Round to the Nearest Hundred Calculator</a></li>
+            <li><a href="/round-to-the-nearest-thousand-calculator/">Round to the Nearest Thousands Calculator</a></li>                        
+            <li><a href="/rounding-to-the-nearest-ten-thousand-calculator/">Round to the Nearest Ten Thousands Calculator</a></li>
+            
+    
+      </ul>
+      <p><strong>Rounding to the Nearest Tens Calculator:</strong> Are you worried about your rounding calculations
+        during assignments or homework. Find the best assistance from the rounding calculator's guru page and learn the
+        concept fully. Here we are providing the handy Rounding to the Nearest Tens Online Calculator that rounds off
+        the number in a blink of an eye and offers a detailed explanation. You can also know what is it, rules on how to
+        round to the nearest ten, and practice examples to get a deeper level of knowledge about the concept.</p>
+    </div>
+  </div>
+
+    {% if id == 1 %}
+    <div id="clear">
+      <div class="card" id="magnetic-force">
+        <div class="card-header">
+          <h2 class="h2">{{firstno}} Rounding to the Nearest Tens Calculator</h2>
+        </div>
+        <div class="card-body">
+          <p><b> Round off value = {{rounding}} </b></p>
+
+        </div>
+      </div>
+    </div>
+    {%endif%}
+
+    {% if id == 1 %}
+    <div id="clear1">
+      <div class="card" id="magnetic-force">
+        <div class="card-header">
+          <h2 class="h2">Steps involved in Rounding to the Nearest Tens Calculator</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Given number is {{firstno}}
+            <br>
+            {% if rem >= 5  %}
+            The number at the ones place is {{rem}} which is equal or above 5. So, round up the value.<br>
+
+            rounded value of {{firstno}} is {{rounding}}.<br>
+
+            <strong>  Therefore, {{firstno}} rounded to the nearest Tens is {{rounding}}. </strong>
+            {% endif %}
+            {% if rem < 5  %}
+            The number at the ones place is {{rem}} which is less 5. So, round down the value.<br>
+
+            rounded value of {{firstno}} is {{rounding}}.<br>
+
+            <strong> Therefore, {{firstno}} rounded to the nearest Tens is {{rounding}}.</strong>
+            {% endif %}
+        </p>
+
+        </div>
+      </div>
+    </div>
+    {%endif%}
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h2">What is meant by Rounding to the Nearest Tens?</h2>
+      </div>
+      <div class="card-body">
+        <p>Replacing the approximate number to the given number to the nearest 10 is called rounding off to the nearest
+          tens. We have to follow a certain set of formula rules to round off the number to the nearest 10. So, below we
+          have provided rules for round off to the nearest tens.</p>
+        <h3>Rules to Follow While Rounding Number to the Nearest Tens</h3>
+        <p>Rule 1: If the digit is one, two, three, or four then round down the number.<br />Rue 2: If the digit is
+          five, six, seven, eight, nine then round up the number.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h2">How to Round Off to Nearest Tens Without Calculator?</h2>
+      </div>
+      <div class="card-body">
+        <p>The best &amp; easy process to round off the number to the nearest 10 without calc is explained here. Take a
+          look at the steps listed below:</p>
+        <ul>
+          <li>First, take the tens place digit and look at the right place value.</li>
+          <li>If the right place digit or one place digit is &gt;= 5, then add 1 to the tens place, and the remaining
+            digits after tens place become 0.</li>
+          <li>If the <a href="https://ccssmathanswers.com/whole-numbers/">whole number</a> place digit is &lt;5, then
+            round down the number and keep the tens place value the same.</li>
+        </ul>
+        <p>Let's have a glance at the below-solved examples and understand the concept of rounding off to the nearest
+          tens easily. Also, visit our <a href="https://roundingcalculator.guru/">roundingcalculator.guru</a> website
+          and utilize all rounding number calculators for free at any time and check your answers instantly.</p>
+        <h3>Rounding Off Numbers to the Nearest Tens Examples</h3>
+        <p><strong>Example 1:</strong></p>
+        <p>Solve 770 rounded to the nearest ten.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Given number is 770</p>
+        <p>Here, 7 is in the tens place value and 0 is in the ones place value</p>
+        <p>The ones' place digit is less than 5 so round down the number for rounding off the number to the nearest 10.
+        </p>
+        <p>Hence, 770 is the rounded value to the nearest 10.</p>
+        <p><strong>Example 2:</strong></p>
+        <p>Round 6787 to the nearest tens.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Given number is 6787</p>
+        <p>To round the number to the nearest tens, consider the right place value to tens and check whether it is
+          greater or less than 5.</p>
+        <p>Here, 7 is greater than 5 so round up the number by adding 1 to the tens place and the remaining digits
+          become 0.</p>
+        <p>Hence, the 6787 rounded value to the nearest tens is 6790.</p>
+        <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Tens.jpeg' %}" alt="Round to the Nearest Tens" /> -->
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h3">FAQs on Handy Rounding to the Nearest 10 Online Calculator</h3>
+      </div>
+      <div class="card-body">
+        <!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is 356 rounded to the nearest ten (10)?</strong></p>
+        <p class="answer">Shortly, 356 rounded to the nearest tens is 360.</p>
+        <hr>
+        <p class="question"><strong>2. What is 436 rounded to the nearest tens without a calculator?</strong></p>
+        <p class="answer">To round the 436 to the nearest tens we have to follow the set of rules. Here, the digit to
+          the right (6) is 5 or above. So, we add 1 to the tens place (3). The digit(s) at the right (6) becomes 0, thus
+          we get 440 as the answer.</p>
+        <hr>
+        <p class="question"><strong>3. What is rounding 536 to all nearest places?</strong></p>
+        <p class="answer">536 to the nearest thousands is 0<br />536 to the nearest hundreds is 500<br />536 to the
+          nearest tens is 540<br />536 to the nearest whole number is 536<br />536 to the nearest tenths is
+          536.0<br />536 to the nearest hundredths is 536.00<br />536 to the nearest thousandths is 536.000</p>
+        <hr>
+        <p class="question"><strong>4. How do you round to the nearest 10 with an online calculator?</strong></p>
+        <p class="answer">Visit roundingcalculator.guru and click on the rounding to the nearest tens calculator. Enter
+          the input value and tap on the calculate button to get the rounded value to the nearest ten in a short time.
+        </p>
+        <hr>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+
+    {% if id == 1 %}
+
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+    {% endif %}
+
+    function myFunction() {
+        document.getElementsByName("firstno")[0].value = "";
+
+        document.getElementById("clear").innerHTML = "";
+        document.getElementById("clear1").innerHTML = "";
+
+    }
+</script>
+  {%endblock%}

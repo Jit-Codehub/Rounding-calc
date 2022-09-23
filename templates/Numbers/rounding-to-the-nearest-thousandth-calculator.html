@@ -1,0 +1,316 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Thousandth Calculator | Best Round off Calculator </title>
+<meta name="description"
+  content="Avail free online Rounding to the Nearest Thousandth Calculator and round off given decimal number to the nearest 1000th in a blink of an eye. " />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Thousandth Calculator | Best Round off Calculator " />
+<meta property="og:description"
+  content="Avail free online Rounding to the Nearest Thousandth Calculator and round off given decimal number to the nearest 1000th in a blink of an eye. " />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-thousandth.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Thousandth Calculator | Best Round off Calculator " />
+<meta name="twitter:description"
+  content="Avail free online Rounding to the Nearest Thousandth Calculator and round off given decimal number to the nearest 1000th in a blink of an eye. " />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-thousandth.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Thousandth Calculator | Best Round off Calculator " />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-thousandth.jpeg" />
+<meta property='og:description'
+  content="Avail free online Rounding to the Nearest Thousandth Calculator and round off given decimal number to the nearest 1000th in a blink of an eye. " />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What is the Nearest 1000th in decimal number?
+        ","acceptedAnswer": {"@type": "Answer","text":"Nearest thousandth is the third digit after the decimal point."}	}, {"@type": "Question","name":"2. 
+        From where can I easily round off the number to the nearest thousandth?
+        ","acceptedAnswer": {"@type": "Answer","text":"You can easily round off the number to the nearest thousandth from our free online & handy rounding to the nearest thousandth calculator."}	}, {"@type": "Question","name":"3. 
+        How do you round off decimals to the nearest thousandth?
+        ","acceptedAnswer": {"@type": "Answer","text":"If the ten thousandth digit is less than 5, then round down the number. If the ten thousandth digit is greater than or equal to 5, then round up the number by adding 1 to the thousandth digit. Hence, you can round off decimals to the nearest thousandth manually."}	}]}
+    </script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Thousandth Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Give the input number to calculate the approximate value that rounds to nearest 1000th in the input box and
+        click on the calculate button. Immediately it displays the output with solution steps. So, make use of our free
+        &amp; handy Rounding to the nearest thousandth calculator online &amp; get the results at a faster pace.</p>
+      
+        <div>
+          <div class="box">
+            <p id="error">
+              {% if error %}
+              <p><b>!! Incorrect values !! Please enter correct values</b></p>
+              {%endif%}
+              </p>
+            <form method="POST" id="my_form">
+                {% csrf_token %}
+                <div class="row mx-auto my-auto">
+                    <div class="cell">
+                        <label for="input1">Value to be rounded up:</label>
+                    </div>
+                </div>
+
+
+                <div class="row mx-auto my-auto">
+                    <div class="center col mt-2">
+                        <center>                               
+
+                          <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                           name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.2346" {% endif %}>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div class="row mx-auto my-auto">
+                    <div class="center col mt-2">
+                        <center><button type="submit" class="btn btn-primary">Round</button>
+                            <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                class="btn btn-danger">Reset</button>
+                        </center>
+                        
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        </div>
+
+
+
+
+      <br>
+      <p>Related Calculators:</p>   
+      <ul>
+        <li><a href="/rounding-to-the-nearest-tenth-calculator/">Round to the Nearest Tenths Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-hundredth-calculator/">Round to Nearest Thoudsandths Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-thousandth-calculator/">Round to the Nearest
+            Thousandths Calculator</a></li>
+        
+        <li><a href="/rounding-to-the-nearest-milllionth-calculator/">Round to Nearest Milllionths Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest Thousandth Calculator:&nbsp;</strong>One more rounding calculator is here to
+        help you find the rounded value to the nearest thousandth of the given decimals. This online&nbsp;Rounding off
+        to the Nearest Thousandth Calculator takes the input and instantly gives the output along with show work. So,
+        kids can learn the manual procedure of rounding off the decimal to nearest 1000th easily from here. Also, you
+        will find the solved examples for understanding the concept of rounding decimals to nearest thousandth
+        efficiently.</p>
+    </div>
+  </div>
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding {{inp}} to nearest Thousandth :</h2>
+        </div>
+
+        <div class="card-body">
+            &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+        </div>        
+    </div>
+
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Steps involved in Rounding to nearest Thousandth:</h2>
+        </div>
+
+        <div class="card-body">
+            <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+            
+            <p>
+                Since, 1 Thousands = 1000 (10<sup>3</sup>).<br>
+                So, 1 thousandth = 0.001 (10<sup>-3</sup>)
+            </p>
+
+            <p>
+                Therefore, while rounding to nearest thousandth, we round the fractional part(or decimal part) upto 3 digits.
+            </p>
+
+            {% if lesdig %}
+            <p>
+                Here, In {{inp}}, number of digits after thousandth place is less than 3, so we add trailing zeros upto 3 places after decmal.
+            </p>
+            {% else %}
+                {% if dig9 %}
+                    <p>
+                        Here, Number of digits after decimal place is 3, so result is same as input.
+                    </p>
+                {% else %}
+                    <p>
+                        Here, In {{inp}}, the digit after thousandth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+                    So, {{bdig}} can be rounded to {{reslastdig}}.
+                    </p>
+                {% endif %}
+            
+            {% endif %}
+
+            <p>
+            So finally, <b>{{inp}}</b>, when rounded to nearest thousandth results in <b>{{res}}</b>. </p>
+        </div>        
+    </div>
+    {% endif %}
+</div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Meant by Rounding to the Nearest Thousandth?</h2>
+    </div>
+    <div class="card-body">
+      <p>The trimming of numbers to the nearest place values is called rounding of numbers in maths. Rounding to the
+        nearest thousandth is the rounded value of the decimal number to the nearest 1/1000 (one-thousandth). The
+        location of the Thousandth place is the third position after the decimal point.</p>
+      <!-- <p><img src="{% static 'images/Numbers/Rounding-to-the-Nearest-Thousandth-Place.jpeg' %}"
+          alt="Rounding to the Nearest Thousandth Place" /></p> -->
+      <p>For instance, 2.7864 is a decimal number. 6 is the thousandth digit. After following the rounding decimals to
+        the nearest thousandth procedure the rounded value of 2.7864 to the 1000th is 2.786</p>
+      <p>Let's dive into the detailed steps from the below modules and gain more knowledge about the concept to solve
+        manually with ease. </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">Step by Step Guide on How to Round off Decimals to Nearest 1000th</h2>
+    </div>
+    <div class="card-body">
+      <p>The manual procedure to round off the decimal to nearest 1000th is explained here step by step. Check out the
+        ultimate technique behind the<strong> rounding numbers to the nearest thousandth</strong> and solve the complex
+        problems easily &amp; effortlessly. The following are the rules to round off a decimal number to the nearest
+        thousandth</p>
+      <ul>
+        <li>First, identify the thousandth place value which is 3rd digit after the decimal point.</li>
+        <li>Now, look at the 4th digit after the decimal point to round off the given number.</li>
+        <li>In case, the digit is equal to or greater than 5 then add 1 in the 3rd digit place while rounding off the
+          decimal number to the nearest thousandth.</li>
+        <li>If the digit is less than 5, then keep the thousandth (3rd) place digit as it is while rounding off the
+          number to nearest 1000th. </li>
+      </ul>
+      <p>Refer to the solved examples available for a better understanding of the concept and practice frequently with
+        our rounding calculator provided in<a href="https://roundingcalculator.guru/"> roundingcalculator.guru</a> to
+        enhance problem-solving skills.</p>
+      <h3>Round to the Nearest Thousandth Examples</h3>
+      <p><strong>Example 1:</strong></p>
+      <p>Round off the decimal 6.5457 to the nearest thousandth.</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given decimal is 6.5457<br />Here the thousandth place value is 5<br />Now, take the next value into
+        consideration (which is 4th digit after the decimal point) and follow the steps. <br />Here 4th digit is 7, this
+        number is greater than 5, so we will add 1 to the thousandth digit. <br />6.5457 &rArr; 6.546<br />Hence, the
+        number 6.5457 rounds to the nearest thousandth and becomes 6.546</p>
+      <p><strong>Example 2:</strong></p>
+      <p>Round 106.8324 to its nearest thousandth.</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given decimal is 106.8324 <br />Here the thousandth place value is 2<br />Now, take the next value into
+        consideration (which is 4th digit after the decimal point) and follow the steps. <br />Here 4th digit is 4, this
+        number is less than 5, so we will remain the thousandth digit and remove all the digits next to the thousandth
+        digit. <br />106.8324 &rArr; 106.832<br />Hence, the number 106.8324 rounds to its nearest thousandth and
+        becomes 106.832</p>
+      <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Thousandth.jpeg' %}"
+          alt="Round to the Nearest Thousandth" /></p> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Online Rounding Decimals to the Nearest Thousandth Calculator </h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. What is the Nearest 1000th in decimal number?</strong></p>
+      <p class="answer">Nearest thousandth is the third digit after the decimal point.</p>
+      <hr>
+      <p class="question"><strong>2. From where can I easily round off the number to the nearest thousandth?</strong>
+      </p>
+      <p class="answer">You can easily round off the number to the nearest thousandth from our free online & handy
+        rounding to the nearest thousandth calculator. </p>
+      <hr>
+      <p class="question"><strong>3. How do you round off decimals to the nearest thousandth?</strong></p>
+      <p class="answer">If the ten thousandth digit is less than 5, then round down the number. If the ten thousandth
+        digit is greater than or equal to 5, then round up the number by adding 1 to the thousandth digit. Hence, you
+        can round off decimals to the nearest thousandth manually.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    document.getElementById('error').innerHTML = "";
+    document.getElementsByName("inp")[0].value = "";
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("result1").innerHTML = "";
+  }
+</script>
+{%endblock%}

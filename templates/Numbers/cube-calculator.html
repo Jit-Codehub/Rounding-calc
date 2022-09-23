@@ -1,0 +1,292 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Cube Calculator | How to Calculate Cube of a Number?</title>
+    <meta name="description" content="Utilize the Cube Calculator to get the Cube of a Number n effortlessly along with detailed work. Get manual procedure on how to find the Cube of a Number."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Cube Calculator | How to Calculate Cube of a Number?"/>
+        <meta property="og:description" content="Utilize the Cube Calculator to get the Cube of a Number n effortlessly along with detailed work. Get manual procedure on how to find the Cube of a Number."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Cube-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Cube Calculator | How to Calculate Cube of a Number?"/>
+        <meta name="twitter:description" content="Utilize the Cube Calculator to get the Cube of a Number n effortlessly along with detailed work. Get manual procedure on how to find the Cube of a Number."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Cube-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Cube Calculator | How to Calculate Cube of a Number?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Cube-Calculator.jpeg"/>
+        <meta property='og:description' content="Utilize the Cube Calculator to get the Cube of a Number n effortlessly along with detailed work. Get manual procedure on how to find the Cube of a Number."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What is a Cubed Number?
+        ","acceptedAnswer": {"@type": "Answer","text":" A number multiplied by itself three times is called a Cubed Number."}	}, {"@type": "Question","name":"2. 
+        How to use the Cube Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" All you need to do is provide the input number in the input section and click on the calculate button to get the cube of the given number instantly."}	}, {"@type": "Question","name":"3. 
+        Where do I get the Step by Step Procedure for finding the Cube of a Number?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get the Step by Step Procedure for finding the Cube of a Number on our page."}	}, {"@type": "Question","name":"4. Is there any website that provides the Online tool to find Cube of a Number?
+        ","acceptedAnswer": {"@type": "Answer","text":" Onlinecalculator.guru is a trusted portal where you can get the Best Online tool to find the Cube of a Number."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Cube Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Avail handy tool Cube Calculator to get the Cube of a given number instantaneously. Just provide the input number in the respective input field and click on the calculate button to get accurate results in a short span of time.</p>
+                <br>
+                <p><b>Ex: </b> <a href="https://onlinecalculator.guru/numbers/cube-of-25/">25 cube</a> (or) <a href="https://onlinecalculator.guru/numbers/cube-of-46/">46 cube</a> (or) <a href="https://onlinecalculator.guru/numbers/cube-of-57/">57 cube</a></p>
+                {%if go_tag%}
+                <a href="{{go_tag}}" id="ddd"></a>
+                {%endif%}
+                <div class="box5" id="cube-calculator">
+                    <form method="POST">{% csrf_token %}
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                        <center>Cube Calculator</center>
+                        
+                        </div>
+                        
+                    
+                      </div>
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                            <center>
+                          <table>
+                        {%if input1 %}
+                        <tr>
+                        <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="{{input1}}"></td>
+                    </tr>
+                        {%else%}
+                        <tr>
+                            <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="27"></td>
+                        </tr>
+                      {% endif %}
+                    </table>
+                </center>
+                        </div>
+                      </div>
+                    
+                      
+                      <center>
+                      <div id="botton5" class="col mt-2 ">
+                        <td><input id="botton1" class="btn btn-secondary btn-mr-3" type="button" onclick="myFunction()" value="Clear"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      
+                      <td><button id="botton2" name="submit2" value="submit2" type="submit" class="btn btn-primary mb-2">Calculate</button>  </td>
+                      </div>
+                    </center>
+                      </form>
+                  
+                    {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                  <div id="detail">
+                    {%if detailStep%}
+                        <hr>
+                        <p><strong>Answer:</strong></p>
+                        <div style="text-align: center;">
+                        {% autoescape off %}
+                        {{detailStep}}
+                        {%endautoescape%}
+                        </div>
+                        <hr>
+                    {%endif%}	
+                    </div>
+                  </div>
+                <br>
+                <p><strong>Here are some samples of Cube of a Number calculations.</strong></p>
+                <div class="row">
+                    <div class="col-sm-3">
+                      <ul>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-6/">6 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-8/">8 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-4/">4 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-3/">3 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-7/">7 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-9/">9 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-5/">5 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-2/">2 cube</a></li>
+                        
+                 
+                      </ul>                    
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-78/">78 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-69/">69 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-85/">85 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-96/">96 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-46/">46 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-31/">31 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-36/">36 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-43/">43 cube</a></li>
+                        
+                      </ul>                 
+                    </div>
+                    <div class="col-sm-3">
+                    <ul>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-52/">52 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-24/">24 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-68/">68 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-20/">20 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-97/">97 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-93/">93 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-89/">89 cube</a></li>
+                        
+                        <li><a href="https://onlinecalculator.guru/numbers/cube-of-44/">44 cube</a></li>
+                           
+                    </ul>			
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-455/">455 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-156/">156 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-150/">150 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-750/">750 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-955/">955 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-803/">803 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-954/">954 cube</a></li>
+                            
+                            <li><a href="https://onlinecalculator.guru/numbers/cube-of-373/">373 cube</a></li>
+                               
+                        </ul>			
+                        </div>
+                  </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/cube-root-calculator/">Cube root Calculator</a></li>
+                    <li><a href="/numbers/square-calculator/">Square Calculator</a></li> 
+                    <li><a href="/numbers/square-root-calculator/">Square root Calculator</a></li>
+                  </ul>
+                <p><strong>Cube Calculator: </strong>If you want to determine the Cube of a number n then this might be the flexible tool you are looking for. Type in the input number and hit on the calculate button next to the input field to avail result in no time. If you aren't sure about finding the cube of a number check out the detailed description where we will explain everything. We even listed a few examples showing the entire work so that you can better understand the concept.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to find the Cube of a Number N?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Check out the simple guidelines for finding the cube of a number. They are as under</p>
+            <ul>
+                <li>A number n cubed is written as n*n*n</li>
+                <li>Relace the number given to you in the place of n.</li>
+                <li>Perform Arithmetic Operation Multiplication to get the resultant cube of a number.</li>
+           </ul>
+           <p>When it comes to Positive numbers the process is quite clear. However, if you are given negative numbers the cube of it may be a bit ambiguous. So learn the difference between the different interpretations.</p>
+           <p>Negative of (2 Cubed) = Negative(2<sup>3</sup>)= Negative(2*2*2)=-8</p>
+           <p>(Negative 2)Cubed = (-2)<sup>3 </sup>= (-2*-2*-2)=-8</p>
+           <p>Use the Parathensis to clearly know which calculation you want to perform.</p>
+           <p><strong>Example Question: Find the value of 8 Cubed?</strong></p>
+           <p><strong>Solution:</strong></p>
+           <p>Given Input Number n = 8</p>
+           <p>Number n cubed is n*n*n</p>
+           <p>Replace the value of n as 8</p>
+           <p>8<sup>3</sup>= 8*8*8</p>
+           <p>= 512</p>
+           <p>Therefore the Value of 8 Cubed is 512.</p>
+           <img src="{% static 'images/Numbers/Cube-Calculator.jpeg' %}" alt='Cube Calculator'>
+        </div>
+    </div>
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Cube Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is a Cubed Number?</strong></p>
+     	<p class="answer">A number multiplied by itself three times is called a Cubed Number.</p><hr>
+     	<p class="question"><strong>2. How to use the Cube Calculator?</strong></p>
+     	<p class="answer">All you need to do is provide the input number in the input section and click on the calculate button to get the cube of the given number instantly.</p><hr>  
+        <p class="question"><strong>3. Where do I get the Step by Step Procedure for finding the Cube of a Number?</strong></p>
+        <p class="answer">You can get the Step by Step Procedure for finding the Cube of a Number on our page.</p><hr>
+        <p class="question"><strong>4. Is there any website that provides the Online tool to find Cube of a Number?</strong></p>
+     	<p class="answer"><a href="https://onlinecalculator.guru/">Onlinecalculator.guru</a> is a trusted portal where you can get the Best Online tool to find the Cube of a Number.</p><hr>
+    	</div>
+    </div>
+    </div>
+    <script>
+        function myFunction() {
+          document.getElementById("input1").value="";
+          document.getElementById("detail").innerHTML="";
+          
+        }
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+            });
+        </script>
+{%endblock%}

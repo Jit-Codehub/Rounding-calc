@@ -1,0 +1,146 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+<!-- META DATA STARTS --->
+<title> {{value1}} Billion Divided by {{value2}} Million Calculator - How to Calculate {{value1}} Billion by {{value2}} Million?</title>
+<meta name="description" content="{{value1}} Billion Divided by {{value2}} Million can be easily found using the {{value1}} Billion Divided by {{value2}} Million Calculator and get detailed work involved">
+<link rel="canonical" href="https://lcmgcf.com/gcf-of-decimals-calculator" >
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/aplustopper/" property="og:url" />
+<meta property="og:title" content=" {{value1}} Billion Divided by {{value2}} Million Calculator - How to Calculate {{value1}} Billion by {{value2}} Million?"/>
+<meta property="og:description" content="{{value1}} Billion Divided by {{value2}} Million can be easily found using the {{value1}} Billion Divided by {{value2}} Million Calculator and get detailed work involved"/>
+<meta content="" property="og:site_name" />
+<meta  content="https://www.aplustopper.com/wp-content/uploads/2018/12/Aplus_380x90-logo.jpg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="https://twitter.com/TopperPlus/"/>
+<meta name="twitter:title" content="{{value1}} Billion Divided by {{value2}} Million Calculator - How to Calculate {{value1}} Billion by {{value2}} Million?"/>
+<meta name="twitter:description" content="{{value1}} Billion Divided by {{value2}} Million can be easily found using the {{value1}} Billion Divided by {{value2}} Million Calculator and get detailed work involved"/>
+<meta name="twitter:image:src" content="https://www.aplustopper.com/wp-content/uploads/2018/12/Aplus_380x90-logo.jpg"/>
+<meta property="twitter:image:height" content="435"/>
+<meta property="twitter:image:width" content="354"/>
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content=" {{value1}} Billion Divided by {{value2}} Million Calculator - How to Calculate {{value1}} Billion by {{value2}} Million?"/>
+<meta property='og:image' content="https://www.aplustopper.com/wp-content/uploads/2018/12/Aplus_380x90-logo.jpg"/>
+<meta property='og:description' content="{{value1}} Billion Divided by {{value2}} Million can be easily found using the {{value1}} Billion Divided by {{value2}} Million Calculator and get detailed work involved"/>
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+<div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">{{value1}} Billion Divided by {{value2}} Million</h1>
+    </div>
+    <div class="card-body">
+<p>Find {{value1}} Billion Divided by {{value2}} Million easily i.e. {{answer}} taking the help of the <a href="/billion-divided-by-million-calculator/">Billion Divided by Million Calculator</a> and get results in the blink of an eye.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+      <h2 class="h2">Billion Divided by Million Calculator:</h2>
+    </div>
+    <div class="card-body">
+      <form method="POST">{% csrf_token %}
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+             <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>What is</strong></div>
+                </div>
+                <input type="text" name="textfield1" step="0.0001" class="form-control" name="textfield1" id="inlineFormInputGroup" placeholder="Enter Numbers" value={% if value1 %}{{value1}}{% else %} 3{% endif %}>
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>Billion Divide By</strong></div>
+                </div>
+                <input type="text" name="textfield2" step="0.0001" class="form-control" name="textfield2" id="inlineFormInputGroup" placeholder="Enter Numbers" value={% if value2 %}{{value2}}{% else %} 20{% endif %}>
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>Million</strong></div>
+                </div>
+              </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+          </div>
+        </div>
+      </form>     
+    </div>
+    </div>
+
+<div class="card">
+    <div class="card-header">
+      <h3 class="h3">How to find {{value1}} Billion Divided by {{value2}} Million?</h3>
+    </div>
+    <div class="card-body">
+      <p>Given numbers are {{value1}} Billion and {{value2}} Million</p>
+      <p>{{value1}} Billion = {{value1}} followed by {{ count1|add:9 }} zeros</p>
+      <p>= {{value1}},000,000,000</p>
+      <p>{{value2}} Million = {{value2}} followed by {{ count2|add:6 }} zeros</p>
+      <p>= {{value2}},000,000</p>
+      <p>Dividing {{value1}} Billion by {{value2}} Million we have {{value1}},000,000,000/{{value2}},000,000</p>
+      <p>= {{value1}}000/{{value2}}</p>
+      <p>= {{answer}}</p>
+      <p>Therefore, {{value1}} Billion Divided by {{value2}} Million is equal to {{answer}}</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on How much is {{value1}} Billion Divided by {{value2}} Million</h3>
+    </div>
+    <div class="card-body">
+<p><strong>1.  How many zeros does {{value1}} Billion have?</strong></p>
+<p>{{value1}} Billion has {{ count1|add:9 }} zeros.</p>
+<ul>
+  <li>How many tens in {{value1}} Billion - {{arr.0}} tens.</li>
+  <li>How many hundreds in {{value1}} Billion - {{arr.1}} hundreds.</li>
+  <li>How many thousands in {{value1}} Billion - {{arr.2}} thousands.</li>
+  <li>How many ten thousands in {{value1}} Billion - {{arr.3}} ten thousands.</li>
+  <li>How many hundred thousands in {{value1}} Billion -{{arr.4}} hundred thousands.</li>
+  <li>How many millions in {{value1}} Billion - {{arr.5}} million.</li>
+  </ul>
+<p><strong>2. How much is {{value1}} Billion divided by {{value2}} Million?</strong></p>
+<p>{{value1}} Billion Divided by {{value2}} Million is {{answer}}</p>
+<p><strong>3. How to find {{value1}} Billion Divided by {{value2}} Million?</strong></p>
+<p>To find {{value1}} Billion Divided by {{value2}} Million simply rewrite the given values in their numeric denotation with zeros added to them and then simplify the result.</div>
+</div>
+
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

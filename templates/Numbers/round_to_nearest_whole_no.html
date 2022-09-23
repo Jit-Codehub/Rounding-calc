@@ -1,0 +1,239 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Round to the Nearest Whole Number calculator| How do you round to the nearest whole number?</title>
+<meta name="description"
+    content="Round to the Nearest Whole Number Calculator is a free online tool displays the value you entered rounded to the nearest whole number with errorfree results and detailed steps." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title"
+    content="Round to the Nearest Whole Number calculator| How do you round to the nearest whole number?" />
+<meta property="og:description"
+    content="Round to the Nearest Whole Number Calculator is a free online tool displays the value you entered rounded to the nearest whole number with errorfree results and detailed steps." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Whole-Number.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+    content="Round to the Nearest Whole Number calculator| How do you round to the nearest whole number?" />
+<meta name="twitter:description"
+    content="Round to the Nearest Whole Number Calculator is a free online tool displays the value you entered rounded to the nearest whole number with errorfree results and detailed steps." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Whole-Number.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title'
+    content="Round to the Nearest Whole Number calculator| How do you round to the nearest whole number?" />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Whole-Number.jpeg" />
+<meta property='og:description'
+    content="Round to the Nearest Whole Number Calculator is a free online tool displays the value you entered rounded to the nearest whole number with errorfree results and detailed steps." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to use round to the nearest whole number calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        All you need to do is enter the input values in the input fields then press the calculate button and get instant answers quickly."}	}, {"@type": "Question","name":"2
+        What is round to the nearest whole number?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Nearest whole number is the first digit available after the decimal point. If it is greater than or equal to 5 then once place will be added by 1 and remove all the digits after the decimal point, if the value is less than or equal to 4 simply remove all the digits after the decimal point."}	}, {"@type": "Question","name":"3
+        What is 7.85 Rounded to the Nearest Whole Number?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        7.85 rounded to the nearest whole number is 8."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Round to the Nearest Whole Number Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Rounding to the Nearest Whole Number Calculator tool is quite interesting and most satisfying tool to
+                find the nearest integer or whole number without any effort. To find the nearest whole number, give the
+                input values in the input fields and get an answer quickly by clicking the calculate button.</p>
+            <div class="box">
+                <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Round:</label>
+                        </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            {%if input1%}
+                            <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text"
+                                title="real number" maxlength="15" autofocus required />
+                            {%else%}
+                            <input name="input1" id="input1" value="1243.76" class="nmbr_real real" type="text"
+                                title="real number" maxlength="15" autofocus required />
+                            {%endif%}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell pl-3">
+                            <label for="input2">Round to: </label>
+                        </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                                <optgroup label="Whole Number Places">
+                                    <option value="-9">Billions</option>
+                                    <option value="-8">Hundred Millions</option>
+                                    <option value="-7">Ten Millions</option>
+                                    <option value="-6">Millions</option>
+                                    <option value="-5">Hundred Thousands</option>
+                                    <option value="-4">Ten Thousands</option>
+                                    <option value="-3">Thousands</option>
+                                    <option value="-2">Hundreds</option>
+                                    <option value="-1">Tens</option>
+                                    <option value="0" selected>Ones</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-auto mt-2 ml-3">
+                        <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                </form>
+                {%if detailStep%}
+                <hr>
+                <p><strong>Answer:</strong></p>
+                <div style="text-align: center;">
+                    {% autoescape off %}
+                    {{detailStep}}
+                    {%endautoescape%}
+                </div>
+                <hr>
+                {%endif%}
+            </div>
+            {% autoescape off %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="alert alert-danger">{{message}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {%endautoescape%}
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+
+                <li><a href="/rounding-to-the-nearest-ones-calculator/">Round to the Nearest Ones Calculator</a></li>
+                <li><a href="/rounding-to-the-nearest-tens-calculator/">Round to the Nearest Tens Calculator</a></li>
+                <li><a href="/rounding-to-the-nearest-hundred-calculator/">Round to the Nearest Hundred Calculator</a></li>
+                <li><a href="/round-to-the-nearest-thousand-calculator/">Round to the Nearest Thousands Calculator</a>
+                </li>
+               
+            </ul>
+            <p><strong>Round to the Nearest Whole Number Calculator: </strong>Having trouble with decimals? our round to
+                the nearest Whole number calculator tool helps you a lot to find the nearest integer. In this article,
+                we not only use the calculator but also we will see how to round the decimals easily with some simple
+                steps by hand.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What is meant by Nearest of Whole Number?</h2>
+        </div>
+        <div class="card-body">
+            <p>The first digit available after the decimal point, we call it as nearest whole number. In other words we
+                can say that, in the given amount the tenth's place digit is called nearest whole number and by
+                following some rules we can round the nearest whole number.</p>
+            <p>For example, nearest whole number of 111.4 is 111.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">How do you Round to the Nearest Whole Number?</h3>
+        </div>
+        <div class="card-body">
+            <p>To round the nearest whole number we have some rules. If we follow those rules step by step, you can
+                round the whole number correctly and easily.</p>
+            <ul>
+                <li>In the given decimal number, look for the tenths place.</li>
+                <li>After that, then the value is equal to 5 and above increase the one's place by 1 and remove all the
+                    digits after the decimal point and remove the decimal point.</li>
+                <li>If the value is less than or equal to 4, just simply remove all the digits after the decimal point.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Rounding Off to the Nearest Whole Number Examples</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Example</strong></p>
+            <p><strong>Question:</strong> Round the decimal number 5.33 to the Nearest Whole Numbers?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, input values are 5.33</p>
+            <p>5.33 - Here after the decimal point we have 3 which is less than 4, so simply remove all the digits after
+                the decimal point.</p>
+            <p>Then the answer for the decimal number 5.33 is 5.</p>
+            <p>Get the best rounding calculator tools on <a
+                    href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> and get detailed about the
+                concepts.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Rounding to the Nearest Whole Number</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. How do we use round to the nearest whole number calculator?</strong></p>
+            <p class="answer">All you need to do is enter the input values in the input fields then press the calculate
+                button and get instant answers quickly.</p>
+            <hr>
+            <p class="question"><strong>2. What is round to the nearest whole number?</strong></p>
+            <p class="answer">Nearest whole number is the first digit available after the decimal point.</p>
+            <hr>
+            <p class="question"><strong>3. What is 7.85 Rounded to the Nearest Whole Number?</strong></p>
+            <p class="answer">7.85 rounded to the nearest whole number is 8.</p>
+            <hr>
+            <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Whole-Number-Calculator.jpeg' %}"
+                alt='Round to the Nearest Whole Number Calculator'> -->
+        </div>
+    </div>
+</div>
+{%endblock%}

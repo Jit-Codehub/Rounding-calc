@@ -1,0 +1,174 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Octal Calculator | Add, Subtract, Multiply, Divide Octal No.s</title>
+    <meta name="description" content="Octal Calculator gives addition, subtraction, multiplication & division of octal numbers easily. Make use of octal calculator to get quick & accurate results."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Octal Calculator | Add, Subtract, Multiply, Divide Octal No.s"/>
+        <meta property="og:description" content="Octal Calculator gives addition, subtraction, multiplication & division of octal numbers easily. Make use of octal calculator to get quick & accurate results."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Octal-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Octal Calculator | Add, Subtract, Multiply, Divide Octal No.s"/>
+        <meta name="twitter:description" content="Octal Calculator gives addition, subtraction, multiplication & division of octal numbers easily. Make use of octal calculator to get quick & accurate results."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Octal-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Octal Calculator | Add, Subtract, Multiply, Divide Octal No.s"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Octal-Calculator.jpeg"/>
+        <meta property='og:description' content="Octal Calculator gives addition, subtraction, multiplication & division of octal numbers easily. Make use of octal calculator to get quick & accurate results."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you convert a decimal number to octal number?
+        ","acceptedAnswer": {"@type": "Answer","text":" Divide the given number by 8 until the remainder is zero. And write the obtained numbers from bottom to up to get the octal form of that number."}	}, {"@type": "Question","name":"2.
+        What is meant by octal number system?
+        ","acceptedAnswer": {"@type": "Answer","text":" In mathematics, there are different number systems, such as octal, decimal, binary, and hexa decimal systems. The octal system is having the number to the base 8. Octal system uses numbers from 0 to 7. To represent the number after 7, values can be represented using the binary form."}	}, {"@type": "Question","name":"3.
+        How to perform the arithmetic operation of two octal numbers using calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Enter two octal numbers in the input fields and press on the calculate button to get the addition, subtraction, multiplication, and division of given octal numbers easily."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Octal Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Free handy tool to simply perform the arithmetical operations of octal numbers is here. All you have to do is just enter your two input octal numbers in the input field and tap on the calculate button to obtain the output immediately along with the detailed explanation in less time.</p>
+                <p><strong>Octal Calculator: </strong>Calculating the addition, subtraction, multiplication and division of octal numbers can be a little difficult task while dealing with lengthy numbers. To overcome the issue we have created a super cool & free online tool i.e Octal Calculator. This calculator simplifies your numbers in a blink of eye and generates the detailed work for the given input numbers. Also, check out the step by step procedure with the solved examples in the following sections.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Steps to Perform Arithmetic Operations on Octal Numbers</h2>
+        </div>
+	    <div class="card-body">
+            <p>Go through the following simple steps to perform arithmetic operations on any two octal numbers. You can have a loook at the procedure of how to add, subtract, multiply and divide the octal numbers in the following sections.</p>
+         <ol>
+             <li><strong>Addition:</strong></li>
+             <ul>
+                <li>Take any two octal numbers.</li>
+                <li>Octal numbers are from 0 to 7.</li>
+                    <li>Write numbers one by one.</li>
+                    <li>Perform addition operation between two numbers from units place to left wards.</li>
+                    <li>For example, add 1+7 is equal to 10 which means 1 as carry and 0 in the answer place. </li>
+                    <li>Adding of remaining numbers which gives result less than 7 remains same.</li>
+                </ul>
+                <p><strong>Example Question: What is 12 + 37?</strong></p>
+                <p><strong>Solution:</strong></p>
+                <p>&nbsp&nbsp1</p>
+                &nbsp1 2</p>
+                  + 3 7</p>
+                  = 4 1</p>
+                  12 + 37 = 41</p>
+                  <li><strong>Subtraction:</strong></li>
+                  <ul>
+                    <li>Write two numbers one by one at different lines.</li>
+                    <li>If the number 1 is less than number 2, then borrow from the next number.</li>
+                    <li>Subtract the numbers.</li>
+                        <li>Add result at the next line.</li>
+                    </ul>
+                    <p><strong>   Example question: Solve 321 - 46?</strong></p>
+                    <p><strong>Solution:</strong></p>
+                    <p>&nbsp3 2 1</p>
+                    <p>- 0 4 6</p>
+                    <p>= 2 5 3 </p>
+                    <p>321 - 46 = 2 5 3</p>
+                    <li><strong>Multiplication:</strong></li>
+                    <ul>
+                        <li>Take any two numbers and write them one after other.</li>
+                        <li>Multiply the first digit of second number with all the digits of first number.</li>
+                        <li>Continue multiplication of all digits of second numbers as the above step till none left.</li>
+                            <li>Add zero at the first place of second row.</li>
+                            <li>Perform the addition of obtained numbers to get the result.</li>
+                        </ul>
+                        <p><strong>   Example question: Solve 32 x 25?</strong></p>
+                    <p><strong>Solution:</strong></p>
+                        <p>&nbsp&nbsp&nbsp 3 2</p>
+                        <p>&nbsp&nbsp   x 2 5</p>
+                        <p>&nbsp   2 0 2</p>
+                        <p> +  6 4 0</p>
+                        <p>  = 1 0 4 2</p>
+                        <p>32 x 25 = 1 0 4 2</p>
+                    <li><strong>Division:</strong></li>
+                    <ul>
+                        <li>Take divisor and dividend.</li>
+                        <li>Write the divisor table.</li>
+                            <li>Check to find the exact dividend in the divisor table.</li>
+                            <li>If not there, check which number in the divisor table is near to the dividend.</li>
+                            <li>Give the multiplication number at the quotient side and obtained number under dividend.</li>
+                            <li>Subtract those numbers.</li>
+                            <li>Continue the process till we left nothing or number is less than the divisor.</li>
+                            <li>Write quotient as the answer.</li>
+                        </ul>
+                        <p><strong>   Example question: Find 3443 / 7?</strong></p>
+                        <p><strong>Solution:</strong></p>
+                        <p>7 table is</p>
+                        <p> 7 × 1 = 7</p>
+                        <p>  7 × 2 = 16</p>
+                        <p>  7 × 3 = 25</p>
+                          <p>   7 × 4 = 34</p>
+                          <p>   7 × 5 = 43</p>
+                          <p>    7 × 6 = 52</p>
+                          <p>    7 × 7 = 61</p>
+                          <p>     7 × 10 = 70</p>
+                          <p>&nbsp7) 3 4 4 3 (405</p>
+                          <p>&nbsp     -3 4 ↓ ↓</p>
+                          <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         4 3</p>
+                          <p>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     - 4 3</p>
+                          <p>            0</p>
+                          <p>   3443 / 7 = 405</p>  
+                          <p>Avail free online calculators to find octal numbers addition, subtraction, division, multiplication, and many more from our website <a href="https://onlinecalculator.guru/">Onlinecalculator.guru</a> along with other math concepts.</p>
+         </ol>
+         <img src="{% static 'images/Numbers/Octal-Calculator.jpeg' %}" alt='Octal Calculator'>
+        </div>
+    </div>
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Octal Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you convert a decimal number to octal number?</strong></p>
+     	<p class="answer">Divide the given number by 8 until the remainder is zero. And write the obtained numbers from bottom to up to get the octal form of that number.</p><hr>
+     	<p class="question"><strong>2. What is meant by octal number system?</strong></p>
+     	<p class="answer">In mathematics, there are different number systems, such as octal, decimal, binary, and hexa decimal systems. The octal system is having the number to the base 8. Octal system uses numbers from 0 to 7. To represent the number after 7, values can be represented using the binary form.</p><hr>  
+        <p class="question"><strong>3. How to perform the arithmetic operation of two octal numbers using calculator?
+        </strong></p>
+        <p class="answer">Enter two octal numbers in the input fields and press on the calculate button to get the addition, subtraction, multiplication, and division of given octal numbers easily.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,222 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Is {{D}} Divisible by 7? - Divisibility Test of {{D}} by 7 - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Is {{D}} Divisible by 7? Get the answer i.e {{Ans}} with a detailed explanation. Know the divisibility test for 7.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Is {{D}} Divisible by 7? - Divisibility Test of {{D}} by 7 - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Is {{D}} Divisible by 7? Get the answer i.e {{Ans}} with a detailed explanation. Know the divisibility test for 7. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Is {{D}} Divisible by 7? - Divisibility Test of {{D}} by 7 - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Is {{D}} Divisible by 7? Get the answer i.e {{Ans}} with a detailed explanation. Know the divisibility test for 7. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Is {{D}} Divisible by 7? - Divisibility Test of {{D}} by 7 - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Is {{D}} Divisible by 7? Get the answer i.e {{Ans}} with a detailed explanation. Know the divisibility test for 7." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+<div class="container" style="height: auto !important;">
+  <div class="card c1">
+      <div class="card-header">
+          <h1>Is {{D}} Divisible by 7?</h1>
+      </div>
+      <div class="card-body">
+          <p>Get an answer for questions like is {{D}} divisible by 7 easily with <a href = "/divisible-by-7-calculator"> divisible by 7 calculator</a>. It will give the
+result i.e no along with the quotient {{div7}}. If the quotient is an integer, then {{D}} is completely divisible by 7.
+          </p>
+          <ul class="messages">
+            {% if message %}
+            <p  id="message_container" class="alert alert-danger text-center"
+                style="color:red">{{ message }}</p>
+            {% endif %}
+
+        </ul>
+
+          <form action="" method="POST" id="my_form" >
+              {% csrf_token %}
+              <div class="col-auto">
+
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><strong>Number: </strong></div>
+                      </div>
+                      <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required="" placeholder="Number to check is divisible By 7"  class="form-control" name="D" {% if D or D == 0 %} value="{{D}}"  {% else %} value="24"  {% endif %}>
+
+                  </div>
+
+                  <div class=" center col mt-2 ">
+                      <center><button type="submit" class="btn btn-primary" name="f1" value="f1">Calculate</button>
+                      </center>
+                  </div>
+
+          </form>
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+<div id="clear">
+
+  {% if f1 %}
+  
+  <div class="card" id="Results">
+      <div class="card-header">
+          <p><strong>Find out if {{D}} Divisible by 7? </strong> </p>
+      </div>
+      
+      
+      <div class="card-body">
+          <p>Follow the below provided guidelines to tell if {{D}} is divisible by 7 or not.</p>
+          {% if Proc %}
+              {% for i,j in Proc.items %}
+              <p>Given number is {{i}}</p>
+              <p>The unit digit of the given number is {{j.1}}</p>
+              <p>So, double of {{j.1}} is {{j.1}} x 2 = {% widthratio j.1 1 2 %}</p>
+              <p>Subtract {{j.0}} from {% widthratio j.1 1 2 %}</p>
+              <p>{{j.0}} - {% widthratio j.1 1 2 %} = {{j.2}}</p>
+              {% if not forloop.last %} <p>As {{j.2}} is a big number, again repeat the process.</p>
+              {% else %}
+                  {% if Ans == "yes" %}
+                      <p>{{j.2}} is a multiple of 7.</p>
+                      <p><strong>So, {{D}} is divisible by 7.</strong></p>
+                  {% else %}
+                      <p>{{j.2}} is not a multiple of 7.</p>
+                      <p><strong>So, {{D}} is not divisible by 7.</strong></p>
+                  {% endif %}
+              {% endif%}
+              {% endfor %}
+
+          {% else %}
+              {% if Ans == "yes" %}
+                  <p>{{D}} is a multiple of 7.</p>
+                  <p><strong>So, {{D}} is divisible by 7.</strong></p>
+              {% else %}
+                  <p>{{D}} is not a multiple of 7.</p>
+                  <p><strong>So, {{D}} is not divisible by 7.</strong></p>
+              {% endif %}
+          {% endif%}
+
+          <h2><p><strong>FAQs on Is {{D}} Divisible by 7</strong></p></h2>
+          <ol>
+              <li><p> <strong>What is {{D}} divided by 7 with a remainder?</strong></p>
+                  <p>The quotient of {{D}}/7 is {{Ansdiv7}} and the remainder is {{Remider7}}.</p></li>
+              <li> <p><strong>Is {{D}} divisible by 7?</strong></p>
+
+                  {% if Ans == "yes" %}
+                  <p>Yes, {{D}} is divisible by 7.</p>
+              {% else %}
+                  <p>No, {{D}} is not divisible by 7.</p>
+              {% endif %}
+              </li>
+
+              <li> <p><strong>How to do the divisibility test for {{D}} by 7?</strong></p>
+                  <p>
+                      If the remainder of the division {{D}}/7 is 0, then it is divisible. otherwise, it is not divisible by 7.
+              </p></li>
+          </ol>
+         
+      </div>
+
+  </div>
+  {% endif %}
+</div>
+</div>
+{% if f1 %}
+<script>
+  var scrollDiv = document.getElementById("clear").offsetTop;
+  window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+</script>
+{% endif %}
+
+<script>
+  
+      var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+      var fist_input = document.getElementById("inlineFormInputGroup").value;
+      function validateNumber(elem) {
+          console.log(elem)
+          if (validNumber.test(elem.value)) {
+              fist_input = elem.value;
+          } else {
+              elem.value = fist_input;
+          }
+      }
+
+      const result = document.getElementById("span1").innerHTML
+      function modifyres1(){
+          
+          var sus  = document.getElementById("myunt1")
+          document.getElementById("span1").innerHTML = +(Number(result) * sus.value)
+      }
+
+  </script>
+  
+  <script>
+      function myFunction() {
+              document.getElementsByName("D")[0].value = "";
+
+              document.getElementById("clear").innerHTML = "";
+
+          }
+      </script>
+  <br>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

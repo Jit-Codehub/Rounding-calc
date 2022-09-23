@@ -1,0 +1,342 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Meter Calculator | Free Online tool with Steps </title>
+<meta name="description"
+    content="Get instant outcomes to round off the nearest meter by using the Rounding to the Nearest Meter Calculator tool. Accomplish detailed procedures and examples." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Meter Calculator | Free Online tool with Steps " />
+<meta property="og:description"
+    content="Get instant outcomes to round off the nearest meter by using the Rounding to the Nearest Meter Calculator tool. Accomplish detailed procedures and examples." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Meter-Calculator.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Meter Calculator | Free Online tool with Steps " />
+<meta name="twitter:description"
+    content="Get instant outcomes to round off the nearest meter by using the Rounding to the Nearest Meter Calculator tool. Accomplish detailed procedures and examples." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Meter-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Meter Calculator | Free Online tool with Steps " />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Meter-Calculator.jpeg" />
+<meta property='og:description'
+    content="Get instant outcomes to round off the nearest meter by using the Rounding to the Nearest Meter Calculator tool. Accomplish detailed procedures and examples." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How do you round off the value to the nearest meter?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        As, if the value after the decimal point is 0,1,2,3,4 then we need to round down. But, if the value is 5,6,7,8,9 then the value should be round up and add +1. Then, remove all the digits after the decimal point."}	}, {"@type": "Question","name":"2
+        How to use this rounding to the nearest meter calculator tool?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Commonly, as we do for every calculator, you need to fill the input provision and tick the calculate button to get the value round to the nearest meter in few scants."}	}, {"@type": "Question","name":"3
+        Round off the 23.44 to the nearest meter?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        23.34 rounded to the nearest meter is 23."}	}, {"@type": "Question","name":"4
+        Which site is giving the best Round off to the Nearest Meter Calculator tool?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Roundingcalculators.guru is the best website that provides you Rounding to the Nearest Meter Calculator to make your calculations effortless and error free."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding to the Nearest Meter Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Take help of this free online Rounding to the Nearest meter tool that displays the round off value to the
+                nearest Meter and make your calculations quite faster by using this calculator. Here, you will get the
+                output in fraction of seconds just by entering the input value in the input field and by clicking on the
+                calculate button which is in blue color.</p>
+            <div class="box">
+
+                <form method="POST" id="my_form" onsubmit="handleSubmit();">
+                    {% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Value to be rounded up:</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+
+                                <input type="number" step = "any" id="Ib" class="form-control mt-1" min = "0" name="num1" value="{{num1}}" placeholder="3245.678" required >
+
+                            </center>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+                                <input type="submit" class="btn btn-primary" value="Round" onclick="myFunction()">
+                                <input type="button" class="btn btn-danger" onclick="Clean();" value="Reset"
+                                    style="margin-top: 5px;">
+                            </center>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            {% autoescape off %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="alert alert-danger">{{message}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {%endautoescape%}
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+                <li><a href="/rounding-to-the-nearest-kilometer-calculator/">Rounding to the Nearest Kilometer Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-yard-calculator/">Rounding to the Nearest Yard Calculator</a></li>
+        <!-- <li><a href="/rounding-to-the-nearest-meter-calculator/">Rounding to the Nearest meter Calculator</a></li> -->
+        <li><a href="/rounding-to-the-nearest-centimeter-calculator/">Rounding to the Nearest Centimeter Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-feet-calculator/">Rounding to the Nearest Feet Calculator</a></li>
+        <!-- <li><a href="/rounding-to-the-nearest-mile-calculator/">Rounding to the Nearest Mile Calculator</a></li>   -->
+        <li><a href="/rounding-to-the-nearest-nanometer-calculator/">Rounding to the Nearest Nanometers Calculator</a></li>
+        <!-- <li><a href="/rounding-to-the-nearest-inch-calculator/">Rounding to the Nearest Inch Calculator</a></li> -->
+
+            </ul>
+            <p><strong>Rounding to the Nearest Meter Calculator: </strong>Looking for assistance to work on round to the
+                nearest meter? Then you are at the right place. Here, we have discussed everything about rounding to the
+                nearest meter, like step by step process, solved examples and definitions. Read on to learn!!</p>
+        </div>
+    </div>
+
+    {%if cas %}
+    <div  id = "cards">
+    <div class="card">
+        <h1 class="card-header" style="background-color:#00BFFF;color: white;">Rounding off {{num1}} to Nearest Meter</h1>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Round off to Nearest Meter</th>
+                    <th scope="col">Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Round off to Nearest Whole Number</td>
+                    <td>{{whole}} Meters</td>
+                  </tr>
+                  <tr>
+                    
+                    <td>Round off to Nearest Tens</td>
+                    <td>{{tens}} Meters</td>
+                
+                  </tr>
+                  <tr>
+                    <td>Round off to Nearest Hundreds</td>
+                    <td>{{hund}} Meters</td>
+                  </tr>
+                  <tr>
+                    <td>Round off to Nearest Thousands</td>
+                    <td>{{thou}} Meters</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        </div>
+        </div>
+    {% endif%}
+    {%if cas1 %}
+<div  id = "cards1">
+<div class="card">
+    <h1 class="card-header" style="background-color:#00BFFF;color: white;">Steps for Rounding {{num1}} to Nearest Tens, Hundreds and Thousands</h1>
+    <div class="card-body">
+      <h3 style="background-color:#DAF7A6;">Rounding off to Nearest Tens</h3>
+      {%if tetcas%}
+        <p>Given Number is {{num1}}</p>
+        <p>Observe the {{placeten}} digit in the number. Here it is {{tensid}}</p>
+        <p>The {{placeten}} place digit {{tensid}} {{st}}. {{st1}}</p>
+        <p>Rounded value of {{num1}} is {{tens}}</p>
+        <p>Therefore, {{num1}} is rounded to the nearest tens is <strong>{{tens}}</strong>.</p>
+      {%endif%}
+      {%if tefcas%}
+        <p>{{st}}</p>
+        <p>{{st1}}</p>
+        {%endif%}
+        <h3 style="background-color:#DAF7A6;">Rounding off to Nearest Hundreds</h3>
+        {%if htcas%}
+      <p>Given Number is {{num1}}</p>
+        <p>Observe the {{placehun}} digit in the number. Here it is {{hunid}}</p>
+        <p>The {{placehun}} place digit {{hunid}} {{sh}}. {{sh1}}</p>
+        <p>Rounded value of {{num1}} is {{tens}}</p>
+        <p>Therefore, {{num1}} is rounded to the nearest hundreds is <strong>{{hund}}</strong>.</p>
+      {%endif%}
+      {%if hfcas%}
+      <p>{{sh}}</p>
+      <p>{{sh1}}</p>
+      {%endif%}
+        <h3 style="background-color:#DAF7A6;">Rounding off to Nearest Thousand</h3>
+        {%if ttcas%}
+      <p>Given Number is {{num1}}</p>
+        <p>Observe the {{placetho}} digit in the number. Here it is {{thouid}}</p>
+        <p>The {{placetho}} place digit {{thouid}} {{sth}}. {{sth1}}</p>
+        <p>Rounded value of {{num1}} is {{thou}}</p>
+        <p>Therefore, {{num1}} is rounded to the nearest thousands is <strong>{{thou}}</strong>.</p>
+        {%endif%}
+        {%if tfcas%}
+      <p>{{sth}}</p>
+      <p>{{sth1}}</p>
+      {%endif%}
+    </div>
+</div>
+</div>
+{% endif %}
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">How to Round off to the Nearest Meter?</h2>
+        </div>
+        <div class="card-body">
+            <p>Track the below steps to round off the number to the nearest meter easily. By using these steps you can
+                solve the problems on your own.</p>
+            <ul>
+                <li>Check the given problem and write the number or value.</li>
+                <li>We will see the rounding number that is in the ones place before the decimal point.</li>
+                <li>For that, if the value after the decimal point is 0,1,2,3,4 then we need to round down.</li>
+                <li>But, if the value is 5,6,7,8,9 then the value should be round up and add +1.</li>
+                <li>Finally, after rounding the value remove all the digits after the decimal point.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Example for Rounding off to the Nearest Meter</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Example</strong></p>
+            <p><strong>Question 1:</strong> Round off the 56.43 to the Nearest Meter?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, value is 56.43</p>
+            <p>Here, in ones place we have 6 before the decimal point.</p>
+            <p>Now look after the decimal point, it is having 4 in tens place. As 4 < 5, we round down the value.</p>
+                    <p>Thus, 56.43 rounded to the nearest meter is 56.</p>
+                    <p><strong>Question 2:</strong> Round the 24.55 to the Nearest Meter?</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Given, value is 24.55</p>
+                    <p>Here, in ones place we have 4 before the decimal point.</p>
+                    <p>Now, look after the decimal point, it is having 5 in tens place. As 5=5, we round up the value by
+                        adding +1.</p>
+                    <p>Thus, 24.55 rounded to the nearest meter is 25.</p>
+                    <p><a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> site offers many best
+                        rounding calculators with detailed concepts. Go through this site and clear up all your queries.
+                    </p>
+                    <!-- <img src="{% static 'images/Numbers/Rounding-to-the-Nearest-Meter-Calculator.jpeg' %}"
+                        alt='Round to the Nearest Meter Calculator'> -->
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Round to the Nearest Meter</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. How do you round off the value to the nearest meter?</strong></p>
+            <p class="answer">As, if the value after the decimal point is 0,1,2,3,4 then we need to round down. But, if
+                the value is 5,6,7,8,9 then the value should be round up and by adding +1. Then, remove all the digits
+                after the decimal point. </li>
+            </p>
+            <hr>
+            <p class="question"><strong>2. How to use this rounding to the nearest meter calculator tool?</strong></p>
+            <p class="answer">Commonly, as we do for every calculator, you need to fill the input provision and tick the
+                calculate button to get the value round to the nearest meter in few scants.</p>
+            <hr>
+            <p class="question"><strong>3. Round off the 23.34 to the nearest meter?</strong></p>
+            <p class="answer">23.44 rounded to the nearest meter is 23.</p>
+            <hr>
+            <p class="question"><strong>4. Which site is giving the best Rounding off to the Nearest Meter Calculator
+                    tool?</strong></p>
+            <p class="answer"><a href="https://roundingcalculator.guru/">Roundingcalculators.guru</a> is the best
+                website that provides you Rounding to the Nearest Meter Calculator to make your calculations effortless
+                and error free.</p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var scrollDiv = document.getElementById("cards").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+    
+        function myFunction() {
+            document.getElementById("cards").innerHTML = "";
+    
+        }
+    </script>
+
+<script>
+    var scrollDiv = document.getElementById("cards").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+    
+       
+    </script>
+    <script>
+      function Clean(){
+              document.getElementById('cards').innerHTML=''
+              document.getElementById('cards1').innerHTML=''
+      }
+          function handleSubmit(event) {
+              if(!validate()) {
+                  event.preventDefault();
+              }
+              return;
+          }
+          function ClearFields() {
+              document.getElementById("Ib").value = "";
+              document.getElementsByName("num1")[0].placeholder = "";
+          }
+    </script>
+{%endblock%}

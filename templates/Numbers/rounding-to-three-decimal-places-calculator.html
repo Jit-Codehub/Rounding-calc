@@ -1,0 +1,263 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to Three Decimal Places Calculator | How do you round to 3 Decimal Places?</title>
+<meta name="description"
+  content="Rounding to Three Decimal Places Calculator will round the given value upto 3 decimal places effortlessly and shows the entire work." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/onlinecalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title"
+  content="Rounding to Three Decimal Places Calculator | How do you round to 3 Decimal Places?" />
+<meta property="og:description"
+  content="Rounding to Three Decimal Places Calculator will round the given value upto 3 decimal places effortlessly and shows the entire work. " />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-Three-Decimal-Places-Calculator.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+  content="Rounding to Three Decimal Places Calculator | How do you round to 3 Decimal Places?" />
+<meta name="twitter:description"
+  content="Rounding to Two Decimal Places Calculator will find the rounded value of of hundredths place in the blink of an eye and make your calculations simple." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-Three-Decimal-Places-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title'
+  content="Rounding to Three Decimal Places Calculator | How do you round to 3 Decimal Places?" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-Three-Decimal-Places-Calculator.jpeg" />
+<meta property='og:description'
+  content="Rounding to Three Decimal Places Calculator will round the given value upto 3 decimal places effortlessly and shows the entire work." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What does rounding to three decimal places mean?
+        ","acceptedAnswer": {"@type": "Answer","text":" Rounding is the process of estimation to make them precise. Rounding Decimals to three Decimal Places is nothing but rounding to the nearest thousandths."}	}, {"@type": "Question","name":"2.
+        How do you round to 3 decimal places on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" All you need to do is simply provide the relevant inputs and click on the calculate button to get the given number's rounded value to 3 decimal places."}	}, {"@type": "Question","name":"2.
+        How do you write 5.8934 rounded to 3 decimal places?
+        ","acceptedAnswer": {"@type": "Answer","text":" 5.8934 rounded to 3 decimal places is 5.893"}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to Three Decimal Places Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Free Online Calculator for Rounding to Three Decimal Places can be used to make your calculations accurate and
+        precise. All you have to do is simply enter the input in the allotted fields and then tap on calculate button to
+        get instantaneous output.</p>
+
+        <div>
+          <form  method = "POST" onsubmit="handleSubmit();">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Enter Decimal</h5>
+                      <input type="number" step = "any"  id="Ib" class="form-control mt-1" name="num1" {% if act_no %} value = "{{act_no}}" {% else %} value="123.4634" {% endif %} required >
+                        <div class="center col mt-2">
+                            <center>
+                            <input type="submit" class="btn btn-primary" value="Round" onclick="myFunction()">
+                            <input type="button" class="btn btn-danger" onclick="Clean()" value="Reset" style="margin-top: 7px;">
+                            </center>
+                        </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-sm-4">
+                  </div>
+              </div>
+              
+        </form>
+        </div>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-to-one-decimal-place-calculator/">Round Number to One Decimal Place Calculator</a></li>
+        <li><a href="/rounding-to-two-decimal-place-calculator/">Round Number to Two Decimal Place Calculator</a></li>
+        <li><a href="/rounding-decimals-to-the-nearest-thousandths/">Round Decimal to the Nearest Thousandth Calculator</a></li>
+        <li><a href="/rounding-fractions-to-decimals-calculator/">Round fraction to Decimals Calculator</a></li>
+      </ul>
+      <p><strong>Rounding to Three Decimal Places Calculator: </strong>If you want to make things simple by roundig them
+        in your complex calculations then you can take help from our Rounding to Three Decimal Places Calculator. When
+        you round to three decimal places you are rounding to nearest thousandths. In this article, we will be
+        discussing everything on what is meant by rounding to three decimal places, rules on how to round to three
+        decimal places, solved examples on rounding off to three decimal places or thousandths place. Go through the
+        step by step procedure explained for rounding to three decimal places and get to know the concept better. </p>
+    </div>
+  </div>
+
+
+  {%if cas %}
+	<div class = "container" id = "cards">
+    <div class="card">
+        <h1 class="card-header" >Rounding {{act_no}} to Three Decimal Place is</h1>
+        <div class="card-body">
+            <p>Round off value {{res}}</p>
+        </div>
+    </div>
+	</div>
+{% endif%}
+    {%if cas %}
+	<div class = "container" id = "cards1">
+    <div class="card">
+        <h1 class="card-header" >Steps to Round off {{num1}} to Three Decimal Places</h1>
+        <div class="card-body">
+            
+            <strong>Given Value = {{act_no}}</strong>
+            <p>Steps to Round off Number to three decimal places</p>
+            <ul>
+                <li><p>Locate the Fourth Digit after the Decimal Point.Here, it is  {{dec}} in {{num1}}
+                   </p></li>
+                <li><p>If the located digit is 5 or more, increase the previous digit by one and remove all digits to right<br>
+                    {%if c1%}
+                    Here in this case, it is {{res}} as the located digit is {{dec}}</p></li><br>
+                    {%endif%}
+                <li><p>If it's 4 or less, keep the previous digit the same and remove all digits to right<br>
+                {%if c2%}
+                Here it is, {{res}} as the located digit is {{dec}}</p></li>
+                {%endif%}
+            </ul>
+            <strong>Therefore Rounded Value of {{act_no}} to three decimal is {{res}}</strong>
+              
+        </div>
+    </div>
+	</div>
+	{% endif %}
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What does Rounding Off to Three Decimal Places Mean?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding to Three Decimal Places is the process of rounding to thousandths place i.e. 3nd place to the right of
+        decimal point. For Example 5.5380 rounded to three decimal places is 5.538 </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Rules for Rounding to Three Decimal Places</h3>
+    </div>
+    <div class="card-body">
+      <p>For rounding to three decimal places you need to follow certain rules. They are explained in the further
+        modules </p>
+      <ul>
+        <li>Firstly visit the decimal point and count 3 places to the right.</li>
+        <li>Look at the next number after 3 decimal places i.e. 4th decimal place or ten thousandths place. </li>
+        <li>If the ten thousandths place digit is greater than or equal to 5 simply round up and add 1 to thousandths
+          place.</li>
+        <li>If the ten thousandths place digit is less than or equal to 4 simply we will round down and keep the
+          thousandths place digit unchanged.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Example of Rounding to the Three Decimal Places</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Example 1:</strong> What is 12.35824 rounded to three decimal places? </p>
+      <p><strong>Solution:</strong></p>
+      <p>Given Number is 12.35824</p>
+      <p>First step is to identify the decimal point and count 3 decimal places from it.</p>
+      <p>Look at the 4th decimal place i.e. ten thousandths if it is >=5 simply round up or else round down. Here it is
+        2</p>
+      <p>Since 2 < 5 e will round down and keep the thousandths place same. </p>
+          <p>Therefore, 12.35824 rounded to 3 decimal places is 12.358</p>
+          <p><strong>Example 2:</strong> Round 17.9566 to the Two Decimal Places</p>
+          <p><strong>Solution:</strong></p>
+          <p>Given Number is 17.9566</p>
+          <p>Identify the decimal point and count 3 decimal places from it.</p>
+          <p>Check the 4th decimal place. If it is >=5 round up or else round down. Here it is 6</p>
+          <p>Since 6 > 5 we will round up and increase the 3rd decimal place by 1 i.e. 6+1 = 7 </p>
+          <p>Therefore, 17.9566 rounded to three decimal places is 17.957</p>
+          <p>Seek help regarding several mathematical concepts that you feel daunting from <a
+              href="https://roundingcalculator.guru/">onlinecalculator.guru</a> and understand them clearly in no time.
+          </p>
+          <!-- <img src="{% static 'images/Numbers/Rounding-to-Three-Decimal-Places-Calculator.jpeg' %}"
+            alt='Rounding to Three Decimal Places Calculator'> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding Off to Three Decimal Places</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. What does rounding to three decimal places mean?</strong></p>
+      <p class="answer">Rounding is the process of estimation to make them precise. Rounding Decimals to three Decimal
+        Places is nothing but rounding to the nearest thousandths.</p>
+      <hr>
+      <p class="question"><strong>2. How do you round to 3 decimal places on a calculator?</strong></p>
+      <p class="answer"> All you need to do is simply provide the relevant inputs and click on the calculate button to
+        get the given number's rounded value to 3 decimal places.</p>
+      <hr>
+      <p class="question"><strong>3. How do you write 5.8934 rounded to 3 decimal places?</strong></p>
+      <p class="answer">5.8934 rounded to 3 decimal places is 5.893</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<script>
+  function Clean() {
+    document.getElementById('cards').innerHTML = ''
+    document.getElementById('cards1').innerHTML = ''
+    document.getElementsByName('num1')[0].value = ''
+  }
+  function handleSubmit(event) {
+    if (!validate()) {
+      event.preventDefault();
+    }
+    return;
+  }
+</script>
+
+<script>
+  var scrollDiv = document.getElementById("cards").offsetTop;
+  window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+  
+      function myFunction() {
+          document.getElementById("cards").innerHTML = "";
+  
+      }
+  </script>
+{%endblock%}

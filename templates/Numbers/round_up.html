@@ -1,0 +1,337 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Free Online Rounding Up Calculator | Rules for Rounding Off the Numbers Up</title>
+<meta name="description"
+    content="Rounding up calculator is the best tool that rounds off the numbers up. And we have given some detailed steps and solved examples." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Free Online Rounding Up Calculator | Rules for Rounding Off the Numbers Up" />
+<meta property="og:description"
+    content="Rounding up calculator is the best tool that rounds off the numbers up. And we have given some detailed steps and solved examples." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Free Online Rounding Up Calculator | Rules for Rounding Off the Numbers Up" />
+<meta name="twitter:description"
+    content="Rounding up calculator is the best tool that rounds off the numbers up. And we have given some detailed steps and solved examples." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Free Online Rounding Up Calculator | Rules for Rounding Off the Numbers Up" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property='og:description'
+    content="Rounding up calculator is the best tool that rounds off the numbers up. And we have given some detailed steps and solved examples." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to round up the number?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        There is a rule for rounding up the number, if the number you are rounding is followed by the integers 5,6,7,8,9 then you need to increase the value by 1 and remove all the digits."}	}, {"@type": "Question","name":"2
+        What is the best tool to round off the number up?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding up calculator is the best tool to round up the values and it will be available on <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a>"}	}, {"@type": "Question","name":"3
+        What is 2.7650 rounded up number?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        2.7650 round up value is 3."}	}, {"@type": "Question","name":"4
+        How to use Rounding up Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Simply, enter the input value in the given input fields and click on the calculate button which you will see in blue color, then you will get the answers effortlessly."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+<!-- {%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%} -->
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('ddd').click();
+    });
+</script> -->
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding Up Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Avail this Rounding Up Calculator tool to make the calculations simple and faster. All you need to do is
+                fill the input fields and hit the calculate button so that you will get the answer in fraction of
+                seconds.</p>
+            <!-- {% if error %}
+            <p><b>!! Incorrect values !! Please enter current values</b></p>
+            {%endif%} -->
+            <div class="box">
+                <form method="POST" id="my_form">
+                    {% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Value to be rounded up:</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+
+                                <input type="number" oninput="validateNumber(this);" step="any" required=""
+                                    class="form-control" name="firstno" value="{{firstno}}">
+                            </center>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center><button type="submit" class="btn btn-primary">Round</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+
+               
+               
+                <li><a href="/rounding-down-numbers-calculator/">Round Down Calculator</a></li>
+                <li><a href="/rounding-half-down-rounding-calculator/">Round Half Down Calculator</a></li>
+                <li><a href="/rounding-half-to-even-calculator/">Round Half to Even Calculator</a></li>
+                <li><a href="/rounding-half-to-odd-calculator/">Round Half to Odd Calculator</a></li>
+               
+
+            </ul>
+            <p><strong>Rounding Up Calculator: </strong>Seeking for help to round up the numbers for whole numbers,
+                tenths, hundredths, thounsandths etc.? Then Rounding Up Calculator will work best for you. It will round
+                off the numbers up to the nearest whole number greater than the given one. Get detailed steps and solved
+                examples in below sections.</p>
+        </div>
+    </div>
+
+
+    <!-- <div id="clear">
+        {% if result %}
+        <div class="card" id="result">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding up : {{inp}}</h2>
+            </div>
+
+            <div class="card-body">
+                <b>{{inp}}</b>, when rounded up, results is <b>{{res}}</b>.
+            </div>
+
+
+        </div>
+
+        {% endif %}
+    </div> -->
+
+
+    <div id="clear">
+        {% if id == 1 %}
+
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="h2">Result of {{firstno}} on Rounding up </h2>
+            </div>
+            <div class="card-body">
+                <strong>Round up value is {{rounding}}</strong>
+            </div>
+        </div>
+
+        {% endif %}
+    </div>
+
+
+    <div id="clear1">
+        {% if id == 1 %}
+
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="h2">Result of {{firstno}} on Rounding up</h2>
+            </div>
+            <div class="card-body">
+                <p> Given number is {{firstno}} </p>
+                {% if great_true %}
+                <p>The digit at tenth place (after decimal) is {{digit_at_tenth}} which is >= 5 </p>
+                <p>Then, we will round up the value by increasing number by one.</p>
+                <p>Currently integer part is {{curr_value}}, increasing it by one gives us {{rounding}}.</p>
+                {% else %}
+                <p>The digit at tenth place (after decimal) is {{digit_at_tenth}} which is smaller than 5</p>
+                <p>Currently integer part is {{curr_value}}, will keep the same value in rounding up.</p>
+                {% endif %}
+
+
+                <strong>Therefore Rounding up {{firstno}} gives us {{rounding}}</strong>
+
+
+            </div>
+        </div>
+
+
+        {% endif %}
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What is Rounding Up of Numbers?</h2>
+        </div>
+        <div class="card-body">
+            <p>Rounding up of numbers means if a given number is in decimal form and after the decimal point if you have
+                5,6,7,8,9 then we will round up the number by increasing the number than the given number.</p>
+            <p>For example, 9.5565 = 10 (Round off to the number up) </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Rules for Rounding Up the Numbers</h3>
+        </div>
+        <div class="card-body">
+            <p>There are certain rules to follow for round up. Round off the numbers up for the integers 10, 100, 1000
+                and so on.</p>
+            <ul>
+                <li>First you need to check the given number. </li>
+                <li>If the number is greater than 5 or equal to 5, then add 1 to the rounding digit and then remove all
+                    the digits after the tenths, hunderedths, thounsandths place.</li>
+                <li>Finally, then the rounded up value is your desired answer.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Rounding Off the Numbers Up Examples</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Question 1:</strong> Round up the decimal number 5.54 to the Nearest Whole Numbers?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, input values are 5.54</p>
+            <p>5.54 - Here after the decimal point we have 5 which is greater than 5, so increase the value by 1 and
+                simply remove all the digits after the decimal point.</p>
+            <p>Then the answer for the decimal number 5.54 is 6.</p>
+            <p><strong>Question 2: </strong>Round up 5.7854 to the Nearest Hundredths?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, number is 5.5685</p>
+            <p>Analyze the value in hundredths place,i.e.6</p>
+            <p>Here, we have 8 in the thousandths place, as the value is greater than 5. So, increase the hundredths
+                value by 1 and remove all the digits.</p>
+            <p>Thus 5.5685 rounded to the nearest hundredths is 5.57</p>
+            <p><a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> is the best online site for
+                rounding calculators which performs complex calculations very easy and gives error free results.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Rounding up Calculator</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. How to round up the number?</strong></p>
+            <p class="answer">There is a rule for rounding up the number, if the number you are rounding is followed by
+                the integers 5,6,7,8,9 then you need to increase the value by 1 and remove all the digits.</p>
+            <hr>
+            <p class="question"><strong>2. What is the best tool to round off the number up?</strong></p>
+            <p class="answer">Rounding up calculator is the best tool to round up the values and it will be available on
+                <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a>
+            </p>
+            <hr>
+            <p class="question"><strong>3. What is 2.7650 rounded up number?</strong></p>
+            <p class="answer">2.7650 round up value is 3.</p>
+            <hr>
+            <p class="question"><strong>4. How to use Rounding up Calculator?</strong></p>
+            <p class="answer">Simply, enter the input value in the given input fields and click on the calculate button
+                which you will see in blue color, then you will get the answers effortlessly.</p>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- <script>
+    var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+        console.log(elem)
+        if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+        } else {
+            elem.value = fist_input;
+        }
+    }
+</script>
+
+<script>
+    function myFunction() {
+
+        document.getElementsByName("inp")[0].value = "";
+        document.getElementById("result").innerHTML = "";
+
+    }
+</script> -->
+
+
+<script>
+
+    {% if id == 1 %}
+
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+    {% endif %}
+
+    function myFunction() {
+        document.getElementsByName("firstno")[0].value = "";
+
+        document.getElementById("clear").innerHTML = "";
+        document.getElementById("clear1").innerHTML = "";
+
+    }
+</script>
+{%endblock%}

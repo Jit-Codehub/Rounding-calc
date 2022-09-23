@@ -1,0 +1,362 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding Decimal to Fraction Calculator | Round Off decimals to nearest fractions</title>
+<meta name="description"
+  content="Want to round decimal numbers to the nearest 1/2, 1/4, 1/8, 1/16, 1/32, 1/64 efficiently? Use this free online Rounding Decimal to Fraction Calculator." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding Decimal to Fraction Calculator | Round Off decimals to nearest fractions" />
+<meta property="og:description"
+  content="Want to round decimal numbers to the nearest 1/2, 1/4, 1/8, 1/16, 1/32, 1/64 efficiently? Use this free online Rounding Decimal to Fraction Calculator." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimal-to-Fraction.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+  content="Rounding Decimal to Fraction Calculator | Round Off decimals to nearest fractions" />
+<meta name="twitter:description"
+  content="Want to round decimal numbers to the nearest 1/2, 1/4, 1/8, 1/16, 1/32, 1/64 efficiently? Use this free online Rounding Decimal to Fraction Calculator." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimal-to-Fraction.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding Decimal to Fraction Calculator | Round Off decimals to nearest fractions" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimal-to-Fraction.jpeg" />
+<meta property='og:description'
+  content="Want to round decimal numbers to the nearest 1/2, 1/4, 1/8, 1/16, 1/32, 1/64 efficiently? Use this free online Rounding Decimal to Fraction Calculator." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How do you round decimal to fraction using a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"Click on the rounding decimal to fraction calculator from our main page. After entering into the calculator page, select the calculation and enter the input decimal in the allotted field then hit the calculate button to obtain the results at a faster pace."}	}, {"@type": "Question","name":"2. 
+        What is the fastest tool to round the decimal to the nearest half (1/2)?
+        ","acceptedAnswer": {"@type": "Answer","text":"Rounding to the nearest 1/2 calculator is the fastest & best tool to round decimals to the nearest 1/2 easily within microseconds."}	}, {"@type": "Question","name":"3. 
+        Where can I find the detailed steps page for rounding decimal to fraction part?
+        ","acceptedAnswer": {"@type": "Answer","text":"You can find the detailed steps page for rounding decimal to fraction part from roundingcalculator.guru, a trusted & reliable portal for all rounding calculators."} }]}
+    </script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %} 
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+		});
+</script>
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding Decimals Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p><strong>Free Online &amp; Handy Rounding Decimal to Fraction Calculator</strong> is available here to round off
+        the given decimals to the nearest half value or 1/4 or 1/8 or 1/16 or etc., in split seconds. All you need to do
+        is select the calculation mood from the dropdown list, enter the value to be rounded, and directly click on the
+        calculate button for getting the exact output with detailed steps.</p>
+      
+
+        <div class="box">
+          <form method="POST" id="my_form">
+              {% csrf_token %}
+              <div class="row mx-auto my-auto">
+                  <div class="cell"><br>
+                    <!-- <div class="input-group-text"><strong>Choose a Calculation</strong></div> -->
+                    <select name="calc" id="inlineFormInputGroup" class="form-control" autofocus="">
+
+                      {% if calc == 'two' %}
+                      <option value="two" selected="selected"> Round to nearest half (1/2) </option>
+                      {% else %}
+                      <option value="two"> Round to nearest half (1/2) </option>
+                      {% endif %}
+
+                      {% if calc == 'four' %}
+                      <option value="four" selected="selected"> Round to nearest one fourth (1/4) </option>
+                      {% else %}
+                      <option value="four"> Round to nearest one fourth (1/4) </option>
+                      {% endif %}
+
+                      {% if calc == 'eight' %}
+                      <option value="eight" selected="selected"> Round to nearest one eighth (1/8) </option>
+                      {% else %}
+                      <option value="eight"> Round to nearest one eighth (1/8) </option>
+                      {% endif %}
+
+                      {% if calc == 'sixteen' %}
+                      <option value="sixteen" selected="selected"> Round to nearest one sixteenth (1/16) </option>
+                      {% else %}
+                      <option value="sixteen"> Round to nearest one sixteenth (1/16) </option>
+                      {% endif %}
+
+                      {% if calc == 'thirtytwo' %}
+                      <option value="thirtytwo" selected="selected"> Round to nearest 1/32 </option>
+                      {% else %}
+                      <option value="thirtytwo"> Round to nearest 1/32 </option>
+                      {% endif %}
+
+                      {% if calc == 'sixtyfour' %}
+                      <option value="sixtyfour" selected="selected"> Round to nearest 1/64 </option>
+                      {% else %}
+                      <option value="sixtyfour"> Round to nearest 1/64 </option>
+                      {% endif %}
+
+                      
+
+
+                  </select>
+                  </div>
+                  
+              </div>
+
+
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                      <center>
+                        <input type="number" step="any" id="inlineFormInputGroup" required=""
+                        placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                         name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.45" {% endif %}>
+                      </center>
+                  </div>
+              </div>
+
+
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                    <center><button type="submit" class="btn btn-primary">Calculate</button>
+                      <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                          class="btn btn-danger">Reset</button>
+                  </center>
+                  </div>
+              </div>
+          </form>
+
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="https://roundingcalculator.guru/round-to-the-nearest-1-2-calculator/">Rounding to the Nearest 1/2
+            Calculator</a></li>
+        <li><a href="https://roundingcalculator.guru/round-to-the-nearest-1-4-calculator/">Rounding to the Nearest 1/4
+            Calculator</a></li>
+        <li><a href="https://roundingcalculator.guru/round-to-the-nearest-1-8-calculator/">Rounding to the Nearest 1/8
+            Calculator</a></li>
+        <li><a href="https://roundingcalculator.guru/round-to-the-nearest-1-16-calculator/">Rounding to the Nearest 1/16
+            Calculator</a></li>
+        <li><a href="https://roundingcalculator.guru/round-to-the-nearest-1-32-calculator/">Rounding to the Nearest 1/32
+            Calculator</a></li>
+        <li><a href="https://roundingcalculator.guru/round-to-the-nearest-1-64-calculator/">Rounding to the Nearest 1/64
+            Calculator</a></li>
+      </ul>
+      <p><strong>Rounding Off Decimal to Fraction Calculator:</strong> Are you looking for one such calculator tool that
+        deals with immediate rounding off decimals to the nearest fraction? Here is the best &amp; perfect tool ie.,
+        Rounding Decimal to Fraction Calculator that helps you round off the given decimal number to the closest
+        fraction within a fraction of seconds. However, you can also find the step-by-step solution to round off decimal
+        to the nearest fraction in the further modules.</p>
+    </div>
+  </div>
+
+
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding to nearest fraction:</h2>
+        </div>
+
+        <div class="card-body">
+            <strong>
+                Result - Round off value = {{res}}  {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %}
+            </strong>
+        </div>
+    </div>
+
+
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding to nearest fraction:</h2>
+        </div>
+
+        <div class="card-body">
+            <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+            <p>To be rounded in  : nearest   &nbsp; <b><sup>1</sup>&frasl;<sub>{{calcval}}</sub></b></p>
+            {% if frac %} 
+                <p>The fractional part is {{deci}}. </p><p>This value is nearest to {{deci_round}}.</p>
+                <p>And, {{deci_round}} in fraction of {{calcval}} is equivalent to <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}.</sub></p> 
+            {% else %}
+                <p>Since, given input is nearest to an integer {{res}}.</p> <p>It's rounding result will be same as {{res}}.</p>
+            {% endif %}
+            <p>So finally, <b>{{inp}}</b>, when rounded to nearest &nbsp; <sup>1</sup>&frasl;<sub>{{calcval}}</sub> , results in <b>{{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %}</b>. </p>
+        </div>
+            
+        
+    </div>
+
+    {% endif %}
+</div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">Detailed Explanation of Rounding Off Decimals to the Nearest 1/2, 1/4, 1/8, 1/16, 1/32, 1/64</h2>
+    </div>
+    <div class="card-body">
+      <p>The following modules will make you understand the process of rounding off numbers to nearest fraction part.
+        Simply dive into the further sections and learn the subject clearly.</p>
+      <h2>Detailed Solution to Round Decimals to the Nearest Half(1/2)</h2>
+      <p>Let's take the example decimal number of 25.87 and follow the rules or guidelines to round off a number to the
+        nearest 1/2 and get accurate results:</p>
+      <ul>
+        <li>First, identify the number, where 25.87 is the given input.</li>
+        <li>The rounding rule to round off a number to the closest half is if the fractional part of the number is close
+          to 0.5, then remove the fractional part and add 1/2 to the given number.</li>
+        <li>If the fractional part is very more than 1/2, then increase by 1 to the integer part and remove the
+          fractional part.</li>
+        <li>If the number after the decimal point is very less than 1/2, then eliminate the fractional part and the
+          result will be the integer part.</li>
+        <li>In this instance, the fractional part is more than 0.5 so the rounded result to the nearest half is 26.</li>
+      </ul>
+      <h2>How to Round off Decimals to the Nearest One-fourth (1/4)?</h2>
+      <p>Go through the below steps for rounding off numbers to the nearest 1/4th and learn the concept easily:</p>
+      <ul>
+        <li>First and foremost, observe the fraction part in the given decimal number.</li>
+        <li>Next, round off the fractional part number to the closest multiple of one-fourth.</li>
+        <li>Write down the obtained result in the fraction of 4.</li>
+        <li>At last, get the rounded value to the nearest 1/4 fraction.</li>
+      </ul>
+      <h2>Rounding to Nearest One Eighth (1/8) Example with Steps</h2>
+      <p><strong>Example:</strong></p>
+      <p>Find 234.45 rounded to the nearest 1/8?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given decimal number to round off to the nearest 1/8 is 234.45</p>
+      <p>Now, look at the fractional part ie., 0.45 which is nearest to 0.5</p>
+      <p>Next, calculate the nearest value that is equal to the multiple of 1/8. Here, 0.5 in the fraction of 8 is
+        equivalent to 4/8.</p>
+      <p>Hence, 234.45 rounded to the nearest 1/8 is 234 4/8.</p>
+      <h2>Detailed Steps to Rounding Off to the Nearest 1/16</h2>
+      <p>Here are the simple steps that should be followed to round off decimal to nearest fraction 1/16 and obtain the
+        results quickly &amp; effortlessly.</p>
+      <ul>
+        <li>Observe the number in the fractional part that should be rounded. Here, the value to be rounded is 875.23
+        </li>
+        <li>Now, round the fractional part ie., 0.23 which is nearest to 0.25.</li>
+        <li>It can be represented in the fraction of 16 is equivalent to 4/16.</li>
+        <li>At last, the integer part and fraction part results in the rounded value of 875.23 ie., 875 4/16.</li>
+      </ul>
+      <h2>How do you Round Decimal to the Nearest 1/32?</h2>
+      <p>To round decimal to the nearest 1/32, we have to check out and follow the below-detailed steps and get the
+        approx value which is closest to 1/32:</p>
+      <ul>
+        <li>Initially, identify the fractional part of the number.</li>
+        <li>Now, go for rounding it to the nearest multiple of 1/32.</li>
+        <li>Once you are done with the above step, the resulted number is in the fraction of 32.</li>
+        <li>Finally, note down the obtained equivalent number into the fractional part.</li>
+      </ul>
+      <h2>Step by Step Solution to Round off Decimal to the Nearest 1/64</h2>
+      <ul>
+        <li>In the first step, we have to observe the given number.</li>
+        <li>Next, split the fractional part and then start rounding off the number to the closest multiple of 1/64.</li>
+        <li>Find or write down the equivalent value which is the nearest fraction of 1/64.</li>
+        <li>Finally, round the decimal to the nearest 1/64 fractional part.</li>
+      </ul>
+
+      <!-- <img src="{% static 'images/Rounding/Rounding-Decimal-to-Fraction.jpeg' %}" alt='Rounding Decimal to Fraction'> -->
+    </div>
+
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Free Online Round Off Decimal Numbers to Nearest Fraction Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How do you round decimal to fraction using a calculator?</strong></p>
+      <p class="answer">Click on the rounding decimal to fraction calculator from our main page. After entering into the
+        calculator page, select the calculation and enter the input decimal in the allotted field then hit the calculate
+        button to obtain the results at a faster pace.</p>
+      <hr>
+      <p class="question"><strong>2. What is the fastest tool to round the decimal to the nearest half (1/2)?</strong>
+      </p>
+      <p class="answer">Rounding to the nearest 1/2 calculator is the fastest &amp; best tool to round decimals to the
+        nearest 1/2 easily within microseconds.</p>
+      <hr>
+      <p class="question"><strong>3. Where can I find the detailed steps page for rounding decimal to fraction
+          part?</strong></p>
+      <p class="answer">You can find the detailed steps page for rounding decimal to fraction part from <a
+          href="https://roundingcalculator.guru/">roundingcalculator.guru</a>, a trusted &amp; reliable portal for all
+        rounding calculators.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    document.getElementsByName("calc")[0].value = "two";
+    document.getElementsByName("inp")[0].value = "";
+
+    {% if result %}
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("result1").innerHTML = "";
+    {% endif %}
+
+  }
+</script>
+{%endblock%}

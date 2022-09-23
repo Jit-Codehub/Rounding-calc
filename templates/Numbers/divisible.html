@@ -1,0 +1,459 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{% static 'images/logo/Online-Calculator-Guru-Fevicon.png' %}" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style2.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Divisibility Calculator | Free Online Tool to check the Divisibility Test & Rule</title>
+    <meta name="description" content="Divisibility Calculator provide the solution whether the given number is divisible by the divisor or not in detail. Check Divisibility Rules for 2 to 20.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Divisibility Calculator | Free Online Tool to check the Divisibility Test & Rule"/>
+    <meta property="og:description" content="Divisibility Calculator provide the solution whether the given number is divisible by the divisor or not in detail. Check Divisibility Rules for 2 to 20."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Divisibility-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Divisibility Calculator | Free Online Tool to check the Divisibility Test & Rule"/>
+    <meta name="twitter:description" content="Divisibility Calculator provide the solution whether the given number is divisible by the divisor or not in detail. Check Divisibility Rules for 2 to 20."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Divisibility-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Divisibility Calculator | Free Online Tool to check the Divisibility Test & Rule"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Divisibility-Calculator.jpeg"/>
+    <meta property='og:description' content="Divisibility Calculator provide the solution whether the given number is divisible by the divisor or not in detail. Check Divisibility Rules for 2 to 20."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is meant by divisibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Divisible by means 'A number x is divisible by another number y if x÷ y gives remainder 0'."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you check divisible by on a calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After entering the input value in the input box of the calculator, tap the calculate button, and then it displays the number is divisible by another number as an output along with a detailed explanation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is every number divisible by zero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As per the divisibility definition, Zero is divisible by everything."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is meant by divisibility rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A divisibility rule is a shorthand way of determining whether a given integer is divisible by a fixed divisor without performing the division, normally by considering its digits."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Divisibility Calculator</h1>
+  </div>
+  <div class="card-body">
+    <p>Divisibility Calculator is a very helpful tool that determines whether the given number is divisible by another number. Just provide the required input number in the input field and tap on the calculate button to obtain the result easily and quickly.</p>
+    <br>
+    <p><b>Ex: </b></p> <ul><li><a href="https://onlinecalculator.guru/numbers/is-25-divisible-by-4/">Is 25 divisible by 4</a></li><li><a href="https://onlinecalculator.guru/numbers/is-46-divisible-by-5/">Is 46 divisible by 5</a></li><li><a href="https://onlinecalculator.guru/numbers/is-257-divisible-by-8/">Is 257 divisible by 8</a></li></ul>
+    {%if go_tag%}
+                <a href="{{go_tag}}" id="ddd"></a>
+                {%endif%}
+                <div class="box5" id="divisible-calculator">
+                    <form method="POST">{% csrf_token %}
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                        <center>Divisibility Calculator</center>
+                        
+                        </div>
+                        
+                    
+                      </div>
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                            <center>
+                          <table>
+                        {%if input1 %}
+                        <tr>
+                        <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="{{input1}}"></td>
+                    </tr>
+                    <tr>
+                      <td>Divisible by: </td><td><input type="text"   class="form-control" name="textfield2" id="input2" placeholder="Enter Number" value="{{input2}}"></td>
+                  </tr>
+                        {%else%}
+                        <tr>
+                            <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="44"></td>
+                        </tr>
+                        <tr>
+                          <td>Divisible by: </td><td><input type="text"   class="form-control" name="textfield2" id="input2" placeholder="Enter Number" value="4"></td>
+                      </tr>
+                      {% endif %}
+                    </table>
+                </center>
+                        </div>
+                      </div>
+                    
+                      
+                      <center>
+                      <div id="botton5" class="col mt-2 ">
+                        <td><input id="botton1" class="btn btn-secondary btn-mr-3" type="button" onclick="myFunction()" value="Clear"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      
+                      <td><button id="botton2" name="submit2" value="submit2" type="submit" class="btn btn-primary mb-2">Calculate</button>  </td>
+                      </div>
+                    </center>
+                      </form>
+                  
+                    {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                  <div id="detail">
+                    {%if detailStep%}
+                        <hr>
+                        <p><strong>Answer:</strong></p>
+                        <div style="text-align: center;">
+                        {% autoescape off %}
+                        {{detailStep}}
+                        {%endautoescape%}
+                        </div>
+                        <hr>
+                    {%endif%}	
+                    </div>
+                  </div>
+      
+    <br>
+    <p><strong>Here are some samples of Divisibility calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-50-divisible-by-6/">Is 50 divisible by 6</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-30-divisible-by-4/">Is 30 divisible by 4</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-79-divisible-by-8/">Is 79 divisible by 8</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-77-divisible-by-5/">Is 77 divisible by 5</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-45-divisible-by-3/">Is 45 divisible by 3</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-98-divisible-by-2/">Is 98 divisible by 2</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-84-divisible-by-9/">Is 84 divisible by 9</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-29-divisible-by-7/">Is 29 divisible by 7</a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-466-divisible-by-7/">Is 466 divisible by 7</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-355-divisible-by-9/">Is 355 divisible by 9</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-713-divisible-by-8/">Is 713 divisible by 8</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-363-divisible-by-4/">Is 363 divisible by 4</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-591-divisible-by-3/">Is 591 divisible by 3</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-695-divisible-by-6/">Is 695 divisible by 6</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-830-divisible-by-5/">Is 830 divisible by 5</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-393-divisible-by-2/">Is 393 divisible by 2</a></li>
+          
+        </ul>                 
+      </div>
+      <div class="col-sm-4">
+      <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-533-divisible-by-25/">Is 533 divisible by 25</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-906-divisible-by-47/">Is 906 divisible by 47</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-381-divisible-by-71/">Is 381 divisible by 71</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-827-divisible-by-91/">Is 827 divisible by 91</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-594-divisible-by-89/">Is 594 divisible by 89</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-804-divisible-by-86/">Is 804 divisible by 86</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-287-divisible-by-94/">Is 287 divisible by 94</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-534-divisible-by-26/">Is 534 divisible by 26</a></li>
+             
+      </ul>			
+      </div>
+    </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/even-or-odd-calculator/">Even or Odd Calculator</a></li>
+                    <li><a href="/numbers/comparing-numbers-calculator/">Compare Numbers Calculator</a></li> 
+                    <li><a href="/numbers/square-root-calculator/">Square root Calculator</a></li>
+                  </ul>
+    <p><strong>Divisibility Calculator:</strong>Divisibility Test Calculator is an online mathematics tool utilized to do the division operation and let you know whether the given numerator is divisible by the given denominator. It also provides a detailed solution for the given input number to understand the concept of the divisibility test. Go through the below sections and know what it is and check the number is divisible by another number or not.</p>
+</div></div>
+  <div class="card">
+    <div class="card-header"><h2 class="h2">What is Divisibility?</h2></div>
+    <div class="card-body">
+      <p>A number 'a' is divisibly by a number 'b' and if the division a:b works without the remainder, then the number is called divisibility.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">How to Check the number is divisible by another number?</h3></div>
+    <div class="card-body">
+      <p>When the number 'a' is divisible by 'b' then it should give the remainder as zero. Thus, you can check the number is divisible by another number. If you feel by performing the division method is too long then make use of the divisibility rules and check the number is divisible with another number or not.</p>
+      <p>We have included the divisibility rules in the below section. Have a look at some of the divisibility test rules and check the answer. By using our simple and easy to use the divisibility test calculator also tells you the number is divisible by the given integer or not along with the remainder and quotient of the given number. This is the online tool that gives you the quickest result to find out if the number is divisible by any numbers.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">Divisibility Rules</h3></div>
+    <div class="card-body">
+      <p>You can also find the divisibility for the given number by using divisibility rules on our own. There are some simple divisibility rules to check this:</p>
+      <ul>
+        <li>A number is divisible by 2 if its last digit is 2, 4, 6, 8 or 0 (the number is then called even)</li>
+        <li>A number is divisible by 3 if its sum of digits is divisible by 3.</li>
+        <li>A number is divisible by 4 if the number consisting of its last two digits is divisible by 4.</li>
+        <li>A number is divisible by 5 if its last digit is a 5 or a 0.</li>
+        <li>A number is divisible by 6 if it is divisible by 2 and 3, i.e. if it is even and its sum and digits are divisible by 3.</li>
+        <li>A number is divisible by 8 if its last three digits are divisible by 8.</li>
+        <li>A number is divisible by 9 if its sum of digits is divisible by 9.</li>
+        <li>A number is divisible by 10 if its last digit is a 0.</li>
+        <li>A number is divisible by 12 if it is divisible by 3 and 4.</li>
+        <li>A number is divisible by 15 if it is divisible by 3 and 5.</li>
+        <li>A number is divisible by 18 if it is divisible by 2 and 9.</li>
+        <li>A number is divisible by 20 if its last digit is a 0 and the second last digit is even.</li>
+      </ul>
+      <p><a href="{%url 'home'%}">onlinecalculator.guru</a> has provided with many mathematical concepts calculator apart from divisibility calculator to assist you in all your grade math concepts.</p>
+      <img src="{% static 'images/Numbers/Divisibility-Calculator.jpeg' %}" alt='Divisibility Calculator'>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+          <h2 class="h2">Divisibility Example Calculations</h2>
+      </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-5149-divisible-by-4/">Is 5149 divisible by 4</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-7844-divisible-by-9/">Is 7844 divisible by 9</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-2557-divisible-by-6/">Is 2557 divisible by 6</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-9878-divisible-by-8/">Is 9878 divisible by 8</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-2192-divisible-by-7/">Is 2192 divisible by 7</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-2956-divisible-by-5/">Is 2956 divisible by 5</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-9220-divisible-by-2/">Is 9220 divisible by 2</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-6233-divisible-by-3/">Is 6233 divisible by 3</a></li>
+                 
+          </ul>			
+          </div>
+          <div class="col-sm-6">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-2857-divisible-by-87/">Is 2857 divisible by 87</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-2636-divisible-by-27/">Is 2636 divisible by 27</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-4582-divisible-by-29/">Is 4582 divisible by 29</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-3260-divisible-by-61/">Is 3260 divisible by 61</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-1451-divisible-by-13/">Is 1451 divisible by 13</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-1523-divisible-by-43/">Is 1523 divisible by 43</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-5551-divisible-by-98/">Is 5551 divisible by 98</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-4387-divisible-by-24/">Is 4387 divisible by 24</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-32010-divisible-by-7/">Is 32010 divisible by 7</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-51174-divisible-by-8/">Is 51174 divisible by 8</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-76688-divisible-by-2/">Is 76688 divisible by 2</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-36612-divisible-by-6/">Is 36612 divisible by 6</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-75920-divisible-by-9/">Is 75920 divisible by 9</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-18573-divisible-by-5/">Is 18573 divisible by 5</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-24153-divisible-by-3/">Is 24153 divisible by 3</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-56513-divisible-by-4/">Is 56513 divisible by 4</a></li>
+                  
+              </ul>
+          </div>
+          <div class="col-sm-6">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-56427-divisible-by-59/">Is 56427 divisible by 59</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-93682-divisible-by-48/">Is 93682 divisible by 48</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-68442-divisible-by-26/">Is 68442 divisible by 26</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-70304-divisible-by-68/">Is 70304 divisible by 68</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-47550-divisible-by-45/">Is 47550 divisible by 45</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-31977-divisible-by-86/">Is 31977 divisible by 86</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-53160-divisible-by-26/">Is 53160 divisible by 26</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/is-89924-divisible-by-74/">Is 89924 divisible by 74</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-586548-divisible-by-2/">Is 586548 divisible by 2</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-996515-divisible-by-7/">Is 996515 divisible by 7</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-477827-divisible-by-6/">Is 477827 divisible by 6</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-276475-divisible-by-3/">Is 276475 divisible by 3</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-718831-divisible-by-4/">Is 718831 divisible by 4</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-253388-divisible-by-8/">Is 253388 divisible by 8</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-224696-divisible-by-9/">Is 224696 divisible by 9</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-905574-divisible-by-5/">Is 905574 divisible by 5</a></li>
+              
+          </ul>
+      </div>
+      <div class="col-sm-6">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-695273-divisible-by-83/">Is 695273 divisible by 83</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-899300-divisible-by-83/">Is 899300 divisible by 83</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-326483-divisible-by-18/">Is 326483 divisible by 18</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-305175-divisible-by-99/">Is 305175 divisible by 99</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-227355-divisible-by-87/">Is 227355 divisible by 87</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-262083-divisible-by-66/">Is 262083 divisible by 66</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-655330-divisible-by-55/">Is 655330 divisible by 55</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-651756-divisible-by-50/">Is 651756 divisible by 50</a></li>
+              
+          </ul>
+      </div>
+      </div>
+      </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+          <h3 class="h3">FAQs on Divisibility Calculator</h3>
+      </div>
+      <div class="card-body">
+          <!-- Question & Answer Starts --->
+         <p class="question"><strong>1. What is meant by divisibility?</strong></p>
+         <p class="answer">Divisible by means 'A number x is divisible by another number y if x÷ y gives remainder 0'.</p><hr>
+
+
+         <p class="question"><strong>2. How do you check divisible by on a calculator?</strong></p>
+         <p class="answer">After entering the input value in the input box of the calculator, tap the calculate button, and then it displays the number is divisible by another number as an output along with a detailed explanation.</p><hr>
+
+
+         <p class="question"><strong>3. Is every number divisible by zero?</strong></p>
+         <p class="answer">As per the divisibility definition, Zero is divisible by everything.</p><hr>
+
+
+         <p class="question"><strong>4. What is meant by divisibility rule?</strong></p>
+         <p class="answer">A divisibility rule is a shorthand way of determining whether a given integer is divisible by a fixed divisor without performing the division, normally by considering its digits.</p>
+      </div>
+   </div>
+</div>
+<script>
+  function myFunction() {
+    document.getElementById("input1").value="";
+    document.getElementById("input2").value="";
+    document.getElementById("detail").innerHTML="";
+    
+  }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('ddd').click();
+      });
+  </script>
+{%endblock%}

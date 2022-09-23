@@ -1,0 +1,307 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Tenth Calculator | Round Off to Nearest 10th Tool</title>
+<meta name="description"
+  content="Looking for free online Rounding to the Nearest Tenth Calculator? Find it here and start finding the rounded values to the tenths in no time." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Tenth Calculator | Round Off to Nearest 10th Tool" />
+<meta property="og:description"
+  content="Looking for free online Rounding to the Nearest Tenth Calculator? Find it here and start finding the rounded values to the tenths in no time." />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-tenth.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Tenth Calculator | Round Off to Nearest 10th Tool" />
+<meta name="twitter:description"
+  content="Looking for free online Rounding to the Nearest Tenth Calculator? Find it here and start finding the rounded values to the tenths in no time." />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-tenth.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Tenth Calculator | Round Off to Nearest 10th Tool" />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-tenth.jpeg" />
+<meta property='og:description'
+  content="Looking for free online Rounding to the Nearest Tenth Calculator? Find it here and start finding the rounded values to the tenths in no time." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How do you round to the nearest tenth?
+        ","acceptedAnswer": {"@type": "Answer","text":"Firstly, check the number next to the tenth place (the hundredths). If it's 5 or greater, add 1 to the digit in the tenths place, and eliminate all the digits after the tenth place. If it is 4 or less, just remove all the digits to the right."}	}, {"@type": "Question","name":"2. 
+        What is 639.497 rounded to the nearest tenth?
+        ","acceptedAnswer": {"@type": "Answer","text":"The rounded decimal value to the nearest tenth for 639.497 is <strong>639.5</strong>"}	}, {"@type": "Question","name":"3. 
+        What does it mean to round your answer to the nearest tenth?
+        ","acceptedAnswer": {"@type": "Answer","text":"Rounding off decimal to the nearest tenth indicates that you have to find the tenth place digit which is closest to the given decimal."}	}]}
+    </script>
+{%endblock%}
+
+
+
+{%block content%}
+
+{%if go_to %} 
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+		});
+</script>
+
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Tenth Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Utilize our free online Rounding to the Nearest Tenth Calculator and easily get the results of the rounded
+        value for the given decimal number. Enter the decimal number, select the round to option from the dropdown list,
+        and click on the calculate button to obtain the solution in a fraction of seconds.</p>
+
+        <div>
+          <div class="box">
+            <p id="error">
+              {% if error %}
+              <p><b>!! Incorrect values !! Please enter correct values</b></p>
+              {%endif%}
+              </p>
+            <form method="POST" id="my_form">
+                {% csrf_token %}
+                <div class="row mx-auto my-auto">
+                    <div class="cell">
+                        <label for="input1">Value to be rounded up:</label>
+                    </div>
+                </div>
+
+
+                <div class="row mx-auto my-auto">
+                    <div class="center col mt-2">
+                        <center>                               
+
+                          <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                           name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.23" {% endif %}>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div class="row mx-auto my-auto">
+                    <div class="center col mt-2">
+                        <center><button type="submit" class="btn btn-primary">Round</button>
+                            <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                class="btn btn-danger">Reset</button>
+                        </center>
+                        
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        </div>
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-to-the-nearest-hundredth-calculator/">Round to Nearest Thoudsandths Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-thousandth-calculator/">Round to the Nearest
+            Thousandths Calculator</a></li>
+        
+        <li><a href="/rounding-to-the-nearest-milllionth-calculator/">Round to Nearest Milllionths Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest Tenth Calculator:</strong> Finding difficulties to solve the complex decimals
+        numbers rounding off to nearest tenths then take the help from our rounding to the nearest tenth online
+        calculator. It not only provides the answers to your complex decimal numbers but also makes you learn what is
+        rounding to the nearest tenth, how to round off manually &amp; easily. Apart from the conceptual knowledge, you
+        can also get practical knowledge by going with our solved rounding decimals to the nearest tenths examples.</p>
+    </div>
+  </div>
+
+  <div id="clear">
+    {% if result %}
+    <div class="card" id="result1">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding {{inp}} to nearest tenth:</h2>
+        </div>
+
+        <div class="card-body">
+            &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+        </div>        
+    </div>
+
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Calculation of Rounding to nearest tenth:</h2>
+        </div>
+
+        <div class="card-body">
+            <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+            
+            <p>
+                Since, <strong>1 ten</strong> = 1 (10<sup>1</sup>).<br>
+                So, <strong>1 tenth</strong>  = 0.1 (10<sup>-1</sup>)
+            </p>
+
+            <p>
+                Therefore, while rounding to nearest tenth, we round the fractional part(or decimal part) upto 1 digits.
+            </p>
+
+            {% if lesdig %}
+            <p>
+                Here, In {{inp}}, number of digits after tenth place is less than 1, so we add trailing zeros upto 1 places after decmal.
+            </p>
+            {% else %}
+                {% if dig9 %}
+                    <p>
+                        Here, Number of digits after decimal place is 1, so result is same as input.
+                    </p>
+                {% else %}
+                    <p>
+                        Here, In {{inp}}, the digit after tenth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+                    So, {{bdig}} can be rounded to {{reslastdig}}.
+                    </p>
+                {% endif %}
+            
+            {% endif %}
+            <p>
+            So finally, <b>{{inp}}</b>, when rounded to nearest tenth, results is <b>{{res}}</b>. </p>
+        </div>        
+    </div>
+    {% endif %}
+</div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Meant by Rounding to the Nearest Tenth?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding to the nearest tenth deals with the decimal numbers. In maths, a Decimal number is the mix of a <a
+          href="https://ccssmathanswers.com/whole-numbers/">whole number</a> and a <a
+          href="https://multiplyfractions.com/">fraction</a> divided by a decimal point. Here, the place value of digits
+        is divided by 10 from left to right thereby the decimal place values will assist in determining the place values
+        of tenths, hundredths, thousands.</p>
+      <p><a href="https://ccssmathanswers.com/decimal-numbers/">Decimal numbers</a> rounding is simply replacing the
+        number with the approximation of the number. We can round the decimal number to nearest tenths, hundredths,
+        thousandths, etc. The place value of tenths is defined as 1/10(one-tenth).</p>
+      <p>For example, let's take a decimal number 14.567. Here, the tenth place value is 5. After performing the
+        rounding decimal to the nearest tenth steps, the rounded value is 14.6 (rounded to the nearest 0.1 or tenths
+        place).</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round Off Decimal to the Nearest Tenths?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding off decimal to the nearest tenths means the value should be written correctly to one decimal place.
+        The process to round off to the nearest tenth place is given in simple steps below:</p>
+      <ul>
+        <li>First, consider the tenth place value in a decimal number. It is the first number that comes first after the
+          decimal separator.</li>
+        <li>To find the nearest tenth, we have to observe the hundredth place value.</li>
+        <li>If the digit is greater than or equal to 5, we have to add 1 to the tenth place value.</li>
+        <li>In case, the digit is less than 5, then remain the tenths value same and remove all the digits after tenths
+          value.</li>
+      </ul>
+      <h3>Solved Examples on Round Numbers to the Nearest Tenth</h3>
+      <p>1. Find 4.47214 rounded to the nearest tenth?</p>
+      <p><strong>Solution:</strong></p>
+      <p>A given decimal number is 4.47214</p>
+      <p>Here, the tenth place value is 4 and the hundredths value is 7 which is greater than 5</p>
+      <p>So, add 1 to the tenth value to round off to the nearest 10th</p>
+      <p>Hence, 4.47214 rounded to the nearest tenth is 4.5</p>
+      <p>2. Solve 753.98 rounded to the nearest tenth</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given number is 753.98</p>
+      <p>Here, the tenth place digit is 9 and the hundredth value is 8, where 8 is greater than 5</p>
+      <p>So, add 1 to the 10th place value</p>
+      <p>Therefore, 753.98 rounded to the nearest tenth is 754.0</p>
+      <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-tenth.jpeg' %}" alt="Round to the Nearest Tenth" /> -->
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Handy Rounding Decimals to the Nearest Tenth Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How do you round to the nearest tenth? </strong></p>
+      <p class="answer">Firstly, check the number next to the tenth place (the hundredths). If it's 5 or greater, add 1
+        to the digit in the tenths place, and eliminate all the digits after the tenth place. If it is 4 or less, just
+        remove all the digits to the right.</p>
+      <hr>
+      <p class="question"><strong>2. What is 639.497 rounded to the nearest tenth?</strong></p>
+      <p class="answer">The rounded decimal value to the nearest tenth for 639.497 is <strong>639.5</strong> </p>
+      <hr>
+      <p class="question"><strong>3. What does it mean to round your answer to the nearest tenth?</strong></p>
+      <p class="answer">Rounding off decimal to the nearest tenth indicates that you have to find the tenth place digit
+        which is closest to the given decimal.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+          fist_input = elem.value;
+      } else {
+          elem.value = fist_input;
+      }
+  }
+</script>
+
+<script>
+  function myFunction() {
+      document.getElementById('error').innerHTML="";
+      document.getElementsByName("inp")[0].value = "";
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result1").innerHTML = "";
+  }
+</script>
+
+{%endblock%}

@@ -1,0 +1,302 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding half up Numbers Calculator | Steps to Round Numbers</title>
+<meta name="description"
+  content="Rounding half up Numbers Calculator is helpful to round off a number to the nearest integer. Get the simple steps on how to round half up and its rounding rules." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding half up Numbers Calculator | Steps to Round Numbers" />
+<meta property="og:description"
+  content="Rounding half up Numbers Calculator is helpful to round off a number to the nearest integer. Get the simple steps on how to round half up and its rounding rules." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding half up Numbers Calculator | Steps to Round Numbers" />
+<meta name="twitter:description"
+  content="Rounding half up Numbers Calculator is helpful to round off a number to the nearest integer. Get the simple steps on how to round half up and its rounding rules." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding half up Numbers Calculator | Steps to Round Numbers" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property='og:description'
+  content="Rounding half up Numbers Calculator is helpful to round off a number to the nearest integer. Get the simple steps on how to round half up and its rounding rules." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you round up half?
+        ","acceptedAnswer": {"@type": "Answer","text":" Round up half is a technique that is used in many disciplines. To use this method, the number in tenth place should be 5. Remove the decimal part and add 1 to the integer part of the number to get the rounded number."}	}, {"@type": "Question","name":"2.
+        Does 0.5 get rounded up?
+        ","acceptedAnswer": {"@type": "Answer","text":" Yes, if a number has 0.5 as a decimal part, it will be rounded up."}	}, {"@type": "Question","name":"3.
+        How to round numbers on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Enter the number in the provided input field of the calculator and tap on the calculate button to get the rounded half up number as result within seconds."}	}, {"@type": "Question","name":"4.
+        What is the best tool to round up half numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":" Rounding Half Up Numbers Calculator is the best tool that rounds half up numbers and it is available on Roundingcalculator.guru website."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding Half Up Numbers Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Take the help of a handy Rounding Half up Numbers Calculator tool and get the rounding half up value for any
+        number. Simply, give your number in the input field and click on the calculate button to avail the rounded value
+        as output within no time.</p>
+
+      <div>
+        <div class="box">
+
+          <ul class="messages">
+            <p id="error" class="alert alert-danger text-center" style="color:red;display:none">Invalid
+              value
+            </p>
+          </ul>
+          <form method="POST">
+            {% csrf_token %}
+
+            <div class="row mx-auto my-auto">
+              <div class="cell center col mt-2">
+
+                <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                  placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp" {% if inp %}
+                  value="{{inp}}" {% else %} value="34.5" {% endif %}>
+              </div>
+
+            </div>
+
+
+            <div class=" center col mt-2 ">
+              <center><button type="submit" class="btn btn-primary">Round</button>
+                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                  class="btn btn-danger">Reset</button>
+              </center>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-up-calculator/">Round Up Calculator</a></li>
+        
+                  <li><a href="/rounding-down-numbers-calculator/">Round Down Calculator</a></li>
+                  <li><a href="/rounding-half-down-rounding-calculator/">Round Half Down Calculator</a></li>
+         
+
+      </ul>
+      <p><strong>Rounding Half Up Numbers Calculator: </strong>Do you want to know what does rounding half up means?
+        Then this page is going to help you a lot and it provides answers for all your queries. Have a look at the
+        detailed steps to round half up numbers manually and the rules for rounding numbers half up. To make you
+        understand the concept better we have also included solved examples in the following sections.</p>
+    </div>
+  </div>
+
+  <div id="clear">
+    {% if result %}
+    <div class="card" id="result1">
+      <div class="card-header">
+        <h2 class="h2">Result of rounding {{inp}} to Half Up:</h2>
+      </div>
+
+      <div class="card-body">
+        &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+      </div>
+    </div>
+
+    <div class="card" id="result">
+      <div class="card-header">
+        <h2 class="h2">Calculation of Half Up Rounding calculator:</h2>
+      </div>
+
+      <div class="card-body">
+        <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+
+        <p>
+          In round up calculator, we round the input value to nearest whole number by rounding to either previous half
+          or next half.
+        </p>
+
+        {% if negative %}
+        <p>
+          Here, input is {{inp}}, which is negative.<br>
+          In {{inp}}, digit after decimal is {{digit_after_dot}}, which is {{comp_type}} than 5.<br>
+        </p>
+        <p>
+          So, we round {{inp}} to {{res}}.
+        </p>
+        {% else %}
+        <p>
+          Here, input is {{inp}}, which is positive.<br>
+          In {{inp}}, digit after decimal is {{digit_after_dot}}, which is {{comp_type}} than 5.<br>
+        </p>
+        <p>
+          So, we round {{inp}} to {{res}}.
+        </p>
+        {% endif %}
+
+        <p>
+          So finally, <b>{{inp}}</b>, when rounded half up, results in <b>{{res}}</b>.
+        </p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Rounding Half Up of Numbers?</h2>
+    </div>
+    <div class="card-body">
+      <p>Rounding half up is a rule that is used to round numbers to the nearest integer. When you round a decimal
+        number x to the nearest integer needs some tie breaking rules for x is exactly equal to 0.5. That means if the
+        fractional part of a number is 0.5, then round up the number.
+      </p>
+      <p> Rounding up means increasing the number and removing the decimal part.</p>
+      <p>For rounding hald up the numbers, if a fraction x is equal to 0.5, then y = x + 0.5</p>
+      <p> y = x + 0.5 = -(x - 0.5) = (2x)/2</p>
+      <p>Example is 28.5 is rounded as 29.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Rules for Rounding Half Up the Numbers</h3>
+    </div>
+    <div class="card-body">
+      <p>Follow below mentioned rules to round half up numbers easily. It must be considered when the fractional part of
+        the number is exactly 0.5</p>
+      <ul>
+        <li>Check the given number and convert it into decimal form.</li>
+        <li>If the decimal part of the number is equal to 0.5, then add 1 to the integer part and remove the decimal
+          part.</li>
+        <li>Finally, then the rounded up value is your desired answer.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Round Numbers Half Up Examples</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Question 1:</strong> Round up the decimal number 18.5 to the Nearest Whole Number?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given, input values are 18.5</p>
+      <p>18.5 - Here after the decimal point we have 5 which is equal to 5, so increase the value by 1 and simply remove
+        all the digits after the decimal point.</p>
+      <p>Then the answer for the decimal number 18.5 is 19.</p>
+      <p><strong>Question 2: </strong>Round half up 84.5 to the Nearest Integer?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given, number is 84.5</p>
+      <p>THe number at the tenths place is 5 which is equal to 5. So, round up the number.</p>
+      <p>Add 1 to the integer part i.e 84 and remove the decimal part.</p>
+      <p>Thus 84.5 rounded half up to the nearest integer is 85.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding Half up NUmbers Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong> 1. How do you round up half?</strong></p>
+      <p class="answer">Round up half is a technique that is used in many disciplines. To use this method, the number in
+        tenth place should be 5. Remove the decimal part and add 1 to the integer part of the number to get the rounded
+        number.</p>
+      <hr>
+      <p class="question"><strong>2. Does 0.5 get rounded up?</strong></p>
+      <p class="answer">Yes, if a number has 0.5 as a decimal part, it will be rounded up.</p>
+      <hr>
+      <p class="question"><strong>3. How to round numbers on a calculator?</strong></p>
+      <p class="answer">Enter the number in the provided input field of the calculator and tap on the calculate button
+        to get the rounded half up number as result within seconds.</p>
+      <hr>
+      <p class="question"><strong>4. What is the best tool to round up half numbers?</strong></p>
+      <p class="answer">Rounding Half Up Numbers Calculator is the best tool that rounds half up numbers and it is
+        available on <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> website.</p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    {% if error %}
+    document.getElementById("error").innerHTML = "";
+    {% endif %}
+    document.getElementById("clear").innerHTML = "";
+    document.getElementsByName("inp")[0].value = "";
+    // document.getElementById("result").innerHTML = "";
+    // document.getElementById("result1").innerHTML = "";
+  }
+</script>
+{%endblock%}

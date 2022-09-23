@@ -1,0 +1,458 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style2.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Greater Than Less Than Calculator | Free Online Tool to compare numbers</title>
+    <meta name="description" content="Greater Than Less Than Calculator is a handy & instant calculator that compares the two numbers and tells the result as which is greater or lesser quickly.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Greater Than Less Than Calculator | Free Online Tool to compare numbers"/>
+    <meta property="og:description" content="Greater Than Less Than Calculator is a handy & instant calculator that compares the two numbers and tells the result as which is greater or lesser quickly."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Comparing-Numbers-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Greater Than Less Than Calculator | Free Online Tool to compare numbers"/>
+    <meta name="twitter:description" content="Greater Than Less Than Calculator is a handy & instant calculator that compares the two numbers and tells the result as which is greater or lesser quickly."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Comparing-Numbers-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Greater Than Less Than Calculator | Free Online Tool to compare numbers"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Comparing-Numbers-Calculator.jpeg"/>
+    <meta property='og:description' content="Greater Than Less Than Calculator is a handy & instant calculator that compares the two numbers and tells the result as which is greater or lesser quickly."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you remember greater than less than inequality signs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One of the most reliable ways to remember the greater than and less than signs is to imagine the Alligator Method, L Method, and Equal Sign Method."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you compare two numbers on a calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A comparison of two numbers can be done through inequality signs like greater than less than. If you want to compare two numbers and find out which number is greater or lesser then provide the numbers as inputs in the input box of the Greater than Less than Calculator and click on the enter button. That's it! comparison of the two numbers is done."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 1 greater or lesser than 6?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The number 1 is less than 6. Thus, 1 < 6 in symbolic representation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 0.2 or 0.02 greater?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The number 0.2 is greater than 0.02. If the more the no of zeroes after the decimal point the smaller the number is. So, 0.02 is a smaller number than 0.2."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Greater than Less than Calculator</h1>
+  </div>
+  <div class="card-body">
+    <p>By providing the inputs in the input filed and click on the calculate button results exact output along with a detailed solution by our Greater than Less than Calculator. S, utilize the tool and obtain the comparison of two numbers output instantly.</p>
+    <p><b>Ex: </b></p> <ul><li><a href="https://onlinecalculator.guru/numbers/compare-numbers-25-and-44/">Compare Numbers 25 and 44</a></li><li><a href="https://onlinecalculator.guru/numbers/compare-numbers-46-and-85/">Compare Numbers 46 and 85</a></li><li><a href="https://onlinecalculator.guru/numbers/compare-numbers-57-and-98/">Compare Numbers 57 and 98</a></li></ul>
+    {%if go_tag%}
+                <a href="{{go_tag}}" id="ddd"></a>
+                {%endif%}
+                <div class="box5" id="compare-numbers-calculator">
+                    <form method="POST">{% csrf_token %}
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                        <center>Greater than Less than Calculator</center>
+                        
+                        </div>
+                        
+                    
+                      </div>
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                            <center>
+                          <table>
+                        {%if input1 %}
+                        <tr>
+                        <td>Number1: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="{{input1}}"></td>
+                    </tr>
+                    <tr>
+                      <td>Number2: </td><td><input type="text"   class="form-control" name="textfield2" id="input2" placeholder="Enter Number" value="{{input2}}"></td>
+                  </tr>
+                        {%else%}
+                        <tr>
+                            <td>Number1: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="35"></td>
+                        </tr>
+                        <tr>
+                          <td>Number2: </td><td><input type="text"   class="form-control" name="textfield2" id="input2" placeholder="Enter Number" value="45"></td>
+                      </tr>
+                      {% endif %}
+                    </table>
+                </center>
+                        </div>
+                      </div>
+                    
+                      
+                      <center>
+                      <div id="botton5" class="col mt-2 ">
+                        <td><input id="botton1" class="btn btn-secondary btn-mr-3" type="button" onclick="myFunction()" value="Clear"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      
+                      <td><button id="botton2" name="submit2" value="submit2" type="submit" class="btn btn-primary mb-2">Calculate</button>  </td>
+                      </div>
+                    </center>
+                      </form>
+                  
+                    {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                  <div id="detail">
+                    {%if detailStep%}
+                        <hr>
+                        <p><strong>Answer:</strong></p>
+                        <div style="text-align: center;">
+                        {% autoescape off %}
+                        {{detailStep}}
+                        {%endautoescape%}
+                        </div>
+                        <hr>
+                    {%endif%}	
+                    </div>
+                  </div>
+      
+    <br>
+    <p><strong>Here are some samples of Compare Numbers calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-8-and-8/">Compare Numbers 8 and 8</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-3-and-6/">Compare Numbers 3 and 6</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-4-and-5/">Compare Numbers 4 and 5</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-9-and-3/">Compare Numbers 9 and 3</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-5-and-9/">Compare Numbers 5 and 9</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-7-and-7/">Compare Numbers 7 and 7</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-6-and-4/">Compare Numbers 6 and 4</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-2-and-2/">Compare Numbers 2 and 2</a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-88-and-42/">Compare Numbers 88 and 42</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-50-and-17/">Compare Numbers 50 and 17</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-21-and-64/">Compare Numbers 21 and 64</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-77-and-42/">Compare Numbers 77 and 42</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-52-and-20/">Compare Numbers 52 and 20</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-73-and-61/">Compare Numbers 73 and 61</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-74-and-25/">Compare Numbers 74 and 25</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-86-and-54/">Compare Numbers 86 and 54</a></li>
+          
+        </ul>                 
+      </div>
+      <div class="col-sm-4">
+      <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-33-and-62/">Compare Numbers 33 and 62</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-29-and-53/">Compare Numbers 29 and 53</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-89-and-86/">Compare Numbers 89 and 86</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-17-and-87/">Compare Numbers 17 and 87</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-72-and-86/">Compare Numbers 72 and 86</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-55-and-82/">Compare Numbers 55 and 82</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-40-and-31/">Compare Numbers 40 and 31</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-38-and-31/">Compare Numbers 38 and 31</a></li>
+             
+      </ul>			
+      </div>
+    </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/even-or-odd-calculator/">Even or Odd Calculator</a></li>
+                    <li><a href="/numbers/divisibility-calculator/">Divisibility Calculator</a></li> 
+                    <li><a href="/numbers/square-calculator/">Square Calculator</a></li>
+                  </ul>
+    <p><strong>Greater than Less than Calculator: </strong>Do you want to learn the concept called comparison of two numbers using inequality signs? Then, this page is the right choice for you. We have discussed the most important mathematics topic knows as greater than less than for comparing the two numbers here. And, you will find details like What it is, how to compare numbers, etc from this page.</p>
+    <p>So, make use of this information and complete your math calculations easily & effortlessly. Also, we have created a free online Greater than less than Calculator to perform compare numbers calculations at a faster pace. You can avail the result in a fraction of seconds by using our handy tool ie, Greater than less than Calculator.</p>
+</div></div>
+  <div class="card">
+    <div class="card-header"><h2 class="h2">What Greater Than Less Than Is?</h2></div>
+    <div class="card-body">
+      <p>In number system, greater than less than concept acts as a major role in explaining which number is greater or lesser than the other number. For indicating the greater number, we use greater than symbol ie, > and to indicate a lesser number, we use less than symbol ie, <.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">Comparison of Two Numbers</h3></div>
+    <div class="card-body">
+      <p>In Maths, symbols play an essential role in comparing the two numbers. To compare two integers or any values, we use equality and inequality symbols. Equal to, equivalent to, congruent to, etc. are some of the equality symbols. Less than, greater than, less than or equal to, greater than or equal to, etc. are few inequality symbols. Greater than & less than are both inequality symbols that are used to compare which number is greater or lesser from the given numbers or expressions.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">Standard Form for Greater Than & Less Than</h3></div>
+    <div class="card-body">
+      <p>The standard form to represent the greater than or less than the number is given as:</p>
+      <p><strong>Greater Than:</strong> First Number > Second Number</p>
+      <p><strong>Example:</strong> 100 > 75</p>
+      <p><strong>Less Than:</strong> First Number < Second Number</p>
+      <p><strong>Example:</strong> 34 < 78</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">Method to compare two numbers to find greater or lesser</h3></div>
+    <div class="card-body">
+      <p>If you want to find which number is greater or lesser from the two given numbers. Check the below example:</p>
+      <p>Find which number is greater between the 2 given numbers: 35, 42</p>
+      <p>We could see that 42 is the highest value so we can write it as 35 < 42.</p>
+      <p>On the other hand, for negative numbers, the least number is the greatest one. So, consider two numbers: -56, -23 now find which number is greater or lesser.</p>
+      <p>We could see that -23 is the least value so it is a greater number than -56, we can write it as -56<-23.</p>
+      <p>Want to finish your assignment in maths subject by understanding the solution of each concept then go with our comprehensive array of calculators prevailing on the <a href="{%url 'home'%}">Onlinecalculator.guru</a> portal.</p>
+      <img src="{% static 'images/Numbers/Comparing-Numbers-Calculator.jpeg' %}" alt="Comparing Numbers Calculator">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+          <h2 class="h2">Comparing Numbers Example Calculations</h2>
+      </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-970-and-594/">Compare Numbers 970 and 594</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-805-and-121/">Compare Numbers 805 and 121</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-542-and-788/">Compare Numbers 542 and 788</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-128-and-141/">Compare Numbers 128 and 141</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-765-and-230/">Compare Numbers 765 and 230</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-314-and-840/">Compare Numbers 314 and 840</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-844-and-393/">Compare Numbers 844 and 393</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-676-and-262/">Compare Numbers 676 and 262</a></li>
+                 
+          </ul>			
+          </div>
+          <div class="col-sm-6">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-490-and-495/">Compare Numbers 490 and 495</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-804-and-661/">Compare Numbers 804 and 661</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-630-and-500/">Compare Numbers 630 and 500</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-895-and-897/">Compare Numbers 895 and 897</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-824-and-569/">Compare Numbers 824 and 569</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-489-and-232/">Compare Numbers 489 and 232</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-891-and-685/">Compare Numbers 891 and 685</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-144-and-976/">Compare Numbers 144 and 976</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-9478-and-6145/">Compare Numbers 9478 and 6145</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-4381-and-2715/">Compare Numbers 4381 and 2715</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-6140-and-1351/">Compare Numbers 6140 and 1351</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-7969-and-9954/">Compare Numbers 7969 and 9954</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-1447-and-9754/">Compare Numbers 1447 and 9754</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-4230-and-4823/">Compare Numbers 4230 and 4823</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-7219-and-8588/">Compare Numbers 7219 and 8588</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-7069-and-6633/">Compare Numbers 7069 and 6633</a></li>
+                  
+              </ul>
+          </div>
+          <div class="col-sm-6">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-8670-and-5576/">Compare Numbers 8670 and 5576</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-7078-and-3770/">Compare Numbers 7078 and 3770</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-9633-and-5734/">Compare Numbers 9633 and 5734</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-1592-and-3168/">Compare Numbers 1592 and 3168</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-3379-and-8169/">Compare Numbers 3379 and 8169</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-9209-and-2212/">Compare Numbers 9209 and 2212</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-4147-and-5559/">Compare Numbers 4147 and 5559</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-1309-and-3891/">Compare Numbers 1309 and 3891</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-14236-and-40182/">Compare Numbers 14236 and 40182</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-66690-and-12035/">Compare Numbers 66690 and 12035</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-90845-and-65305/">Compare Numbers 90845 and 65305</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-13430-and-44721/">Compare Numbers 13430 and 44721</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-64487-and-52911/">Compare Numbers 64487 and 52911</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-66587-and-87187/">Compare Numbers 66587 and 87187</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-64927-and-40486/">Compare Numbers 64927 and 40486</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-22530-and-38403/">Compare Numbers 22530 and 38403</a></li>
+              
+          </ul>
+      </div>
+      <div class="col-sm-6">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-63756-and-18737/">Compare Numbers 63756 and 18737</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-93280-and-59875/">Compare Numbers 93280 and 59875</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-61812-and-99401/">Compare Numbers 61812 and 99401</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-30691-and-26550/">Compare Numbers 30691 and 26550</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-26713-and-86228/">Compare Numbers 26713 and 86228</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-55649-and-32042/">Compare Numbers 55649 and 32042</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-17080-and-24650/">Compare Numbers 17080 and 24650</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/compare-numbers-75077-and-98311/">Compare Numbers 75077 and 98311</a></li>
+              
+          </ul>
+      </div>
+      </div>
+      </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+          <h3 class="h3">FAQs on Greater Than Less Than Calculator</h3>
+      </div>
+      <div class="card-body">
+          <!-- Question & Answer Starts --->
+         <p class="question"><strong>1. How do you remember greater than less than inequality signs?</strong></p>
+         <p class="answer">One of the most reliable ways to remember the greater than and less than signs is to imagine the Alligator Method, L Method, and Equal Sign Method.</p><hr>
+
+
+         <p class="question"><strong>2. How do you compare two numbers on a calculator?</strong></p>
+         <p class="answer">A comparison of two numbers can be done through inequality signs like greater than less than. If you want to compare two numbers and find out which number is greater or lesser then provide the numbers as inputs in the input box of the Greater than Less than Calculator and click on the enter button. That's it! comparison of the two numbers is done.</p><hr>
+
+
+         <p class="question"><strong>3. Is 1 greater or lesser than 6?</strong></p>
+         <p class="answer">The number 1 is less than 6. Thus, 1 < 6 in symbolic representation.</p><hr>
+
+
+         <p class="question"><strong>4. Is 0.2 or 0.02 greater?</strong></p>
+         <p class="answer">The number 0.2 is greater than 0.02. If the more the no of zeroes after the decimal point the smaller the number is. So, 0.02 is a smaller number than 0.2.</p>
+      </div>
+   </div>
+</div>
+<script>
+  function myFunction() {
+    document.getElementById("input1").value="";
+    document.getElementById("input2").value="";
+    document.getElementById("detail").innerHTML="";
+    
+  }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('ddd').click();
+      });
+  </script>
+{%endblock%}

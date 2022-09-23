@@ -1,0 +1,339 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Feet Calculator | Online Foot Rounding Calculator</title>
+<meta name="description"
+  content="Here is the Rounding to the Nearest Feet Calculator that finds the rounded values to the closest ft unit place & provides output with steps." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Feet Calculator | Online Foot Rounding Calculator" />
+<meta property="og:description"
+  content="Here is the Rounding to the Nearest Feet Calculator that finds the rounded values to the closest ft unit place & provides output with steps." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/rounding-to-the-nearest-feet.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Feet Calculator | Online Foot Rounding Calculator" />
+<meta name="twitter:description"
+  content="Here is the Rounding to the Nearest Feet Calculator that finds the rounded values to the closest ft unit place & provides output with steps." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/rounding-to-the-nearest-feet.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Feet Calculator | Online Foot Rounding Calculator" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/rounding-to-the-nearest-feet.jpeg" />
+<meta property='og:description'
+  content="Here is the Rounding to the Nearest Feet Calculator that finds the rounded values to the closest ft unit place & provides output with steps." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is rounding to ft unit?
+        ","acceptedAnswer": {"@type": "Answer","text":"The process of trimming the decimal points to the closest rounding place is called rounding off to the feet or foot. The symbol to represent both measures is ft."} }, {"@type": "Question","name":"2.
+        Where can I find the round to the nearest feet calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"You can find the round to the nearest feet calculator from the best online website i.e., roundingcalculator.guru"} }, {"@type": "Question","name":"3.
+        What is 32.41 ft rounded to the nearest foot?
+        ","acceptedAnswer": {"@type": "Answer","text":"32.41 ft rounded to the nearest foot is 32 ft. Here, 4 in the tenth place is less than 5 so we have rounded down the input to the nearest feet."} }]}
+    </script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Feet Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Handy &amp; Free online tool that determines the approx value or rounded value to the nearest foot or feet in
+        less time is <strong>Rounding to the Nearest Feet Calculator</strong>. It takes an input value and gives output
+        with a detailed explanation with just a few taps.</p>
+     
+      
+        <div class="box">
+
+          <form method="POST" id="my_form" onsubmit="handleSubmit();">
+            {% csrf_token %}
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                <label for="input1">Value to be rounded up:</label>
+              </div>
+            </div>
+  
+  
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center>
+  
+                  <input type="number" step="any" id="Ib" class="form-control mt-1" min="0" name="num1" value="{{num1}}"
+                    placeholder="3245.678" required>
+                </center>
+              </div>
+            </div>
+  
+  
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center>
+                  <input type="submit" class="btn btn-primary" value="Round" onclick="myFunction()">
+                  <input type="button" class="btn btn-danger" onclick="Clean();ClearFields();" value="Reset" style="margin-top: 8px;">
+                  </center>
+  
+              </div>
+            </div>
+          </form>
+  
+        </div>
+
+      {%if detailStep%}
+      <hr>
+      <p><strong>Answer:</strong></p>
+      <div style="text-align: center;">
+        {% autoescape off %}
+        {{detailStep}}
+        {%endautoescape%}
+      </div>
+      <hr>
+      {%endif%}
+    </div>
+    {% autoescape off %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row">
+      <div class="col-md-6">
+        <p class="alert alert-danger">{{message}}</p>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {%endautoescape%}
+    <br>
+    <p>Related Calculators:</p>
+    <ul>
+      <li><a href="rounding-to-the-nearest-feet-inch-calculator/">Rounding to the Nearest feet-inch</a></li>
+      
+      <li><a href="/rounding-to-the-nearest-meter-calculator/">Rounding to the Nearest meters</a></li>
+      <li><a href="/rounding-to-the-nearest-kilometer-calculator/">Rounding to the Nearest Kilometers</a></li>
+        <!-- <li><a href="/rounding-to-the-nearest-meter-calculator/">Rounding to the Nearest Meters</a></li> -->
+      
+
+    </ul>
+    <p><strong>Rounding to the Nearest Feet Calculator:</strong> Want to round off the large values to the nearest feet
+      (ft)? Take the help from our free Rounding to the Nearest Feet Calculator and enter your input. It computes the
+      answer along with detailed steps. Also, you can learn what is meant by rounding off to nearest ft, rounding rules
+      &amp; simple steps to round off numbers, and worked examples on rounding off to the nearest feet online
+      calculator.</p>
+  </div>
+
+
+  {%if cas %}
+  <div class="container" id="cards">
+    <div class="card">
+      <h1 class="card-header" style="background-color:#00BFFF;color: white;">Rounding off {{num1}} to Nearest Feet</h1>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Round off to Nearest Feet</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Round off to Nearest Whole Number</td>
+              <td>{{whole}} Feet</td>
+            </tr>
+            <tr>
+
+              <td>Round off to Nearest Tens</td>
+              <td>{{tens}} Feet</td>
+
+            </tr>
+            <tr>
+              <td>Round off to Nearest Hundreds</td>
+              <td>{{hund}} Feet</td>
+            </tr>
+            <tr>
+              <td>Round off to Nearest Thousands</td>
+              <td>{{thou}} Feet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endif%}
+  {%if cas1 %}
+  <div class="container" id="cards1">
+    <div class="card">
+      <h1 class="card-header" style="background-color:#00BFFF;color: white;">Steps for Rounding {{num1}} to Nearest
+        Tens, Hundreds and Thousands</h1>
+      <div class="card-body">
+        <h3 style="background-color:#DAF7A6;">Rounding off to Nearest Tens</h3>
+        {%if tetcas%}
+        <p>Given Number is {{num1}}</p>
+        <p>Observe the {{placeten}} digit in the number. Here it is {{tensid}}</p>
+        <p>The {{placeten}} place digit {{tensid}} {{st}}. {{st1}}</p>
+        <p>Rounded value of {{num1}} is {{tens}}</p>
+        <p>Therefore, {{num1}} is rounded to the nearest tens is <strong>{{tens}}</strong>.</p>
+        {%endif%}
+        {%if tefcas%}
+        <p>{{st}}</p>
+        <p>{{st1}}</p>
+        {%endif%}
+        <h3 style="background-color:#DAF7A6;">Rounding off to Nearest Hundreds</h3>
+        {%if htcas%}
+        <p>Given Number is {{num1}}</p>
+        <p>Observe the {{placehun}} digit in the number. Here it is {{hunid}}</p>
+        <p>The {{placehun}} place digit {{hunid}} {{sh}}. {{sh1}}</p>
+        <p>Rounded value of {{num1}} is {{tens}}</p>
+        <p>Therefore, {{num1}} is rounded to the nearest hundreds is <strong>{{hund}}</strong>.</p>
+        {%endif%}
+        {%if hfcas%}
+        <p>{{sh}}</p>
+        <p>{{sh1}}</p>
+        {%endif%}
+        <h3 style="background-color:#DAF7A6;">Rounding off to Nearest Thousand</h3>
+        {%if ttcas%}
+        <p>Given Number is {{num1}}</p>
+        <p>Observe the {{placetho}} digit in the number. Here it is {{thouid}}</p>
+        <p>The {{placetho}} place digit {{thouid}} {{sth}}. {{sth1}}</p>
+        <p>Rounded value of {{num1}} is {{thou}}</p>
+        <p>Therefore, {{num1}} is rounded to the nearest thousands is <strong>{{thou}}</strong>.</p>
+        {%endif%}
+        {%if tfcas%}
+        <p>{{sth}}</p>
+        <p>{{sth1}}</p>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Meant by Round Off to Nearest Feet (ft)?</h2>
+    </div>
+    <div class="card-body">
+      <p>Trimming the input number to the closest rounding value is known as rounding off to the nearest feet. The
+        process to find the round off value to the nearest foot is explained very clearly in a step-wise manner below.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round to the Nearest Feet (Step-by-Step)?</h2>
+    </div>
+    <div class="card-body">
+      <p>Take a look at the simple procedure of rounding to the nearest feet in the provided points and get familiar
+        with the calculation manually:</p>
+      <ul>
+        <li>First and foremost, identify the given feet number. </li>
+        <li>Now, look at the digit that we have to round off which is the first digit after the decimal point. </li>
+        <li>If that value is between 0 to 4, then leave the digit we care for and trim all digits to the right. </li>
+        <li>If the value is between 5 to 9, then increment the number we care about and trim all the right of it. </li>
+        <li>Finally, the left out number is the rounded value to the nearest ft.</li>
+      </ul>
+      <p><strong>Example:</strong></p>
+      <p>What is 23.879 ft to the nearest feet?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given input is 23.879 ft</p>
+      <p>The digit at the tenth place is 8 which is greater than 5</p>
+      <p>So, round up the number</p>
+      <p>Hence, 23.879 ft rounded to the nearest feet is <strong>24 ft</strong>.</p>
+      <p>However, you can also grab the opportunity to check other <a
+          href="https://roundingcalculator.guru/round-to-nearest-unit-calculator/">Rounding to the Nearest Unit
+          Calculators</a> from here and calculate all your complex questions easily and efficiently.</p>
+      <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Feet.jpeg' %}" alt="Round to the Nearest Feet" /></p> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3"></h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. What is rounding to ft unit?</strong></p>
+      <p class="answer">The process of trimming the decimal points to the closest rounding place is called rounding off
+        to the feet or foot. The symbol to represent both measures is ft.</p>
+      <hr>
+      <p class="question"><strong>2. Where can I find the round to the nearest feet calculator?</strong></p>
+      <p class="answer">You can find the round to the nearest feet calculator from the best online website i.e., <a
+          href="https://roundingcalculator.guru/">roundingcalculator.guru</a></p>
+      <hr>
+      <p class="question"><strong>3. What is 32.41 ft rounded to the nearest foot?</strong></p>
+      <p class="answer">32.41 ft rounded to the nearest foot is 32 ft. Here, 4 in the tenth place is less than 5 so we
+        have rounded down the input to the nearest feet.</p>
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var scrollDiv = document.getElementById("cards").offsetTop;
+  window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+  function myFunction() {
+    document.getElementById("cards").innerHTML = "";
+
+  }
+</script>
+
+<script>
+  var scrollDiv = document.getElementById("cards").offsetTop;
+  window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+  
+</script>
+
+<script>
+  function Clean() {
+    document.getElementById('cards').innerHTML = ''
+    document.getElementById('cards1').innerHTML = ''
+  }
+  function handleSubmit(event) {
+    if (!validate()) {
+      event.preventDefault();
+    }
+    return;
+  }
+  function ClearFields() {
+    document.getElementById("Ib").value = "";
+  }
+</script>
+
+{%endblock%}

@@ -1,0 +1,303 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Free Rounding to the Nearest Hundred Trillionths Calculator - Roundingcalculator.guru</title>
+<meta name="description"
+  content="Rounding to the nearest hundred trillionths is the free online tool by roundingcalculator.guru to round the number to the nearest hundred trillionths." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title"
+  content="Free Rounding to the Nearest Hundred Trillionths Calculator - Roundingcalculator.guru" />
+<meta property="og:description"
+  content="Rounding to the nearest hundred trillionths is the free online tool by roundingcalculator.guru to round the number to the nearest hundred trillionths." />
+<meta content="" property="og:site_name" />
+<meta
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundred-Trillionths-Calculator.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title"
+  content="Free Rounding to the Nearest Hundred Trillionths Calculator - Roundingcalculator.guru" />
+<meta name="twitter:description"
+  content="Rounding to the nearest hundred trillionths is the free online tool by roundingcalculator.guru to round the number to the nearest hundred trillionths." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundred-Trillionths-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title'
+  content="Free Rounding to the Nearest Hundred Trillionths Calculator - Roundingcalculator.guru" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-the-Nearest-Hundred-Trillionths-Calculator.jpeg" />
+<meta property='og:description'
+  content="Rounding to the nearest hundred trillionths is the free online tool by roundingcalculator.guru to round the number to the nearest hundred trillionths." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to use rounding to the nearest hundred trillionths calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Simply, give the value in the input field and select round to hundred trillionths and click the calculate button and get the answer in no time."}	}, {"@type": "Question","name":"2
+        What is the best tool to round the nearest hundred trillionth?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding to thr nearest hundred trillionths calculator available on Roundingcalculator.guru is the best tool to make your work easy."}	}, {"@type": "Question","name":"3
+        Round this number 55.6565435678975562  to the nearest of hundred trillionths?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        55.6565435678975562 rounding to the nearest hundred trillionth is 55.656543567897556."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Hundred Trillionths</h1>
+    </div>
+    <div class="card-body">
+      <p>This rounding to the nearest hundred trillionths calculator is the useful online tool to round the nearest
+        hundred trillionths. You just need to enter the number to round off in the given field and select the round to
+        hundred trillionths and press the calculate button to get the answer in a blink of an eye. </p>
+
+      <div class="box">
+        {% if error %}
+        <div id="error">
+          <p><b>!! Incorrect values !! Please enter correct values</b></p>
+        </div>
+
+        {%endif%}
+        <form method="POST" id="my_form">
+          {% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Value to be rounded up:</label>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+
+                <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                            placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                             name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.235623124891452" {% endif %}>
+              </center>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center><button type="submit" class="btn btn-primary">Round</button>
+                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                  class="btn btn-danger">Reset</button>
+              </center>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-to-the-nearest-hundred-milllionth-calculator/">Rounding to nearest Hundred Millionths
+            Calculator</a></li>
+        <li><a href="/round-to-nearest-hundred-billionth-calculator/">Rounding to nearest Hundred Billionths
+            Calculator</a></li>
+
+       
+        <li><a href="/round-to-nearest-hundred-quadrillionth-calculator/">Rounding to nearest Hundred Quadrillionths
+            Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest Hundred Trillionths Calculator: </strong> Unlike other tools rounding to the
+        nearest hundred trillionths calculator provides the best error free results. By using this calculator we can
+        round the number to the nearest hundred trillionths. Also, we have given detailed explanation about the steps to
+        round the number manually and easily.</p>
+    </div>
+  </div>
+
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+      <div class="card-header">
+        <h2 class="h2">Result of Rounding {{inp}} to nearest Hundred Trillionth:</h2>
+      </div>
+
+      <div class="card-body">
+        &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+      </div>
+    </div>
+
+    <div class="card" id="result">
+      <div class="card-header">
+        <h2 class="h2">Result of Rounding to nearest Hundred Trillionth:</h2>
+      </div>
+
+      <div class="card-body">
+        <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+
+        <p>
+          Since, <strong>1 Hundred Trillion</strong> = 100000000000000 (10<sup>14</sup>).<br>
+          So, <strong>1 Hundred Trillionth</strong> = 0.00000000000001 (10<sup>-14</sup>)
+        </p>
+
+        <p>
+          Therefore, while rounding to nearest hundred trillionth, we round the fractional part(or decimal part) upto 14
+          digits.
+        </p>
+
+        {% if lesdig %}
+        <p>
+          Here, In {{inp}}, number of digits after billionth place is less than 14, so we add trailing zeros upto 14
+          places after decmal.
+        </p>
+        {% else %}
+        {% if dig9 %}
+        <p>
+          Here, Number of digits after decimal place is 14, so result is same as input.
+        </p>
+        {% else %}
+        <p>
+          Here, In {{inp}}, the digit after billionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+          So, {{bdig}} can be rounded to {{reslastdig}}.
+        </p>
+        {% endif %}
+
+        {% endif %}
+
+        <p>
+          So finally, <b>{{inp}}</b>, when rounded to nearest hundred trillionth, results in <b>{{res}}</b>. </p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to round off the decimals to the nearest 10000000000000?</h2>
+    </div>
+    <div class="card-body">
+      <p>Here are some simple steps to round up or down the number to the nearest hundred trillionth.</p>
+      <ul>
+        <li>Essentially you need to mark the hundred trillionths place.</li>
+        <li>Next thing is to choose the next value right to the hundred trillionths.</li>
+        <li>If the quadrillionths value is equal to or less than 4 then round down and keep the value right to the
+          hundred trillionths to zero.</li>
+        <li>If the quadrillionths value is greater than or equal to 5 then round up to the hundred trillionths value to
+          1 and keep remaining to zero.</li>
+        <li>After performing the above steps you will get the answer.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Rounding Decimals to the Nearest Hundred Trillionths Problems with Solutions</h3>
+    </div>
+    <div class="card-body">
+      <p><b>Question:</b> Round off the number 34.445654738292874 to the nearest hundred trillionths?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given, number is 34.445654738292874</p>
+      <p>Look for the value in hundred millionths place, i.e. 7</p>
+      <p>The value in Quadrillionth place is less than 4. so, we round all the numbers right to the hundred millionth to
+        zero.</p>
+      <p>34.445654738292874 round off to the nearest hundred trillionths is 34.44565473829287.</p>
+      <p>Take help from these rounding calculators at <a
+          href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> and complete your homework and assignments
+        very easily.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding Decimals to the Nearest Hundred Trillionths</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How to use rounding to the nearest hundred trillionths calculator?</strong></p>
+      <p class="answer">Simply, give the value in the input field and select round to hundred trillionths and click the
+        calculate button and get the answer in no time.</p>
+      <hr>
+      <p class="question"><strong>2. What is the best tool to round the nearest hundred trillionth?</strong></p>
+      <p class="answer">Rounding to thr nearest hundred trillionths calculator available on <a
+          href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> is the best tool to make your work easy.
+      </p>
+      <hr>
+      <p class="question"><strong>3. Round this number 55.6565435678975562 to the nearest of hundred
+          trillionths?</strong></p>
+      <p class="answer">55.6565435678975562 rounding to the nearest hundred trillionth is 55.656543567897556.</p>
+      <hr>
+      <!-- <img src="{% static 'images/Numbers/Rounding-to-the-Nearest-Hundred-Trillionths-Calculator.jpeg' %}"
+        alt='Rounding to the Nearest Hundred Trillionths Calculator'> -->
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+    console.log(elem)
+    if (validNumber.test(elem.value)) {
+      fist_input = elem.value;
+    } else {
+      elem.value = fist_input;
+    }
+  }
+</script>
+
+<script>
+  function myFunction() {
+    {% if error %}
+    document.getElementById("error").innerHTML = "";
+    {% endif %}
+    document.getElementsByName("inp")[0].value = "";
+    document.getElementById("clear").innerHTML = "";
+  }
+</script>
+
+{%endblock%}

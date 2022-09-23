@@ -1,0 +1,338 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Round to the Nearest Hundred Quadrillionth Calculator - Free Online Tool</title>
+<meta name="description"
+    content="Our round to the nearest hundred quadrillionths calculator is simple and easy to use. We have also given with detailed steps." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Round to the Nearest Hundred Quadrillionth Calculator - Free Online Tool" />
+<meta property="og:description"
+    content="Our round to the nearest hundred quadrillionths calculator is simple and easy to use. We have also given with detailed steps." />
+<meta content="" property="og:site_name" />
+<meta
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Hundred-Quadrillionth-Calculator.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Round to the Nearest Hundred Quadrillionth Calculator - Free Online Tool" />
+<meta name="twitter:description"
+    content="Our round to the nearest hundred quadrillionths calculator is simple and easy to use. We have also given with detailed steps." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Hundred-Quadrillionth-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Round to the Nearest Hundred Quadrillionth Calculator - Free Online Tool" />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Hundred-Quadrillionth-Calculator.jpeg" />
+<meta property='og:description'
+    content="Our round to the nearest hundred quadrillionths calculator is simple and easy to use. We have also given with detailed steps." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What are the rules for rounding to the nearest hundred quadrillionth?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding Rules for hundred quadrillionth is:
+        1.To get the accurate result, check for hundred quadrillionth and thousand quadrillionth number.
+        2.Then, the thousand quadrillionth place is 5 and above 5 round up the value and add 1 to the rounding value.
+        3.If the thousand quadrillionth value is below 5 then round down the value.
+        4.Finally, remove all the digits after the rounding value."}	}, {"@type": "Question","name":"2
+        What does rounding to the nearest hundred quadrillionths mean?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding to the hundred quadrillionths mean that round off the decimal the nearest hundred quadrillionth whose digit place is 17th after the decimal point."}	}, {"@type": "Question","name":"3
+        How do you round the nearest 1,000,000,000,000,0000th using calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Simple thing you need to do is give the number in the input section and select round to hundred quadrillionth and press the calculate button."}	}, {"@type": "Question","name":"4
+        What is the easy way to round the nearest hundred quadrillionth value?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Use this rounding to the nearest hundred quadrillionth calculator, the best and easy way to get the answer in fraction of seconds. This calculator is available on Roundingcalculator.guru."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('ddd').click();
+    });
+</script>
+
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Round to the Nearest Hundred Quadrillionth Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Avail this simple and easy tool that determines the round the nearest hundred quadrillionths. This
+                calculator will saves you a lot of time that displays the nearest hundred quadrillionths. You should
+                give the input values in the input fields and click on the calculate button and get the result in no
+                time.</p>
+
+            <div class="box">
+
+
+
+                {% if error %}
+                <div id="error">
+                    <p><b>!! Incorrect values !! Please enter correct values</b></p>
+                </div>
+                {%endif%}
+                <form method="POST" id="my_form">
+                    {% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Value to be rounded up:</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+
+                                <input type="number" step="any" oninput="validateNumber(this);"
+                                    id="inlineFormInputGroup" required="" placeholder="Enter value to be rounded"
+                                    maxlength="100" class="form-control" name="inp" {% if inp %} value="{{inp}}" {% else
+                                    %} value="434.235622314524891452" {% endif %}>
+                            </center>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center><button type="submit" class="btn btn-primary">Round</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+                <li><a href="/rounding-to-the-nearest-hundred-milllionth-calculator/">Rounding to nearest Hundred
+                        Millionths Calculator</a></li>
+                <li><a href="/round-to-nearest-hundred-billionth-calculator/">Rounding to nearest Hundred Billionths
+                        Calculator</a></li>
+
+                <li><a href="/round-to-nearest-hundred-trillionth-calculator/">Rounding to nearest Hundred Trillionths
+                        Calculator</a></li>
+
+            </ul>
+            <p><strong>Round to the Nearest Hundred Quadrillionths: </strong>Complete your homework and assignments in
+                less time by using our round to the nearest quadrillionths calculator. It gives you error free results
+                in less time. And we have also shared you with detailed steps and examples to do it manually. By using
+                our calculator you can complete your work in time without any hard work.</p>
+        </div>
+    </div>
+
+
+    <div id="clear">
+        {% if result %}
+
+        <div class="card" id="result1">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding {{inp}} to nearest Hundred Quadrillionth:</h2>
+            </div>
+
+            <div class="card-body">
+                &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+            </div>
+        </div>
+
+        <div class="card" id="result">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding to nearest Hundred Quadrillionth:</h2>
+            </div>
+
+            <div class="card-body">
+                <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+
+                <p>
+                    Since, <strong>1 Hundred Quadrillion</strong> = 100000000000000000 (10<sup>17</sup>).<br>
+                    So,<strong>1 Hundred Quadrillionth</strong> = 0.00000000000000001 (10<sup>-17</sup>)
+                </p>
+
+                <p>
+                    Therefore, while rounding to nearest hundred quadrillionth, we round the fractional part(or decimal
+                    part) upto 17 digits.
+                </p>
+
+                {% if lesdig %}
+                <p>
+                    Here, In {{inp}}, number of digits after billionth place is less than 17, so we add trailing zeros
+                    upto 17 places after decmal.
+                </p>
+                {% else %}
+                {% if dig9 %}
+                <p>
+                    Here, Number of digits after decimal place is 17, so result is same as input.
+                </p>
+                {% else %}
+                <p>
+                    Here, In {{inp}}, the digit after billionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+                    So, {{bdig}} can be rounded to {{reslastdig}}.
+                </p>
+                {% endif %}
+
+                {% endif %}
+
+                <p>
+                    So finally, <b>{{inp}}</b>, when rounded to nearest hundred quadrillionth, results in
+                    <b>{{res}}</b>. </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">How to Round to the Nearest Hundred Quadrillionths?</h2>
+        </div>
+        <div class="card-body">
+            <p>The procedure to round off the decimals to the nearest hundred quadrillionths is as follows:</p>
+            <ul>
+                <li>In the given decimal number, look for the hundred quadrillionth value.</li>
+                <li>After that, have a look at the next digit place, i.e. thousand quadrillionth.</li>
+                <li>If the thousand quadrillionths is equal to 5 or greater than 5 then round up the rounding value to
+                    1.</li>
+                <li>Otherwise, if the thousand quadrillionths is less than 5 then round down.</li>
+                <li>At last, after rounding up or down remove all the digits.</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Rounding to the Nearest Hundred Quadrillionths Examples</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Question 1:</strong> Round to the 17.287227366378928736 nearest of 1,000,000,000,000,0000th?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, 17.287227366378928736</p>
+            <p>Look for the hundred quadrillionth and thousand quadrillionth place, i.e.3 and 6.</p>
+            <p>As the thousand quadrillionth place is 6. According to our rule, 6 is above 5, so we round up the digit
+                and remove all the digits after that rounding value.</p>
+            <p>Thus, 17.287227366378928736 round to the nearest thousand quadrillionth is 17.28722736637892874.</p>
+            <p><strong>Question 2:</strong> Round to the 37.757654245698754673 nearest of hundred quadrillionth?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, number 37.757654245698754677</p>
+            <p>Look at the hundred quadrillionth and thousand quadrillionth place, i.e.7 and 3.</p>
+            <p>As the thousand quadrillionth place is 3. According to our rule, 3 is less than 5, so we round down the
+                digit and remove all the digits after that rounding value.</p>
+            <p>Thus, 37.757654245698754673 round to the nearest thousand quadrillionth is 37.75765424569875467.</p>
+            <p><a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> is an online site that provides
+                you free calculators in rounding concepts to make your work easy and quick.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Rounding Off to the Nearest Hundred Quadrillionth</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. What are the rules for rounding to the nearest hundred
+                    quadrillionth?</strong></p>
+            <p class="answer">Rounding Rules for hundred quadrillionth is
+            <ul>
+                <li>To get the accurate result, check for hundred quadrillionth and thousand quadrillionth number.</li>
+                <li>Then, the thousand quadrillionth place is 5 and above 5 round up the value and add 1 to the rounding
+                    value.</li>
+                <li>If the thousand quadrillionth value is below 5 then round down the value.</li>
+                <li>Finally, remove all the digits after the rounding value.</li>
+            </ul>
+            </p>
+            <hr>
+            <p class="question"><strong>2. What does rounding to the nearest hundred quadrillionths mean?</strong></p>
+            <p class="answer">Rounding to the hundred quadrillionths mean that round off the decimal the nearest hundred
+                quadrillionth whose digit place is 17th after the decimal point.</p>
+            <hr>
+            <p class="question"><strong>3. How do you round the nearest 1,000,000,000,000,0000th using
+                    calculator?</strong></p>
+            <p class="answer">Simple thing you need to do is give the number in the input section and select round to
+                hundred quadrillionth and press the calculate button. </p>
+            <hr>
+            <p class="question"><strong>4. What is the easy way to round the nearest hundred quadrillionth
+                    value?</strong></p>
+            <p class="answer">Use this rounding to the nearest hundred quadrillionth calculator, the best and easy way
+                to get the answer in fraction of seconds. This calculator is available on Roundingcalculator.guru.</p>
+            <hr>
+            <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Hundred-Quadrillionth-Calculator.jpeg' %}"
+                alt='Round to the Nearest Hundred Quadrillionth Calculator'> -->
+        </div>
+    </div>
+</div>
+
+<script>
+    var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+        console.log(elem)
+        if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+        } else {
+            elem.value = fist_input;
+        }
+    }
+</script>
+
+<script>
+    function myFunction() {
+
+        {% if error %}
+        document.getElementById("error").innerHTML = "";
+        {% endif %}
+        document.getElementsByName("inp")[0].value = "";
+        document.getElementById("clear").innerHTML = "";
+        // document.getElementById("result1").innerHTML = "";
+
+    }
+</script>
+
+{%endblock%}

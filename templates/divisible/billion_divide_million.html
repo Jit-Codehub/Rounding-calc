@@ -1,0 +1,161 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Billion Divided by Million Calculator - How much is Billion Divided by Million? - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Billion Divided by Million Calculator will tell you the result of Billion Divided by Million without actually doing it manually.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Billion Divided by Million Calculator - How much is Billion Divided by Million? - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Billion Divided by Million Calculator will tell you the result of Billion Divided by Million without actually doing it manually. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Billion Divided by Million Calculator - How much is Billion Divided by Million? - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Billion Divided by Million Calculator will tell you the result of Billion Divided by Million without actually doing it manually. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Billion Divided by Million Calculator - How much is Billion Divided by Million? - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Billion Divided by Million Calculator will tell you the result of Billion Divided by Million without actually doing it manually." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+
+<div class="container">
+<div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Billion Divided by Million Calculator</h1>
+    </div>
+    <div class="card-body">
+        <p>User friendly Billion Divided by Million Calculator tool will make your computations of big numbers division too simple. All you have to do is enter the input values and click on the calculate button and the tool will display the output in no time.</p>
+       
+<form method="POST">{% csrf_token %}
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+             <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>What is</strong></div>
+                </div>
+                <input type="text" name="textfield1" class="form-control" name="textfield1" id="inlineFormInputGroup" placeholder="Enter Numbers" value={% if value1 %}{{value1}}{% else %} 3{% endif %}>
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>Billion Divide By</strong></div>
+                </div>
+                <input type="text" name="textfield2" class="form-control" name="textfield2" id="inlineFormInputGroup" placeholder="Enter Numbers" value={% if value2 %}{{value2}}{% else %} 20{% endif %}>
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>Million</strong></div>
+                </div>
+              </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mt-0">Calculate</button>
+          </div> 
+        <br>
+    
+            {% if decimal %}
+            <div  style="padding-left:25vw; width: 100vw;">
+              <div style="width: 20vw">
+                <input name="textfield3" style="margin-top: 20px; "  value={{answer}} class="form-control" id="inlineFormInputGroup">
+              </div>
+              
+          </div>
+            {% endif %}
+          </div>
+        </form>
+        <p><strong>Billion Divided by Million Calculator:</strong> If you are facing any trouble while solving problems on Billion Divided by Million then you have landed on the right page as we have come up with an online tool named Billion Divided by Million Calculator. Just enter the inputs in the tool and hit the calculate button to obtain the result in no time. This tool will help you compute the problems on Billion Divided by Million quite easily, and shows the procedure on How to Divide Billion by Million here.
+        </p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Divide Billion by Million?</h2>
+    </div>
+    <div class="card-body">
+      <p>The procedure for dividing billion by million is given below</p>
+      <ul>
+      <li aria-level="1">Firstly, find out the conversion value between Billion and Million i.e. 1 Billion = 1000 Million and 1 Million = 1,000,000.</li>
+      <li aria-level="1">Now cut down the same number of zeros that exist in both of them.</li>
+      <li aria-level="1">Lastly, simplify the remaining value of a billion divided by a million to obtain the result.</li>
+      </ul>
+      <p><strong>Example:</strong><strong><br /></strong>What is 8 Billion divided by 2 Million?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given Values are 8 Billion, 2 Million</p>
+      <p>We know 1 Billion = 1000 Million</p>
+      <p>Thus 8 Billion = 8*1000 Million</p>
+      <p>= 8000 Million</p>
+      <p>= 8,000,000,000</p>
+      <p>1 Million = 1,000,000</p>
+      <p>2 Million = 2*1,000,000</p>
+      <p>= 2,000,000</p>
+      <p>Now dividing 8 Billion by 1 Million we have 8,000,000,000/2,000,000</p>
+      <p>= 8000/2 = 4000</p>
+      <p>Therefore, 8 Billion Divided by 2 Million is 4000.</p>
+      <p>For more similar concepts and their calculators, you can visit our portal <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> a trusted portal, and resolve all your doubts.</p>
+      <h3>FAQs on What is Billion Divided by Million</h3>
+      <ol>
+      <li><strong> What is 1 Billion Divided by 1 Million?</strong></li>
+      </ol>
+      <p>1 Billion Divided by 1 Million is 1000.</p>
+      <ol start="2">
+      <li><strong> How many Millions is 1 Billion?</strong></li>
+      </ol>
+      <p>1000 Million is 1 Billion.</p>
+      <ol start="3">
+      <li><strong> What is the easy way to divide billions by millions?</strong></li>
+      </ol>
+      <p>The easy way to divide Billions by Millions is to use a Billion Divided by Million Calculator.</p>
+    </div>
+</div>
+
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

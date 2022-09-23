@@ -1,0 +1,272 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Singapore Dollar calculator | Free online tool to round SGD</title>
+<meta name="description"
+  content="Give your input price in the allotted field of Rounding to the Singapore Dollar Calculator & tap on the calculate button to get quick results" />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Singapore Dollar calculator | Free online tool to round SGD" />
+<meta property="og:description"
+  content="Give your input price in the allotted field of Rounding to the Singapore Dollar Calculator & tap on the calculate button to get quick results" />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/rounding-to-the-singapore-dollar.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Singapore Dollar calculator | Free online tool to round SGD" />
+<meta name="twitter:description"
+  content="Give your input price in the allotted field of Rounding to the Singapore Dollar Calculator & tap on the calculate button to get quick results" />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/rounding-to-the-singapore-dollar.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Singapore Dollar calculator | Free online tool to round SGD" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/rounding-to-the-singapore-dollar.jpeg" />
+<meta property='og:description'
+  content="Give your input price in the allotted field of Rounding to the Singapore Dollar Calculator & tap on the calculate button to get quick results" />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is Singapore Dollar?
+        ","acceptedAnswer": {"@type": "Answer","text":"The Singapore Dollar is the official currency of Singapore. Basically, it divides into 100 cents. The symbol to represent the Singapore dollar is S$ or $ and the Code is SGD. The subunit of Sing-dollar is Cent (c). Also, it is the thirteen-most traded currency in the world by value from the date of 2019"} }, {"@type": "Question","name":"2.
+        Where can I find the Rounding to the Singapore Dollar Calculator Online?
+        ","acceptedAnswer": {"@type": "Answer","text":"You can find the online Rounding to the Singapore Dollar Calculator with steps from roundingcalculator.guru which is a reliable & trusted website."} }, {"@type": "Question","name":"3.
+        How do you round to SGD?
+        ","acceptedAnswer": {"@type": "Answer","text":"To round the amount to the nearest SGD, take a look at the first digit after the decimal point in the cents part. If it is >=5 round up to SGD, else if it is <5 round down to SGD"} }]}
+    </script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Singapore Dollar Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Make use of our handy and user-friendly Rounding to the Singapore dollar calculator tool to round the given
+        amount to its nearest dollar. Just enter the dollar amount with cents and click on the calculate button to
+        obtain the outcome in Singapore dollars along with steps in less time.</p>
+     
+
+        <div class="box">
+          <form method="POST">{% csrf_token %}
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                <label for="input1">Round:</label>
+              </div>
+            </div>
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                {%if input1%}
+                <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number"
+                  maxlength="15" autofocus required />
+                {%else%}
+                <input name="input1" id="input1" value="43572" class="nmbr_real real" type="text" title="real number"
+                  maxlength="15" autofocus required />
+                {%endif%}
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell pl-3">
+                <label for="input2">Round to: </label>
+              </div>
+            </div>
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                <select name="input2" id="input2" class="year" style="padding: 5px;">
+                  <optgroup label="Whole Number Places">
+                    {%if input2_value%}
+                    <option value="{{input2_value}}" selected>{{input2_data}}</option>
+                    <option value="-6">Million singp. Dollars</option>
+                    <option value="-5">Hundred Thousand singp. Dollars</option>
+                    <option value="-4">Ten Thousand singp. Dollars</option>
+                    <option value="-3">Thousand singp. Dollars</option>
+                    <option value="-2">Hundred singp. Dollars</option>
+                    <option value="-1">Tens singp. Dollars</option>
+                    <option value="0">singp. Dollar</option>
+                    {%else%}
+                    <option value="-6">Million singp. Dollars</option>
+                    <option value="-5">Hundred Thousand singp. Dollars</option>
+                    <option value="-4">Ten Thousand singp. Dollars</option>
+                    <option value="-3">Thousand singp. Dollars</option>
+                    <option value="-2">Hundred singp. Dollars</option>
+                    <option value="-1">Tens singp. Dollars</option>
+                    <option value="0" selected>singp. Dollar</option>
+                    {%endif%}
+                  </optgroup>
+                </select>
+                <script>
+                  var map = {};
+                  $('#input2 option').each(function () {
+                    if (map[this.value]) {
+                      $(this).remove()
+                    }
+                    map[this.value] = true;
+                  });
+                </script>
+              </div>
+            </div>
+  
+            <div class="col-auto mt-2 ml-3">
+              <button type="submit" class="btn btn-primary mb-2">Round</button>
+            </div>
+          </form>
+          {%if detailStep%}
+          <hr>
+          <p><strong>Answer:</strong></p>
+          <div style="text-align: center;">
+            {% autoescape off %}
+            {{detailStep}}
+            {%endautoescape%}
+          </div>
+          <hr>
+          {%endif%}
+        </div>
+        {% autoescape off %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row">
+          <div class="col-md-6">
+            <p class="alert alert-danger">{{message}}</p>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {%endautoescape%}
+        <br>
+
+
+  <p>Related Calculators:</p>
+  <ul>
+    <li><a href="round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+    <li><a href="round-to-the-nearest-5-cents/">Round to the Nearest 5 Cents</a></li>
+    
+    <li><a href="round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>        
+    <li><a href="round-to-the-nearest-euro-calculator/">Round to the Nearest Euro</a></li>
+    <li><a href="round-to-the-nearest-japanese-yen-calculator/">Round to the Nearest Yens</a></li>
+
+  </ul>
+  <p><strong>Rounding to the Singapore Dollar Calculator:</strong> Here is the ultimate guide that helps to find the
+    rounded value to the nearest Singapore dollar by the best online calculator tool. Also, it makes you learn and
+    understand what does it mean and how to round off to the Singapore dollars by hand. Check all the steps and rules
+    for rounding the currency and practice well with our provided solved examples. Use the Rounding off to the Singapore
+    Dollar Calculator and perform your calculations easier and faster.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h2 class="h2">What is meant by Round to the Singapore Dollar?</h2>
+  </div>
+  <div class="card-body">
+    <p>The process of removing the cents part in the given Singapore dollar amount using rounding currency rules is
+      called rounding to the Singapore dollar. For example, $4.587 is the given amount where the rounded value to the
+      nearest Singapore dollar is $5.</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h2 class="h2">Detailed Procedure to Round Off to the Singapore Dollar</h2>
+  </div>
+  <div class="card-body">
+    <p>Here we will be seeing the simple steps to round off the Singapore dollars &amp; cents amount to the Singapore
+      dollar.</p>
+    <ul>
+      <li>Firstly, we have to identify the given dollar amount. </li>
+      <li>If the tenths place value in cents part is having 0 to 4 digit then round down the amount to the Singapore
+        dollar. </li>
+      <li>If the tenth place value is having 5 to 9 digits then round up the amount to the Singapore dollar. </li>
+      <li>Finally, you will get the desired rounding value to the nearest Singapore dollar.</li>
+    </ul>
+    <p>Need extra clarity on the process of rounding to the Singapore dollars? Check out the solved examples available
+      and be familiar with manual calculations.</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h2 class="h3">Rounding Off to the Nearest Singapore Dollar Solved Examples</h3>
+  </div>
+  <div class="card-body">
+    <p><strong>Example 1:</strong></p>
+    <p>Round $87.234 to the Singapore dollar.</p>
+    <p><strong>Solution:</strong></p>
+    <p>Given dollar amount is S$87.234</p>
+    <p>Look at the tenth place value and apply the rounding rules to it. </p>
+    <p>Here, 2 is the digit placed in the tenth position. The digit 2 is less than 5 so round down the amount. </p>
+    <p>Just keep the ones' digit as it is and remove all digits after the decimal point along with the decimal
+      separator.</p>
+    <p>Therefore, the rounded amount to the nearest Singapore dollar is $87.</p>
+    <p><strong>Example 2:</strong> </p>
+    <p>What is S$3.7 rounded to the Singapore dollar? </p>
+    <p><strong>Solution:</strong> </p>
+    <p>Given amount is $3.7 SGD</p>
+    <p>Now, look at the tenth place value in cents.</p>
+    <p>Here, digit 7 is located in the tenth place. </p>
+    <p>The value 7 is greater than or equal to 5, so as per the rounding rules we have to round up the amount to the
+      Singapore dollar. </p>
+    <p>Add 1 to the Singapore dollar and remove the cents part.</p>
+    <p>Hence, S$4 is the rounded amount to the nearest SGD.</p>
+    <p>Do visit our website roundingcalculator.guru and refer to the other <a
+        href="https://roundingcalculator.guru/rounding-money-calculator/">rounding money calculators</a> for easy
+      calculations &amp; accurate results.</p>
+    <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Singapore-Dollar.jpeg' %}"
+        alt="Round to the Singapore Dollar" /></p> -->
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h3 class="h3">FAQs on User-Friendly Singapore Dollars Rounding Off Calculator</h3>
+  </div>
+  <div class="card-body">
+    <!-- Question & Answer Starts --->
+    <p class="question"><strong>1. What is Singapore Dollar?</strong></p>
+    <p class="answer">The Singapore Dollar is the official currency of Singapore. Basically, it divides into 100 cents.
+      The symbol to represent the Singapore dollar is S$ or $ and the Code is SGD. The subunit of Sing-dollar is Cent
+      (c). Also, it is the thirteen-most traded currency in the world by value from the date of 2019.</p>
+    <hr>
+    <p class="question"><strong>2. Where can I find the Rounding to the Singapore Dollar Calculator Online?</strong></p>
+    <p class="answer">You can find the online Rounding to the Singapore Dollar Calculator with steps from <a
+        href="https://roundingcalculator.guru/">roundingcalculator.guru</a> which is a reliable &amp; trusted website.
+    </p>
+    <hr>
+    <p class="question"><strong>3. How do you round to SGD?</strong></p>
+    <p class="answer">To round the amount to the nearest SGD, take a look at the first digit after the decimal point in
+      the cents part. If it is &gt;=5 round up to SGD, else if it is &lt;5 round down to SGD.</p>
+    <hr>
+  </div>
+</div>
+</div>
+{%endblock%}

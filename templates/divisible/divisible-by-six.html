@@ -1,0 +1,177 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Divisible By 6 Calculator Online - Disivibility Test Calculator for 6 - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Divisible By 6 Calculator apply the divisibility rule of 6 and solves whether the given number is divisible by 6 or not. It provides detailed steps and solutions along with accurate results.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Divisible By 6 Calculator Online - Disivibility Test Calculator for 6 - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Divisible By 6 Calculator apply the divisibility rule of 6 and solves whether the given number is divisible by 6 or not. It provides detailed steps and solutions along with accurate results. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Divisible By 6 Calculator Online - Disivibility Test Calculator for 6 - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Divisible By 6 Calculator apply the divisibility rule of 6 and solves whether the given number is divisible by 6 or not. It provides detailed steps and solutions along with accurate results. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Divisible By 6 Calculator Online - Disivibility Test Calculator for 6 - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Divisible By 6 Calculator apply the divisibility rule of 6 and solves whether the given number is divisible by 6 or not. It provides detailed steps and solutions along with accurate results." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">Divisible By 6 Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Make sure to use our free &amp; simple Divisible By 6 Calculator and get the output in a fraction of seconds. All you need to do is enter the given input in the field and click on the calculate button. In a while, it displays the result along with the detailed solution.</p>
+      <ul class="messages">
+        {% if message %}
+        <p  id="message_container" class="alert alert-danger text-center" 
+            style="color:red">{{ message }}</p>
+        {% endif %}   
+
+        </ul>
+
+        <form action="" method="POST" id="my_form" >
+            {% csrf_token %}
+            <div class="col-auto">
+                
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><strong>Number: </strong></div>
+                    </div>
+                    <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required="" placeholder="Number to check is divisible By 6"  class="form-control" name="D" {% if D or D == 0 %} value="{{D}}"  {% else %} value="24"  {% endif %}>
+
+                </div>
+
+                <div class=" center col">
+                    <center><button type="submit" class="btn btn-primary" name="f1" value="f1">Calculate</button>
+                        <button type="button" onclick="myFunction()" class="btn btn-danger">Reset</button>
+                    </center>
+                </div>
+
+        </form>
+      <p><strong>Divisible By 6 Online Calculator:</strong> Are you confused to determine the number is divisible by 6 as it is a big one? Don&rsquo;t worry here is the free online tool that can solve your issue in a blink of an eye. This handy divisibility by 6 calculator test whether the given number is divisible by 2 and 3 or not and gives output in no time. From this guide, you can also learn what is the divisibility rule for 6 and how to check if the number is divisible by 6.</p>
+      <h2>What is the Divisibility Rule of 6?</h2>
+      <p>Divisibility Rule of 6 states that a given number is divisible by 6 when it is divisible by 2 and 3. To make it divisible, we have to use the divisibility test of 2 and the divisibility test of 3. Also, the number is divisible by 6 if it is the whole number.</p>
+      <p>There are two conditions that a whole number should meet to be divisible by 6. They are given below:</p>
+      <ul>
+      <li aria-level="1">The required whole number needs to be divisible by 2 and it can happen when the unit place digit is even ie., it should end with 0, 2, 4, 6, and 8.</li>
+      <li aria-level="1">One more condition is it should be divisible by 3. For this, a number is divisible by 3 if the sum of the digits of the given number is divisible by 3.</li>
+      </ul>
+      <p>While checking whether the number is divisible by 6, it should satisfy both conditions. If any of the conditions is failed then the given number is not divisible by 6. Also, all the even numbers included in the 3 tables are divisible by 6.</p>
+      <h3>Solved Example on How To Calculate Divisibility by 6?</h3>
+      <p><strong>Example:</strong></p>
+      <p>Let's check that 5124 is divisible by 6 by applying the divisibility test of 6.</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given number is 5124</p>
+      <p>To check if 5124 is divisible by 6 or not, apply the divisibility test by 6:</p>
+      <ol start="2">
+      <li>5124 is an even number. As it ends with an even number then the number is divisible by 2. Hence, condition 1 is meeting.</li>
+      </ol>
+      <ol start="12">
+      <li>Now, add all the digits of the number and check whether the result is divisible by 3 or not. Therefore, (5+1+2+4) = 12. The sum of 12 is divisible by 3. Hence, condition 2 is satisfied.</li>
+      </ol>
+      <p>Since 5124 is divisible by both 2 and 3, then the number 5124 is divisible by 6.</p>
+      <h3>FAQs on Divisibility Test by 6 Calculator</h3>
+      <ol>
+      <li><strong> How do you calculate divisibility by 6?</strong></li>
+      </ol>
+      <p>By using the <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> provided a divisible by 6 calculator, you can easily calculate divisibility by 6 of any number either small or big.</p>
+      <ol start="2">
+      <li><strong> What are the numbers divisible by 6?</strong></li>
+      </ol>
+      <p>The list of a few numbers that are divisible by 6 is 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, etc.</p>
+      <ol start="3">
+      <li><strong> Is divisible by 6 if it is divisible by?</strong></li>
+      </ol>
+      <p>If it is divisible by both 2 and 3 then the number is divisible by 6.</p>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  
+      var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+      var fist_input = document.getElementById("inlineFormInputGroup").value;
+      function validateNumber(elem) {
+          console.log(elem)
+          if (validNumber.test(elem.value)) {
+              fist_input = elem.value;
+          } else {
+              elem.value = fist_input;
+          }
+      }
+
+      const result = document.getElementById("span1").innerHTML
+      function modifyres1(){
+          
+          var sus  = document.getElementById("myunt1")
+          document.getElementById("span1").innerHTML = +(Number(result) * sus.value)
+      }
+
+  </script>
+  
+  <script>
+      function myFunction() {
+              document.getElementsByName("D")[0].value = "";
+
+          }
+      </script>
+  <br>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

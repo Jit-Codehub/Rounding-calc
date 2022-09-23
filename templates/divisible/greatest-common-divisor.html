@@ -1,0 +1,181 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Greatest Common Divisor Calculator Online for Free - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Using this online greatest common divisor calculator tool you can easily find the GCD or HCF of any two numbers quickly.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Greatest Common Divisor Calculator Online for Free - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Using this online greatest common divisor calculator tool you can easily find the GCD or HCF of any two numbers quickly. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Greatest Common Divisor Calculator Online for Free - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Using this online greatest common divisor calculator tool you can easily find the GCD or HCF of any two numbers quickly. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Greatest Common Divisor Calculator Online for Free - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Using this online greatest common divisor calculator tool you can easily find the GCD or HCF of any two numbers quickly." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">Greatest Common Divisor Calculator - How To Find GCD?</h1>
+    </div>
+    <div class="card-body">
+        <p>The greatest common divisor calculator is a free online tool that helps you to compute the greatest common divisor of any two numbers easily and quickly. To use this calculator, Give upto 3 numbers as inputs in the input fields and then click on the calculate button that gives you the answers instantaneously.</p>
+        <p><strong>Greatest Common Divisor Calculator:</strong> If you are struggling to compute the GCD of numbers then this page is the right choice for you. On this page, you will see a GCD calculator tool that provides you with answers for any three numbers easily and quickly along with some simple guide for students to solve GCD easily.</p>
+        <h2>What is Greatest Common Divisor(GCD)?</h2>
+        <p>GCD(Greatest Common Divisor) is nothing but the common factor of both positive integers of (a,b). GCD is also defined as the greatest positive number. The common least positive integer in GCD is 1.</p>
+        <h3>GCD Methods</h3>
+        <p>As we have three methods to find the GCD of two numbers, we are looking into them below clearly.&nbsp;</p>
+        <ol>
+        <li>Prime Factorisation Method</li>
+        <li>LCM Method</li>
+        <li>Euclids Algorithm Method</li>
+        <li>Finding Common Divisors Method.</li>
+        </ol>
+        <p><strong>Prime Factorisation Method</strong></p>
+        <p>In this method, each method is written as the product of prime numbers and then we will find the smallest prime factors from all those numbers. And this method is applicable only for positive natural numbers.</p>
+        <p><strong>LCM Method</strong></p>
+        <p>In this LCM method, the GCD of any two positive integers a,b, is calculated by using the formula, i.e., <strong>GCD (a,b) = [a x b] /[LCM(a,b)]</strong></p>
+        <p><strong>Euclid's Algorithm Method</strong></p>
+        <p>In this method, the GCD of two positive integers can be calculated by the following conditions.</p>
+        <ul>
+        <li>If a = 0, then GCD (a, b) = b as GCD (0, b) = b.</li>
+        <li>If b = 0, then GCD (a, b) = a as GCD (a, 0) = a.</li>
+        <li>If both a&ne;0 and b&ne;0, we write 'a' in quotient remainder form (a = b&times;q + r) where q is the quotient and r is the remainder, and a&gt;b.</li>
+        </ul>
+        <p><strong>Finding Common Divisors Method</strong></p>
+        <p>In this method, we will find the common divisors for the two positive integers a and b then we will take out the common divisor for the two integer common divisors.</p>
+        <h3>Steps To Calculate GCD of Two Numbers&nbsp;</h3>
+        <p>Look into the guidelines that are given below to calculate the GCD of any two positive integers easily. We are going to provide you with steps for all four methods that we have to find the GCD.</p>
+        <p><strong>Prime Factorisation Method</strong></p>
+        <ul>
+        <li>Take the value that was given in the problem.</li>
+        <li>Find the prime factors for the two positive integers.</li>
+        <li>Then, take out common prime factors and multiply them.</li>
+        <li>The result that you get is the greatest common divisor.</li>
+        </ul>
+        <p><strong>LCM Method</strong></p>
+        <ul>
+        <li>Take any two positive integer values.</li>
+        <li>Then you need to apply the formula, i.e., GCD (a,b) = [a x b] /[LCM(a,b)].</li>
+        <li>Now, you need to find the LCM for two positive integers and then find a product of a,b</li>
+        <li>Finally, substitute the values in the formula and simplify it.</li>
+        <li>The result that you got is the GCD of two numbers.</li>
+        </ul>
+        <p><strong>Euclid's Algorithm Method</strong></p>
+        <ul>
+        <li>Note down the value that was taken from the problem.</li>
+        <li>If a = 0, then GCD (a, b) = b as GCD (0, b) = b.</li>
+        <li>If b = 0, then GCD (a, b) = a as GCD (a, 0) = a.</li>
+        <li>If both a&ne;0 and b&ne;0, we write 'a' in quotient remainder form (a = b&times;q + r) where q is the quotient and r is the remainder, and a&gt;b.</li>
+        <li>Find the GCD (b, r) as GCD (b, r) = GCD (a, b)</li>
+        <li>Repeat the process until you get the remainder of Zero.</li>
+        <li>When the remainder is zero, the divisor at that stage is called GCD.</li>
+        </ul>
+        <p><strong>Finding Common Divisors Method</strong></p>
+        <ul>
+        <li>Let us take any two positive integers (a,b).</li>
+        <li>Write the divisors for the two positive integers a and b.</li>
+        <li>Now list out the divisors and take out the highest common divisor.</li>
+        <li>That common divisor is GCD.</li>
+        </ul>
+        <h3>How To Find GCD of Two Numbers</h3>
+        <p><strong>Question:</strong> How to Find the GCD of 2, 4?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Given, that GCD(2,4)</p>
+        <p>By the method of prime factorization</p>
+        <p>GCD(2,4)&nbsp;</p>
+        <p>2 = 1 x 2&nbsp;</p>
+        <p>4 = 2 x 2</p>
+        <p>GCD(2,4) = 2.&nbsp;</p>
+        <p>(or)</p>
+        <p>By the Method of LCM&nbsp;</p>
+        <p>Formula,&nbsp;</p>
+        <p>GCD (a,b) = [a x b] /[LCM(a,b)]</p>
+        <p>LCM(2,4) = 4</p>
+        <p>Product of 2,4 is = 2x4 = 8.</p>
+        <p>GCD (2,4) = 8 / 4 = 2.</p>
+        <p>(or)</p>
+        <p>By the Method of Common divisors</p>
+        <p>Divisor of 2 = 1,2</p>
+        <p>Divisors of 4 = 1,4,2,2</p>
+        <p>The highest Common Divisor of 2,4 is 2.</p>
+        <p>GCD(2,4) = 2</p>
+        <p>(or)</p>
+        <p>By using Euclids Algorithm,</p>
+        <p>Here, a = 2, b = 4</p>
+        <p>a&ne;0 and b&ne;0</p>
+        <p>According to Euclid's algorithm a&gt;b.</p>
+        <p>As here, a&lt;b we cannot perform the Euclid algorithm.</p>
+        <p>Look into our other maths calculator concepts on Roundingcalculator.Guru website. Use them and work easily.</p>
+        <h3>FAQs on Greatest Common Divisor Calculator</h3>
+        <p><strong>1. What is the GCD(3,4)?</strong></p>
+        <p>GCD of(3,4) is 1.</p>
+        <p><strong>2. How to use this greatest common divisor calculator?</strong></p>
+        <p>Simply, you need to give the inputs in the input field and then click on the calculate button. So that you will get the answers easily.</p>
+        <p><strong>3. Find the GCD of 1 and 2 using the LCM method?</strong></p>
+        <p>In the LCM method, the formula is&nbsp;</p>
+        <p>GCD (a,b) = [a x b] /[LCM(a,b)]</p>
+        <p>LCM(1,2) = 2</p>
+        <p>a x b = 1 x 2 = 2</p>
+        <p>= 2 /2 = 1.</p>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+{% endblock %}

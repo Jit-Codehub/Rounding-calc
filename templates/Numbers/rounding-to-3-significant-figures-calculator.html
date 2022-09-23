@@ -1,0 +1,223 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+    <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Rounding to 3 Significant Figures Calculator | How to round to 3 Significant Figures?</title>
+    <meta name="description" content="Round to 3 significant calculator is the best tool to calculate the 3 significant numbers of the given number very easily and effortlessly. We have also explained it by detailed steps."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Rounding to 3 Significant Figures Calculator | How to round to 3 Significant Figures?"/>
+        <meta property="og:description" content="Round to 3 significant calculator is the best tool to calculate the 3 significant numbers of the given number very easily and effortlessly. We have also explained it by detailed steps."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-3-Significant-Figures.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Rounding to 3 Significant Figures Calculator | How to round to 3 Significant Figures?"/>
+        <meta name="twitter:description" content="Round to 3 significant calculator is the best tool to calculate the 3 significant numbers of the given number very easily and effortlessly. We have also explained it by detailed steps."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-3-Significant-Figures.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Rounding to 3 Significant Figures Calculator | How to round to 3 Significant Figures?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-to-3-Significant-Figures.jpeg"/>
+        <meta property='og:description' content="Round to 3 significant calculator is the best tool to calculate the 3 significant numbers of the given number very easily and effortlessly. We have also explained it by detailed steps."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+      How do you round to 3 significant figures?
+      ","acceptedAnswer": {"@type": "Answer","text":" 
+      To round to 3 significant figures, look for the fourth significant figure, if it is above or equal to 5 increase before value by 1 and remove all the digits. If the fourth significant figure is less than or equal to 4, simply remove all the digits."}	}, {"@type": "Question","name":"2
+      What is rounding to 3 significant figures?
+      ","acceptedAnswer": {"@type": "Answer","text":" 
+      Rounding to 3 significant figure is very much similar to round off the decimal values. For a given number to round off to 3 significant digits, we need to round it off to 1 after the decimal."}	}, {"@type": "Question","name":"3
+      What is 5.5842 round to 3 significant figures?
+      ","acceptedAnswer": {"@type": "Answer","text":"
+      5.5842 rounded to 3 significant figures is 5.584"}	}, {"@type": "Question","name":"4
+      Which one is the best tool to calculate the round to 3 significant figures?
+      ","acceptedAnswer": {"@type": "Answer","text":"
+      Rounding to 3 significant figure calculator is the best tool to calculate the 3 significant figures that is available on <a href="https://roundingcalculator.guru/">Roundingcalculator.com"}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Rounding to 3 Significant Figures Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Obtain this free online round to 3 significant figures calculator tool to know the 3 significant figures of a given number. Give the input values in the given input sectors, then click the calculate button and get the answers instantaneously.</p>
+                <div class="box">
+                    <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="4232.169" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                          <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                          <optgroup label="Whole Number Places">
+                              <option value="-9" >Billions</option>
+                              <option value="-8" >Hundred Millions</option>
+                              <option value="-7" >Ten Millions</option>
+                              <option value="-6" >Millions</option>
+                              <option value="-5" >Hundred Thousands</option>
+                              <option value="-4" >Ten Thousands</option>
+                              <option value="-3" >Thousands</option>
+                              <option value="-2" >Hundreds</option>
+                              <option value="-1" >Tens</option>
+                              <option value="0" >Ones</option>
+                          </optgroup>
+                          <optgroup label="Decimal Places">
+                              <option value="1" >Tenths (1)</option>
+                              <option value="2" selected>Hundredths (2)</option>
+                              <option value="3" >Thousandths (3)</option>
+                              <option value="4" >Ten Thousandths (4)</option>
+                              <option value="5" >Hundred Thousandths (5)</option>
+                              <option value="6" >Millionths (6)</option>
+                              <option value="7" >Ten Millionths (7)</option>
+                              <option value="8" >Hundred Millionths (8)</option>
+                              <option value="9" >Billionths (9)</option>
+                          </optgroup>
+                      </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                        <!-- <li><a href="/numbers/rounding-decimals-to-the-nearest-tenths/">Rounding Decimals to the Nearest Tenths</a></li>
+                                        <li><a href="/numbers/rounding-decimals-to-the-nearest-thousandths/">Rounding Decimals to the Nearest Thousandths</a></li>
+                                        <li><a href="/numbers/rounding-decimals/">Rounding Decimals</a></li>
+                                        <li><a href="/numbers/rounding-calculator/">Rounding Calculator</a></li> -->
+                                        
+                                      </ul>
+                <p><strong>Round to 3 Significant Figures Calculator: </strong>Feeling difficult to calculate 3 significant figures? Here there is a free tool to round off the 3 significant calculator which is loaded with user friendly interface, that gives the result in no time. This tool will be useful for teachers, students, learners for everyone who want to know how to calculate the 3 significant figures. And in further sections we have also explained about step by step process and examples. </p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is meant by rounding to 3 significant figures?</h2>
+        </div>
+	    <div class="card-body">
+        <p>Before knowing about rounding off 3 significant figures, first we will know about significant figures.</p>
+        <p>According to experts, significant figures of a number is the digits that express with some degree of confidence. Rounding to 3 significant figures are almost similar to the rounding number of decimal places.</p>
+        <p>In this round to 3 significant figures as if we need to round to 5 digit number all we need to drop the last 2 digits and simply round off the remaining number.</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+                <h3 class="h3">How to Round to 3 Significant Figures?</h3>
+            </div>
+          <div class="card-body">
+            <p>In this rounding to 3 significant figures there are some rules to follow. By adhering those rules we can roundoff the 3 significant figures. Let us see what are they:</p>
+            <ul>
+              <li>Primarily, we need to check the given number.</li>
+              <li>Then as this is round to 3 significant figures, starting from left leave the 3 digits towards right. And the fourth digit should be rounded off.</li>
+              <li>If the 4th digit is greater than or equal to 5 then we will round up the 3rd digit by 1 and simply remove all the digits after that number.</li>
+              <li>Otherwise, if the fourth digit is less than or equal to 4, then simply we remove all the digits after the 3rd digit.</li>
+              <li>That's simple, we will get the desired answer easily.</li>
+            </ul>
+           </div>
+           </div>
+    <div class="card">
+      <div class="card-header">
+            <h3 class="h3">Rounding to 3 Significant Figures with Example</h3>
+      </div>
+      <div class="card-body">
+       <p>Question 1: Round off 8.9867 to 3 significant figures?</p>
+       <p><strong>Solution:</strong></p>
+       <p>Given, number is 8.9867</p>
+       <p>Here, starting from the left after 3 digits we have only one number,i.e.fourth digit- 7</p>
+       <p>As the number 7 is greater than 5 we need to increase before value by 1 and remove all the digits after that digit.</p>
+       <p>Thus 8.987 rounded to 3 significant figures is 8.987</p>
+       <p>You can also try other calculators like significant figures, sig fig calculator to calculate any number or expression, that is available on <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a></p>
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">Frequently Asked Questions on Rounding to 3 Significant Figures</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you round to 3 significant figures?</strong></p>
+     	<p class="answer">To round to 3 significant figures, look for the fourth significant figure, if it is above or equal to 5 increase before value by 1 and remove all the digits. If the fourth significant figure is less than or equal to 4, simply remove all the digits.</p><hr>
+     	<p class="question"><strong>2. What is rounding to 3 significant figures?</strong></p>
+     	<p class="answer">Rounding to 3 significant figure is very much similar to round off the decimal values. For a given number to round off to 3 significant digits, we need to round it off to 1 after the decimal.</p><hr>  
+      <p class="question"><strong>3. What is 5.5842 round to 3 significant figures?</strong></p>
+     	<p class="answer">5.5842 rounded to 3 significant figures is 5.584</p><hr>
+       <p class="question"><strong>4. Which one is the best tool to calculate the round to 3 significant figures?</strong></p>
+     	<p class="answer">Rounding to 3 significant figure calculator is the best tool to calculate the 3 significant figures that is available on <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

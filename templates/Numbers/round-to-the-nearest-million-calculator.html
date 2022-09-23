@@ -1,0 +1,273 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding to the Nearest Million Calculator | How to Round off to Nearest Million</title>
+<meta name="description"
+    content="Rounding to the Nearest Million Calculator is a free online & handy tool that easily rounds up or down to the nearest 1000000 in less time. " />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding to the Nearest Million Calculator | How to Round off to Nearest Million" />
+<meta property="og:description"
+    content="Rounding to the Nearest Million Calculator is a free online & handy tool that easily rounds up or down to the nearest 1000000 in less time. " />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-million.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding to the Nearest Million Calculator | How to Round off to Nearest Million" />
+<meta name="twitter:description"
+    content="Rounding to the Nearest Million Calculator is a free online & handy tool that easily rounds up or down to the nearest 1000000 in less time. " />
+<meta name="twitter:image:src"
+    content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-million.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding to the Nearest Million Calculator | How to Round off to Nearest Million" />
+<meta property='og:image'
+    content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-million.jpeg" />
+<meta property='og:description'
+    content="Rounding to the Nearest Million Calculator is a free online & handy tool that easily rounds up or down to the nearest 1000000 in less time. " />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How much is a million in numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":"In numbers, 1,000,000 or one thousand thousand is a million."} }, {"@type": "Question","name":"2.
+        How do you round to the nearest million?
+        ","acceptedAnswer": {"@type": "Answer","text":"Rounding the numbers nearest million might be 4,000,000 or 5,000,000. In order to round off to the nearest 1000000, consider the right digit to the million which is hundred thousands. If it is 5 or more then round up the million place or round down the million place."} }, {"@type": "Question","name":"3.
+        How do you round off on a calculator to the nearest 1000000? 
+        ","acceptedAnswer": {"@type": "Answer","text":"First, visit RoundingCalculator.Guru website & go for Rounding to the nearest million calculator. Now, enter the input in the allotted box then click on the calculate button. It immediately rounds off the given number to the nearest million & provides output along with steps in a matter of seconds."} }]}
+    </script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding to the Nearest million Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Grab the opportunity of calculating the rounding numbers to a million at a faster pace by our free online
+                &amp; user-friendly Rounding to the Nearest Million Calculator. It takes an input value and with one
+                click it displays the rounded million value along with detailed steps on your screen.</p>
+
+            <div class="box">
+                <ul class="messages">
+                    <p id="error" class="alert alert-danger text-center" style="color:red;display:none">Value should not
+                        be zero</p>
+                </ul>
+                <form method="POST" onsubmit="return function1()" id="my_form">
+                    {% csrf_token %}
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+                                <input type="number" oninput="validateNumber(this);" id="inlineFormInputGroup"
+                                    required="" class="form-control" maxlength="15" name="firstno" value="{{firstno}}"
+                                    step="any">
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center><button type="submit" class="btn btn-primary" name="f1">Round</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          
+        
+        
+        <br>
+        <p>Related Calculators:</p>
+        <ul>
+            
+            <li><a href="/rounding-to-the-nearest-ten-millions-calculator/">Round Nearest Ten Million Calculator</a></li>
+            <li><a href="/rounding-to-the-nearest-billion-calculator/">Round Nearest Million Calculator</a></li>
+
+        </ul>
+        <p><strong>Rounding To The Nearest Million Calculator:</strong> Finding easy ways to round off the given large
+            number to the nearest 1000000. If yes, you are on the right page. Here, we have compiled the easiest &amp;
+            step by step process to calculate the rounding number to the nearest million along with solved examples.
+            Also, you can take help from our free online rounding off to the nearest million calculator to find the
+            rounding value in a fraction of seconds. Let's dive into the further sections and get familiar with the
+            rounding concept.</p>
+        </p>
+
+    </div>
+
+</div>
+
+    {% if id == 1 %}
+    <div id="clear1">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="h2">{{firstno}} Rounding to the Millions Place Calculator</h2>
+            </div>
+            <div class="card-body">
+                <strong>Rounding off value= {{rounding}}</strong>
+            </div>
+        </div>
+    </div>
+
+
+    {% endif %}
+
+
+    {% if id == 1 %}
+    <div id="clear">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="h2">{{firstno}} Rounding to the Millions Place Calculator</h2>
+            </div>
+            <div class="card-body">
+                Given number is {{firstno}}
+                <br>
+                {% if rem >= 5 %}
+                The number at the hundred thousands place is {{rem}} which is equal or above 5. So, round up the
+                value.<br>
+
+                rounded value of {{firstno}} is {{rounding}}.<br>
+
+                <strong> Therefore, {{firstno}} rounded to the nearest Millions is {{rounding}}. </strong>
+                {% endif %}
+                {% if rem < 5 %} The number at the hundred thousands place is {{rem}} which is less 5. So, round down
+                    the value.<br>
+
+                    rounded value of {{firstno}} is {{rounding}}.<br>
+
+                    <strong>
+
+
+
+
+                        Therefore, {{firstno}} rounded to the nearest Millions is {{rounding}}. </strong>
+                    {% endif %}
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What is Meant by Rounding to the Nearest Million?</h2>
+        </div>
+        <div class="card-body">
+            <p>Rounding off to the nearest million is quickly estimating the answers before solving them manually using
+                the formulas or rules. Rounding to a million implies the method of rounding up or down to the nearest
+                1000000 value.</p>
+            <p>For instance, 4,879,624 rounded to the nearest million is 5,000,000.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">How to Round Off to the Nearest Billions Step by Step?</h2>
+        </div>
+        <div class="card-body">
+            <p>Refer to the below steps of rounding a number to the nearest million and follow them carefully to obtain
+                the result at a faster pace.</p>
+            <ul>
+                <li>To round off to a million, first, check the million digit of the number.</li>
+                <li>Then, take a look at the right digit to the million (hundred thousands place value).</li>
+                <li>If the hundred thousands place value is &gt;=5, round up the number. Add one to the million value
+                    and write all the digits to zero.</li>
+                <li>If the hundred thousands place value is &lt;5, round down the number. Keep the million value as it
+                    is and make other digits to zero.</li>
+            </ul>
+            <p>Take a look at the available solved examples on how to round off to the nearest million and get a good
+                grip on the concept of rounding to the nearest 1000000. Also, make use of our handy online calculators
+                from<a href="https://roundingcalculator.guru/"> RoundingCalculator.Guru</a> and calculate complex
+                problems easily &amp; quickly.</p>
+            <h3>Rounding to a Million Example</h3>
+            <p><strong>Question:</strong></p>
+            <p>Sai says that 5,562,145 rounded to the nearest million is 5,000,000. Why is he incorrect?</p>
+            <p><strong>Solution:</strong></p>
+            <p>5 is in the million column, meaning five million.</p>
+            <p>To round to the nearest million, take a look at the digit in the column to the right, which is the
+                hundred thousands. </p>
+            <p>5,<strong>5</strong>62,145</p>
+            <p>The number in the hundred thousands column is 5.</p>
+            <p>As per the rule, if the number is 5 or more than it, round up the number.</p>
+            <p>Hence, sai need to round up to <strong>6,000,000.</strong></p>
+            <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Million.jpeg' %}"
+                    alt="Round to the Nearest Million" /></p> -->
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Online Rounding Off to Nearest Million Calculator</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. How much is a million in numbers?</strong></p>
+            <p class="answer">In numbers, 1,000,000 or one thousand thousand is a million.</p>
+            <hr>
+            <p class="question"><strong>2. How do you round to the nearest million?</strong></p>
+            <p class="answer">Rounding the numbers nearest million might be 4,000,000 or 5,000,000. In order to round
+                off to the nearest 1000000, consider the right digit to the million which is hundred thousands. If it is
+                5 or more then round up the million place or round down the million place.</p>
+            <hr>
+            <p class="question"><strong>3. How do you round off on a calculator to the nearest 1000000?</strong></p>
+            <p class="answer">First, visit RoundingCalculator.Guru website & go for Rounding to the nearest million
+                calculator. Now, enter the input in the allotted box then click on the calculate button. It immediately
+                rounds off the given number to the nearest million & provides output along with steps in a matter of
+                seconds.</p>
+            <hr>
+        </div>
+    </div>
+</div>
+<script>
+
+    {% if id == 1 %}
+
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+
+    {% endif %}
+
+    function myFunction() {
+        document.getElementsByName("firstno")[0].value = "";
+
+        document.getElementById("clear").innerHTML = "";
+        document.getElementById("clear1").innerHTML = "";
+
+    }
+</script>
+{%endblock%}

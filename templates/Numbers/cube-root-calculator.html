@@ -1,0 +1,427 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Cube Root Calculator | Calculator to get Cube Root of a Number</title>
+    <meta name="description" content="Cube Root Calculator displays the cube root value of your number instantly. Get best & free calculator to find the cube root of a number easily in no time."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Cube Root Calculator | Calculator to get Cube Root of a Number"/>
+        <meta property="og:description" content="Cube Root Calculator displays the cube root value of your number instantly. Get best & free calculator to find the cube root of a number easily in no time."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Cube-Root-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Cube Root Calculator | Calculator to get Cube Root of a Number"/>
+        <meta name="twitter:description" content="Cube Root Calculator displays the cube root value of your number instantly. Get best & free calculator to find the cube root of a number easily in no time."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Cube-Root-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Cube Root Calculator | Calculator to get Cube Root of a Number"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Cube-Root-Calculator.jpeg"/>
+        <meta property='og:description' content="Cube Root Calculator displays the cube root value of your number instantly. Get best & free calculator to find the cube root of a number easily in no time."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you calculate cube root of number using prime factorization method?
+        ","acceptedAnswer": {"@type": "Answer","text":" Prime factorization is one of the simple method to calculate the cube root of any decimal number. The steps are listed here:
+        First of all find the factors of your number.
+        Multiply the factors and write it under cube root.
+        Check whether any number repeated several times.
+        Then, try to represent repeated numbers in the form of number3 or numbern.
+        Eliminate cube root for numbers like this number3.
+        And compute other numbers root by using the process mentioned above."} }, {"@type": "Question","name":"2.
+        What does Cube Root means?
+        ","acceptedAnswer": {"@type": "Answer","text":" Cube root of a number is defined as the special number which when multiplied three times gives the original number. For example the cube root of 8 is 2. It says that 2x2x2 = 8."} }, {"@type": "Question","name":"3.
+        List out the perfect cube values up to 10?
+        ","acceptedAnswer": {"@type": "Answer","text":" The list of perfect cube number 1 to 10 are provided here:
+        Cube of 1: 1x1x1 = 1, so ∛1=1.
+        Cube of 2: 2x2x2 = 8, so ∛8 = 2.
+        Cube of 3: 3x3x3 = 27, so ∛27 = 3.
+        Cube of 4: 4x4x4 = 64, so ∛64 = 4.
+        Cube of 5: 5x5x5 = 125, so ∛125 = 5.
+        Cube of 6: 6x6x6 = 216, so ∛216 = 6.
+        Cube of 7: 7x7x7 = 343, so ∛343 = 7.
+        Cube of 8: 8x8x8 = 512, so ∛512 = 8.
+        Cube of 9: 9x9x9 = 729, so ∛729 = 9.
+        Cube of 10: 10x10x10 = 1000, so ∛1000 = 10."} }, {"@type": "Question","name":"4.
+        Solve ∛39,304?
+        ","acceptedAnswer": {"@type": "Answer","text":" Solve this problem by using prime factorization method.
+        39,304 = 2x2x2x17x17x17
+        ∛39,304 = ∛2x2x2x17x17x17
+        = ∛23x∛173
+        = 2*17
+        ∛39,304 = 34."} }]}</script> 
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Cube Root Calculator</h1>
+            </div>
+            <div class="card-body">
+<p>By giving the input number in the specified input field and click on calculate button to check the exact result along with a detailed solution in our Cube Root Calculator. So, utilise this tool and obtain the cube root of any number as result instantly.</p>
+<br>
+    <p><b>Ex: </b> <a href="https://onlinecalculator.guru/numbers/cube-root-of-224/">Cube root of 224</a> (or) <a href="https://onlinecalculator.guru/numbers/cube-root-of-88/">Cube root of 88</a> (or) <a href="https://onlinecalculator.guru/numbers/cube-root-of-125/">Cube root of 125</a></p>
+    
+    {%if go_tag%}
+                <a href="{{go_tag}}" id="ddd"></a>
+                {%endif%}
+                <div class="box5" id="cube-root-calculator">
+                    <form method="POST">{% csrf_token %}
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                        <center>Cube Root Calculator</center>
+                        
+                        </div>
+                        
+                    
+                      </div>
+                      <div class="row mx-auto my-auto">
+                        <div class="cell4">
+                            <center>
+                          <table>
+                        {%if input1 %}
+                        <tr>
+                        <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="{{input1}}"></td>
+                    </tr>
+                        {%else%}
+                        <tr>
+                            <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="27"></td>
+                        </tr>
+                      {% endif %}
+                    </table>
+                </center>
+                        </div>
+                      </div>
+                    
+                      
+                      <center>
+                      <div id="botton5" class="col mt-2 ">
+                        <td><input id="botton1" class="btn btn-secondary btn-mr-3" type="button" onclick="myFunction()" value="Clear"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      
+                      <td><button id="botton2" name="submit2" value="submit2" type="submit" class="btn btn-primary mb-2">Calculate</button>  </td>
+                      </div>
+                    </center>
+                      </form>
+                  
+                    {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                  <div id="detail">
+                    {%if detailStep%}
+                        <hr>
+                        <p><strong>Answer:</strong></p>
+                        <div style="text-align: center;">
+                        {% autoescape off %}
+                        {{detailStep}}
+                        {%endautoescape%}
+                        </div>
+                        <hr>
+                    {%endif%}	
+                    </div>
+                  </div>
+    <br>
+    <p><strong>Here are some samples of Cube Root of a Number calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-3">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-8/">Cube root of 8</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-9/">Cube root of 9</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-4/">Cube root of 4</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-3/">Cube root of 3</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-5/">Cube root of 5</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-2/">Cube root of 2</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-6/">Cube root of 6</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-7/">Cube root of 7</a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-3">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-80/">Cube root of 80</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-45/">Cube root of 45</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-70/">Cube root of 70</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-20/">Cube root of 20</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-98/">Cube root of 98</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-21/">Cube root of 21</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-84/">Cube root of 84</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-60/">Cube root of 60</a></li>
+          
+        </ul>                 
+      </div>
+      <div class="col-sm-3">
+      <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-17/">Cube root of 17</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-68/">Cube root of 68</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-70/">Cube root of 70</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-49/">Cube root of 49</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-60/">Cube root of 60</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-40/">Cube root of 40</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-24/">Cube root of 24</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-22/">Cube root of 22</a></li>
+             
+      </ul>			
+      </div>
+      <div class="col-sm-3">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-653/">Cube root of 653</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-946/">Cube root of 946</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-504/">Cube root of 504</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-164/">Cube root of 164</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-898/">Cube root of 898</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-405/">Cube root of 405</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-665/">Cube root of 665</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-897/">Cube root of 897</a></li>
+                 
+          </ul>			
+          </div>
+    </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/cube-calculator/">Cube Calculator</a></li>
+                    <li><a href="/numbers/square-calculator/">Square Calculator</a></li> 
+                    <li><a href="/numbers/square-root-calculator/">Square root Calculator</a></li>
+                  </ul>
+                <p><strong>Cube Root Calculator: </strong>Do you want to compute the cube root of a number easily? Then use this free online tool to get the cubth root of number quickly. In the below segments, you can get the detailed explanation for how to calculate cube root of numbers with an example. Cube Root Calculator takes input as number and gives the result as cube root of that particular number in no time.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Steps to Calculate Cube Root of a Number</h2>
+        </div>
+	    <div class="card-body">
+<p>Don't think that calculating the non perfect number cube root is very difficult. The simple steps offered here will help you in solving the cube root of number x. Follow these guidelines and solve them carefully.</p>
+            <ul>
+            <li>Let say number x to compute the cube root.</li>
+            <li>We will write cube root of x as ∛x. Cube root of x is also represented as x<sup>⅓</sup>.</li>
+            <li>Know the perfect cubes of numbers 1 to 10.</li>
+            <li>So, that it will be easy for you to find the perfect cube root number.</li>
+            <li>If the number is not perfect cube root, then know between which numbers the number lies.</li>
+            <li>By trial and error method, calculate the nearest possible numbers to get the exact value.</li>
+            </ul>
+            <p><strong>Example</strong></p>
+            <p><strong>Question: What is the cube root of 30?</strong></p>
+            <p><strong>Solution:</strong></p>
+            <p>Given number is 30</p>
+            <p>∛30 = ?</p>
+            <p>We already know that 3x3x3 = 27, 4x4x4 = 64</p>
+            <p>So, ∛30 lies between 3 and 4.</p>
+            <p>Try to compute 3.1 perfect cube</p>
+            <p>3.1x3.1x3.1 = 29.791</p>
+            <p>3.2x3.2x3.2 = 32.769</p>
+            <p>∛30 = 3.1</p>
+            <p>If you are looking for a comprehensive array of calculators covering various algebra concepts, you can check out <a href="https://onlinecalculator.guru/">Onlinecalculator.guru</a></p>
+            <img src="{% static 'images/Numbers/Cube-Root-Calculator.jpeg' %}" alt='Cube Root Calculator'>
+        </div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Cube Root of a Number Example Calculations</h2>
+        </div>
+	    <div class="card-body">
+        <div class="row">
+          <div class="col-sm-4">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-8542/">Cube root of 8542</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-8623/">Cube root of 8623</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-8444/">Cube root of 8444</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-3091/">Cube root of 3091</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-8883/">Cube root of 8883</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-7423/">Cube root of 7423</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-9050/">Cube root of 9050</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-4579/">Cube root of 4579</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-7819/">Cube root of 7819</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-2045/">Cube root of 2045</a></li>
+                  
+              </ul>
+          </div>
+          <div class="col-sm-4">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-99335/">Cube root of 99335</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-49461/">Cube root of 49461</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-26081/">Cube root of 26081</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-22735/">Cube root of 22735</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-18410/">Cube root of 18410</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-11403/">Cube root of 11403</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-72711/">Cube root of 72711</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-93533/">Cube root of 93533</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-52974/">Cube root of 52974</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-80654/">Cube root of 80654</a></li>
+                  
+              </ul>
+          </div>
+          <div class="col-sm-4">
+              <ul>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-726479/">Cube root of 726479</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-205472/">Cube root of 205472</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-889786/">Cube root of 889786</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-469044/">Cube root of 469044</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-679636/">Cube root of 679636</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-420092/">Cube root of 420092</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-785455/">Cube root of 785455</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-913127/">Cube root of 913127</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-893230/">Cube root of 893230</a></li>
+                  
+                  <li><a href="https://onlinecalculator.guru/numbers/cube-root-of-940361/">Cube root of 940361</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+        </div>
+    </div>
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">Frequently Asked Questions on Cube Root Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you calculate cube root of number using prime factorization method?</strong></p>
+         <p class="answer">Prime factorization is one of the simple method to calculate the cube root of any decimal number. The steps are listed here
+         <ul>
+             <li>First of all find the factors of your number.</li>
+             <li>Multiply the factors and write it under cube root.</li>
+             <li>Check whether any number repeated several times.</li>
+             <li>Then, try to represent repeated numbers in the form of number<sup>3</sup> or number<sup>n</sup>.</li>
+             <li>Eliminate cube root for numbers like this number<sup>3</sup>.</li>
+             <li>And compute other numbers root by using the process mentioned above.</li>
+         </ul>
+        </p><hr>
+     	<p class="question"><strong>2. What does Cube Root means?</strong></p>
+     	<p class="answer">Cube root of a number is defined as the special number which when multiplied three times gives the original number. For example the cube root of 8 is 2. It says that 2x2x2 = 8.</p><hr>  
+        <p class="question"><strong>3. List out the perfect cube values up to 10?</strong></p>
+        <p class="answer">The list of perfect cube number 1 to 10 are provided here:</p>
+        <p>Cube of 1:  1x1x1 = 1, so ∛1=1.</p>
+        <p>Cube of 2: 2x2x2 = 8, so ∛8 = 2.</p>
+        <p>Cube  of 3: 3x3x3 = 27, so ∛27 = 3.</p>
+        <p>Cube of 4: 4x4x4 = 64, so ∛64 = 4.</p>
+        <p>Cube of 5: 5x5x5 = 125, so ∛125 = 5.</p>
+        <p>Cube of 6: 6x6x6 = 216, so ∛216 = 6.</p>
+        <p>Cube of 7: 7x7x7 = 343, so ∛343 = 7.</p>
+        <p>Cube of 8: 8x8x8 = 512, so ∛512 = 8.</p>
+        <p>Cube of 9: 9x9x9 = 729, so ∛729 = 9.</p>
+        <p>Cube of 10: 10x10x10 = 1000, so ∛1000 = 10.</p><hr>
+        <p class="question"><strong>4. Solve ∛39,304?</strong></p>
+         <p class="answer">Solve this problem by using prime factorization method.</p>
+         <p>39,304 = 2x2x2x17x17x17</p>
+         <p>∛39,304 = ∛2x2x2x17x17x17</p>
+         <p>= ∛2<sup>3</sup>x∛17<sup>3</sup></p>
+         <p>= 2*17</p>
+         <p>∛39,304 = 34.</p>
+         <hr>
+    	</div>
+    </div>
+    </div>
+    <script>
+      function myFunction() {
+        document.getElementById("input1").value="";
+        document.getElementById("detail").innerHTML="";
+        
+      }
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('ddd').click();
+          });
+      </script>
+{%endblock%}

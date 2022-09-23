@@ -1,0 +1,247 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Rounding Money Calculator | How to Round Numbers in Money?</title>
+    <meta name="description" content="Get this Handy Rounding Money Calculator tool to round off the money very easily and quickly without any efforts."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Rounding Money Calculator | How to Round Numbers in Money?"/>
+        <meta property="og:description" content="Get this Handy Rounding Money Calculator tool to round off the money very easily and quickly without any efforts."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Money-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Rounding Money Calculator | How to Round Numbers in Money?"/>
+        <meta name="twitter:description" content="Get this Handy Rounding Money Calculator tool to round off the money very easily and quickly without any efforts."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Money-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Rounding Money Calculator | How to Round Numbers in Money?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Money-Calculator.jpeg"/>
+        <meta property='og:description' content="Get this Handy Rounding Money Calculator tool to round off the money very easily and quickly without any efforts."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What are the techniques used for Rounding money?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        There are two techiques used to round the money. They are,
+        1.Rounding to the Nearest Dollar
+        2.Rounding to the Nearest Cent"}	}, {"@type": "Question","name":"2
+        How to round up $45.66 to the nearest dollar?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        $45.66 round up to the nearest dollar is $46."}	}, {"@type": "Question","name":"3
+        How to utilize Rounding Money Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        All you have to do is fill the input fields and click on the calculate button which is available in blue color, and get the answer with error-free results."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Rounding Money Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Rounding money calculator is the best tool to round off the monetary amount. Simply type in the values in the input fields and tap the calculate button to get the answer in a blink of an eye.</p>
+                
+
+
+                <div class="box">
+                  <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                        <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number"
+                          maxlength="15" autofocus required />
+                        {%else%}
+                        <input name="input1" id="input1" value="43572" class="nmbr_real real" type="text" title="real number"
+                          maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                        <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;">
+                          <optgroup label="Whole Number Places">
+                            {%if input2_value%}
+                            <option value="{{input2_value}}" selected>{{input2_data}}</option>
+                            <option value="-6">Million</option>
+                            <option value="-5">Hundred Thousand</option>
+                            <option value="-4">Ten Thousand</option>
+                            <option value="-3">Thousand</option>
+                            <option value="-2">Hundred</option>
+                            <option value="-1">Tens</option>
+                            <option value="0">Ones</option>
+                            {%else%}
+                            <option value="-6">Million</option>
+                            <option value="-5">Hundred Thousand</option>
+                            <option value="-4">Ten Thousand</option>
+                            <option value="-3">Thousand</option>
+                            <option value="-2">Hundred</option>
+                            <option value="-1">Tens</option>
+                            <option value="0" selected>Ones</option>
+                            {%endif%}
+                          </optgroup>
+                        </select>
+                        <script>
+                          var map = {};
+                          $('#input2 option').each(function () {
+                            if (map[this.value]) {
+                              $(this).remove()
+                            }
+                            map[this.value] = true;
+                          });
+                        </script>
+                      </div>
+                    </div>
+          
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Round</button>
+                    </div>
+                  </form>
+                  {%if detailStep%}
+                  <hr>
+                  <p><strong>Answer:</strong></p>
+                  <div style="text-align: center;">
+                    {% autoescape off %}
+                    {{detailStep}}
+                    {%endautoescape%}
+                  </div>
+                  <hr>
+                  {%endif%}
+                </div>
+                {% autoescape off %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="alert alert-danger">{{message}}</p>
+                  </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {%endautoescape%}
+                <br>
+
+                      
+                                    <p>Related Calculators:</p> 
+                                    <ul>  
+                                        
+                                        <li><a href="/round-to-the-nearest-5-cents/">Rounding Nearest 5 cents Calculator</a></li>
+                                        <li><a href="/round-to-the-nearest-10-cents/">Rounding Nearest 10 cents Calculator</a></li>
+                                        <li><a href="/round-to-the-nearest-dollar/">Rounding Nearest Dollar Calculator</a></li>
+                                        <li><a href="/round-to-the-nearest-japanese-yen-calculator/">Rounding Nearest Japanese Yen Calculator</a></li>
+
+                                        
+                                      </ul>
+                <p><strong>Rounding Money Calculator: </strong>Feeling Exhausted to round off the money? Here we have came up with an interesting tool to round the monetary amount. And in this article, we have also clearly explained about different familiar techniques, Solved examples and procedures in order to make it easy in rounding off the money. Let's begin!!</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Round Off the Money?</h2>
+        </div>
+	    <div class="card-body">
+            <p>When you are rounding with money, you need to know how to round up the values for the nearest cent and for large amount of money like tens, thousands, etc.</p>
+            <p>Here, when you are rounding money we use two rounding techniques.</p>
+            <p>1. Round off to the Nearest Dollar.</p>
+            <p>2. Round off to the Nearest Cent.</p>
+            <h3>Round off to the Nearest Dollar.</h3>
+            <p>If your dollar amount has 0 to 49 cents, then you need to round down to the nearest dollar, if your dollar amount has 50 to 99 cents, then you need to be rounded up to the nearest dollar.</p>
+            <h3>Round off to the Nearest Cent.</h3>
+            <p>In the given cent, last number in the right is five and more, then you need to increase the cents by 1, if the number is four or less, then you need to keep the cents as same.</p>
+            </div>
+            </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">How to use Rounding Money Calculator?</h3>
+            </div>
+            <div class="card-body">
+              <p>Go through the steps clearly, to use the rounding money calculator very easily and effortlessly.</p>
+              <ul>
+                  <li>Firstly, you need to verify the question.</li>
+                  <li>Then, insert the input values in the input field and press the calculate button.</li>
+                  <li>Finally,  value of rounding money will be displayed in split seconds.</li>
+              </ul>
+            </div>
+            </div>
+    <div class="card">
+      <div class="card-header">
+            <h3 class="h3">Rounding and Estimation of Money Examples</h3>
+      </div>
+      <div class="card-body">
+       <p><strong>Example</strong></p>
+       <p><b>Question 1:</b> Round $31.56 to the nearest dollar?</p>
+       <p><strong>Solution:</strong></p>
+       <p>Given, number is $31.86</p>
+       <p>Look for the number right to the decimal point. i.e.8</p>
+       <p>As 8 is greater than 5, so we will round up to the nearest dollar.</p>
+       <p>Finally, $31.56 after rounding up to the nearest dollar, $32</p>
+       <p><b>Question 2:</b> Round $65.23 to the nearest cent?</p>
+       <p><strong>Solution:</strong></p>
+       <p>Given, number is $65.23</p>
+       <p>Here, we will see for the last digit after the decimal point.i.e.3</p>
+       <p>As the Last digit is 3 and it is less than 5, keep the cents same.</p>
+       <p>Finally, $65.23 round down to $65.2</p>
+       <p><a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> is the best suitable website for rounding calculators, We have also given detailed explanations in these tools which are included in the website, go through them and clear all your queries. </p>
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Rounding Money Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What are the techniques used for Rounding money?</strong></p>
+     	<p class="answer"><p>There are two techniques used to round the money. They are,
+    1.Rounding to the Nearest Dollar
+    2.Rounding to the Nearest Cent</p><hr>
+     	<p class="question"><strong>2. How to round up $45.66 to the nearest dollar?</strong></p>
+     	<p class="answer">$45.66 round up to the nearest dollar is $46.</p><hr>  
+      <p class="question"><strong>3. How to utilize Rounding Money Calculator?</strong></p>
+     	<p class="answer">All you have to do is fill the input fields and click on the calculate button which is available in blue color, and get the answer with error-free results.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,375 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Square Root Calculator to find Square Root | Free Online Calculator</title>
+    <meta name="description" content="Square Root Calculator determines the square root of a given number you enter. Learn how to find square root of a number manually with detailed steps.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Square Root Calculator to find Square Root | Free Online Calculator"/>
+    <meta property="og:description" content="Square Root Calculator determines the square root of a given number you enter. Learn how to find square root of a number manually with detailed steps."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Square-Root-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Square Root Calculator to find Square Root | Free Online Calculator"/>
+    <meta name="twitter:description" content="Square Root Calculator determines the square root of a given number you enter. Learn how to find square root of a number manually with detailed steps."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Square-Root-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Square Root Calculator to find Square Root | Free Online Calculator"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Square-Root-Calculator.jpeg"/>
+    <meta property='og:description' content="Square Root Calculator determines the square root of a given number you enter. Learn how to find square root of a number manually with detailed steps."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is meant by Perfect Square?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any number multiplied by itself creates a perfect square."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you find the Square Root of Non-Perfect Square Numbers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can find the square root of non-perfect square numbers by using the long division method."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the symbol to denote square root?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Symbol to denote square root is √"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do I get Procedure on how to find the square root in detail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can find the Procedure on how to find square root in detail on our page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a number have more than one square root?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, a number can have more than one square root. In fact, all positive numbers will have two square roots one is positive and the other is negative."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Square Root Calculator</h1>
+  </div>
+  <div class="card-body">
+    <p>With this tool, you can estimate the square root of the given number quickly and automatically. Just enter the input in the input field and tap on the enter button to see the result.</p>
+    <br>
+    <p><b>Ex: </b> <a href="https://onlinecalculator.guru/numbers/square-root-of-224/">Square root of 224</a> (or) <a href="https://onlinecalculator.guru/numbers/square-root-of-88/">Square root of 88</a> (or) <a href="https://onlinecalculator.guru/numbers/square-root-of-125/">Square root of 125</a></p>
+    <form method="POST">{% csrf_token %}
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInputGroup">Square Root</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><strong>Square Root of: </strong></div>
+            </div>
+            {%if input%}
+            <input type="text" class="form-control" name="textfield1" id="inlineFormInputGroup" placeholder="Enter Positive Number" value="{{input}}">
+            {%else%}
+            <input type="text" class="form-control" name="textfield1" id="inlineFormInputGroup" placeholder="Enter Positive Number" value="49">
+            {%endif%}
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+        </div>
+      </div>
+    </form>
+    {% autoescape off %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="alert alert-danger">{{message}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {%endautoescape%}
+    <br>
+    <p><strong>Here are some samples of Square Root of a Number calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-3">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-2/">Square root of 2</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-6/">Square root of 6</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-9/">Square root of 9</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-4/">Square root of 4</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-3/">Square root of 3</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-5/">Square root of 5</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-8/">Square root of 8</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-7/">Square root of 7</a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-3">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-75/">Square root of 75</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-37/">Square root of 37</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-24/">Square root of 24</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-19/">Square root of 19</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-76/">Square root of 76</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-73/">Square root of 73</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-12/">Square root of 12</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-38/">Square root of 38</a></li>
+          
+        </ul>                 
+      </div>
+      <div class="col-sm-3">
+      <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-31/">Square root of 31</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-83/">Square root of 83</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-78/">Square root of 78</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-67/">Square root of 67</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-44/">Square root of 44</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-23/">Square root of 23</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-71/">Square root of 71</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/square-root-of-85/">Square root of 85</a></li>
+             
+      </ul>			
+      </div>
+      <div class="col-sm-3">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-702/">Square root of 702</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-166/">Square root of 166</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-573/">Square root of 573</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-174/">Square root of 174</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-190/">Square root of 190</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-916/">Square root of 916</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-365/">Square root of 365</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-663/">Square root of 663</a></li>
+                 
+          </ul>			
+          </div>
+    </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/square-calculator/">Square Calculator</a></li>
+                    <li><a href="/numbers/cube-calculator/">Cube Calculator</a></li> 
+                    <li><a href="/numbers/cube-root-calculator/">Cuberoot Calculator</a></li>
+                  </ul>
+    <p><strong>Square Root Calculator:</strong>Are you struggling to find Square Roots? Not anymore, as you can make use of our Square Root Calculator to determine the Square Root of any positive number you want. From this article, you will find what is a square root, and how to find the square root of a given number easily along with a detailed explanation.</p>
+</div></div>
+  <div class="card">
+    <div class="card-header"><h2 class="h2">What is Square Root?</h2></div>
+    <div class="card-body">
+      <p>Square Root is defined as the number as the value which gives the number when it is multiplied by itself. The symbol used to denote the square root is √. This radical symbol is also called sure or root symbol. If a number is a perfect square we can easily find the square root of the number. However, if the given number isn't a perfect square you can find the square root using a long division method. There is one more common notation of square root that you can use in complex calculations.</p>
+      <p>Standard form to represent the square root is given as √x</p>
+      <p>The alternative square root formula states that the square root of a number is a number raised to the fraction of one half.</p>
+      <p>√x = x<sup>(1/2)</sup></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">How to find Square Root of a number?</h3></div>
+    <div class="card-body">
+      <p>Go through the below steps while finding the square root of a number.</p>
+      <ul>
+        <li>Find the nearest square number above and below the number you are thinking of finding the square root.</li>
+        <li>The square root will be between the square roots of these numbers.</li>
+        <li>The closeness of the number to a square root indicates how close the root is.</li>
+        <li>Try many times to get the square root accurately.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">How to Simplify Square Roots?</h3></div>
+    <div class="card-body">
+      <p>To Simplify Square Roots use the handy square roots property √x = x^(1/2). We can use these two forms of square roots and switch between them whenever you want. You need to check the number after the root symbol and find its factors.  It can have a perfect square among its factors. You need to have at least one factor to be a perfect square in order to simplify a square root.</p>
+      <p>You may find the process of finding square roots a bit complicated in the initial stage but with enough practice, you will find them easily.</p>
+      <p>If you would like to explore Perimeter, area, volume, trigonometric functions, algebra, percentages, and many more concepts you can refer to <a href="{%url 'home'%}">onlinecalculator.guru</a></p>
+      <img src="{% static 'images/Numbers/Square-Root-Calculator.jpeg' %}" alt='Square Root Calculator'>
+    </div>
+  </div>
+<div class="card">
+  <div class="card-header">
+        <h2 class="h2">Square Root of a Number Example Calculations</h2>
+    </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-4">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-5346/">Square root of 5346</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-5726/">Square root of 5726</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-8954/">Square root of 8954</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-5996/">Square root of 5996</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-1696/">Square root of 1696</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-3581/">Square root of 3581</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-5264/">Square root of 5264</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-7765/">Square root of 7765</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-8319/">Square root of 8319</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-7550/">Square root of 7550</a></li>
+              
+          </ul>
+      </div>
+      <div class="col-sm-4">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-93894/">Square root of 93894</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-44065/">Square root of 44065</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-40071/">Square root of 40071</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-72042/">Square root of 72042</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-37875/">Square root of 37875</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-24416/">Square root of 24416</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-11941/">Square root of 11941</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-57142/">Square root of 57142</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-31341/">Square root of 31341</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-17505/">Square root of 17505</a></li>
+              
+          </ul>
+      </div>
+      <div class="col-sm-4">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-907963/">Square root of 907963</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-413515/">Square root of 413515</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-234849/">Square root of 234849</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-319500/">Square root of 319500</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-916440/">Square root of 916440</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-129364/">Square root of 129364</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-835425/">Square root of 835425</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-189407/">Square root of 189407</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-301691/">Square root of 301691</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/square-root-of-323835/">Square root of 323835</a></li>
+              
+          </ul>
+      </div>
+  </div>
+    </div>
+</div>
+  <div class="card">
+      <div class="card-header">
+          <h3 class="h3">FAQs on Square Root</h3>
+      </div>
+      <div class="card-body">
+          <!-- Question & Answer Starts --->
+         <p class="question"><strong>1. What is meant by Perfect Square?</strong></p>
+         <p class="answer">Any number multiplied by itself creates a perfect square.</p><hr>
+
+
+         <p class="question"><strong>2. How do you find the Square Root of Non-Perfect Square Numbers?</strong></p>
+         <p class="answer">You can find the square root of non-perfect square numbers by using the long division method.</p><hr>
+
+
+         <p class="question"><strong>3. What is the symbol to denote square root?</strong></p>
+         <p class="answer">Symbol to denote square root is √</p><hr>
+
+
+         <p class="question"><strong>4. Where do I get Procedure on how to find the square root in detail?</strong></p>
+         <p class="answer">You can find the Procedure on how to find square root in detail on our page.</p><hr>
+
+         <p class="question"><strong>5. Can a number have more than one square root?</strong></p>
+         <p class="answer">Yes, a number can have more than one square root. In fact, all positive numbers will have two square roots one is positive and the other is negative.</p>
+      </div>
+   </div>
+</div>
+{%endblock%}

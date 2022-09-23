@@ -1,0 +1,335 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Number to Word Converter | How to Convert Numbers into Word?</title>
+    <meta name="description" content="Utilize the free Number to Word Converter that translates Numbers to Words easily. Provide input number & click on the calculate button to get output."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Number to Word Converter | How to Convert Numbers into Word?"/>
+        <meta property="og:description" content="Utilize the free Number to Word Converter that translates Numbers to Words easily. Provide input number & click on the calculate button to get output."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Number-to-Word-Converter.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Number to Word Converter | How to Convert Numbers into Word?"/>
+        <meta name="twitter:description" content="Utilize the free Number to Word Converter that translates Numbers to Words easily. Provide input number & click on the calculate button to get output."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Number-to-Word-Converter.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Number to Word Converter | How to Convert Numbers into Word?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Number-to-Word-Converter.jpeg"/>
+        <meta property='og:description' content="Utilize the free Number to Word Converter that translates Numbers to Words easily. Provide input number & click on the calculate button to get output."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        Where do I get the best Number to Word Converter?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get the best Number to Word Converter on our page."}	}, {"@type": "Question","name":"2. 
+        What is 1245 in word?
+        ","acceptedAnswer": {"@type": "Answer","text":" 1245 in word is One Thousand and Forty Five."}	}, {"@type": "Question","name":"3. 
+        How to use Number to Word Converter?
+        ","acceptedAnswer": {"@type": "Answer","text":" Simply enter the input number and choose the case you want to display the word from the dropdown and click on the calculate button to get the word in no time."}	}, {"@type": "Question","name":"4. 
+        Where do I get a detailed procedure to convert Number to Word?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get a detailed procedure to convert Number to Word on our page."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Number to Word Converter</h1>
+            </div>
+            <div class="card-body">
+                <p>Avail Number to Word Converter over here and change between numbers to word easily. You just need to type in the input number in the respective input section and hit on the calculate button to get the word in a fraction of seconds.</p>
+                <p><b>Ex:</b></p> <ul><li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-3078/">Convert 3078 to Word</a></li><li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-8675/">Convert 8675 to Word</a></li><li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-4328/">Convert 4328 to Word</a></li></ul>
+    <form action="{% url 'expanded-form' %}" method="POST" id="my_form" name="reg_to_scientific" onsubmit="go();">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Number to Word Converter</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Convert Number to Word of: </strong></div>
+          </div>
+          {%if inputEnter%}
+          <input type="text" class="form-control" name="input1" id="inlineFormInputGroup" placeholder="Enter number" value="{{inputEnter}}">
+          {%else%}
+          <input type="text" class="form-control" name="input1" id="inlineFormInputGroup" placeholder="Enter number" value="4562">
+          {%endif%}
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+      </div>
+    </div>
+    </form>
+    {% autoescape off %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="alert alert-danger">{{message}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {%endautoescape%}
+    <br>
+    <p><strong>Here are some samples of Number to Word calculations.</strong></p>
+    <div class="row">
+        <div class="col-sm-3">
+          <ul>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-8/">Convert 8 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-3/">Convert 3 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-7/">Convert 7 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-4/">Convert 4 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-5/">Convert 5 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-6/">Convert 6 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-9/">Convert 9 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-2/">Convert 2 to Word</a></li>
+            
+     
+          </ul>                    
+        </div>
+        <div class="col-sm-3">
+          <ul>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-86/">Convert 86 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-76/">Convert 76 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-62/">Convert 62 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-28/">Convert 28 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-93/">Convert 93 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-40/">Convert 40 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-41/">Convert 41 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-94/">Convert 94 to Word</a></li>
+            
+          </ul>                 
+        </div>
+        <div class="col-sm-3">
+        <ul>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-66/">Convert 66 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-99/">Convert 99 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-42/">Convert 42 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-37/">Convert 37 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-86/">Convert 86 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-19/">Convert 19 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-79/">Convert 79 to Word</a></li>
+            
+            <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-86/">Convert 86 to Word</a></li>
+               
+        </ul>			
+        </div>
+        <div class="col-sm-3">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-632/">Convert 632 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-115/">Convert 115 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-909/">Convert 909 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-515/">Convert 515 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-257/">Convert 257 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-944/">Convert 944 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-100/">Convert 100 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-577/">Convert 577 to Word</a></li>
+                   
+            </ul>			
+            </div>
+      </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/even-or-odd-calculator/">Even or Odd Number</a></li>
+                    <li><a href="/numbers/square-root-calculator/">Square Root Calculator</a></li> 
+                    <li><a href="/numbers/square-calculator/">Square Calculator</a></li>
+                    <li><a href="/numbers/cube-calculator/">Cube Calculator</a></li>
+                  </ul>
+                <p><strong>Number to Word Converter: </strong>If you are looking for help on how to convert Number to Word then this is the right place for you. The online tool is quite easy to use and you can select the words to display in formats like lowercase, uppercase, Title case, Sentence Case as per your need. We have listed the step by step procedure on how to convert Number to Word along with solved examples.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Procedure to convert Number to Word</h2>
+        </div>
+	    <div class="card-body">
+            <p>Check out the following guidelines for converting a number to a word. They are in the following fashion</p>
+            <ul>
+                <li>With the help of number words from one to ten, you can make words on the higher value.</li>
+                <li>Do learn the number words from eleven to twenty to make other words of higher value.</li>
+                <li>Once you learn the words from One to Twenty do remember the number words such as thirty, forty, fifty, sixty until hundred.</li>
+                <li>As the numbers increase in value and become larger with more digits the names start to change.</li>
+           </ul>
+           <p><strong>Numbers of Higher Values</strong></p>
+           <p>10 - Ten</p>
+            <p>100 - Hundred</p>
+            <p>1,000 - Thousand</p>
+            <p>10,000 - Ten Thousand</p>
+            <p>100, 000 - Hundred Thousand</p>
+            <p>1, 000, 000 - One Million</p>
+            <p><strong>Example</strong></p>
+<p>Question : Write 735, 152, 2003 to Word?</p>
+<p><strong>Solution:</strong></p>
+<p>As per the basic words, we know we can write the number 735 in words as follows</p>
+<p>735 - Seven Hundred Thirty Five</p>
+<p>152 - One Hundred and Fifty Two</p>
+<p>2003 - Two Thousand and Three</p>
+<p>Make use of the handy tools available for math concepts all at one place <a href="http://onlinecalculator.guru/">onlinecalculator.guru</a> and clear all your concerns.</p>
+<img src="{% static 'images/Numbers/Number-to-Word-Converter.jpeg' %}" alt='Number to Word Converter'>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+          <h2 class="h2">Number to Word Example Calculations</h2>
+      </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-5115/">Convert 5115 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-6584/">Convert 6584 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-2707/">Convert 2707 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-2702/">Convert 2702 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-3595/">Convert 3595 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-3088/">Convert 3088 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-2273/">Convert 2273 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-5504/">Convert 5504 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-1403/">Convert 1403 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-3569/">Convert 3569 to Word</a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-13462/">Convert 13462 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-21515/">Convert 21515 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-14567/">Convert 14567 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-43747/">Convert 43747 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-26274/">Convert 26274 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-43844/">Convert 43844 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-50615/">Convert 50615 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-46791/">Convert 46791 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-82276/">Convert 82276 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-49306/">Convert 49306 to Word</a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-598830/">Convert 598830 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-894080/">Convert 894080 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-114303/">Convert 114303 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-679389/">Convert 679389 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-623494/">Convert 623494 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-566261/">Convert 566261 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-459841/">Convert 459841 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-622582/">Convert 622582 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-120891/">Convert 120891 to Word</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/rational-numbers/expanded-form-of-166257/">Convert 166257 to Word</a></li>
+                
+            </ul>
+        </div>
+    </div>
+      </div>
+  </div>
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Number to Word Converter</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. Where do I get the best Number to Word Converter?</strong></p>
+     	<p class="answer">You can get the best Number to Word Converter on our page.</p><hr>
+     	<p class="question"><strong>2. What is 1245 in word?</strong></p>
+     	<p class="answer">1245 in word is One Thousand and Forty Five.</p><hr>  
+        <p class="question"><strong>3. How to use Number to Word Converter?</strong></p>
+        <p class="answer">Simply enter the input number and choose the case you want to display the word from the dropdown and click on the calculate button to get the word in no time.</p><hr>
+        <p class="question"><strong>4. Where do I get a detailed procedure to convert Number to Word?</strong></p>
+     	<p class="answer">You can get a detailed procedure to convert Number to Word on our page.</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

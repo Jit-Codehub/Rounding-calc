@@ -1,0 +1,210 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Round to the Nearest Cent Calculator | How to Round Off to Nearest Cent?</title>
+<meta name="description"
+  content="Round to the Nearest Cent Calculator will round off the number entered to two decimal places instantly. Get detailed steps to round off to the nearest cent." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Round to the Nearest Cent Calculator | How to Round Off to Nearest Cent?" />
+<meta property="og:description"
+  content="Round to the Nearest Cent Calculator will round off the number entered to two decimal places instantly. Get detailed steps to round off to the nearest cent." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Round to the Nearest Cent Calculator | How to Round Off to Nearest Cent?" />
+<meta name="twitter:description"
+  content="Round to the Nearest Cent Calculator will round off the number entered to two decimal places instantly. Get detailed steps to round off to the nearest cent." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Round to the Nearest Cent Calculator | How to Round Off to Nearest Cent?" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" />
+<meta property='og:description'
+  content="Round to the Nearest Cent Calculator will round off the number entered to two decimal places instantly. Get detailed steps to round off to the nearest cent." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What does it mean when you round to the nearest cent?
+        ","acceptedAnswer": {"@type": "Answer","text":" Round off to the nearest cent means to round off to two decimal places."}	}, {"@type": "Question","name":"2. 
+        How to use Round to the Nearest Cent Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Simply provide the input number in the input field of the calculator and then hit the calculate button to round off it to the nearest cent."}	}, {"@type": "Question","name":"3. 
+        What is 5.193 rounded to the nearest cent?
+        ","acceptedAnswer": {"@type": "Answer","text":" 5.193 rounded to the nearest cent is 5.19"}	}, {"@type": "Question","name":"4. 
+        How do you Round to the Nearest Cent?
+        ","acceptedAnswer": {"@type": "Answer","text":" Check the thousandths place and if it is >=5 then increase the cent value in hundredths place by 1. If it is less than 5 then remove the digits after the hundredths place."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Round to the Nearest Cent</h1>
+    </div>
+    <div class="card-body">
+      <p>Avail the Round to the Nearest Cent Calculator over here and get the input value rounded to the nearest cent in
+        a matter of seconds. All you need to do is enter the input number and click on the calculate button to get the
+        value rounded to the nearest cent.</p>
+      <div class="box">
+        <form method="POST">{% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Round:</label>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              {%if input1%}
+              <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number"
+                maxlength="15" autofocus required />
+              {%else%}
+              <input name="input1" id="input1" value="734.234" class="nmbr_real real" type="text" title="real number"
+                maxlength="15" autofocus required />
+              {%endif%}
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell pl-3">
+              <label for="input2">Round to: </label>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                <optgroup label="Decimal Places">
+                  <option value="cent" selected>Cent (Penny)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-auto mt-2 ml-3">
+            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+          </div>
+        </form>
+        {%if detailStep%}
+        <hr>
+        <p><strong>Answer:</strong></p>
+        <div style="text-align: center;">
+          {% autoescape off %}
+          {{detailStep}}
+          {%endautoescape%}
+        </div>
+        <hr>
+        {%endif%}
+      </div>
+      {% autoescape off %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="row">
+        <div class="col-md-6">
+          <p class="alert alert-danger">{{message}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {%endautoescape%}
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <!-- <li><a href="round-to-the-nearest-cent/">Round to the Nearest Cent</a></li> -->
+        <li><a href="/round-to-the-nearest-5-cents/">Round to the Nearest 5 Cents</a></li>
+        <li><a href="/round-to-the-nearest-25-cents/">Round to the Nearest 25 Cent</a></li>
+        <li><a href="/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>
+        <li><a href="/round-to-the-nearest-euro-calculator/">Round to the Nearest Euro</a></li>
+        <li><a href="/round-to-the-nearest-japanese-yen-calculator/">Round to the Nearest Yens</a></li>
+      </ul>
+      <p><strong>Round to the Nearest Cent: </strong>If you are looking for an online tool that does rounding to the
+        nearest cent then can be a great option for you. This article covers details like What does it mean to round to
+        the nearest cent, procedure to round to the nearest cent. The tool is quite simple and you just need to enter
+        the inputs required and hit on the calculate button to get output effortlessly. To help you get a good grip on
+        the concept we even provided solved examples.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round to the Nearest Cent?</h2>
+    </div>
+    <div class="card-body">
+      <p>Follow the simple instructions to round the value to its nearest cent. By adhering to these instructions you
+        can arrive at the solution easily. They are outlined as such</p>
+      <ul>
+        <li>To round the amount to the nearest cent check the value of its thousandths place.</li>
+        <li>If the value is greater than or equal to 5 increase the cent's place in hundredths by 1 and remove all the
+          digits right after the second decimal value.</li>
+        <li>If the value is less than 5 or less remove all digits right next to the second decimal value.</li>
+      </ul>
+      <p><strong>Example</strong></p>
+      <p>Question : If the Amount is 5.3227 round it to the Nearest Cent?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given Amount = 5.3227</p>
+      <p>Firstly, check for the thousandths place</p>
+      <p>In this case, thousandths place is 2 as it is less than 5 you can remove the values next to it.</p>
+      <p>Thus 5.3227 becomes<strong> 5.32</strong></p>
+      <p>Therefore, 5.3227 rounded to nearest cent is<strong> 5.32</strong></p>
+      <p>Get a comprehensive array of calculators regarding maths, physics, chemistry concepts from <a
+        href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and clear all your queries easily.</p>
+      <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Cent.jpeg' %}" alt='Round to the Nearest Cent'> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Round to the Nearest Cent</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. What does it mean when you round to the nearest cent?</strong></p>
+      <p class="answer">Round off to the nearest cent means to round off to two decimal places.</p>
+      <hr>
+      <p class="question"><strong>2. How to use Round to the Nearest Cent Calculator?</strong></p>
+      <p class="answer">Simply provide the input number in the input field of the calculator and then hit the calculate
+        button to round off it to the nearest cent.</p>
+      <hr>
+      <p class="question"><strong>3. What is 5.193 rounded to the nearest cent?</strong></p>
+      <p class="answer">5.193 rounded to the nearest cent is 5.19</p>
+      <hr>
+      <p class="question"><strong>4. How do you Round to the Nearest Cent?</strong></p>
+      <p class="answer">Check the thousandths place and if it is &gt;=5 then increase the cent value in hundredths place
+        by 1. If it is less than 5 then remove the digits after the hundredths place.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,247 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg"
+    type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Round to the Nearest Dollar | How to round a number to the nearest dollar?</title>
+<meta name="description"
+  content="Round to the Nearest Dollar Calculator rounds the value you enter to the nearest dollar in no time. Check how to round number to nearest dollar manually." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Round to the Nearest Dollar | How to round a number to the nearest dollar?" />
+<meta property="og:description"
+  content="Round to the Nearest Dollar Calculator rounds the value you enter to the nearest dollar in no time. Check how to round number to nearest dollar manually." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Dollar.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Round to the Nearest Dollar | How to round a number to the nearest dollar?" />
+<meta name="twitter:description"
+  content="Round to the Nearest Dollar Calculator rounds the value you enter to the nearest dollar in no time. Check how to round number to nearest dollar manually." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Dollar.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Round to the Nearest Dollar | How to round a number to the nearest dollar?" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Dollar.jpeg" />
+<meta property='og:description'
+  content="Round to the Nearest Dollar Calculator rounds the value you enter to the nearest dollar in no time. Check how to round number to nearest dollar manually." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How do you Round to the Nearest Dollar?
+        ","acceptedAnswer": {"@type": "Answer","text":" Check for the tenths place in the given amount and if it is >=5 increase the value in the dollar's one place by 1 and remove all the digits after the decimal point. If the tenths place value is <=4 simply remove all the digits next to the decimal point."}	}, {"@type": "Question","name":"2. 
+        How to use Round to the Nearest Dollar Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Simply provide the input number in the respective input provision and hit on the calculate button to get the number rounded to the nearest dollar."}	}, {"@type": "Question","name":"3. 
+        Where do I get a detailed procedure for rounding to the nearest dollar?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get a detailed procedure for rounding to the nearest dollar on our page."}	}, {"@type": "Question","name":"4. 
+        What is $9.14 rounded to the nearest dollar?
+        ","acceptedAnswer": {"@type": "Answer","text":" $9.14 rounded to the nearest dollar is $ 9."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Round to the Nearest Dollar</h1>
+    </div>
+    <div class="card-body">
+      <p>Utilize the free tool for Round to the Nearest Dollar and get the results immediately. Provide the input value
+        in the corresponding input section and press the calculate button highlighted in blue color to get the amount
+        entered rounded to the nearest dollar just like that.</p>
+      <div class="box">
+        <form method="POST">{% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Round:</label>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              {%if input1%}
+              <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number"
+                maxlength="15" autofocus required />
+              {%else%}
+              <input name="input1" id="input1" value="43572" class="nmbr_real real" type="text" title="real number"
+                maxlength="15" autofocus required />
+              {%endif%}
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell pl-3">
+              <label for="input2">Round to: </label>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <select name="input2" id="input2" class="year" style="padding: 5px;">
+                <optgroup label="Whole Number Places">
+                  {%if input2_value%}
+                  <option value="{{input2_value}}" selected>{{input2_data}}</option>
+                  <option value="-6">Million Dollars</option>
+                  <option value="-5">Hundred Thousand Dollars</option>
+                  <option value="-4">Ten Thousand Dollars</option>
+                  <option value="-3">Thousand Dollars</option>
+                  <option value="-2">Hundred Dollars</option>
+                  <option value="-1">Tens Dollars</option>
+                  <option value="0">Dollar</option>
+                  {%else%}
+                  <option value="-6">Million Dollars</option>
+                  <option value="-5">Hundred Thousand Dollars</option>
+                  <option value="-4">Ten Thousand Dollars</option>
+                  <option value="-3">Thousand Dollars</option>
+                  <option value="-2">Hundred Dollars</option>
+                  <option value="-1">Tens Dollars</option>
+                  <option value="0" selected>Dollar</option>
+                  {%endif%}
+                </optgroup>
+              </select>
+              <script>
+                var map = {};
+                $('#input2 option').each(function () {
+                  if (map[this.value]) {
+                    $(this).remove()
+                  }
+                  map[this.value] = true;
+                });
+              </script>
+            </div>
+          </div>
+
+          <div class="col-auto mt-2 ml-3">
+            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+          </div>
+        </form>
+        {%if detailStep%}
+        <hr>
+        <p><strong>Answer:</strong></p>
+        <div style="text-align: center;">
+          {% autoescape off %}
+          {{detailStep}}
+          {%endautoescape%}
+        </div>
+        <hr>
+        {%endif%}
+      </div>
+      {% autoescape off %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="row">
+        <div class="col-md-6">
+          <p class="alert alert-danger">{{message}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {%endautoescape%}
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+
+          
+        <li><a href="/round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+        <li><a href="/round-to-the-nearest-5-cents/">Round to the Nearest 5 Cents</a></li>
+        <li><a href="/round-to-the-nearest-25-cents/">Round to the Nearest 25 Cent</a></li>
+             
+        <li><a href="/round-to-the-nearest-euro-calculator/">Round to the Nearest Euro</a></li>
+        <li><a href="/round-to-the-nearest-japanese-yen-calculator/">Round to the Nearest Yens</a></li>
+        
+
+      </ul>
+      <p><strong>Round to the Nearest Dollar: </strong>If you want to round money amounts then make use of the handy
+        tool Round to the Nearest Dollar over here. It makes your calculations much simple and displays the result in
+        the blink of an eye. The tool is quite user-friendly and you just need to provide the input values and it does
+        everything for you. Check out the detailed procedure on how to round to the nearest dollar in the further
+        modules. Have a look at the solved examples and get to know how to approach while solving related problems.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round to the Nearest Dollar?</h2>
+    </div>
+    <div class="card-body">
+      <p>Go through the guidelines that you might need while rounding to the nearest dollar. These steps will be of
+        extreme help while solving problems on rounding to the nearest dollar. Follow them and arrive at the solution
+        quite easily</p>
+      <ul>
+        <li>The first step to keep in mind while rounding to the nearest dollar is to check the value of its tenths.
+        </li>
+        <li>If the value is greater than or equal to 5 increase the value in dollar's one place by 1 and then remove all
+          digits after the decimal point.</li>
+        <li>If the value is less than or equal to 4 simply remove all the digits to the right of the decimal separator.
+        </li>
+      </ul>
+      <p><strong>Example</strong></p>
+      <p>Question : Round the Amount $12.39 to the Nearest Dollar?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given Amount = $12.39</p>
+      <p>The First Step is to identify the tenth's place</p>
+      <p>As the tenth's place value is 3 i.e. less than 4 simply remove all the digits to the right of the decimal
+        separator.</p>
+      <p>Thus it becomes $ 12 or( $ 12.00)</p>
+      <p>Therefore, $12.39 rounded to the nearest dollar is $12</p>
+      <p>Seek help regarding maths, physics, chemistry concepts that you never seemed to understand from <a
+        href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and clear all your queries during homework or
+        assignments.</p>
+      <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Dollar.jpeg' %}" alt='Round to the Nearest Dollar'> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Round to the Nearest Dollar</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How do you Round to the Nearest Dollar?</strong></p>
+      <p class="answer">Check for the tenths place in the given amount and if it is &gt;=5 increase the value in the
+        dollar's one place by 1 and remove all the digits after the decimal point. If the tenths place value is &lt;=4
+        simply remove all the digits next to the decimal point.</p>
+      <hr>
+      <p class="question"><strong>2. How to use Round to the Nearest Dollar Calculator?</strong></p>
+      <p class="answer">Simply provide the input number in the respective input provision and hit on the calculate
+        button to get the number rounded to the nearest dollar.</p>
+      <hr>
+      <p class="question"><strong>3. Where do I get a detailed procedure for rounding to the nearest dollar?</strong>
+      </p>
+      <p class="answer">You can get a detailed procedure for rounding to the nearest dollar on our page.</p>
+      <hr>
+      <p class="question"><strong>4. What is $9.14 rounded to the nearest dollar?</strong></p>
+      <p class="answer">$9.14 rounded to the nearest dollar is $ 9.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+{%endblock%}

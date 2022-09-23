@@ -1,0 +1,418 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{% static 'images/logo/Online-Calculator-Guru-Fevicon.png' %}" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Prime Factorization Calculator to breakdown Prime Factors of a number</title>
+    <meta name="description" content="Prime Factorization Calculator to express the given number as a product of prime numbers. Learn how to do Prime Factorization using various methods.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Prime Factorization Calculator to breakdown Prime Factors of a number"/>
+    <meta property="og:description" content="Prime Factorization Calculator to express the given number as a product of prime numbers. Learn how to do Prime Factorization using various methods."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Prime-Factorization-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Prime Factorization Calculator to breakdown Prime Factors of a number"/>
+    <meta name="twitter:description" content="Prime Factorization Calculator to express the given number as a product of prime numbers. Learn how to do Prime Factorization using various methods."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Prime-Factorization-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Prime Factorization Calculator to breakdown Prime Factors of a number"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Prime-Factorization-Calculator.jpeg"/>
+    <meta property='og:description' content="Prime Factorization Calculator to express the given number as a product of prime numbers. Learn how to do Prime Factorization using various methods."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to find the Prime Factorization of a number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can find the Prime Factorization of a number using various methods like Trial Division and Factor Tree."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is meant by Prime Factorization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prime factorization is the decomposition of composite numbers into a product of prime numbers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the prime factorization of 36?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prime factorization of 36 is 2 x 2 x 3 x 3"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do I find the detailed procedure of finding Prime factors of a number through Prime Factorization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can find a detailed procedure of finding Prime factors of a number through Prime Factorization on our page."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Prime Factorization Calculator</h1>
+  </div>
+  <div class="card-body">
+    <p>Free online tool Prime Factorization Calculator displays the prime factorization of a number in no time. Simply provide the input number in the respective input field and click on the enter button to avail the prime factorization of it.</p>
+    <br>
+    <p><b>Ex:</b> 3844 or 5680 or 9240</p>
+    <form action="{% url 'prime-factorization' %}" method="POST" id="my_form" name="reg_to_scientific" onsubmit="go();">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Prime Factorization</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Prime Factorization of: </strong></div>
+          </div>
+          <input type="number"  min="1" max="9999999999" class="form-control" name="input1" id="inlineFormInputGroup" placeholder="Enter number" value="{{inputEnter}}">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+      </div>
+    </div>
+    </form>
+    {% autoescape off %}
+    {{error}}
+    {%endautoescape%}
+    <br>
+    <p><strong>Here are some samples of Prime Factorisation calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-84/" title=''>
+            Prime Factorisation of 84
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-74/" title=''>
+            Prime Factorisation of 74
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-85/" title=''>
+            Prime Factorisation of 85
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-82/" title=''>
+            Prime Factorisation of 82
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-49/" title=''>
+            Prime Factorisation of 49
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-97/" title=''>
+            Prime Factorisation of 97
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-44/" title=''>
+            Prime Factorisation of 44
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-57/" title=''>
+            Prime Factorisation of 57
+            </a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-25/" title=''>
+            Prime Factorisation of 25
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-56/" title=''>
+            Prime Factorisation of 56
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-37/" title=''>
+            Prime Factorisation of 37
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-58/" title=''>
+            Prime Factorisation of 58
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-30/" title=''>
+            Prime Factorisation of 30
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-35/" title=''>
+            Prime Factorisation of 35
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-71/" title=''>
+            Prime Factorisation of 71
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-24/" title=''>
+            Prime Factorisation of 24
+            </a></li>
+        
+        </ul>             
+      </div>
+      <div class="col-sm-4">
+      <ul>
+       
+          
+          <li><a  href="/lcmgcf/prime-factors-of-134/" title=''>
+            Prime Factorisation of 134
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-127/" title=''>
+            Prime Factorisation of 127
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-162/" title=''>
+            Prime Factorisation of 162
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-325/" title=''>
+            Prime Factorisation of 325
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-559/" title=''>
+            Prime Factorisation of 559
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-627/" title=''>
+            Prime Factorisation of 627
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-983/" title=''>
+            Prime Factorisation of 983
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-918/" title=''>
+            Prime Factorisation of 918
+            </a></li>
+        
+      </ul>			
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-1700/" title=''>
+            Prime Factorisation of 1700
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-5878/" title=''>
+            Prime Factorisation of 5878
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-9654/" title=''>
+            Prime Factorisation of 9654
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-6370/" title=''>
+            Prime Factorisation of 6370
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-6301/" title=''>
+            Prime Factorisation of 6301
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-7412/" title=''>
+            Prime Factorisation of 7412
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-3297/" title=''>
+            Prime Factorisation of 3297
+            </a></li>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-6821/" title=''>
+            Prime Factorisation of 6821
+            </a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-33239/" title=''>
+            Prime Factorisation of 33239
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-50199/" title=''>
+            Prime Factorisation of 50199
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-95048/" title=''>
+            Prime Factorisation of 95048
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-91115/" title=''>
+            Prime Factorisation of 91115
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-94317/" title=''>
+            Prime Factorisation of 94317
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-16647/" title=''>
+            Prime Factorisation of 16647
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-47051/" title=''>
+            Prime Factorisation of 47051
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-51506/" title=''>
+            Prime Factorisation of 51506
+            </a></li>
+        
+        </ul>             
+      </div>
+      <div class="col-sm-4">
+      <ul>
+          
+          <li><a  href="/lcmgcf/prime-factors-of-848550/" title=''>
+            Prime Factorisation of 848550
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-761014/" title=''>
+            Prime Factorisation of 761014
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-854111/" title=''>
+            Prime Factorisation of 854111
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-767523/" title=''>
+            Prime Factorisation of 767523
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-142266/" title=''>
+            Prime Factorisation of 142266
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-984117/" title=''>
+            Prime Factorisation of 984117
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-592151/" title=''>
+            Prime Factorisation of 592151
+            </a></li>
+        
+          <li><a  href="/lcmgcf/prime-factors-of-104827/" title=''>
+            Prime Factorisation of 104827
+            </a></li>
+        
+        </ul>
+      </div>
+    </div>
+    <p><strong>Prime Factorization Calculator:</strong> If you are looking for a handy tool that does Prime Factorization you have come the right way. To help you understand the concept of prime factorization or prime decomposition we have listed everything in detail step by step. You will find information on what is meant by Prime Factorization and how to find Prime Factorization. This easy to use tool will make your calculations faster and gives you a detailed explanation of the concept.</p>
+</div></div></div>
+<div class="container">
+  <div class="card">
+    <div class="card-header"><h2 class="h2">What is meant by Prime Factorization?</h2></div>
+    <div class="card-body">
+      <p>In Maths, Prime Factorization is the method to find prime numbers of a given number. When all the Prime Factors of the numbers are multiplied you will get the original number. Prime Numbers are the basic blocks of all numbers. We know Prime number is the number divided by 1 and the number itself. The Method of Prime Factorization is used to break down the whole number into its prime factors. Prime Factorization is also known as Prime Decomposition.</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-header"><h3 class="h3">How to find Prime Factorization of a number?</h3></div>
+    <div class="card-body">
+      <p>Prime factorization is the decomposition of composite numbers into a product of prime numbers. There are many methods to do the Prime Factorization and we have listed some of them namely Trial Division and Factor Tree Methods. Check out them to have an idea of them in detail so that you can choose the method you want.</p>
+      <p><strong>Trial Division</strong></p>
+      <p>One of the methods to obtain the Prime Factors of a number is through trial division. It is one of the basic algorithms and can be highly tedious. Start by testing each integer to see if and how it divides the number and the subsequent quotients evenly. The resulting set of factors will be prime numbers.</p>
+      <p><strong>Factor Tree</strong></p>
+      <p>Factor Tree Diagram is an easy way to break down a number into its prime factors.</p>
+      <ul>
+        <li>Take a number in the first step.</li>
+        <li>Factor it into any two numbers and you may need it to split it easily.</li>
+        <li>Start constructing the factor tree i.e. draw two branches splitting down the original number.</li>
+        <li>Factor the next line. If your number is prime leave it as it is or else factor the numbers again.</li>
+        <li>Continue the Process until you are left with all the prime numbers.</li>
+        <li>Write down the Prime Factorization by taking all the leaves of the factor tree.</li>
+      </ul>
+      <p>Need some quick help after your class? You can always look up to <a href="{%url 'home'%}">onlinecalculator.guru</a> to clarify your doubts on math concepts with numerous calculator tools provided.</p>
+      <img src="{% static 'images/Numbers/Prime-Factorization-Calculator.jpeg' %}" alt='Prime Factorization Calculator'>
+    </div>
+  </div>
+</div>
+<div class=" container faq ">
+  <div class="card">
+      <div class="card-header">
+          <h3 class="h3">FAQs on Prime Factorization</h3>
+      </div>
+      <div class="card-body">
+          <!-- Question & Answer Starts --->
+         <p class="question"><strong>1. How to find the Prime Factorization of a number?</strong></p>
+         <p class="answer">You can find the Prime Factorization of a number using various methods like Trial Division and Factor Tree.</p><hr>
+
+
+         <p class="question"><strong>2. What is meant by Prime Factorization?</strong></p>
+         <p class="answer">Prime factorization is the decomposition of composite numbers into a product of prime numbers.</p><hr>
+
+
+         <p class="question"><strong>3. What is the prime factorization of 36?</strong></p>
+         <p class="answer">Prime factorization of 36 is 2 x 2 x 3 x 3</p><hr>
+
+
+         <p class="question"><strong>4. Where do I find the detailed procedure of finding Prime factors of a number through Prime Factorization?</strong></p>
+         <p class="answer">You can find a detailed procedure of finding Prime factors of a number through Prime Factorization on our page.</p>
+      </div>
+   </div>
+</div>
+<!-- <div class="container">
+  <div class="card c1">
+    <div class="card-header"><h2>More Examples</h2></div>
+    <div class="card-body">
+      {%for post1 in post%}
+      <li><a href="{% url 'prime-factorization-detail' post1.slug %}">{{post1.solutionTitle}}</a></li>
+      {%endfor%}
+    </div>
+  </div>
+</div> -->
+{%endblock%}

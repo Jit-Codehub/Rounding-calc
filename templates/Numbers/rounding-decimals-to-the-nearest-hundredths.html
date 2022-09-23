@@ -1,0 +1,235 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding Decimals to the Nearest Hundredths | Rules for Rounding Decimals</title>
+<meta name="description"
+  content="Rounding Decimals to the Nearest Hundredths Calculator gives the decimal value rounded to the nearest hundredths quickly. Get rules for rounding decimals." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding Decimals to the Nearest Hundredths | Rules for Rounding Decimals" />
+<meta property="og:description"
+  content="Rounding Decimals to the Nearest Hundredths Calculator gives the decimal value rounded to the nearest hundredths quickly. Get rules for rounding decimals." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding Decimals to the Nearest Hundredths | Rules for Rounding Decimals" />
+<meta name="twitter:description"
+  content="Rounding Decimals to the Nearest Hundredths Calculator gives the decimal value rounded to the nearest hundredths quickly. Get rules for rounding decimals." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding Decimals to the Nearest Hundredths | Rules for Rounding Decimals" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg" />
+<meta property='og:description'
+  content="Rounding Decimals to the Nearest Hundredths Calculator gives the decimal value rounded to the nearest hundredths quickly. Get rules for rounding decimals." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How to Round Decimal to the Nearest Hundredths?
+        ","acceptedAnswer": {"@type": "Answer","text":" Analyze the digit in the thousandths place and if it is >=5 increase the hundredths place value by 1 and remove all the digits in thousandths place and thereafter. If it <=4 simply remove the digits in thousandths place and keep the hundredths place value unaltered."}	}, {"@type": "Question","name":"2. 
+        Where do I get a detailed procedure for Rounding Decimals to the Nearest Hundredths?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get a detailed procedure for Rounding Decimals to the Nearest Hundredths on our page."}	}, {"@type": "Question","name":"3. 
+        How to use Rounding Decimals to the Nearest Hundredths Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" You just need to provide the inputs in the respective input fields and press the calculate button to get the result i.e. decimal rounded to the Nearest Hundredths."}	}, {"@type": "Question","name":"4. 
+        What is 0.845 Rounded to the Nearest Hundredths?
+        ","acceptedAnswer": {"@type": "Answer","text":" 0.845 Rounded to the Nearest Hundredths is 0.85 as the digit in thousandths place is =5 increase the hundredths digit by 1 and remove the digit at thousandths place."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding Decimals to the Nearest Hundredthss</h1>
+    </div>
+    <div class="card-body">
+      <p>Avail the Rounding Decimals to the Nearest Hundredths Calculator and make your calculations much simple. Simply
+        enter the input decimal and press the calculate button to avail the input value rounded to the nearest
+        hundredths in the blink of an eye along with a detailed explanation.</p>
+      <div class="box">
+        <form method="POST">{% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Round:</label>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              {%if input1%}
+              <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number"
+                maxlength="15" autofocus required />
+              {%else%}
+              <input name="input1" id="input1" value="4232.169" class="nmbr_real real" type="text" title="real number"
+                maxlength="15" autofocus required />
+              {%endif%}
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell pl-3">
+              <label for="input2">Round to: </label>
+            </div>
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                <optgroup label="Whole Number Places">
+                  <option value="-9">Billions</option>
+                  <option value="-8">Hundred Millions</option>
+                  <option value="-7">Ten Millions</option>
+                  <option value="-6">Millions</option>
+                  <option value="-5">Hundred Thousands</option>
+                  <option value="-4">Ten Thousands</option>
+                  <option value="-3">Thousands</option>
+                  <option value="-2">Hundreds</option>
+                  <option value="-1">Tens</option>
+                  <option value="0">Ones</option>
+                </optgroup>
+                <optgroup label="Decimal Places">
+                  <option value="1">Tenths (1)</option>
+                  <option value="2" selected>Hundredths (2)</option>
+                  <option value="3">Thousandths (3)</option>
+                  <option value="4">Ten Thousandths (4)</option>
+                  <option value="5">Hundred Thousandths (5)</option>
+                  <option value="6">Millionths (6)</option>
+                  <option value="7">Ten Millionths (7)</option>
+                  <option value="8">Hundred Millionths (8)</option>
+                  <option value="9">Billionths (9)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-auto mt-2 ml-3">
+            <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+          </div>
+        </form>
+        {%if detailStep%}
+        <hr>
+        <p><strong>Answer:</strong></p>
+        <div style="text-align: center;">
+          {% autoescape off %}
+          {{detailStep}}
+          {%endautoescape%}
+        </div>
+        <hr>
+        {%endif%}
+      </div>
+      {% autoescape off %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="row">
+        <div class="col-md-6">
+          <p class="alert alert-danger">{{message}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {%endautoescape%}
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/rounding-decimals-to-the-nearest-tenths/">Rounding Decimals to the Nearest Tenths</a></li>
+        <li><a href="/rounding-decimals-to-the-nearest-thousandths/">Rounding Decimals to the Nearest
+            Thousandths</a></li>
+        <li><a href="/rounding-decimals-calculator/">Rounding Decimals</a></li>
+
+
+      </ul>
+      <p><strong>Rounding Decimals to the Nearest Hundredths: </strong>If you ever need help on Rounding Decimals to the
+        Nearest Hundredths take the help of the online tool over here. Enter the inputs and click on the calculate
+        button to get results immediately. Have a glance at the step by step procedure for rounding decimals to the
+        nearest hundredths. We even included solved examples to make you understand the concept better. </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round Decimals to the Nearest Hundredths?</h2>
+    </div>
+    <div class="card-body">
+      <p>Go through the instructions listed below to round decimals to the nearest hundredths. Use them while solving
+        problems on the concept and make your calculations simple</p>
+      <ul>
+        <li>Firstly while rounding a decimal to the nearest hundredths place check the digit in the thousandths place.
+        </li>
+        <li>If the thousandths place value is &gt;=5 increase the digit in the hundredths place by 1 and remove the
+          digits in thousandths place and thereafter.</li>
+        <li>If the thousandths place is &lt;=4 simply remove the digits to the right of the hundredths.</li>
+      </ul>
+      <p><strong>Example</strong></p>
+      <p>Question : Round 29.681 to the Nearest Hundredths?</p>
+      <p><strong>Solution:</strong></p>
+      <p>Given Decimal Value = 29.681</p>
+      <p>Analyze the thousandths value i.e. 1</p>
+      <p>As 1 &lt; 5 the digit at the hundredths place remains the same and digits in thousandths place and thereafter
+        becomes zero.</p>
+      <p>Thus 29.681 rounded to the nearest hundredths is 29.68</p>
+      <p>Understand several mathematical, physics, chemistry concepts that you feel daunting from <a
+        href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and understand them clearly in no time.</p>
+      <img src="{% static 'images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg' %}"
+        alt='Rounding Decimals to the Nearest Hundredths'>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Rounding Decimals to the Nearest Hundredths</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. How to Round Decimal to the Nearest Hundredths?</strong></p>
+      <p class="answer">Analyze the digit in the thousandths place and if it is &gt;=5 increase the hundredths place
+        value by 1 and remove all the digits in thousandths place and thereafter. If it &lt;=4 simply remove the digits
+        in thousandths place and keep the hundredths place value unaltered.</p>
+      <hr>
+      <p class="question"><strong>2. Where do I get a detailed procedure for Rounding Decimals to the Nearest
+          Hundredths?</strong></p>
+      <p class="answer">You can get a detailed procedure for Rounding Decimals to the Nearest Hundredths on our page.
+      </p>
+      <hr>
+      <p class="question"><strong>3. How to use Rounding Decimals to the Nearest Hundredths Calculator?</strong></p>
+      <p class="answer">You just need to provide the inputs in the respective input fields and press the calculate
+        button to get the result i.e. decimal rounded to the Nearest Hundredths.</p>
+      <hr>
+      <p class="question"><strong>4. What is 0.845 Rounded to the Nearest Hundredths?</strong></p>
+      <p class="answer">0.845 Rounded to the Nearest Hundredths is 0.85 as the digit in thousandths place is =5 increase
+        the hundredths digit by 1 and remove the digit at thousandths place.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+{%endblock%}

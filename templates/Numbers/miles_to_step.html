@@ -1,0 +1,733 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+{%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style2.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Miles to Steps Calculator Online - How To Convert Miles to Steps Easily? </title>
+    <meta name="description" content="Converting Miles to Steps Calculator is very helpful to find how many steps are in a mile. Also, you can easily check the conversion chart of miles to steps from our free online tool.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+{% endblock %} 
+{% block content %}
+
+<style>
+    .card {
+        border-bottom-left-radius: 10px!important;
+        border-bottom-right-radius: 10px!important;
+        border-top-left-radius: 10px!important;
+        border-top-right-radius: 10px!important;
+    }
+    .b1{
+        background-color: rgba(0, 0, 0, 0.015);
+    }
+    .b{
+        border-top-left-radius: 25px!important;
+        border-top-right-radius: 25px!important;
+    }
+    .col-sm-6{
+        width: 60%;
+    }
+    .col-sm-4{
+        width: 33%;
+    }
+    .col-sm-5{
+        width: 45%;
+    }
+    .button {
+    width: 80px;
+    height: 44px;
+    position: relative;
+    }
+
+    .button label,.button input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+
+    .button input[type="radio"] {
+    opacity: 0.011;
+    }
+
+    .button input[type="radio"]:checked + label {
+    background: #0080ff;
+    border-radius: 4px;
+    color:white;
+    }
+
+    .button label {
+    cursor: pointer;
+    line-height: 1.8em;
+    background-color: rgba(0, 0, 0, 0.081);
+    padding: 2px;
+    }
+    .s1{
+        width: 30px;
+    }
+    .btn{
+        background-color: rgb(236, 236, 236);
+    }
+    .active{
+        background-color: #0080ff;
+        color: white;
+    }
+    .btn.active:hover{
+        color: white;
+    }
+</style>
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header"><h1><strong>Miles to Steps Calculator</strong></h1></div>
+        <div class="card-body">
+
+            <p>Conversion of Miles to Steps is simple and easy with our free online Miles to Steps calculator. All you require to do is enter sex, average height, and how many miles to convert inputs in the fields of the calculator and click on the calculate button. In seconds, our handy conversion calculator generates the output in steps along with a detailed explanation.</p>
+            
+            <div class="btn-group btn-group-sm">
+                <button type="button" class="btn active rounded-bottom border-2 border-dark" style="border-radius: 15px;" onclick="location.href='/miles-to-steps-calculator'"><strong>Miles to steps</strong></button>
+                <button type="button" class="btn rounded-bottom border-2 border-dark" style="border-radius: 15px;background-color:white;;" onclick="location.href='/steps-to-miles-calculator'"><strong>Steps to Miles</strong></button>
+                <button type="button" class="btn rounded-bottom border-2 border-dark" style="border-radius: 15px;background-color:white;" onclick="location.href='/km-to-steps-calculator'"><strong>Km to Steps</strong></button>
+                <button type="button" class="btn rounded-bottom border-2 border-dark" style="border-radius: 15px;background-color:white;" onclick="location.href='/steps-to-km-calculator'"><strong>Steps to Km</strong></button>
+            </div>
+            
+            <div class="card b1" style="width:290px;">
+                <div class="card-body">
+                    <form name="form2" method="post">
+                        {% csrf_token %} 
+                        <input type="hidden" name="form_type" value="formTwo">
+                        <span style="font-size:14px;">Miles to Steps</span>
+                        <div class="row" style="padding-bottom: 5px">
+                            <div class="col-sm-8">
+                                <input class="form-control" placeholder="miles" type="number" name="mil" step="any" min="0" {%if mil %} value="{{mil}}"{%else%} value="5"{%endif%} required> 
+                                <br><button class="btn active" type="submit">Calculate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p><strong>Miles in Steps Calculation Examples</strong></p>
+            <div class="row">
+                <div class="col-sm-6">
+                <ul>
+                    <li><a href="/1-miles-to-steps/">1 Mile is How Many Steps</a></li>
+                    <li><a href="/2-miles-to-steps/">2 Miles in Steps</a></li>
+                    <li><a href="/3-miles-to-steps/">3 Miles in Steps</a></li>
+                    <li><a href="/4-miles-to-steps/">4 Miles in Steps</a></li>
+                    <li><a href="/5-miles-to-steps/">5 Miles in Steps</a></li>
+                    <li><a href="/6-miles-to-steps/">6 Miles in Steps</a></li>
+                </ul>
+                </div>
+                <div class="col-sm-6">
+                <ul>
+                    <li><a href="/7-miles-to-steps/">7 Miles in Steps</a></li>  
+                    <li><a href="/8-miles-to-steps/">8 Miles in Steps</a></li>
+                    <li><a href="/9-miles-to-steps/">9 Miles in Steps</a></li>
+                    <li><a href="/10-miles-to-steps/">10 Miles in Steps</a></li>
+                    <li><a href="/11-miles-to-steps/">11 Miles in Steps</a></li>
+                    <li><a href="/12-miles-to-steps/">12 Miles in Steps</a></li>   
+                </ul>                   
+                </div>
+            </div>
+            <br>
+            <p><strong>Steps in Miles Calculation Examples</strong></p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="/1000-steps-to-miles/">1000 Steps in Miles</a></li>
+                        <li><a href="/1200-steps-to-miles/">1200 Steps in Miles</a></li>
+                        <li><a href="/1500-steps-to-miles/">1500 Steps in Miles</a></li>
+                        <li><a href="/2000-steps-to-miles/">2000 Steps in Miles</a></li>
+                        <li><a href="/2500-steps-to-miles/">2500 Steps in Miles</a></li>
+                        <li><a href="/3000-steps-to-miles/">3000 Steps in Miles</a></li>
+                        <li><a href="/4000-steps-to-miles/">4000 Steps in Miles</a></li>
+                        <li><a href="/5000-steps-to-miles/">5000 Steps in Miles</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="/6000-steps-to-miles/">6000 Steps in Miles</a></li>
+                        <li><a href="/7000-steps-to-miles/">7000 Steps in Miles</a></li>
+                        <li><a href="/8000-steps-to-miles/">8000 Steps in Miles</a></li>
+                        <li><a href="/9000-steps-to-miles/">9000 Steps in Miles</a></li>
+                        <li><a href="/10000-steps-to-miles/">10000 Steps in Miles</a></li>
+                        <li><a href="/11000-steps-to-miles/">11000 Steps in Miles</a></li>
+                        <li><a href="/12000-steps-to-miles/">12000 Steps in Miles</a></li>
+                        <li><a href="/15000-steps-to-miles/">15000 Steps in Miles</a></li>
+                    </ul>
+                </div>
+            </div>
+            <span style="font-size: 16px;color: rgba(0, 0, 0, 0.596);">or</span><br><br>
+
+            
+            <div class="card b1" style="width:290px;">
+                <div class="card-body">
+                    <form name="form1" method="post">
+                        {% csrf_token %} 
+                        <input type="hidden" name="form_type" value="formOne">
+                        <span style="font-size:14px;">Biological sex:</span>
+                        <div class="row" style="padding-bottom: 5px">
+                            <div class="input-group" style="padding-left: 15px;">
+                                <div class="button">
+                                    <input type="radio" id="gm" name="gender" value="1" {%if gender == "1" %} {%endif%} checked/>
+                                    <label class="btn btn-default" for="gm">Male</label>
+                                </div>
+                                <div class="button">
+                                    <input type="radio" id="gf" name="gender" value="2" {%if gender == "2" %} checked {%endif%}/>
+                                    <label class="btn btn-default" for="gf">Female</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span style="font-size:14px;">Height:</span>
+                        <div class="row" style="padding-bottom: 5px">
+                            <div class="col-sm-6">
+                                <input class="form-control" type="number" name="h1" min="1" max="1000" {%if h1 %} value="{{h1}}" {%else%} value="6" {%endif%} required> 
+                            </div>
+                            <div class="col-sm-4">
+                                <select name="u1" class="form-control">
+                                    {% if hu == "1" %}
+                                    <option value="1" selected>feet</option>
+                                    {%else%}
+                                    <option value="1">feet</option>
+                                    {%endif%}
+                                    {%if hu == "2" %}
+                                    <option value="2" selected>cm</option>
+                                    {%else%}
+                                    <option value="2">cm</option>
+                                    {%endif%}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-bottom: 14px;">
+                            <div class="col-sm-6">
+                                <input class="form-control" type="number" min="0" max="12" {%if h2 %} value="{{h2}}" {%else%} value="0" {%endif%} name="h2" required>
+                            </div>
+                            <div class="col-sm-4">
+                                <select name="u2" class="form-control">
+                                    <option value="1">inches</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <span style="font-size:14px;">Pace:</span>
+                        <div class="row" style="padding-bottom: 14px;">
+                            <div class="col-sm-11">
+                                <select name="pace" class="form-control">
+                                    <option value="3" selected>Average walk (3mph)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <span style="font-size:14px;">Number of miles:</span>                        
+                        <div class="row" style="padding-bottom: 14px;">
+                            <div class="col-sm-8">
+                                <input class="form-control" type="number" min="0" max="100000" {%if nom %} value="{{nom}}" {%else%} value="6" {%endif%} name="mile" required>
+                                <br><button class="btn active" type="submit">Calculate</button>
+                            </div>
+                        </div>
+
+                        <!-- <span style="font-size: 14px;">Calculate your calories burned?</span>
+                        <div class="row">
+                            <div class="col-sm">
+                                <input type="checkbox" name="cal" value="1">
+                            </div>
+                        </div>
+                        <div class="add">
+                            
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+            {%if result %}
+            <div id="result">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card" style="background-color: #0080ff; width: 140px; text-align: center;">
+                                <div class="card-body">
+                                    <h3><span style="color: white; font-weight: bolder;">{{result}}</span></h3>
+                                    <h3><span style="color: white; font-weight: bold;">Steps</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                        {%if result1 %}
+                        <div class="col">
+                            <div class="card" style="background-color: #0080ff; width: 140px; text-align: center;">
+                                <div class="card-body">
+                                    <h3><span style="color: white; font-weight: bolder;">{{result1}}</span></h3>
+                                    <h3><span style="color: white; font-weight: bold;">Steps</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                        {%endif%}
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+
+            <p>
+                <strong>Miles to Steps Calculator: </strong>Is your phone failed to show the steps count after your walk/run? Need to check how many steps you have completed for certain miles? This is the right tool you have landed. Our free online calculator tool ie., Miles to Steps Calculator finds the steps you have taken in particular miles and help you calculate each step accurately. 
+
+                Take the assistance of conversion miles to steps online calculator and learn the definitions, conversion formula, how to convert miles into steps manually, and solved examples on miles-to-steps calculations.
+
+            </p>
+            <hr>
+            <h2><span>What is a Mile?</span></h2>
+            <p><span>Several units of distance and length (in physics terminology) are called a mile. A mile is denoted as mi and is equivalent to 1609 m approx on land and 1853 m at sea and in the air. Also, you can see other particular definitions of a mile like a nautical mile, metric mile, survey mile, and statute mile. Moreover, we know that 1 meter is equal to 0.00062137119223733 miles, or 1.3123359580052 steps.</span></p>
+            <hr>
+            <h3><span>Miles to Steps Conversion Formula</span></h3>
+            <p><span>In order to convert the miles into steps, we use the standard formulas for a number of steps ie.,</span></p>
+            <p><strong>Steps = Distance / Stride length</strong></p>
+            <p><span>Where</span></p>
+            <p><span>Distance value is the given miles</span></p>
+            <p><span>Stride length value is the average length of female/male ie., Female = 2.2ft and Male = 2.5 ft</span></p>
+            <p><span>Also, you have one more formula to convert the miles to steps when you know how many steps in a mile. Below are the conversion formulas of miles to steps for women and men.</span></p>
+            
+            <p><strong>Steps for Men = Miles x 2122</strong></p>
+            <p><strong>Steps for Women = Miles x 2400</strong></p>
+            <hr>
+            <h3><span>Different Approaches Used By Miles to Steps Conversion Calculator</span></h3>
+            <p><span>There are a few methods that can help you determine the conversion of miles and steps in a simple and manual manner</span></p>
+            
+            <p><strong>Approach 1: Using Stride Length</strong></p>
+            <p><span>If you want to calculate the steps that you have taken for certain miles using this method. You should enter the stride length of your in the input box and choose your sex. Later on, go for the calculate button available to determine the steps you walked/run.</span></p>
+            
+            <p><strong>Approach 2: Using Average Steps-Based Method</strong></p>
+            <p><span>One more method that can be used to determine your steps when you know the miles you have covered is an average steps-based method. In this method, you have to identify the two inputs ie., your biological sex and the distance you covered. After entering these inputs the system by default considers the average stride length of females and males while calculating. In a while, it generates the result in steps.</span></p>
+            
+            <p><strong>Approach 3: Using Height</strong></p>
+            <p><span>In this last method, you have to enter your sex, your height of yours in the required fields along with pace, and the number of miles you walked/run. It calculates the stride length as per your height and then it finds out the steps you have taken in the covered distance.</span></p>
+            <p><span>Based on your parameters you can choose the method that suits you and start calculating the number of steps you have taken. </span></p>
+            <hr>
+            <h3><span>Quick Miles to Steps Conversion Chart</span></h3>
+            <p><span>These are the steps females/males can take for 1 mile on average. By using this below assumption a quick conversion chart of miles to steps is given here for your reference.</span></p>
+            <ul>
+            <li aria-level="1"><span>1 mile run = 1,672 steps</span></li>
+            <li aria-level="1"><span>1 mile fast run = 1,400 steps</span></li>
+            <li aria-level="1"><span>1 mile very fast run = 1,080 steps</span></li>
+            <li aria-level="1"><span>1 mile jog = 1,951 steps</span></li>
+            <li aria-level="1"><span>1 mile brisk walk = 1,935 steps</span></li>
+            <li aria-level="1"><span>1 mile average-speed walk = 2,252 steps</span></li>
+            </ul>
+            <p><span>Check the 1 to 25 miles to steps conversion table and solve your problems quickly:</span></p>
+            <table class="table table-sm table-bordered table-responsive">
+            <tbody>
+            <tr>
+            <td>
+            <p><strong>Miles</strong></p>
+            </td>
+            <td>
+            <p><strong>Average walk</strong></p>
+            <p><strong>(3mph)</strong></p>
+            </td>
+            <td>
+            <p><strong>Brisk walk</strong></p>
+            <p><strong>(4mph)</strong></p>
+            </td>
+            <td>
+            <p><strong>Run</strong></p>
+            <p><strong>(6mph)</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>1 mile</span></p>
+            </td>
+            <td>
+            <p><span>2252 steps</span></p>
+            </td>
+            <td>
+            <p><span>1935 steps</span></p>
+            </td>
+            <td>
+            <p><span>1672 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>2 miles</span></p>
+            </td>
+            <td>
+            <p><span>4504 steps</span></p>
+            </td>
+            <td>
+            <p><span>3870 steps</span></p>
+            </td>
+            <td>
+            <p><span>3344 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>3 miles</span></p>
+            </td>
+            <td>
+            <p><span>6756 steps</span></p>
+            </td>
+            <td>
+            <p><span>5805 steps</span></p>
+            </td>
+            <td>
+            <p><span>5016 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>4 miles</span></p>
+            </td>
+            <td>
+            <p><span>9008 steps</span></p>
+            </td>
+            <td>
+            <p><span>7740 steps</span></p>
+            </td>
+            <td>
+            <p><span>6688 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>5 miles</span></p>
+            </td>
+            <td>
+            <p><span>11260 steps</span></p>
+            </td>
+            <td>
+            <p><span>9675 steps</span></p>
+            </td>
+            <td>
+            <p><span>8360 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>6 miles</span></p>
+            </td>
+            <td>
+            <p><span>13512 steps</span></p>
+            </td>
+            <td>
+            <p><span>11610 steps</span></p>
+            </td>
+            <td>
+            <p><span>10032 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>7 miles</span></p>
+            </td>
+            <td>
+            <p><span>15764 steps</span></p>
+            </td>
+            <td>
+            <p><span>13545 steps</span></p>
+            </td>
+            <td>
+            <p><span>11704 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>8 miles</span></p>
+            </td>
+            <td>
+            <p><span>18016 steps</span></p>
+            </td>
+            <td>
+            <p><span>15480 steps</span></p>
+            </td>
+            <td>
+            <p><span>13376 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>9 miles</span></p>
+            </td>
+            <td>
+            <p><span>20268 steps</span></p>
+            </td>
+            <td>
+            <p><span>17415 steps</span></p>
+            </td>
+            <td>
+            <p><span>15048 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>10 miles</span></p>
+            </td>
+            <td>
+            <p><span>22520 steps</span></p>
+            </td>
+            <td>
+            <p><span>19350 steps</span></p>
+            </td>
+            <td>
+            <p><span>16720 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>11 miles</span></p>
+            </td>
+            <td>
+            <p><span>24772 steps</span></p>
+            </td>
+            <td>
+            <p><span>21285 steps</span></p>
+            </td>
+            <td>
+            <p><span>18392 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>12 miles</span></p>
+            </td>
+            <td>
+            <p><span>27024 steps</span></p>
+            </td>
+            <td>
+            <p><span>23220 steps</span></p>
+            </td>
+            <td>
+            <p><span>20064 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>13 miles</span></p>
+            </td>
+            <td>
+            <p><span>29276 steps</span></p>
+            </td>
+            <td>
+            <p><span>25155 steps</span></p>
+            </td>
+            <td>
+            <p><span>21736 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>14 miles</span></p>
+            </td>
+            <td>
+            <p><span>31528 steps</span></p>
+            </td>
+            <td>
+            <p><span>27090 steps</span></p>
+            </td>
+            <td>
+            <p><span>23408 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>15 miles</span></p>
+            </td>
+            <td>
+            <p><span>33780 steps</span></p>
+            </td>
+            <td>
+            <p><span>29025 steps</span></p>
+            </td>
+            <td>
+            <p><span>25080 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>16 miles</span></p>
+            </td>
+            <td>
+            <p><span>36032 steps</span></p>
+            </td>
+            <td>
+            <p><span>30960 steps</span></p>
+            </td>
+            <td>
+            <p><span>26752 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>17 miles</span></p>
+            </td>
+            <td>
+            <p><span>38284 steps</span></p>
+            </td>
+            <td>
+            <p><span>32895 steps</span></p>
+            </td>
+            <td>
+            <p><span>28424 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>18 miles</span></p>
+            </td>
+            <td>
+            <p><span>40536 steps</span></p>
+            </td>
+            <td>
+            <p><span>34830 steps</span></p>
+            </td>
+            <td>
+            <p><span>30096 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>19 miles</span></p>
+            </td>
+            <td>
+            <p><span>42788 steps</span></p>
+            </td>
+            <td>
+            <p><span>36765 steps</span></p>
+            </td>
+            <td>
+            <p><span>31768 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>20 miles</span></p>
+            </td>
+            <td>
+            <p><span>45040 steps</span></p>
+            </td>
+            <td>
+            <p><span>38700 steps</span></p>
+            </td>
+            <td>
+            <p><span>33440 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>21 miles</span></p>
+            </td>
+            <td>
+            <p><span>47292 steps</span></p>
+            </td>
+            <td>
+            <p><span>40635 steps</span></p>
+            </td>
+            <td>
+            <p><span>35112 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>22 miles</span></p>
+            </td>
+            <td>
+            <p><span>49544 steps</span></p>
+            </td>
+            <td>
+            <p><span>42570 steps</span></p>
+            </td>
+            <td>
+            <p><span>36784 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>23 miles</span></p>
+            </td>
+            <td>
+            <p><span>51796 steps</span></p>
+            </td>
+            <td>
+            <p><span>44505 steps</span></p>
+            </td>
+            <td>
+            <p><span>38456 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>24 miles</span></p>
+            </td>
+            <td>
+            <p><span>54048 steps</span></p>
+            </td>
+            <td>
+            <p><span>46440 steps</span></p>
+            </td>
+            <td>
+            <p><span>40128 steps</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><span>25 miles</span></p>
+            </td>
+            <td>
+            <p><span>56300 steps</span></p>
+            </td>
+            <td>
+            <p><span>48375 steps</span></p>
+            </td>
+            <td>
+            <p><span>41800 steps</span></p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <h3><span>How To Use Miles To Steps Conversion Calculator?</span></h3>
+            <p><span>The following are the simple steps on how to use the calculator of miles to steps and get the desired result in no time. They are as listed below:</span></p>
+            <ul>
+            <li aria-level="1"><span>Firstly, you have to enter the inputs in the given required field as per your problem.</span></li>
+            <li aria-level="1"><span>Now, choose the method you have to convert your miles to steps by using the available dropdown box.</span></li>
+            <li aria-level="1"><span>After completing the entry of inputs do press the calculate button to convert the miles to steps and get the output in steps at a faster pace.</span></li>
+            </ul>
+            <h3><span>FAQs on Bike Miles to Steps Calculator Online with Solution</span></h3>
+            <ol>
+            <li><strong>How many steps are in 1 mile?</strong></li>
+            </ol>
+            <p><span>The suggested steps that can be taken in 1 mile is 2000 steps.</span></p>
+            <ol start="2">
+            <li><strong> How many steps in 2.4 miles of running?</strong></li>
+            </ol>
+            <p><span>The steps that can be counted for 2.4 miles of running is like 4000 steps. Want to check how is it calculated then make sure to visit the online miles to steps calculator provided by percentagecalculator.guru</span></p>
+            <ol start="3">
+            <li><strong> Is possible to get a detailed solution for miles to steps conversion calculation?</strong></li>
+            </ol>
+            <p><span>Yes, it&rsquo;s possible to get a detailed solution for miles-to-steps conversion calculation using the available miles-to-steps calculator on our page. </span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    {% if result %}
+    var scrollDiv = document.getElementById("result").offsetTop;
+    console.log(scrollDiv)
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    {%endif%}
+</script>
+
+{% endblock %} 

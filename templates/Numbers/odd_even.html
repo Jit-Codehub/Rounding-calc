@@ -1,0 +1,402 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style2.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Even or Odd Calculator to Check if the number is Even or Odd</title>
+    <meta name="description" content="Utilize the Even or Odd Calculator to know whether the given number is even or odd with detailed steps given. Learn how to check a number is even or odd.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Even or Odd Calculator to Check if the number is Even or Odd"/>
+    <meta property="og:description" content="Utilize the Even or Odd Calculator to know whether the given number is even or odd with detailed steps given. Learn how to check a number is even or odd."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Even-or-Odd-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Even or Odd Calculator to Check if the number is Even or Odd"/>
+    <meta name="twitter:description" content="Utilize the Even or Odd Calculator to know whether the given number is even or odd with detailed steps given. Learn how to check a number is even or odd."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Even-or-Odd-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Even or Odd Calculator to Check if the number is Even or Odd"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Even-or-Odd-Calculator.jpeg"/>
+    <meta property='og:description' content="Utilize the Even or Odd Calculator to know whether the given number is even or odd with detailed steps given. Learn how to check a number is even or odd."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an Even number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A number, when divided by 2, divides exactly and leaves no remainder is called even number."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an Odd Number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A number when divided by 2 leaves a remainder 1 is called Odd Number"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 122 an Even Number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Given Number is 122.On dividing the number 122 by 2 you will have a zero remainder.As the number 122 is exactly divisible by 2 it is an even number."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do I get detailed steps on how to check if a number is Even or Odd?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will find detailed steps on how to check if a number is even or odd by referring to our page. Make use of it and determine whether the given number is even or odd easily."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Odd or Even Calculator</h1>
+  </div>
+  <div class="card-body">
+    <p>You can find whether the given number is even or odd in the blink of an eye taking the help of Even or Odd Calculator. The tool is pretty much straight forward and all you need to do is just provide inputs and tap on the enter button to avail the result.</p>
+    <br>
+    <p><b>Ex: </b></p><ul><li><a href="https://onlinecalculator.guru/numbers/is-25-an-even-or-odd-number/">Is 25 even or odd</a></li><li><a href="https://onlinecalculator.guru/numbers/is-46-an-even-or-odd-number/">Is 46 even or odd</a></li><li><a href="https://onlinecalculator.guru/numbers/is-57-an-even-or-odd-number/">Is 57 even or odd</a></li></ul>
+  
+    {%if go_tag%}
+    <a href="{{go_tag}}" id="ddd"></a>
+    {%endif%}
+    <div class="box5" id="even-or-odd-calculator">
+        <form method="POST">{% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell4">
+            <center>Even or Odd Calculator</center>
+            
+            </div>
+            
+        
+          </div>
+          <div class="row mx-auto my-auto">
+            <div class="cell4">
+                <center>
+              <table>
+            {%if input1 %}
+            <tr>
+            <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="{{input1}}"></td>
+        </tr>
+            {%else%}
+            <tr>
+                <td>Number: </td><td><input type="text"   class="form-control" name="textfield1" id="input1" placeholder="Enter Number" value="27"></td>
+            </tr>
+          {% endif %}
+        </table>
+    </center>
+            </div>
+          </div>
+        
+          
+          <center>
+          <div id="botton5" class="col mt-2 ">
+            <td><input id="botton1" class="btn btn-secondary btn-mr-3" type="button" onclick="myFunction()" value="Clear"></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          
+          <td><button id="botton2" name="submit2" value="submit2" type="submit" class="btn btn-primary mb-2">Calculate</button>  </td>
+          </div>
+        </center>
+          </form>
+      
+        {% autoescape off %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="row">
+                      <div class="col-md-12">
+                          <p class="alert alert-danger">{{message}}</p>
+                      </div>
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {%endautoescape%}
+      <div id="detail">
+        {%if detailStep%}
+            <hr>
+            <p><strong>Answer:</strong></p>
+            <div style="text-align: center;">
+            {% autoescape off %}
+            {{detailStep}}
+            {%endautoescape%}
+            </div>
+            <hr>
+        {%endif%}	
+        </div>
+      </div>
+    <p><strong>Here are some samples of Even or Odd Number calculations.</strong></p>
+    <div class="row">
+      <div class="col-sm-3">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-4-an-even-or-odd-number/">Is 4 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-8-an-even-or-odd-number/">Is 8 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-5-an-even-or-odd-number/">Is 5 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-6-an-even-or-odd-number/">Is 6 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-3-an-even-or-odd-number/">Is 3 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-7-an-even-or-odd-number/">Is 7 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-9-an-even-or-odd-number/">Is 9 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-2-an-even-or-odd-number/">Is 2 an even or odd</a></li>
+          
+   
+        </ul>                    
+      </div>
+      <div class="col-sm-3">
+        <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-93-an-even-or-odd-number/">Is 93 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-53-an-even-or-odd-number/">Is 53 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-46-an-even-or-odd-number/">Is 46 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-42-an-even-or-odd-number/">Is 42 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-24-an-even-or-odd-number/">Is 24 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-26-an-even-or-odd-number/">Is 26 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-88-an-even-or-odd-number/">Is 88 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-35-an-even-or-odd-number/">Is 35 an even or odd</a></li>
+          
+        </ul>                 
+      </div>
+      <div class="col-sm-3">
+      <ul>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-68-an-even-or-odd-number/">Is 68 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-46-an-even-or-odd-number/">Is 46 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-10-an-even-or-odd-number/">Is 10 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-40-an-even-or-odd-number/">Is 40 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-53-an-even-or-odd-number/">Is 53 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-85-an-even-or-odd-number/">Is 85 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-32-an-even-or-odd-number/">Is 32 an even or odd</a></li>
+          
+          <li><a href="https://onlinecalculator.guru/numbers/is-77-an-even-or-odd-number/">Is 77 an even or odd</a></li>
+             
+      </ul>			
+      </div>
+      <div class="col-sm-3">
+          <ul>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-870-an-even-or-odd-number/">Is 870 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-717-an-even-or-odd-number/">Is 717 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-334-an-even-or-odd-number/">Is 334 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-653-an-even-or-odd-number/">Is 653 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-741-an-even-or-odd-number/">Is 741 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-560-an-even-or-odd-number/">Is 560 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-359-an-even-or-odd-number/">Is 359 an even or odd</a></li>
+              
+              <li><a href="https://onlinecalculator.guru/numbers/is-916-an-even-or-odd-number/">Is 916 an even or odd</a></li>
+                 
+          </ul>			
+          </div>
+    </div>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/numbers/cube-calculator/">Cube Calculator</a></li>
+                    <li><a href="/numbers/square-calculator/">Square Calculator</a></li> 
+                    <li><a href="/numbers/square-root-calculator/">Square root Calculator</a></li>
+                  </ul>
+    <p><strong>Odd or Even Calculator:</strong>If you ever need any assistance on finding even or odd numbers this tool will be of great help. You need not struggle anymore as the instant and easy to use tool will give you a detailed explanation on whether the number is even or odd. Furthermore, you will have an insight into basic details like What are Odd and Even Numbers, How to Check whether a number is odd or even, etc.</p>
+</div></div>
+  <div class="card">
+    <div class="card-header"><h2 class="h2">What is Meant by Odd & Even Numbers?</h2></div>
+    <div class="card-body">
+      <p>Basic definitions of even and odd numbers are given as under</p>
+      <p>Even Numbers - Even Numbers are those that are divisible by 2 i.e. when divided by 2 leaves no remainder.</p>
+      <p>Odd Numbers - Numbers that aren't divisible by 2 i.e. when divided by 2 leaves a remainder of 1.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3 class="h3">How to Check if a number is Odd or Even?</h3></div>
+    <div class="card-body">
+      <p>Even Numbers are those that usually end with 0,2, 4, 6, 8, and odd numbers are those that end with 1, 3, 5, 7, 9. Check out the one's place firstly and you will understand whether the entire number is even or odd. To know whether a number is even or odd simply divide the number 2 and if it is exactly divisible and leaves no remainder it is even. On the Other hand, if the number isn't exactly divisible and leaves a remainder 1 it is an odd number.</p>
+      <img src="{%static 'images/even_or_odd_img1.jpg' %}">
+      <p><strong>Examples:</strong></p>
+      <p>20, 44, 56, 84, 78 are even numbers that leave no remainder when divided by 2.</p>
+      <p>13, 15, 79,97, 121 are odd numbers that leave remainder 1 when divided by 2.</p>
+      <p><a href="{%url 'home'%}">Onlinecalculator.guru</a> is absolutely free and includes calculator tools for solving problems. Learning will be much fun with simple tools.</p>
+      <img src="{% static 'images/Numbers/Even-or-Odd-Calculator.jpeg' %}" alt='Even or Odd Calculator'>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+          <h2 class="h2">Even or Odd Number Example Calculations</h2>
+      </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-3237-an-even-or-odd-number/">Is 3237 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-3331-an-even-or-odd-number/">Is 3331 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-8778-an-even-or-odd-number/">Is 8778 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-1846-an-even-or-odd-number/">Is 1846 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-5147-an-even-or-odd-number/">Is 5147 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-6568-an-even-or-odd-number/">Is 6568 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-1263-an-even-or-odd-number/">Is 1263 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-6364-an-even-or-odd-number/">Is 6364 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-8950-an-even-or-odd-number/">Is 8950 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-6720-an-even-or-odd-number/">Is 6720 an even or odd</a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-12685-an-even-or-odd-number/">Is 12685 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-67948-an-even-or-odd-number/">Is 67948 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-71091-an-even-or-odd-number/">Is 71091 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-99833-an-even-or-odd-number/">Is 99833 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-30455-an-even-or-odd-number/">Is 30455 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-95559-an-even-or-odd-number/">Is 95559 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-24239-an-even-or-odd-number/">Is 24239 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-73616-an-even-or-odd-number/">Is 73616 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-14239-an-even-or-odd-number/">Is 14239 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-17252-an-even-or-odd-number/">Is 17252 an even or odd</a></li>
+                
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-630969-an-even-or-odd-number/">Is 630969 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-844404-an-even-or-odd-number/">Is 844404 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-947634-an-even-or-odd-number/">Is 947634 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-266298-an-even-or-odd-number/">Is 266298 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-960269-an-even-or-odd-number/">Is 960269 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-224157-an-even-or-odd-number/">Is 224157 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-138701-an-even-or-odd-number/">Is 138701 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-576657-an-even-or-odd-number/">Is 576657 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-114261-an-even-or-odd-number/">Is 114261 an even or odd</a></li>
+                
+                <li><a href="https://onlinecalculator.guru/numbers/is-803946-an-even-or-odd-number/">Is 803946 an even or odd</a></li>
+                
+            </ul>
+        </div>
+    </div>
+      </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+          <h3 class="h3">FAQs on Odd or Even Calculator</h3>
+      </div>
+      <div class="card-body">
+          <!-- Question & Answer Starts --->
+         <p class="question"><strong>1. What is an Even number?</strong></p>
+         <p class="answer">A number, when divided by 2, divides exactly and leaves no remainder is called even number.</p><hr>
+
+
+         <p class="question"><strong>2. What is an Odd Number?</strong></p>
+         <p class="answer">A number when divided by 2 leaves a remainder 1 is called Odd Number</p><hr>
+
+
+         <p class="question"><strong>3. Is 122 an Even Number?</strong></p>
+         <p class="answer">Given Number is 122</p><p>On dividing the number 122 by 2 you will have a zero remainder.</p><img src="{%static 'images/even_or_odd_img2.jpg' %}"><p>As the number 122 is exactly divisible by 2 it is an even number.</p><hr>
+
+
+         <p class="question"><strong>4. Where do I get detailed steps on how to check if a number is Even or Odd?</strong></p>
+         <p class="answer">You will find detailed steps on how to check if a number is even or odd by referring to our page. Make use of it and determine whether the given number is even or odd easily.</p>
+      </div>
+   </div>
+</div>
+<script>
+  function myFunction() {
+    document.getElementById("input1").value="";
+    document.getElementById("detail").innerHTML="";
+    
+  }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('ddd').click();
+      });
+  </script>
+{%endblock%}

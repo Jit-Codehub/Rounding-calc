@@ -1,0 +1,148 @@
+{%extends 'base/numbers_base3.html'%}
+
+{%load static%}
+{%block meta%}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://roundingcalculator.guru/static/images/logo/Rounding-Calculator-icon.svg"
+  type="icon">
+
+<!-- CSS STARTS -->
+{%block css%}
+<link rel="stylesheet" href="https://roundingcalculator.guru/static/style2.css?ez_used_css_s=14">
+{%endblock%}
+<!-- CSS ENDS -->
+
+<!-- META DATA STARTS --->
+<title>Three Digit Numbers Divisible By Calculator - Free Calculator to find Three Digit Numbers Divisible By - RoundingCalculator.Guru</title>
+<meta name=description 
+    content="Three Digit Numbers Divisible By Calculator is an user-friendly tool that helps to calculate 3 digit numbers that are divisible by any number. Also get examples.">
+    
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+
+<!-- FACEBOOK --->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Three Digit Numbers Divisible By Calculator - Free Calculator to find Three Digit Numbers Divisible By - RoundingCalculator.Guru" />
+<meta property="og:description"
+  content="Three Digit Numbers Divisible By Calculator is an user-friendly tool that helps to calculate 3 digit numbers that are divisible by any number. Also get examples. " />
+<meta content="" property="og:site_name" />
+<meta content="/static/images/logo/rounding-calculator.png" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!-- Twitter --->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Three Digit Numbers Divisible By Calculator - Free Calculator to find Three Digit Numbers Divisible By - RoundingCalculator.Guru" />
+<meta name="twitter:description"
+  content="Three Digit Numbers Divisible By Calculator is an user-friendly tool that helps to calculate 3 digit numbers that are divisible by any number. Also get examples. " />
+<meta name="twitter:image:src" content="/static/images/logo/rounding-calculator.png" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- Linkedin --->
+<meta property='og:title' content="Three Digit Numbers Divisible By Calculator - Free Calculator to find Three Digit Numbers Divisible By - RoundingCalculator.Guru" />
+<meta property='og:image' content="/static/images/logo/rounding-calculator.png" />
+<meta property='og:description'
+  content="Three Digit Numbers Divisible By Calculator is an user-friendly tool that helps to calculate 3 digit numbers that are divisible by any number. Also get examples." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<style>
+    input {
+        text-align: right;
+    }
+</style>
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h1">Three Digit Numbers Divisible By Calculator</h1>
+    </div>
+    <div class="card-body">
+        <p>Online Three Digit Numbers Divisible By Calculator aids you to find the list of 3-digit numbers that are divisible by any number. Enter input as the divisor which divides all three-digit numbers. By hitting the calculate button, the tool will display the 3-digit numbers divisible by an input number within seconds.</p>
+        <form action="{% url 'threedigitnumber' %}" method="POST" id="my_form">
+            {% csrf_token %}
+            <table width="300" height="100" align="center" border="0" cellspacing="0" cellpadding="4"
+                style="background-color:#ffffff;border:1px #000000 solid; border-bottom: 2px solid">
+                <tr>
+                    <td align="center" valign="middle">
+                        <table width="150" height="100" border="0" cellspacing="0" cellpadding="0"">
+                        <tr>
+                        <td style=" ">
+                    <div class=" input-group-prepend">
+                            <div class="input-group-text" style="padding: 8px 30px;"><strong> Enter No. </strong></div>
+                            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="13" tabindex="1" min="1" step="1" max="999" oninput="validateNumber(this);"
+                            required="" placeholder="" id="aa" name="aa" {% if aa %} value="{{aa}}" {% else %} value="52" {%endif %}>
+                    </td>
+                </tr>
+            </table>
+            </td>
+            </tr>
+            </table>
+            <div class=" center col mt-2 ">
+                <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                </center>
+            </div>
+        </form>
+        <p><strong>Three Digit Numbers Divisible By Calculator:</strong> It is really difficult to find the 3 digit numbers that are divisible by a number. So make use of our free Three Digit Numbers Divisible By Calculator that gives the list of numbers easily. We have also covered the step-by-step guide on how to find 3-digit numbers divisible by a number with examples.</p>
+        <h2><strong>How to Find Three Digit Numbers Divisible By a Number?</strong></h2>
+        <p>These are the simple steps to calculate the list of 3-digit numbers divisible by any given number.</p>
+        <ul>
+        <li>First of all, let us take any number of your choice as the divisor.</li>
+        <li>Know the divisibility rule for the given number.</li>
+        <li>List the three-digit numbers range i.e 100 to 999.</li>
+        <li>Then, using the number divisibility rule, find the first 3-digit number divisible by the given number.</li>
+        <li>Simply add the given number to the first number to get the second number.</li>
+        <li>Continue to the addition process to obtain the list.</li>
+        </ul>
+        <h3><strong>Examples of Finding 3-digit Numbers Divisible by Number</strong></h3>
+        <p><strong>Example 1:</strong></p>
+        <p>How many three-digit numbers are divisible by 52?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Given divisor is 52</p>
+        <p>The three-digit numbers are from 100 to 999.</p>
+        <p>The lowest three-digit number divisible by 52 is 104.</p>
+        <p>Add 52 to 104 to check the next number</p>
+        <p>52 + 104 = 156</p>
+        <p>156 + 52 = 208</p>
+        <p>Therefore, the list of three digit numbers divisible by 52 are 104, 156, 208, 260, 312, 364, 416, 468, 520, 572, 624, 676, 728, 780, 832, 884, 936, 988.</p>
+        <p>There are 18 three-digit numbers that are divisible by 52.</p>
+        <h3><strong>FAQs on 3 Digit Numbers Divisible By Calculator</strong></h3>
+        <p><strong>1. What are 3-digit numbers divisible by 7?</strong></p>
+        <p>The 3-digit numbers divisible by 7 are 105, 112, 119, . . 987, and 994.</p>
+        <p><strong>2. How many three-digit numbers are there?</strong></p>
+        <p>There are a total of 900 three-digit numbers.</p>
+        <p><strong>3. How to use three-digit numbers divisible by calculator?</strong></p>
+        <p>Give the input number and press the calculate button to get the list of 3-digit numbers that are divisible by the input number.</p>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+
+{% endblock %}

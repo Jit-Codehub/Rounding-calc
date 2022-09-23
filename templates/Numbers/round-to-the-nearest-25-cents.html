@@ -1,0 +1,192 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Round to the Nearest 25 Cents | How to round number to nearest 25 cents</title>
+    <meta name="description" content="Round to the Nearest 25 Cents Calculator displays the value you enter rounded to the nearest 25 cents. Know how to round number to the nearest quarter."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Round to the Nearest 25 Cents | How to round number to nearest 25 cents"/>
+        <meta property="og:description" content="Round to the Nearest 25 Cents Calculator displays the value you enter rounded to the nearest 25 cents. Know how to round number to the nearest quarter."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-25-Cents.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Round to the Nearest 25 Cents | How to round number to nearest 25 cents"/>
+        <meta name="twitter:description" content="Round to the Nearest 25 Cents Calculator displays the value you enter rounded to the nearest 25 cents. Know how to round number to the nearest quarter."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-25-Cents.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Round to the Nearest 25 Cents | How to round number to nearest 25 cents"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-25-Cents.jpeg"/>
+        <meta property='og:description' content="Round to the Nearest 25 Cents Calculator displays the value you enter rounded to the nearest 25 cents. Know how to round number to the nearest quarter."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        Where do I get the step by step procedure to round to the nearest 25 Cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get the step by step procedure to round to the nearest 25 Cents on our page."}	}, {"@type": "Question","name":"2. 
+        How to round number to the nearest 25 cents easily?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can round number to the nearest 25 cents easily taking the help of the Round to the Nearest 25 Cents Calculator."}	}, {"@type": "Question","name":"3. 
+        How to use Round to the Nearest 25 Cents Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Just provide the input number and click on the calculate button next to the input fields to avail the value rounded to the nearest 25 cents."}	}, {"@type": "Question","name":"4. 
+        What is 16.66 Rounded to the Nearest 25 Cents?
+        ","acceptedAnswer": {"@type": "Answer","text":" 66 mod(25) = 16 round up i.e. 16 + (.66 + (.25-.16))
+        = 16+(.66+.9)
+        = 16.75
+        Therefore, 16.66 Rounded to the Nearest 25 Cents is 16.75"}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Round to the Nearest 25 Cents</h1>
+            </div>
+            <div class="card-body">
+                <p>Use the Round to the Nearest 25 Cents Calculator over here to decrease the Precision of a Number and make it short/easy to grasp. Enter the input number and press on the calculate button to get the amount rounded to the nearest 25 cents in a fraction of seconds along with a detailed procedure.</p>
+                <div class="box">
+                    <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                          <label for="input1">Round:</label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        {%if input1%}
+                          <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%else%}
+                          <input name="input1" id="input1" value="524.36" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+                        {%endif%}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="cell pl-3">
+                          <label for="input2">Round to: </label>
+                      </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                      <div class="cell">
+                        <select name="input2" id="input2" class="year" style="padding: 5px;" disabled>
+                          <optgroup label="Decimal Places">
+                            <option value="cent" selected >25 Cents (Quarter)</option>
+                          </optgroup>
+                      </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                    </form>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+                      <br>
+                                    <p>Related Calculators:</p>
+                                    <ul>
+                                      <li><a href="/round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+                                      <li><a href="/round-to-the-nearest-5-cents/">Round to the Nearest 5 Cents</a></li>
+                                     
+                                      <li><a href="/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>        
+                                      <li><a href="/round-to-the-nearest-euro-calculator/">Round to the Nearest Euro</a></li>
+                                      <li><a href="/round-to-the-nearest-japanese-yen-calculator/">Round to the Nearest Yens</a></li>
+                                      </ul>
+                <p><strong>Round to the Nearest 25 Cents: </strong>Sometimes you might not be in a mood to round up the amount to the nearest 25 cents. In such cases, make use of our online tool and round the value to the nearest 25 Cents effortlessly. Simply enter the number and our calculator does everything for you. Check out the detailed steps to round off the amount to the nearest 25 cents, solved examples. Get a good grip on the concept and solve related problems on your own.</p>
+            </div>
+        </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Round to the Nearest 25 Cents?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Go through the below-mentioned guidelines to Round off the value to the nearest 25 Cents. They are in the following fashion</p>
+            <ul>
+                <li>Firstly, Check the two digits sequence next to the decimal place value.</li>
+                <li>If xy mod(25) &lt;= 12 then round down and the nearest quarter is given by xy - xy mod(25)</li>
+                <li>If xy mod(25) &gt; 12 then round up and the nearest quarter is xy + (25 – xy mod(25)). On rounding up if you get the nearest quarter ending in .00 then increase the one's place value by 1.</li>
+           </ul>
+           <p>Thus from the formula, it implies that if xy is 00, 25, 50, 75 we don't do anything.</p>
+<p><strong>Example</strong></p>
+<p>Question : Round the amounts $11.95 to the Nearest 25 Cents?</p>
+<p><strong>Solution:</strong></p>
+<p>Given Amount is $11.95</p>
+<p>Consider the value of xy i.e. two digits sequence next to the decimal value is 95</p>
+<p>95 mod(25) = 20 round up as the mod value is &gt; 12 i.e. $11+(.95 + (.25 -.20))</p>
+<p>As the nearest quarter ends with .00 increase the one's place value by 1</p>
+<p>= $12.00</p>
+<p>Seek help regarding maths, physics, chemistry concepts that you never seemed to understand from <a
+  href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and clear all your queries.</p>
+<!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-25-Cents.jpeg' %}" alt='Round to the Nearest 25 Cents'> -->
+</div>
+</div>     
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Round to the Nearest 25 Cents</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. Where do I get the step by step procedure to round to the nearest 25 Cents?</strong></p>
+     	<p class="answer">You can get the step by step procedure to round to the nearest 25 Cents on our page.</p><hr>
+     	<p class="question"><strong>2. How to round number to the nearest 25 cents easily?</strong></p>
+     	<p class="answer">You can round number to the nearest 25 cents easily taking the help of the Round to the Nearest 25 Cents Calculator.</p><hr>  
+        <p class="question"><strong>3. How to use Round to the Nearest 25 Cents Calculator?</strong></p>
+        <p class="answer">Just provide the input number and click on the calculate button next to the input fields to avail the value rounded to the nearest 25 cents.</p><hr>
+        <p class="question"><strong>4. What is 16.66 Rounded to the Nearest 25 Cents?</strong></p>
+     	<p class="answer">66 mod(25) = 16 round up i.e. 16 + (.66 + (.25-.16))
+            <p>= 16+(.66+.9)</p>
+            <p>= 16.75</p>
+            Therefore, 16.66 Rounded to the Nearest 25 Cents is 16.75</p><hr>
+    	</div>
+    </div>
+    </div>
+{%endblock%}

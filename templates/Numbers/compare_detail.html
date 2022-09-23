@@ -1,0 +1,147 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- META DATA STARTS --->
+    <title>Greater Than Less Than Calculator to Compare Numbers of {{input1}} and {{input2}}</title>
+    <meta name="description" content="Greater Than Less Than Calculator determines the given two numbers {{input1}}, {{input2}} is greater or lesser and provides output ie., {{s}} in less time.">
+    <link rel="canonical" href="{{request.build_absolute_uri}}" >
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="Greater Than Less Than Calculator to Compare Numbers of {{input1}} and {{input2}}"/>
+    <meta property="og:description" content="Greater Than Less Than Calculator determines the given two numbers {{input1}}, {{input2}} is greater or lesser and provides output ie., {{s}} in less time."/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Numbers/Comparing-Numbers-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="Greater Than Less Than Calculator to Compare Numbers of {{input1}} and {{input2}}"/>
+    <meta name="twitter:description" content="Greater Than Less Than Calculator determines the given two numbers {{input1}}, {{input2}} is greater or lesser and provides output ie., {{s}} in less time."/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Comparing-Numbers-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="Greater Than Less Than Calculator to Compare Numbers of {{input1}} and {{input2}}"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Comparing-Numbers-Calculator.jpeg"/>
+    <meta property='og:description' content="Greater Than Less Than Calculator determines the given two numbers {{input1}}, {{input2}} is greater or lesser and provides output ie., {{s}} in less time."/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is {{input1}} greater or lesser than {{input2}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{% autoescape off %} {{s}} {% endautoescape %}"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you compare numbers {{input1}} and {{input2}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the inequality signs like greater than, less than, greater than or equal to, less than or equal to and equal signs and compare numbers {{input1}} & {{input2}}. Here, {% autoescape off %} {{s}} {% endautoescape %} so we can write it as {{s1}}."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to Compare numbers {{input1}} greater or lesser than {{input2}} using Greater than Lesser than Calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Just enter the given numbers {{input1}} and {{input2}} in the input field of the calculator using ',' separator, and tap on the calculate button to display the solution for it. The solution that you will view on the screen is '{% autoescape off %} {{s}} {% endautoescape %}' within no time."
+        }
+      }]
+  }
+</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+      <div class="card-header">
+  <h1 class="h1">Compare Numbers {% autoescape off %}
+    {{input1}}
+    {% endautoescape %} and {% autoescape off %} {{input2}} {% endautoescape %}</h1>
+  </div>
+  <div class="card-body">
+    <p>Take the help of our <a href="{% url 'compare_num' %}">Greater Than Less Than Calculator</a> and compare number {{input1}} and {{input2}} by providing them as inputs and get the output as {% autoescape off %} {{s}} {% endautoescape %}within a fraction of seconds.</p>
+    <br>
+    <p><b>Ex: </b> 25,44 (or) 46,85 (or) 57,98</p>
+    <form action="{% url 'compare_num' %}" method="POST">{% csrf_token %}
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInputGroup">Compare Numbers</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><strong>Compare Numbers of </strong></div>
+            </div>
+            <input type="number"  min="1" max="9999999" name="textfield1" class="form-control" id="inlineFormInputGroup" placeholder="Number 1" required="" value="{{input1}}">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><strong> and </strong></div>
+            </div>
+            <input type="number"  min="1" max="9999999" name="textfield2" class="form-control"  id="inlineFormInputGroup" placeholder="Number 2" required="" value="{{input2}}">
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+        </div>
+      </div>
+      </form>
+    
+</div></div>
+<div class="card">
+    <div class="card-header">
+<h2 class="h2">Solution for {% autoescape off %}
+  {{input1}}
+  {% endautoescape %} greater or less than {% autoescape off %} {{input2}} {% endautoescape %}</h2>
+</div>
+<div class="card-body">
+{% autoescape off %}
+{{ s }}
+{% endautoescape %}
+</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="h3">Frequently Asked Question on Compare Numbers of {{input1}} and {{input2}}</h3>
+  </div>
+  <div class="card-body">
+      <p class="question"><strong>1. Is {{input1}} greater or lesser than {{input2}}?</strong></p>
+      <p class="answer">{% autoescape off %} {{s}} {% endautoescape %}</p><hr>
+
+
+        <p class="question"><strong>2. How do you compare numbers {{input1}} and {{input2}}?</strong></p>
+        <p class="answer">Use the inequality signs like greater than, less than, greater than or equal to, less than or equal to and equal signs and compare numbers {{input1}} & {{input2}}. Here, {% autoescape off %} {{s}} {% endautoescape %} so we can write it as {{s1}}.</p><hr>
+
+
+        <p class="question"><strong>3. How to Compare numbers {{input1}} greater or lesser than {{input2}} using Greater than Lesser than Calculator?</strong></p>
+        <p class="answer">Just enter the given numbers {{input1}} and {{input2}} in the input field of the calculator using ',' separator, and tap on the calculate button to display the solution for it. The solution that you will view on the screen is '{% autoescape off %} {{s}} {% endautoescape %}' within no time.</p><hr>
+  </div>
+</div>
+</div>
+{%endblock%}

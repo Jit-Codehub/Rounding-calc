@@ -1,0 +1,305 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Free Rounding Decimals to the Nearest Ten Quadrillionths Calculator</title>
+<meta name="description"
+    content="Rounding Decimals to the Nearest Ten Quadrillionths Calculator is the best tool to give the output in fraction of seconds. Know the detailed steps, rules and examples." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Free Rounding Decimals to the Nearest Ten Quadrillionths Calculator" />
+<meta property="og:description"
+    content="Rounding Decimals to the Nearest Ten Quadrillionths Calculator is the best tool to give the output in fraction of seconds. Know the detailed steps, rules and examples." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/round-to-nearest-ten-quadrillionth-calculator.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Free Rounding Decimals to the Nearest Ten Quadrillionths Calculator" />
+<meta name="twitter:description"
+    content="Rounding Decimals to the Nearest Ten Quadrillionths Calculator is the best tool to give the output in fraction of seconds. Know the detailed steps, rules and examples." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/round-to-nearest-ten-quadrillionth-calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Free Rounding Decimals to the Nearest Ten Quadrillionths Calculator" />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/round-to-nearest-ten-quadrillionth-calculator.jpeg" />
+<meta property='og:description'
+    content="Rounding Decimals to the Nearest Ten Quadrillionths Calculator is the best tool to give the output in fraction of seconds. Know the detailed steps, rules and examples." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What is rounding to the nearest ten quadrillionths?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Rounding to the nearest ten quadrillionths means making the number much simpler to its nearest ten quadrillionths and it is defined by the 1/1000000000000000. And the place of the ten quadrillionth is 16 from the decimal point."}	}, {"@type": "Question","name":"2
+        How do you round decimals to the nearest ten quadrillionth?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        To round the given number, you need to consider the next digit. If the rounding value is greater than 5 then round up and if the value is less than 5 then round down."}	}, {"@type": "Question","name":"3
+        What is the tool used to round the nearest ten quadrillionths?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Rounding to the nearest ten quadrillionths calculator is the best tool available in Roundingcalculator.guru website."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %} 
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+		});
+</script>
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding to the Nearest Ten Quadrillionths Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Our rounding to the nearest ten quadrillionths calculator provides the output quickly and easily. For
+                getting that output in split seconds you need to offer input value in the below section and select the
+                round to the nearest ten quadrillionths and hit the calculate button. </p>
+
+            <div class="box">
+               
+
+                
+                {% if error %}
+                <div id="error">
+                <p><b>!! Incorrect values !! Please enter correct values</b></p>
+                </div>
+                {%endif%}
+                <form method="POST" id="my_form">
+                    {% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Value to be rounded up:</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+
+                                <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                                 name="inp" {% if inp %} value="{{inp}}" {% else %} value="434.23562423124891452" {% endif %}>
+                            </center>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center><button type="submit" class="btn btn-primary">Round</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+                <li><a href="/round-to-nearest-ten-billionth-calculator/">Rounding Nearest Ten Billionths Calculator</a></li>
+                <li><a href="/round-to-nearest-ten-trillionth-calculator/">Rounding Nearest Ten Trillionths Calculator</a></li>
+                <li><a href="/rounding-to-the-nearest-ten-milllionth-calculator/">Rounding Nearest Ten Milllionths
+                        Calculator</a></li>
+                
+
+            </ul>
+            <p><strong>Rounding to the Nearest Ten Quadrillionths Calculator: </strong>Searching for the best site to
+                acquire some knowledge to round the decimal to the nearest ten quadrillionth? Our tool will help you a
+                lot. This calculator will make your work easy and also we have specified with detailed steps, rules and
+                examples to get good knowledge about the concept. Get into the further sections to know more!!</p>
+        </div>
+    </div>
+
+
+    <div id="clear">
+        {% if result %}
+    
+        <div class="card" id="result1">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding {{inp}} to nearest Ten Quadrillionth:</h2>
+            </div>
+    
+            <div class="card-body">
+                &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+            </div>        
+        </div>
+    
+        <div class="card" id="result">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding to nearest Ten Quadrillionth:</h2>
+            </div>
+    
+            <div class="card-body">
+                <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+                
+                <p>
+                    Since, <strong>1 Ten Quadrillion</strong> = 10000000000000000 (10<sup>16</sup>).<br>
+                    So,&nbsp;&nbsp;&nbsp;&nbsp; <strong>1 Ten Quadrillionth</strong>  = 0.0000000000000001 (10<sup>-16</sup>)
+                </p>
+    
+                <p>
+                    Therefore, while rounding to nearest ten quadrillionth, we round the fractional part(or decimal part) upto 16 digits.
+                </p>
+    
+                {% if lesdig %}
+                <p>
+                    Here, In {{inp}}, number of digits after billionth place is less than 16, so we add trailing zeros upto 16 places after decmal.
+                </p>
+                {% else %}
+                    {% if dig9 %}
+                        <p>
+                            Here, Number of digits after decimal place is 16, so result is same as input.
+                        </p>
+                    {% else %}
+                        <p>
+                            Here, In {{inp}}, the digit after billionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+                        So, {{bdig}} can be rounded to {{reslastdig}}.
+                        </p>
+                    {% endif %}
+                
+                {% endif %}
+    
+                <p>
+                So finally, <b>{{inp}}</b>, when rounded to nearest ten quadrillionth, results in <b>{{res}}</b>. </p>
+            </div>        
+        </div>
+        {% endif %}
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">Procedure to Round Off the Decimal to Nearest Ten Quadrillionth</h2>
+        </div>
+        <div class="card-body">
+            <p>For rounding the decimal to the nearest ten quadrillionths follow the steps given below. </p>
+            <ul>
+                <li>Looking for the ten quadrillionth value in the given problem.</li>
+                <li>Then search for the next digit value right to the rounding value.</li>
+                <li>Hundred quadrillionths place is above or = 5 then round up and add +1.</li>
+                <li>Or, the hundred quadrillionths value is less than 5 then round down.</li>
+                <li>After that simply remove all the digits right to the ten quadrillionths place.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Rounding Off Values to the Nearest Ten Quadrillionths Examples</h3>
+        </div>
+        <div class="card-body">
+            <p>Question 1: Round off the decimal 6223.38833737783839246 to the nearest ten quadrillionths?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, number is 6223.38833737783839246</p>
+            <p>Examine the ten quadrillionths value and hundred quadrillionths values in the given decimal number, i.e.
+                4 and 6.</p>
+            <p>As we have the hundred quadrillionths value as above 5 then we round up the value and add +1 then remove
+                all the digits.</p>
+            <p>Thus, 6223.38833737783839246 round to the nearest ten quadrillionths is 6223.3883373778383925</p>
+            <p>Question 2: Round off the decimal 2.764345788765445682 to the nearest ten quadrillionths?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given, number is 2.764345788765445682</p>
+            <p>Examine the ten quadrillionths value and hundred quadrllionths values in the given decimal number, i.e.8
+                and 2.</p>
+            <p>As we have the hundred quadrillionths value as below 5 then we round down the value and remove all the
+                digits.</p>
+            <p>Thus, 2.764345788765445682 round to the nearest ten quadrillionths is 2.76434578876544568</p>
+            <p><a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> is the site that gives you many
+                calculators related to rounding along with the knowledge about the concept. Make use of it.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Rounding Decimal to the Nearest Ten Quadrillionths </h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. What is rounding to the nearest ten quadrillionths?</strong></p>
+            <p class="answer">Rounding to the nearest ten quadrillionths means making the number much simpler to its
+                nearest ten quadrillionths and it is defined by the 1/1000000000000000. And the place of the ten
+                quadrillionth is 16 from the decimal point.</p>
+            <hr>
+            <p class="question"><strong>2. How do you round decimals to the nearest ten quadrillionth?</strong></p>
+            <p class="answer">To round the given number, you need to consider the next digit. If the rounding value is
+                greater than 5 then round up and if the value is less than 5 then round down.</p>
+            <hr>
+            <p class="question"><strong>3. What is the tool used to round the nearest ten quadrillionths?</strong></p>
+            <p class="answer">Rounding to the nearest ten quadrillionths calculator is the best tool available in
+                Roundingcalculator.guru website.</p>
+            <hr>
+            <!-- <img src="{% static 'images/Numbers/Rounding-Decimals-to-the-Nearest-Ten-Quadrillionths-Calculator.jpeg' %}"
+                alt='Rounding Decimals to the Nearest Ten Quadrillionths Calculator'> -->
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+        console.log(elem)
+        if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+        } else {
+            elem.value = fist_input;
+        }
+    }
+</script>
+
+<script>
+    function myFunction() {
+        {% if error %}
+        document.getElementById("error").innerHTML= "";
+        {% endif %}
+       
+        document.getElementById("clear").innerHTML= "";
+        document.getElementsByName("inp")[0].value = "";
+       
+        
+    }
+</script>
+
+{%endblock%}

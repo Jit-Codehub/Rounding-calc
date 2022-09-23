@@ -1,0 +1,234 @@
+{%extends 'base/numbers_base1.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ 
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- META DATA STARTS --->
+    <title>Rounding Calculator | Round a number to nearest whole number</title>
+	<meta name="description" content="Looking for a tool to Round a number to nearest whole number, use Rounding Calculator. Calculator gives instant results and shows the nearest number for decimal">
+	<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+ 
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+	<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+	<meta property="og:title" content="Rounding Calculator | Round a number to nearest whole number"/>
+	<meta property="og:description" content="Looking for a tool to Round a number to nearest whole number, use Rounding Calculator. Calculator gives instant results and shows the nearest number for decimal"/>
+	<meta content="" property="og:site_name" />
+	<meta  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Calculator.jpeg" property="og:image" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:height" content="435" />
+	<meta property="og:image:width" content="354" />
+	<!--  FACEBOOK CONFIGURATION ENDS  -->
+	<!-- TWITTER CARD CONFIGURATION STARTS  -->
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+	<meta name="twitter:title" content="Rounding Calculator | Round a number to nearest whole number"/>
+	<meta name="twitter:description" content="Looking for a tool to Round a number to nearest whole number, use Rounding Calculator. Calculator gives instant results and shows the nearest number for decimal"/>
+	<meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Calculator.jpeg"/>
+	<meta property="twitter:image:height" content="435"/>
+	<meta property="twitter:image:width" content="354"/>
+	<!-- TWITTER CARD CONFIGURATION ENDS  -->
+	<!--  LINKEDIN CONFIGURATION STARTS-->
+	<meta property='og:title' content="Rounding Calculator | Round a number to nearest whole number"/>
+	<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Calculator.jpeg"/>
+	<meta property='og:description' content="Looking for a tool to Round a number to nearest whole number, use Rounding Calculator. Calculator gives instant results and shows the nearest number for decimal"/>
+	<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+	<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+	What is 6.5 rounded to the nearest whole number?
+	","acceptedAnswer": {"@type": "Answer","text":" The number after the point is 5, then add one to the number on one's place. So, that means 6.5 is rounded to 7."}        }, {"@type": "Question","name":"2. 
+	What is the difference between rounded down and rounded up?
+	","acceptedAnswer": {"@type": "Answer","text":" Round down means making that decimal number equal to the next largest integer that is smaller than the given number. Where round up is nothing but making the given number equal to the next smallest integer that is larger than that number."}        }, {"@type": "Question","name":"3.
+	What is rounding off a number?
+	","acceptedAnswer": {"@type": "Answer","text":" Rounding means making a number simpler but keeping its value closer to what it is."}        }, {"@type": "Question","name":"4. 
+	How do you use a Rounding Calculator for rounding the numbers?
+	","acceptedAnswer": {"@type": "Answer","text":" The simple process is just enter your decimal number as input and click the button which is having calculate as text, then you will get the nearest whole number for your number on the screen."}        }]}</script>
+	
+{%endblock%}
+{%block content%}
+<div class="container">
+	<div class="card c1">
+  	<div class="card-header">
+  <h1 class="h1">Rounding Calculator</h1>
+  </div>
+  <div class="card-body">
+<p>Take the help of a handy Rounding Calculator tool and get the rounding value for any decimal number. Simply, provide your number in the respective input field and click on the calculate button to display the rounded value as output within no time.</p>
+<div class="box">
+  <form method="POST">{% csrf_token %}
+  <div class="row mx-auto my-auto">
+    <div class="cell">
+        <label for="input1">Round:</label>
+    </div>
+  </div>
+  <div class="row mx-auto my-auto">
+    <div class="cell">
+      {%if input1%}
+        <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+      {%else%}
+        <input name="input1" id="input1" value="453423" class="nmbr_real real" type="text" title="real number" maxlength="15" autofocus required />
+      {%endif%}
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell pl-3">
+        <label for="input2">Round to: </label>
+    </div>
+  </div>
+  <div class="row mx-auto my-auto">
+    <div class="cell">
+      {%if input2%}
+      <select name="input2" id="input2" class="year" style="padding: 5px;">
+        <option value="{{input2}}" selected >{{opt_tag}}</option>
+        <optgroup label="Whole Number Places">
+            <option value="-9" >Billions</option>
+            <option value="-8" >Hundred Millions</option>
+            <option value="-7" >Ten Millions</option>
+            <option value="-6" >Millions</option>
+            <option value="-5" >Hundred Thousands</option>
+            <option value="-4" >Ten Thousands</option>
+            <option value="-3" >Thousands</option>
+            <option value="-2" >Hundreds</option>
+            <option value="-1" >Tens</option>
+            <option value="0" >Ones</option>
+        </optgroup>
+        <optgroup label="Decimal Places">
+            <option value="1" >Tenths (1)</option>
+            <option value="2" >Hundredths (2)</option>
+            <option value="3" >Thousandths (3)</option>
+            <option value="4" >Ten Thousandths (4)</option>
+            <option value="5" >Hundred Thousandths (5)</option>
+            <option value="6" >Millionths (6)</option>
+            <option value="7" >Ten Millionths (7)</option>
+            <option value="8" >Hundred Millionths (8)</option>
+            <option value="9" >Billionths (9)</option>
+        </optgroup>
+    </select>
+    {%else%}
+        <select name="input2" id="input2" class="year" style="padding: 5px;">
+            <optgroup label="Whole Number Places">
+                <option value="-9" >Billions</option>
+                <option value="-8" >Hundred Millions</option>
+                <option value="-7" >Ten Millions</option>
+                <option value="-6" >Millions</option>
+                <option value="-5" >Hundred Thousands</option>
+                <option value="-4" >Ten Thousands</option>
+                <option value="-3" selected>Thousands</option>
+                <option value="-2" >Hundreds</option>
+                <option value="-1" >Tens</option>
+                <option value="0" >Ones</option>
+            </optgroup>
+            <optgroup label="Decimal Places">
+                <option value="1" >Tenths (1)</option>
+                <option value="2" >Hundredths (2)</option>
+                <option value="3" >Thousandths (3)</option>
+                <option value="4" >Ten Thousandths (4)</option>
+                <option value="5" >Hundred Thousandths (5)</option>
+                <option value="6" >Millionths (6)</option>
+                <option value="7" >Ten Millionths (7)</option>
+                <option value="8" >Hundred Millionths (8)</option>
+                <option value="9" >Billionths (9)</option>
+            </optgroup>
+        </select>
+        {%endif%}
+    </div>
+  </div>
+  
+  <div class="col-auto mt-2 ml-3">
+    <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+  </div>
+  </form>
+	</div>
+{% autoescape off %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="alert alert-danger">{{message}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{%endautoescape%}
+{%if detailStep%}
+    <hr>
+    <p><strong>Answer:</strong></p>
+    <div style="text-align: center;">
+    {% autoescape off %}
+    {{detailStep}}
+    {%endautoescape%}
+    </div>
+    <hr>
+{%endif%}
+    <br>
+                  <p>Related Calculators:</p>
+                  <ul>
+                    <li><a href="/rounding-decimals-calculator/">Rounding Decimals</a></li>
+                    <li><a href="/round-to-the-nearest-integer/">Round to the Nearest Integer</a></li>
+                    <li><a href="/rounding-to-the-nearest-whole-number-calculator/">Round to the Nearest Whole Number</a></li>
+                  </ul>
+    <p><strong>Rounding Calculator: </strong>If you are facing troubles to round up the number, then you have come the right way. Take the help of our free online tool Rounding Calculator to get the output of the rounded whole number quickly. Along with this tool, you will also learn the process behind rounding any number in detail with examples.</p>
+</div></div>
+  <div class="card">
+	<div class="card-header"><h2 class="h2">Process for Rounding Off Numbers</h2></div>
+	<div class="card-body">
+  <p>Follow the below provided step by step procedure to round up your number to the nearest whole number or nearest tenth, hundredth, and thousandth number.</p>
+<ul>
+<li>Take any decimal number</li>
+
+<li>The primary rule involved in rounding decimals to the nearest whole number is look at the tenths digit </li>
+
+<li>If it is less than 5 then round given number down by removing the decimal part of that particular number</li>
+
+<li>If it is 5 or more then round the number up by adding one to the ones digit and truncating the decimal part of that number</li>
+ </ul>
+<p><strong>Example:</strong></p>
+<p><strong>Question: What is 15.3 rounded to the nearest whole number?</strong></p>
+<p>Answer:</p>
+<p>Given decimal number is 15.3</p>
+<p>The number in the tenths digit is 3 which is less than 3</p>
+<p>So, the rounded value of 15.3 is 15.</p>
+<p>Check out <a
+  href="https://roundingcalculator.guru/">roundingcalculator.guru</a> to get an idea on the various mathematical concepts and its calculators. With the help of these handy free calculator tools, you can obtain the result at a faster pace and easily.</p>
+<!-- <img src="{% static 'images/Numbers/Rounding-Calculator.jpeg' %}" alt='Rounding Calculator'> -->
+	</div>
+  </div>
+  <div class="card">
+  	<div class="card-header">
+      	<h3 class="h3">FAQs on Rounding Calculator</h3>
+  	</div>
+  	<div class="card-body">
+      	<!-- Question & Answer Starts --->
+<p class="question"><strong>1. What is 6.5 rounded to the nearest whole number?</strong></p>
+     	<p class="answer">The number after the point is 5, then add one to the number on one's place. So, that means 6.5 is rounded to 7.</p><hr>
+     	<p class="question"><strong>2. What is the difference between rounded down and rounded up?</strong></p>
+     	<p class="answer">Round down means making that decimal number equal to the next largest integer that is smaller than the given number. Where round up is nothing but making the given number equal to the next smallest integer that is larger than that number.</p><hr>
+     	<p class="question"><strong>3. What is rounding off a number?</strong></p>
+ <p class="answer">Rounding means making a number simpler but keeping its value closer to what it is.</p><hr>
+<p class="question"><strong>4. How do you use a Rounding Calculator for rounding the numbers?</strong></p>
+     	<p class="answer">The simple process is just enter your decimal number as input and click the button which is having calculate as text, then you will get the nearest whole number for your number on the screen.</p><hr>
+
+  	</div>
+   </div>
+</div>
+{%endblock%}

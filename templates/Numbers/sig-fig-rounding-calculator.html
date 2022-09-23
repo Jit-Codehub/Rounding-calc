@@ -1,0 +1,343 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Sig Fig Rounding Calculator | Online Rounding significant figures calculator</title>
+<meta name="description"
+  content="Avail our handy, user-friendly & free online Sig Fig Rounding Calculator and get your rounded numbers with detailed steps in a blink of an eye " />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Sig Fig Rounding Calculator | Online Rounding significant figures calculator" />
+<meta property="og:description"
+  content="Avail our handy, user-friendly & free online Sig Fig Rounding Calculator and get your rounded numbers with detailed steps in a blink of an eye " />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/sig-fig-rounding.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Sig Fig Rounding Calculator | Online Rounding significant figures calculator" />
+<meta name="twitter:description"
+  content="Avail our handy, user-friendly & free online Sig Fig Rounding Calculator and get your rounded numbers with detailed steps in a blink of an eye " />
+<meta name="twitter:image:src" content="https://roundingcalculator.guru/static/images/Numbers/sig-fig-rounding.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Sig Fig Rounding Calculator | Online Rounding significant figures calculator" />
+<meta property='og:image' content="https://roundingcalculator.guru/static/images/Numbers/sig-fig-rounding.jpeg" />
+<meta property='og:description'
+  content="Avail our handy, user-friendly & free online Sig Fig Rounding Calculator and get your rounded numbers with detailed steps in a blink of an eye " />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How do you do sig figs when rounding?
+        ","acceptedAnswer": {"@type": "Answer","text":"For rounding to significant figures, we have to follow these steps:
+
+        First, Look at the first non-zero digit if rounding to one significant figure
+        Next, consider the digit after the first non-zero digit if rounding to two significant figures
+        Draw a vertical line after the place value digit that is needed
+        Look at the next digit, if it is greater than or equal to 5, Add 1 to the previous digit.
+        If it's 4 or less, keep the previous digit as it is.
+        Fill any spaces to the right of the line with zeros, ending at the decimal point if there is one."}	}, {"@type": "Question","name":"2. 
+        Do you round down in sig figs?
+        ","acceptedAnswer": {"Yes, we do round down in sig figs as we did for any other number of decimal places."}	}, {"@type": "Question","name":"3. 
+        How do you round off to 3 significant figures?
+        ","acceptedAnswer": {"@type": "Answer","text":"To round to 3 sig figs, identify the 4th sig fig is more than 5 if yes then round up else round down."}, {"@type": "Question","name":"4. 
+        Do you round up at 5 for sig figs?
+        ","acceptedAnswer": {"@type": "Answer","text":"In case, it is 5, round the number so that it will be even. Remember that zero is considered to be even when rounding off."}	}]}
+    </script>
+{%endblock%}
+{%block content%}
+
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('ddd').click();
+    });
+</script>
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Sig Fig Rounding Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Utilize our online Sig Fig Rounding Calculator and easily rounds a given number to the quantity of significant
+        digits that you define in the input box. Just give your input rounding number and significant figures in the
+        relevant input fields and click on the calculate button to avail the output in microseconds with steps. </p>
+     
+
+
+        <div class="box">
+          {% if error %}
+          <p><b>!! Incorrect values !! Please enter current values</b></p>
+          {%endif%}
+          <form method="POST">{% csrf_token %}
+              <div class="row mx-auto my-auto">
+                  <div class="cell">
+                      <label for="input1">Round:</label>
+                  </div>
+              </div>
+              <div class="row mx-auto my-auto">
+                  <div class="cell  center col mt-2">
+                      <input type="text" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp"
+                          {% if inp %} value="{{inp}}" {% else %} value="25.36" {% endif %}>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="cell pl-3">
+                      <label for="input2">Round significant figure upto: </label>
+                  </div>
+              </div>
+              <div class="row mx-auto my-auto">
+                  <div class="cell  center col mt-2">
+                      <input type="text" pattern=[0-9]* title="Only positive numbers"
+                          oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter number of significant figures" maxlength="100" class="form-control"
+                          name="dig" {% if dig %} value="{{dig}}" {% else %} value="3" {% endif %}>
+                  </div>
+              </div>
+
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                      <center><button type="submit" class="btn btn-primary" name="f1">Round</button>
+                          <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                              class="btn btn-danger">Reset</button>
+                      </center>
+                  </div>
+              </div>
+          </form>
+
+      </div>
+
+
+      
+    <br>
+    <p>Related Calculators:</p>
+    <ul>
+      <li><a href="/rounding-up-calculator/">Rounding Up Calculator</a></li>
+      <li><a href="/round-to-the-nearest-million-calculator/">Rounding to the Nearest
+          Millions Calculator</a></li>
+      <li><a href="/round-to-the-nearest-whole-number/">Rounding to Nearest Whole Number Calculator</a></li>
+      <li><a href="/numbers/rounding-calculator/">Rounding Calculator</a></li>
+
+    </ul>
+    <p><strong>Sig Fig Rounding Calculator:</strong> Need more assistance to calculate the problems on significant
+      figures rounding? Make a visit to this article i.e., Sig Fig Rounding Calculator and find the information related
+      to rounding significant figures completely. Here, you will get to know what sig fig is and how to round numbers to
+      specified significant figures with examples. Also, read the sig fig rules followed when rounding the given numbers
+      from the further modules.</p>
+  </div>
+  </div>
+
+
+  <div id="clear">
+    {% if result %}
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding to {{dig}} significant figure:</h2>
+        </div>
+
+        <div class="card-body">
+            <b>{{inp}}</b>, when rounded upto <b>{{dig}}</b> significant figures, results in
+            {% if res1 %}<b>{{res1}}<span style="text-decoration: overline;">{{res2}}</span>{{res3}}</b>
+            {% else %} <b>{{res}}</b>{% endif %}.
+        </div>
+
+
+    </div>
+
+    {% endif %}
+</div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">What is Meant by Sig Fig Rounding & Its Rules?</h2>
+    </div>
+    <div class="card-body">
+      <p>The process of rounding a given number with the specified significant figures is called sig fig rounding. It
+        applies all the rules to round to significant figures. For example, 1670 rounded to 2 significant digits is
+        1700.</p>
+      <h3>Rules to Calculate Significant Figures(Sig Fig)</h3>
+      <ul>
+        <li>Every non - zero digits are significant numbers. For example, 2.43 includes three significant figures</li>
+        <li>The zeroes are significant if the zeros are between numbers, whose actual value is not zero. For instance,
+          34200057 includes eight significant figures.</li>
+        <li>The zeroes are significant that is after the last non-zero number when the number has a decimal point. For
+          example, 4.050 includes four significant figures.</li>
+        <li>The zero is not a significant number if it is to the left of the first non-zero digit. For instance,
+          0.002222 includes four significant figures.</li>
+        <li>Trailing zeros are not significant if the number does not have a decimal point. For instance, 500 or 5
+          &times; 10^2 only holds one significant figure.</li>
+        <li>In exact numbers, the total number of significant digits is unlimited. Also, same case for defined numbers.
+          1 meter = 1.0 meters = 1.000 meters = 1.00000000 meters etc.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round Off To Significant Figures Using Rules?</h2>
+    </div>
+    <div class="card-body">
+      <p>The below given points are some of the rules that should be followed when rounding to sig figs. They are as
+        follows:</p>
+      <ul>
+        <li>When the standard rules of rounding numbers apply on a rounding sig figs, except the non-significant digits
+          to the left of the decimal are replaced with zeros.</li>
+        <li>The specified pounding number can't be a negative number and must be higher than 0.</li>
+        <li>A number with 0 significant digits would be 0. Hence, the number to round to must be a positive.</li>
+        <li>Moreover, the specified rounding number must be a number that is either equal to or less than the amount of
+          significant digits present in the number.</li>
+      </ul>
+      <p>Take a look at some solved examples which we have workd out by applying the rounding sig fig rules. Understand
+        the concept by practicing with these problems and verify your answers from<a
+          href="https://roundingcalculator.guru/"> roundingcalculator.guru</a> offered online sig fig rounding
+        calculator.</p>
+      <h3>Rounding to Significant Figures Calculator Examples</h3>
+      <p><strong>Example:</strong></p>
+      <p>Rounding the Number 205.3359 to sig fig &amp; decimal places</p>
+      <p><strong>Solution:</strong></p>
+      <table border="1">
+        <tbody>
+          <tr>
+            <td style="text-align: center;"><strong>Rounded to How Many SF &amp; DP?</strong></td>
+            <td style="text-align: center;"><strong>Rounded to Significant Figures (SF)</strong></td>
+            <td style="text-align: center;"><strong>Rounded to Decimal Places (DP)</strong></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><strong>200</strong></td>
+            <td>205.3</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>210</strong></td>
+            <td>205.34</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>205</strong></td>
+            <td>205.336</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>205.3</strong></td>
+            <td>205.3359</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>205.34</strong></td>
+            <td>205.33590</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>205.336</strong></td>
+            <td>205.335900</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>205.3359</strong></td>
+            <td>205.3359000</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <p><img src="{% static 'images/Numbers/Sig-Fig-Rounding.jpeg' %}" alt="Sig Fig Rounding" /></p> -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">FAQs on Free Online Sig Figs Rounding Off Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1.How do you do sig figs when rounding?</strong></p>
+      <p class="answer">
+      <p>For rounding to significant figures, we have to follow these steps:</p>
+      <ul>
+        <li>First, Look at the first non-zero digit if rounding to one significant figure</li>
+        <li>Next, consider the digit after the first non-zero digit if rounding to two significant figures</li>
+        <li>Draw a vertical line after the place value digit that is needed</li>
+        <li>Look at the next digit, if it is greater than or equal to 5, Add 1 to the previous digit.</li>
+        <li>If it's 4 or less, keep the previous digit as it is.</li>
+        <li>Fill any spaces to the right of the line with zeros, ending at the decimal point if there is one.</li>
+      </ul>
+      </p>
+      <hr>
+      <p class="question"><strong>2. Do you round down in sig figs?</strong></p>
+      <p class="answer">
+      <p>Yes, we do round down in sig figs as we did for any other number of decimal places.</p>
+      </p>
+      <hr>
+      <p class="question"><strong>3. How do you round off to 3 significant figures? </strong></p>
+      <p class="answer">To round to 3 sig figs, identify the 4th sig fig is more than 5 if yes then round up else round
+        down.</p>
+      <hr>
+      <p class="question"><strong>4. Do you round up at 5 for sig figs?</strong></p>
+      <p class="answer">In case, it is 5, round the number so that it will be even. Remember that zero is considered to
+        be even when rounding off.</p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var validNumber = new RegExp(/^\d*\.?-?\.?\d?*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+          fist_input = elem.value;
+      } else {
+          elem.value = fist_input;
+      }
+  }
+</script>
+
+<script>
+  function myFunction() {
+
+      document.getElementsByName("inp")[0].value = "";
+      document.getElementsByName("dig")[0].value = "";
+
+      document.getElementById("result").innerHTML = "";
+
+  }
+</script>
+{%endblock%}

@@ -1,0 +1,310 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Free Rounding to the Nearest 1/8 Calculator to Round Numbers</title>
+<meta name="description"
+    content="Rounding to the Nearest 1/8 Calculator gives instant results i.e round off number to the closest ⅛. Know the simple steps to find rounding of decimals to one-eighth." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Free Rounding to the Nearest 1/8 Calculator to Round Numbers" />
+<meta property="og:description"
+    content="Rounding to the Nearest 1/8 Calculator gives instant results i.e round off number to the closest ⅛. Know the simple steps to find rounding of decimals to one-eighth." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Free Rounding to the Nearest 1/8 Calculator to Round Numbers" />
+<meta name="twitter:description"
+    content="Rounding to the Nearest 1/8 Calculator gives instant results i.e round off number to the closest ⅛. Know the simple steps to find rounding of decimals to one-eighth." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Free Rounding to the Nearest 1/8 Calculator to Round Numbers" />
+<meta property='og:image' content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Up-Calculator.jpeg" />
+<meta property='og:description'
+    content="Rounding to the Nearest 1/8 Calculator gives instant results i.e round off number to the closest ⅛. Know the simple steps to find rounding of decimals to one-eighth." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What are the steps for rounding a number?
+        ","acceptedAnswer": {"@type": "Answer","text":" The steps to round off numbers are here.
+        At first, identify the rounding digit in the number.
+        If it is less than 5, then just leave the rounding digit unchanged and replace the digits right of it as zeros.
+        If it is 5 or more, then add 1 to it and trim the values right of it."}	}, {"@type": "Question","name":"2.
+        How to round off numbers to the nearest one eighth on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Give the decimal number as input in the calculator and click on the blue colour calculate button to check the value which is nearest to ⅛ as the answer."}	}, {"@type": "Question","name":"3.
+        Find the nearest 1/8 of the number 89.689?
+        ","acceptedAnswer": {"@type": "Answer","text":" Given number is 89.689
+        The fractional part is 0.689
+        The nearest value of 0.689 which can be represented as a multiple of fraction 1/8 is 0.75
+        0.75 can be written as 6/8 in fraction
+        So, 89.689 rounded to the nearest ⅛ is 89 6/8."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('ddd').click();
+    });
+</script>
+
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding to Nearest One Eighth (1/8) Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Make your calculations easier by taking the help of free Rounding to the Nearest ⅛ Calculator and round
+                to one eighth. Just enter the input number in the relevant input box given below and tap on the
+                calculate button to find the output in no time.</p>
+            </p>
+
+            <div class="box">
+                <div id="error">
+                    {% if error %}
+                <p><b>!! Incorrect values !! Please enter correct values</b></p>
+                {%endif%}
+                </div>
+                
+                <form method="POST" id="my_form">
+                    {% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Value to be rounded up:</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+
+                                <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                    placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                                    name="inp" {% if inp %} value="{{inp}}" {% else %} value="34.45" {% endif %}>
+                            </center>
+                        </div>
+                    </div>
+
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center><button type="submit" class="btn btn-primary">Round</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+                <li><a href="/round-to-the-nearest-1-2-calculator/">Rounding to nearest 1/2 Calculator</a></li>
+                <li><a href="/round-to-the-nearest-1-4-calculator/">Rounding to nearest 1/4 Calculator</a></li>
+                <li><a href="/round-to-the-nearest-1-16-calculator/">Rounding to nearest 1/16 Calculator</a></li>
+                <li><a href="/round-to-the-nearest-1-32-calculator/">Rounding to nearest 1/32 Calculator</a></li>
+                <li><a href="/round-to-the-nearest-1-64-calculator/">Rounding to nearest 1/64 Calculator</a></li>
+
+            </ul>
+            <p><strong>Rounding to the Nearest 1/8 Calculator: </strong>Want to speed your calculations of rounding
+                numbers to the nearest fraction one eighth? Use our free online Rounding to the Nearest 1/8 Calculator
+                that produces instant results effortlessly. Continue reading to check the steps and rules on how to
+                round off decimals to the nearest ⅛. Also, get the example questions and definition of round to the
+                nearest ⅛ for better knowledge.
+            </p>
+        </div>
+    </div>
+
+
+    <div id="clear">
+        {% if result %}
+
+        <div class="card" id="result1">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding to nearest one eighth(1/8):</h2>
+            </div>
+
+            <div class="card-body">
+                <strong>Result - Rounf off value = {{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %} </strong>
+                </div>
+                </div>
+        <div class="card" id="result">
+            <div class="card-header">
+                <h2 class="h2">Result of Rounding to nearest one eighth(1/8):</h2>
+            </div>
+
+            <div class="card-body">
+                <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+                <p>To be rounded in : nearest &nbsp; <b><sup>1</sup>&frasl;<sub>{{calcval}}</sub></b></p>
+                {% if frac %}
+                <p>The fractional part is {{deci}}. </p>
+                <p>This value is nearest to {{deci_round}}.</p>
+                <p>And, {{deci_round}} in fraction of {{calcval}} is equivalent to
+                    <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}.</sub>
+                </p>
+                {% else %}
+                <p>Since, given input is nearest to an integer {{res}}.</p>
+                <p>It's rounding result will be same as {{res}}.</p>
+                {% endif %}
+                <p>So finally, <b>{{inp}}</b>, when rounded to nearest &nbsp; <sup>1</sup>&frasl;<sub>{{calcval}}</sub>
+                    , results in <b>{{res}} {% if frac %} <sup>{{frac_num}}</sup>&frasl;<sub>{{frac_den}}</sub> {% endif %}</b>. </p>
+            </div>
+
+
+        </div>
+
+        {% endif %}
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">What is Rounding Numbers to Nearest One-Eighth? </h2>
+        </div>
+        <div class="card-body">
+            <p>Rounding to the nearest of ⅛ is the process of trimming down or up the number that is nearest to one
+                eighth. Here, you can check the closest multiple of fraction ⅛ for any decimal number.</p>
+            <p>Example: Rounding of 100.245 to the nearest 1/8 is 100 2/8.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Step by Step Process to Round Off to the Nearest ⅛ </h3>
+        </div>
+        <div class="card-body">
+            <p>Here are the simple steps that you should remember when rounding off numbers to the nearest 1/8 manually:
+            </p>
+            <ul>
+                <li>First, get the number.</li>
+                <li>Identify the fractional part for the given number.</li>
+                <li>Find the nearest value that is equivalent to the multiple of ⅛</li>
+                <li>Represent the value in the form of fraction. </li>
+                <li>If the given number is near to the next number, then round up the number.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Round to the Nearest ⅛ Example Questions</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Question 1:</strong> Find 5678.2609 rounded to the nearest ⅛?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given number is 5678.2609</p>
+            <p> The fractional part is 0.2609</p>
+            <p>This value is nearest to 0.25</p>
+            <p>Representation of 0.25 in the fraction of 8 is 2/8</p>
+            <p> Therefore, 5678.2609 rounded to the nearest ⅛ is 55678 2/8.</p>
+            <p><strong>Question 2: </strong>What is 10.76 rounded to the nearest ⅛?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given number is 10.76</p>
+            <p> The fractional part of the number is 0.76</p>
+            <p> This value is nearest to 0.75</p>
+            <p> And, 0.75 in fraction of 8 is equivalent to 6⁄8.</p>
+            <p> So, 10.76 rounded to the nearest ⅛ is 10 6⁄8.</p>
+            <p>Get assistance for your math homework and assignments from <a
+                    href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> and gain more subject knowledge
+                and problem-solving skills.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Round to the Nearest ⅛ Calculator</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong> 1. What are the steps for rounding a number?</strong></p>
+            <p class="answer">The steps to round off numbers are here.</p>
+            <ol>
+                <li>At first, identify the rounding digit in the number.</li>
+                <li>If it is less than 5, then just leave the rounding digit unchanged and replace the digits right of
+                    it as zeros.</li>
+                <li>If it is 5 or more, then add 1 to it and trim the values right of it.</li>
+            </ol>
+            <hr>
+            <p class="question"><strong>2. How to round off numbers to the nearest one eighth on a calculator?</strong>
+            </p>
+            <p class="answer">Give the decimal number as input in the calculator and click on the blue colour calculate
+                button to check the value which is nearest to ⅛ as the answer.</p>
+            <hr>
+            <p class="question"><strong>3. Find the nearest 1/8 of the number 89.689?</strong></p>
+            <p class="answer">Given number is 89.689</p>
+            <p>The fractional part is 0.689</p>
+            <p>The nearest value of 0.689 which can be represented as a multiple of fraction 1/8 is 0.75</p>
+            <p>0.75 can be written as 6/8 in fraction</p>
+            <p>So, 89.689 rounded to the nearest ⅛ is 89 6/8.</p>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+        console.log(elem)
+        if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+        } else {
+            elem.value = fist_input;
+        }
+    }
+</script>
+
+<script>
+    function myFunction() {
+        {% if error %}
+        document.getElementById('error').innerHTML = "";
+        {% endif %}
+        document.getElementsByName("inp")[0].value = "";
+        {% if result %}
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("result1").innerHTML = "";
+        {% endif %}
+
+    }
+</script>
+
+{%endblock%}

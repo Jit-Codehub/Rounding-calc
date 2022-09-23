@@ -1,0 +1,322 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Free Online Rounding to the Nearest Ten Billionths Calculator With Steps</title>
+<meta name="description"
+  content="Handy Tool that rounds off the decimals to the nearest 10000000000th in no time is our Rounding to the Nearest Ten billionths calculator." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Free Online Rounding to the Nearest Ten Billionths Calculator With Steps" />
+<meta property="og:description"
+  content="Handy Tool that rounds off the decimals to the nearest 10000000000th in no time is our Rounding to the Nearest Ten billionths calculator." />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ten-billionths.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Free Online Rounding to the Nearest Ten Billionths Calculator With Steps" />
+<meta name="twitter:description"
+  content="Handy Tool that rounds off the decimals to the nearest 10000000000th in no time is our Rounding to the Nearest Ten billionths calculator." />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ten-billionths.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Free Online Rounding to the Nearest Ten Billionths Calculator With Steps" />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ten-billionths.jpeg" />
+<meta property='og:description'
+  content="Handy Tool that rounds off the decimals to the nearest 10000000000th in no time is our Rounding to the Nearest Ten billionths calculator." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How to round off to the nearest ten billionth without a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"For rounding off the nearest ten billionth, have a glance at the hundred billionth value and apply the rounding rules. If it is >=5, round up the rounding value. If it is <5, round down the rounding value."} }, {"@type": "Question","name":"2.
+        How to round to the nearest ten billionth using an online calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"Select a valid online calculator tool and enter your input decimal number in the allotted box. Now, hit the calculate or round button and get the output in seconds using online rounding to the nearest ten billionths calculator."} }, {"@type": "Question","name":"3.
+        What is the best portal to find free & handy online rounding calculators?
+        ","acceptedAnswer": {"@type": "Answer","text":"To find the free & handy online rounding calculators, you have to visit the Roundingcalculator.guru website which is reliable and trusted to round off any of the large or complex numbers."} }]}
+    </script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %} 
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+		});
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Ten Billionths Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Rounding to the Nearest Ten Billionths Calculator is a free &amp; handy online tool that determines the rounded
+        value to the nearest 10000000000th within a few clicks. Simply provide the input decimal in the tool and tap the
+        calculate button then it gives the result with steps in microseconds.</p>
+
+
+      <div class="box">
+        {% if error %}
+                <div id="error">
+                <p><b>!! Incorrect values !! Please enter correct values</b></p>
+                </div>
+                {%endif%}
+
+        <form method="POST" id="my_form">
+          {% csrf_token %}
+          <div class="row mx-auto my-auto">
+            <div class="cell">
+              <label for="input1">Value to be rounded up:</label>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center>
+
+                <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                            placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                             name="inp" {% if inp %} value="{{inp}}" {% else %} value="144.23564891145" {% endif %}>
+              </center>
+            </div>
+          </div>
+
+
+          <div class="row mx-auto my-auto">
+            <div class="center col mt-2">
+              <center><button type="submit" class="btn btn-primary">Round</button>
+                <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                  class="btn btn-danger">Reset</button>
+              </center>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/round-to-nearest-ten-quadrillionth-calculator/">Rounding Nearest Ten Quadrillionths Calculator</a>
+        </li>
+
+        <li><a href="/round-to-nearest-ten-trillionth-calculator/">Rounding Nearest Ten Trillionths Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-ten-milllionth-calculator/">Rounding Nearest Ten Milllionths
+            Calculator</a></li>
+
+      </ul>
+      <p><strong>Rounding to the Nearest Ten Billionths Calculator:</strong> Want to solve rounding large decimals to
+        its
+        nearest places? Need quick assistance &amp; accurate results in a blink of an eye? If yes, then Rounding to the
+        Nearest Ten Billionths Calculator works best for you all. This is the best &amp; handy online tool that finds
+        the
+        rounded value to its nearest 10000000000th and display the output with steps in no time.</p>
+      <p>Apart from the free online ten billionth <a
+          href="https://roundingcalculator.guru/rounding-calculator/">rounding
+          calculator</a> tool, you can also learn the step-by-step process on how to round off the decimal numbers to
+        the
+        nearest ten billionths with solved examples.</p>
+    </div>
+
+
+    <div id="clear">
+      {% if result %}
+      <div class="card" id="result1">
+          <div class="card-header">
+              <h2 class="h2">Result of Rounding {{inp}} to nearest Ten Billionth:</h2>
+          </div>
+  
+          <div class="card-body">
+              &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+          </div>        
+      </div>
+  
+      <div class="card" id="result">
+          <div class="card-header">
+              <h2 class="h2">Result of Rounding to nearest Ten Billionth:</h2>
+          </div>
+  
+          <div class="card-body">
+              <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+              
+              <p>
+                  Since, 1 Billion = 10000000000 (10<sup>10</sup>).<br>
+                  So, 1 billionth = 0.0000000001 (10<sup>-10</sup>)
+              </p>
+  
+              <p>
+                  Therefore, while rounding to nearest ten billionth, we round the fractional part(or decimal part) upto 10 digits.
+              </p>
+              {% if lesdig %}
+              <p>
+                  Here, In {{inp}}, number of digits after billionth place is less than 10, so we add trailing zeros upto 10 places after decmal.
+              </p>
+              {% else %}
+                  {% if dig9 %}
+                      <p>
+                          Here, Number of digits after decimal place is 10, so result is same as input.
+                      </p>
+                  {% else %}
+                      <p>
+                          Here, In {{inp}}, the digit after billionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+                      So, {{bdig}} can be rounded to {{reslastdig}}.
+                      </p>
+                  {% endif %}
+              
+              {% endif %}
+              <p>
+              So finally, <b>{{inp}}</b>, when rounded to nearest ten billionth, results in <b>{{res}}</b>. </p>
+          </div>        
+      </div>
+      {% endif %}
+  </div>
+  
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h2">Detailed Steps to Round Off Decimal to the Nearest 10000000000th</h2>
+      </div>
+      <div class="card-body">
+        <p>Rounding to the Nearest Ten Billionths is the process of trimming the decimal number to the closest place
+          value. In decimals, ten billionths place is the 10th position to the right of the decimal point. The simple
+          steps to round off the decimal to the nearest 1/10000000000 are listed below. Follow them carefully while
+          rounding decimals.</p>
+        <ul>
+          <li>First and foremost, look at the given number.</li>
+          <li>Then, recognize the digits in ten billionths and hundred billionths unit places.</li>
+          <li>To round off decimals to the nearest ten billionth, we have to look for the next digit which is a hundred
+            billionths digit.</li>
+          <li>If it is greater than or equal to 5, then we will round up.</li>
+          <li>If it is less than 5, then we will round down.</li>
+        </ul>
+        <p>Refer to the below section and practice manually with the help of provided solved examples on how to round
+          off
+          to the nearest ten billionth. Also, you can make use of our other rounding decimals calculators by visiting
+          our
+          website @<a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> &amp; avail the result in
+          quick
+          seconds.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h3">Solved Examples on Rounding to the Nearest Ten Billionths</h3>
+      </div>
+      <div class="card-body">
+        <p><strong>Example 1: </strong></p>
+        <p>Find the rounding to the nearest ten billionth for the decimal: 3427.12453784736</p>
+        <p><strong>Solution: </strong></p>
+        <p>Given number is 3427.12453784736</p>
+        <p>The ten billionth place value is 3 and the hundred-billionth place value is 6.</p>
+        <p>Here 6 is greater than 5 so round up the decimal to the nearest 10000000000th.</p>
+        <p>Hence, the rounded value of 3427.12453784736 to the nearest ten billionth is
+          <strong>3427.1245378474.</strong>
+        </p>
+        <p><strong>Example 2: </strong></p>
+        <p>What is the nearest 10000000000th value for the decimal: 7.28153742853?</p>
+        <p><strong>Solution: </strong></p>
+        <p>Given number is 7.28153742853</p>
+        <p>The ten billionth place value is 5 and the hundred-billionth place value is 3.</p>
+        <p>Here 3 is less than 5, so round down the decimal to the nearest place value ie., ten billionth.</p>
+        <p>Therefore, <strong>7.2815374285</strong> is the rounded value to the nearest ten billionth.</p>
+        <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Ten-Billionths.jpeg' %}"
+          alt="Round to the Nearest Ten Billionths" /> -->
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h3">FAQs on Rounding Off to the Nearest Ten Billionths Calculator</h3>
+      </div>
+      <div class="card-body">
+        <!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How to round off to the nearest ten billionth without a calculator?</strong></p>
+        <p class="answer">For rounding off the nearest ten billionth, have a glance at the hundred billionth value and
+          apply the rounding rules. If it is &gt;=5, round up the rounding value. If it is &lt;5, round down the
+          rounding
+          value.</p>
+        <hr>
+        <p class="question"><strong>2. How to round to the nearest ten billionth using an online calculator?</strong>
+        </p>
+        <p class="answer">Select a valid online calculator tool and enter your input decimal number in the allotted box.
+          Now, hit the calculate or round button and get the output in seconds using online rounding to the nearest ten
+          billionths calculator.</p>
+        <hr>
+        <p class="question"><strong>3. What is the best portal to find free & handy online rounding
+            calculators?</strong>
+        </p>
+        <p class="answer">To find the free & handy online rounding calculators, you have to visit the
+          Roundingcalculator.guru website which is reliable and trusted to round off any of the large or complex
+          numbers.
+        </p>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+        console.log(elem)
+        if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+        } else {
+            elem.value = fist_input;
+        }
+    }
+</script>
+
+<script>
+    function myFunction() {
+      {}
+      {% if error %}
+        document.getElementById("error").innerHTML= "";
+        {% endif %}
+        document.getElementsByName("inp")[0].value = "";
+        document.getElementById("clear").innerHTML = "";
+        // document.getElementById("result1").innerHTML = "";
+        
+    }
+</script>
+
+  {%endblock%}

@@ -1,0 +1,348 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Rounding Fractions to the Nearest Tenth Calculator - roundingcalculator.guru</title>
+<meta name="description"
+    content="Use Rounding Fractions to the Nearest Tenth Calculator to round off a fraction to the nearest 10th. Find steps of rounding fractions to the nearest tenth here." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Rounding Fractions to the Nearest Tenth Calculator - roundingcalculator.guru" />
+<meta property="og:description"
+    content="Use Rounding Fractions to the Nearest Tenth Calculator to round off a fraction to the nearest 10th. Find steps of rounding fractions to the nearest tenth here." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Rounding Fractions to the Nearest Tenth Calculator - roundingcalculator.guru" />
+<meta name="twitter:description"
+    content="Use Rounding Fractions to the Nearest Tenth Calculator to round off a fraction to the nearest 10th. Find steps of rounding fractions to the nearest tenth here." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Rounding Fractions to the Nearest Tenth Calculator - roundingcalculator.guru" />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Cent.jpeg" />
+<meta property='og:description'
+    content="Use Rounding Fractions to the Nearest Tenth Calculator to round off a fraction to the nearest 10th. Find steps of rounding fractions to the nearest tenth here." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you round a fraction to the nearest tenth?
+        ","acceptedAnswer": {"@type": "Answer","text":" To round the fraction to the nearest 10th, enter the fraction in the mentioned input field of the calculator. Tap on the calculate button to get the rounded nearest tenth value as the answer."}	}, {"@type": "Question","name":"2.
+        What is 0.84 rounded to the nearest tenth?
+        ","acceptedAnswer": {"@type": "Answer","text":" Given decimal number is 0.84
+        As the number at the hundredth place i.e 4 < 5, keep the tenth digit of the number as same and change the hundredth digit as zero.
+        So, 0.84 is rounded to the nearest tenth as 0.8."}	}, {"@type": "Question","name":"3.
+        Where is the nearest tenth place?
+        ","acceptedAnswer": {"@type": "Answer","text":" The tenth place is the right of the decimal point in a decimal number. The standard format of a number is 1234.56789. Here digit 5 is located at tenth place."}	}, {"@type": "Question","name":"4.
+        What is meant by rounding to the nearest tenth?
+        ","acceptedAnswer": {"@type": "Answer","text":" The decimal numbers are rounded by replacing the number with the approximation of the number. Rounding a decimal number to the nearest 10th means, the number has only the tenth value in fractional part and it is the approximation of the original number."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('ddd').click();
+    });
+</script>
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Rounding Fractions to the Nearest Tenth Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Utilise this free Rounding Fractions to the Nearest Tenth Calculator to round off a fraction to the
+                nearest 10th value in a fraction of seconds. All you need to do is provide the fraction numerator,
+                denominator in the fields of the online calculator tool and press the calculate button to check the
+                exact fraction along with the detailed solution.</p>
+            <ul class="messages">
+                <p id="error" class="alert alert-danger text-center" style="color:red;display:none">Value should not be
+                    zero</p>
+            </ul>
+            <div class="box">
+
+                <p id="error">
+                    {% if error %}
+                    <center><em><b>!! Incorrect values !! Please enter correct values !! Denominator can't be 0</b></em>
+                    </center><br>
+                    {%endif%}
+                </p>
+
+                <form method="POST" onsubmit="return function1()">
+                    {% csrf_token %}
+
+                    <div class="row mx-auto my-auto">
+                        <div class="center col mt-2">
+                            <center>
+                                <!-- <input type="number" id="inlineFormInputGroup" required="" class="form-control"
+                                    oninput="validateNumber(this);" step="1"
+                                    style="height:50px;width: 180px; text-align:center; font-size:22pt; outline:none"
+                                    name="firstno" maxlength="10" value="{{firstno}}"> -->
+
+                                <input type="number" id="inlineFormInputGroup" required="" placeholder="Numerator"
+                                    maxlength="100" class="form-control" name="nr" {% if nr %} value="{{nr}}" {% else %}
+                                    value="8" {% endif %}
+                                    style="height:50px;width: 180px; text-align:center; font-size:22pt; outline:none">
+
+                                <hr style="height:2px;border:none;color:#4285f4;background-color:#4285f4; "
+                                    width="190px">
+
+                                <!-- <input type="number" required="" class="form-control" id="inlineFormInputGroup"
+                                    oninput="validateNumber(this);" name="secondno" step="1"
+                                    style="height:50px;width: 180px; text-align:center; font-size:22pt; outline:none"
+                                    maxlength="10" value="{{secondno}}"> -->
+
+                                <input type="number" id="inlineFormInputGroup" required="" placeholder="Denominator"
+                                    maxlength="100" class="form-control" name="dr" {% if dr %} value="{{dr}}" {% else %}
+                                    value="5" {% endif %}
+                                    style="height:50px;width: 180px; text-align:center; font-size:22pt; outline:none">
+                            </center>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="col-auto mt-2 ml-3">
+                        <center><button type="submit" class="btn btn-primary" name="f1">Round</button>
+                            <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                                class="btn btn-danger">Reset</button>
+                        </center>
+                    </div>
+                </form>
+
+            </div>
+
+            <br>
+            <p>Related Calculators:</p>
+            <ul>                               
+                
+                <li><a href="/rounding-fractions-to-the-nearest-hundredth-calculator/">Round fraction to the Nearest Hundredth Calculator</a></li>
+                <li><a href="/rounding-fractions-to-decimals-calculator/">Round fraction to Decimals Calculator</a></li>
+                <li><a href="/rounding-fractions-to-the-nearest-half-calculator/">Round fraction to the Nearest Half Calculator</a></li>
+           
+                </ul>
+
+                <p><strong>Rounding Fractions to the Nearest Tenth Calculator: </strong>Trying to round off a fraction
+                    to
+                    the nearest tenth place? If so, you have landed at the correct place. Here we will explain the rules
+                    and
+                    steps on how to round a fraction to the nearest 10th easily. Check out the solved example questions
+                    on
+                    rounding fractions in the following sections of this page. You can also use our handy Round Fraction
+                    to
+                    the Nearest 10th Calculator tool to get quicker results.</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div id="clear " class="container">
+    {% if result %}
+    <div class="card" id="result1">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding ({{nr}} &frasl; {{dr}}) to nearest tenth:</h2>
+        </div>
+
+        <div class="card-body">
+            &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+        </div>
+    </div>
+
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Calculation of rounding ({{nr}} &frasl; {{dr}}) to nearest tenth:</h2>
+        </div>
+
+        <div class="card-body">
+            <p>Given, value to be rounded is : <b>({{nr}} &frasl; {{dr}})</b></p>
+
+            <p>
+                In this rounding calculator, first we convert given fraction into decimal number and then round the
+                decimal to nearest tenth.
+            </p>
+            <br>
+            <p>
+                So, On divison we get, ({{nr}} &frasl; {{dr}}) = {{divres}}.
+            </p>
+            <p>
+                Now, we round {{divres}} to its nearest tenth.
+            </p>
+            <br>
+            <p>
+                Decimal part of {{divres}} = {{deci}}.
+            </p>
+            <p>
+                On rounding to nearest tenth, {{deci}} = {{resdeci}}
+            </p>
+            <p>
+                {% if resdeci == 1 %}
+                So, Rounding to nearest tenth, {{divres}} = {{temp_res}}.0 + 1.0 = {{res}}
+                {% else %}
+                So, Rounding to nearest tenth, {{divres}} = {{res}}
+                {% endif %}
+            </p>
+            <br>
+            <p>
+                Finally,
+                <b>({{nr}} &frasl; {{dr}})</b>, on rounding to nearest tenth, results in <b>{{res}}</b> .
+            </p>
+
+        </div>
+        {% endif %}
+    </div>
+
+
+</div>
+
+
+
+<div class="container">
+    <div class="card ">
+        <div class="card-header">
+            <h2 class="h2">What are the Rules for Rounding Fractions to the Nearest 10th?</h2>
+        </div>
+        <div class="card-body">
+            <p>Here mentioned are the rules to round a fraction to the nearest 10.</p>
+            <ol>
+                <li>When the last digit in the fractional part is less than 5, then remove the last digit of the
+                    fractional
+                    part.</li>
+                <li> If the last digit in the fractional part is 5 or more and the first digit is less than 9, then add
+                    1 to
+                    the first digit and remove the second digit.</li>
+                <li> When the last digit in the fractional part is 5 or more and the first digit is equal to 9 then add
+                    1 to
+                    the integer part and make fractional part as 0.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card ">
+        <div class="card-header">
+            <h3 class="h3">Steps to Round off Fractions to the Nearest Tenth</h3>
+        </div>
+        <div class="card-body">
+            <p>Go through the simple steps on finding round of fraction to the nearest 10 easily.</p>
+            <ul>
+                <li>Take any fraction.</li>
+                <li>Divide the numerator of the fraction by the denominator and consider first 2 numbers of fractional
+                    part.
+                </li>
+                <li>Check all the rules of rounding fractions and use the suitable one.</li>
+                <li>Make changes to the decimal numbers as per the suitable rule.</li>
+                <li>Multiply both numerator and denominator of the decimal number by 10.</li>
+                <li>Solve it to get the rounded fraction.</li>
+            </ul>
+            <p><strong>Example</strong></p>
+            <p>Question: What is 85/12 is rounded to the nearest tenth?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given fraction is 85/12</p>
+            <p>Convert the fraction into decimal</p>
+            <p> 85/12 = 7.08</p>
+            <p>Here, integer part is 7, fractional part is 0.08</p>
+            <p>By applying the Rule II of rounding rules, fraction 85/12 rounded to the nearest 10th is 7.1.</p>
+            <p> Multiply and divide the number by 10</p>
+            <p> (7.1 x 10)/(10) = 71/10</p>
+            <p> Therefore, 85/12 rounded to the nearest tenth is 71/10.</p>
+            <p><a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> has got concepts like rounding
+                decimals, fractions, mixed numbers and many more along with their relevant calculators all one under one
+                roof.</p>
+            <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Cent.jpeg' %}" alt='Round to the Nearest Cent'> -->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card ">
+        <div class="card-header">
+            <h3 class="h3">FAQ's on Round off Fractions To the Nearest 10th</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong> 1. How do you round a fraction to the nearest tenth?</strong></p>
+            <p class="answer">To round the fraction to the nearest 10th, enter the fraction in the mentioned input field
+                of
+                the calculator. Tap on the calculate button to get the rounded nearest tenth value as the answer.</p>
+            <hr>
+            <p class="question"><strong>2. What is 0.84 rounded to the nearest tenth?</strong></p>
+            <p class="answer">Given decimal number is 0.84</p>
+            <p> As the number at the hundredth place i.e 4 < 5, keep the tenth digit of the number as same and change
+                    the hundredth digit as zero.</p>
+                    <p> So, 0.84 is rounded to the nearest tenth as 0.8.</p>
+                    <hr>
+                    <p class="question"><strong>3. Where is the nearest tenth place?</strong></p>
+                    <p class="answer">The tenth place is the right of the decimal point in a decimal number. The
+                        standard
+                        format of a number is 1234.56789. Here digit 5 is located at tenth place.</p>
+                    <hr>
+                    <p class="question"><strong>4. What is meant by rounding to the nearest tenth?</strong></p>
+                    <p class="answer">The decimal numbers are rounded by replacing the number with the approximation of
+                        the
+                        number. Rounding a decimal number to the nearest 10th means, the number has only the tenth value
+                        in
+                        fractional part and it is the approximation of the original number.</p>
+                    <hr>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    function myFunction() {
+        document.getElementById("error").innerHTML = "";
+        document.getElementsByName("nr")[0].value = "";
+        document.getElementsByName("dr")[0].value = "";
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("result1").innerHTML = "";
+    }
+</script>
+{%endblock%}

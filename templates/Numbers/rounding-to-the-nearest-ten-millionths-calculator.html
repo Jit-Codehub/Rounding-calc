@@ -1,0 +1,309 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Free Online Rounding to the Nearest Ten Millionths Calculator with Steps </title>
+<meta name="description"
+  content="Rounding to the Nearest Ten Millionths Calculator is a valid & reliable tool to round off a decimal to the nearest 10000000th in less time." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Free Online Rounding to the Nearest Ten Millionths Calculator with Steps " />
+<meta property="og:description"
+  content="Rounding to the Nearest Ten Millionths Calculator is a valid & reliable tool to round off a decimal to the nearest 10000000th in less time." />
+<meta content="" property="og:site_name" />
+<meta content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ten-millionths.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Free Online Rounding to the Nearest Ten Millionths Calculator with Steps " />
+<meta name="twitter:description"
+  content="Rounding to the Nearest Ten Millionths Calculator is a valid & reliable tool to round off a decimal to the nearest 10000000th in less time." />
+<meta name="twitter:image:src"
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ten-millionths.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Free Online Rounding to the Nearest Ten Millionths Calculator with Steps " />
+<meta property='og:image'
+  content="https://roundingcalculator.guru/static/images/Numbers/rounding-to-the-nearest-ten-millionths.jpeg" />
+<meta property='og:description'
+  content="Rounding to the Nearest Ten Millionths Calculator is a valid & reliable tool to round off a decimal to the nearest 10000000th in less time." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How does Rounding to the nearest 10000000th calculator work?
+        ","acceptedAnswer": {"@type": "Answer","text":"Rounding to the nearest 10000000th calculator takes the decimal number as input and by tapping on the calculate button it gives you the rounded values to the nearest ten millionth place value."} }, {"@type": "Question","name":"2.
+        Where is the ten-millionth digit located?
+        ","acceptedAnswer": {"@type": "Answer","text":"The ten millionth digit is located in the seventh place after the decimal point."} }, {"@type": "Question","name":"3.
+        What is the ten millionths rounded value for 23.76445231?
+        ","acceptedAnswer": {"@type": "Answer","text":"For the given decimal number 23.76445231, the rounded value to the ten-millionths is 23.7644523 as the hundred millionth digit is less than five."} }]}
+    </script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">Rounding to the Nearest Ten Millionths Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Rounding to the Nearest Ten Millionths Calculator is a free online tool that assists you to find the rounded
+        values to the nearest ten millionth. Just give your input decimal number and then click on the calculate button
+        to obtain results with steps in a fraction of seconds.</p>
+
+      <div>
+        <div class="box">
+          <p id="error">
+            {% if error %}
+          <p><b>!! Incorrect values !! Please enter correct values</b></p>
+          {%endif%}
+          </p>
+          <form method="POST" id="my_form">
+            {% csrf_token %}
+            <div class="row mx-auto my-auto">
+              <div class="cell">
+                <label for="input1">Value to be rounded up:</label>
+              </div>
+            </div>
+
+
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center>
+
+                  <input type="number" step="any" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                    placeholder="Enter value to be rounded" maxlength="100" class="form-control" name="inp" {% if inp %}
+                    value="{{inp}}" {% else %} value="34.23423873" {% endif %}>
+                </center>
+              </div>
+            </div>
+
+
+            <div class="row mx-auto my-auto">
+              <div class="center col mt-2">
+                <center><button type="submit" class="btn btn-primary">Round</button>
+                  <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                    class="btn btn-danger">Reset</button>
+                </center>
+
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        <li><a href="/round-to-nearest-ten-quadrillionth-calculator/">Rounding Nearest Ten Quadrillionths Calculator</a>
+        </li>
+        <li><a href="/round-to-nearest-ten-billionth-calculator/">Rounding Nearest Ten Billionths Calculator</a></li>
+        <li><a href="/round-to-nearest-ten-trillionth-calculator/">Rounding Nearest Ten Trillionths Calculator</a></li>
+        
+
+      </ul>
+      <p><strong>Rounding to the Nearest Ten Millionths Calculator:</strong> Had large decimals to calculate? Consuming
+        much time to round the values manually? Go for this handy Round off to the Nearest Ten Millionths Calculator. As
+        it holds each and every bit of the concept and explains how to round decimals to ten millionths by hand with
+        solved examples clearly. Moreover, you can avail the answers in split seconds along with detailed steps. So,
+        grab
+        the chance and jump into the below sections for additional details about rounding off numbers to the closest ten
+        millionths.</p>
+    </div>
+    </div>
+    
+
+    <div id="clear" >
+      {% if result %}
+
+      <div class="card " id="result1">
+        <div class="card-header">
+          <h2 class="h2">Result of Rounding {{inp}} to nearest ten millionth :</h2>
+        </div>
+
+        <div class="card-body">
+          &nbsp;&nbsp;&nbsp;<b>Round off result = {{res}}</b>
+        </div>
+      </div>
+
+      <div class="card " id="result">
+        <div class="card-header">
+          <h2 class="h2">Result of Rounding to nearest ten millionth:</h2>
+        </div>
+
+        <div class="card-body">
+          <p>Given, value to be rounded is : <b>{{inp}}</b></p>
+
+          <p>
+            Since, 1 ten million = 10000000 (10<sup>7</sup>).<br>
+            So, 1 ten millionth = 0.0000001 (10<sup>-7</sup>)
+          </p>
+
+          <p>
+            Therefore, while rounding to nearest ten millionth, we round the fractional part(or decimal part) upto 7
+            digits.
+          </p>
+
+          {% if lesdig %}
+          <p>
+            Here, In {{inp}}, number of digits after ten millionth place is less than 7, so we add trailing zeros upto 7
+            places after decmal.
+          </p>
+          {% else %}
+          {% if dig9 %}
+          <p>
+            Here, Number of digits after decimal place is 7, so result is same as input.
+          </p>
+          {% else %}
+          <p>
+            Here, In {{inp}}, the digit after ten millionth place is {{bplus}}, which is {{bplustype}} than 5.<br>
+            So, {{bdig}} can be rounded to {{reslastdig}}.
+          </p>
+          {% endif %}
+
+          {% endif %}
+
+          <p>
+            So finally, <b>{{inp}}</b> , when rounded to nearest ten millionth results in <b>{{res}}</b>. </p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h2">What is Meant by Rounding to the Nearest Ten Millionths?</h2>
+      </div>
+      <div class="card-body">
+        <p>In maths, rounding means trimming the numbers to the nearest place value. Rounding to the nearest
+          ten-millionths means trimming the decimals to the closest ten millionth place value. The ten million number
+          after the decimal point is defined as 1/10000000 (one-ten-millionth). Also, the seventh position after the
+          decimal point is the ten-millionth place.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h2">Steps to Round Off Decimals to the Nearest 10000000th</h2>
+      </div>
+      <div class="card-body">
+        <p>For rounding decimals to the nearest ten millionth, we have to follow some rounding rules and steps that are
+          listed below:</p>
+        <ul>
+          <li>First, identify the ten-millionth digit. </li>
+          <li>Next, identify the hundred millionth digit. </li>
+          <li>To round off decimal to 10000000th, we have to look at the hundred millionth digit. </li>
+          <li>If the digit &gt;=5 then round up the number to the nearest ten millionths. </li>
+          <li>If the digit &lt;5 then round down the number to the nearest ten millionths. </li>
+          <li>Finally, the obtained result is the rounded value to the nearest 10000000th.</li>
+        </ul>
+        <p>Let's see the below example and understand the step-by-step process of rounding decimals to the nearest ten
+          millionths. Also, go with other handy &amp; user-friendly online calculators under one roof @<a
+            href="https://roundingcalculator.guru/">roundingcalculator.guru</a> and start rounding the numbers within
+          microseconds.</p>
+        <p><strong>Example:</strong></p>
+        <p>Round 7.123456784 to its nearest ten millionth.</p>
+        <p><strong>Solution:</strong></p>
+        <p>The given decimal number is 7.123456784</p>
+        <p>Here, 7 is the digit in the ten millionth place value and 8 is the digit in the hundred millionth place
+          value.
+        </p>
+        <p>Take the hundred millionth digit into consideration and apply the rules to find the rounded value to the
+          nearest 10000000th.</p>
+        <p>The digit is greater than 5 so round up the number. Add 1 to the ten millionth digit and remove the remaining
+          digits after the ten millionth place value.</p>
+        <p>Thus,<strong> 7.1234568</strong> is the rounded value to the nearest ten millionth.</p>
+        <!-- <p><img src="{% static 'images/Numbers/Round-to-the-Nearest-Ten-Millionths.jpeg' %}"
+            alt="Round to the Nearest Ten Millionths" /></p> -->
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h3">FAQs on Rounding Decimal to Nearest Ten Millionth Calculator </h3>
+      </div>
+      <div class="card-body">
+        <!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How does Rounding to the nearest 10000000th calculator work?</strong></p>
+        <p class="answer">Rounding to the nearest 10000000th calculator takes the decimal number as input and by tapping
+          on the calculate button it gives you the rounded values to the nearest ten millionth place value.</p>
+        <hr>
+        <p class="question"><strong>2. Where is the ten-millionth digit located?</strong></p>
+        <p class="answer">The ten millionth digit is located in the seventh place after the decimal point.</p>
+        <hr>
+        <p class="question"><strong>3. What is the ten millionths rounded value for 23.76445231?</strong></p>
+        <p class="answer">For the given decimal number 23.76445231, the rounded value to the ten-millionths is
+          23.7644523
+          as the hundred millionth digit is less than five.</p>
+        <hr>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var validNumber = new RegExp(/^?\d*\.?-?\d*$/);
+    var fist_input = document.getElementById("inlineFormInputGroup").value;
+    function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+        fist_input = elem.value;
+      } else {
+        elem.value = fist_input;
+      }
+    }
+  </script>
+
+  <script>
+    function myFunction() {
+      document.getElementById('error').innerHTML = "";
+      document.getElementsByName("inp")[0].value = "";
+      document.getElementById("clear").innerHTML = "";
+      // document.getElementById("result").innerHTML = "";
+      // document.getElementById("result1").innerHTML = "";
+      
+    }
+  </script>
+
+  {%endblock%}

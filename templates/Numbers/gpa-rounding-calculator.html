@@ -1,0 +1,280 @@
+{%extends 'base/numbers_base3.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg"
+    type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>GPA Rounding Calculator | Steps to Round Up Your GPA</title>
+<meta name="description"
+  content="GPA Rounding Calculator is the best tool that rounds up the GPA and gives you the instant answer. In this we have explained about GPA, and how to round the GPA along with some solved examples." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="GPA Rounding Calculator | Steps to Round Up Your GPA" />
+<meta property="og:description"
+  content="GPA Rounding Calculator is the best tool that rounds up the GPA and gives you the instant answer. In this we have explained about GPA, and how to round the GPA along with some solved examples.  " />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg"
+  property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="GPA Rounding Calculator | Steps to Round Up Your GPA" />
+<meta name="twitter:description"
+  content="GPA Rounding Calculator is the best tool that rounds up the GPA and gives you the instant answer. In this we have explained about GPA, and how to round the GPA along with some solved examples." />
+<meta name="twitter:image:src"
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="GPA Rounding Calculator | Steps to Round Up Your GPA" />
+<meta property='og:image'
+  content="https://onlinecalculator.guru/static/images/Numbers/Rounding-Decimals-to-the-Nearest-Hundredths.jpeg" />
+<meta property='og:description'
+  content="GPA Rounding Calculator is the best tool that rounds up the GPA and gives you the instant answer. In this we have explained about GPA, and how to round the GPA along with some solved examples." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+  type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+      Can I round 3.676 to 3.7?
+      ","acceptedAnswer": {"@type": "Answer","text":" 
+      Yes, you can round up the GPA Value 3.676 to 3.7."}	}, {"@type": "Question","name":"2
+      What is the best tool to round the GPA?
+      ","acceptedAnswer": {"@type": "Answer","text":" 
+      GPA Rounding calculator is the best tool to round off the GPA and it is available on <a href="https://roundingcalculator.guru/">Roundingcalculator.guru</a>"}	}, {"@type": "Question","name":"3
+      How to use GPA Rounding Calculator?
+      ","acceptedAnswer": {"@type": "Answer","text":"
+      Rounding the GPA can be done easily by using calculator. Simply insert the values in the allocated fields and click the blue color calculate button and see the answer in fraction of seconds."}	}]}</script>
+{%endblock%}
+{%block content%}
+
+{%if go_to %}
+<a href="{{go_to}}" id="ddd"></a>
+{%endif%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('ddd').click();
+  });
+</script>
+
+
+<div class="container">
+  <div class="card c1">
+    <div class="card-header">
+      <h1 class="h1">GPA Rounding Calculator</h1>
+    </div>
+    <div class="card-body">
+      <p>Go through this GPA Rounding Calculator tool to round off the GPA as it grants you the immediate results
+        without wasting your time. Simple thing to do is enter the GPA value in the allocated field and click on the
+        calculate button, then you can see the answer in blink of an eye.</p>
+
+        <div class="box">
+          {% if error %}
+          <p><b>!! Incorrect values !! GPA must be whole number less than or equal to 10</b></p>
+          {%endif%}
+          <form method="POST" id="my_form">
+              {% csrf_token %}
+              <div class="row mx-auto my-auto">
+                  <div class="cell">
+                      <label for="input1">Value to be rounded up:</label>
+                  </div>
+              </div>
+
+
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                      <center>
+
+                        <input type="text" oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                            placeholder="Enter value to be rounded" maxlength="100" class="form-control"
+                             name="inp" {% if inp %} value="{{inp}}" {% else %} value="8.325" {% endif %}>
+                      </center>
+                  </div>
+              </div>
+
+
+              <div class="row mx-auto my-auto">
+                  <div class="center col mt-2">
+                      <center><button type="submit" class="btn btn-primary">Round</button>
+                          <button type="button" onclick="myFunction()" style="margin-top:8px;"
+                              class="btn btn-danger">Reset</button>
+                      </center>
+                  </div>
+              </div>
+          </form>
+
+      </div>
+
+      <br>
+      <p>Related Calculators:</p>
+      <ul>
+        
+        <li><a href="/round-to-the-nearest-million-calculator/">Rounding Million Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-tenth-calculator/">Rounding nearest tenth Calculator</a></li>
+        <li><a href="/rounding-to-the-nearest-kilometer-calculator/">Rounding nearest kilometers Calculator</a></li>
+
+      </ul>
+      <p><strong>GPA Rounding Calculator:</strong> Thinking that rounding the GPA is tough? No worries we have made that
+        easy for you by introducing a GPA rounding calculator that round off your GPA within a microsecond. For
+        students, Teachers this tool will be very useful to calculate their rounding GPA. Below we have discussed how to
+        round the GPA along with some examples.</p>
+    </div>
+  </div>
+
+  <div id="clear">
+    {% if result %}
+
+    <div class="card" id="result1">
+      <div class="card-header">
+          <h2 class="h2">Result of Rounding to nearest GPA:</h2>
+      </div>
+
+      <div class="card-body">
+        <strong>Round off value = {{res}}</strong>
+        </div>
+        </div>
+    <div class="card" id="result">
+        <div class="card-header">
+            <h2 class="h2">Result of Rounding to nearest GPA:</h2>
+        </div>
+
+        <div class="card-body">
+            <p>
+                <p>Given, value to be rounded is : {{inp}}</p>
+            <p>To be rounded in : nearest GPA.</p>
+            <p>
+                In rounding GPA calculator, we round the decimal part of GPA to one place after decimal.<br>
+                If the GPA is already a whole number, the result is same as input.
+            </p>
+            <p>
+                {% if exc %}
+                    Here, if we round {{inp}}, we get the result as next whole number.<br>
+                    So, we won't round here. 
+                {% else %}
+                    Here, the input is {{inp}}, which can be rounded to {{res}}.
+                {% endif %}
+
+            </p>
+            <p>So finally, <br>
+            </p>
+            <b>{{inp}}</b>, when rounded to nearest GPA, results in <b>{{res}}</b>. 
+        </div>
+            
+        
+    </div>
+
+    {% endif %}
+</div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="h2">How to Round off the GPA?</h2>
+    </div>
+    <div class="card-body">
+      <p>Many of them has a doubt that can GPA can be rounded up and rounded down. Answer for them is Yes, and here we
+        will see how to round off the GPA in step by step process.</p>
+      <ul>
+        <li>First, you need calculate your GPA.</li>
+        <li>Now, for this GPA you can round up or round down the GPA only for one decimal.</li>
+        <li>Look for the tenths place in the GPA.</li>
+        <li>If the tenths place is above 5 or =5 then you can round up the decimal value by adding 1 to the tenths
+          place.</li>
+        <li>If the value is below 4 or =4 then round down the decimal value.</li>
+        <li>Finally, you will get the round off value for GPA which you need for checking the grades.</li>
+        <li>4.0 is the standard GPA, you cannot do anything for that value.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">GPA Rounding Examples</h3>
+    </div>
+    <div class="card-body">
+      <p>Here, we will see some sample examples to round off the GPA value.</p>
+      <ul>
+        <li>If your calculated GPA is 3.34 then you need to round down the GPA to 3.3.</li>
+        <li>If your GPA is 3.89 then you can round up the value to 3.9</li>
+        <li>If your GPA is 3.99 it remains same, as 4.0 is the standard GPA.</li>
+      </ul>
+      <p>Utilize this easy to use tools to make your calculations easy and faster. <a
+          href="https://roundingcalculator.guru/">Roundingcalculator.guru</a> is the one website embedded with some
+        rounding calculators that makes your work easy to round off the value. </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="h3">Frequently Asked Questions on GPA Rounding Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- Question & Answer Starts --->
+      <p class="question"><strong>1. Can I round 3.676 to 3.7?</strong></p>
+      <p class="answer"> Yes, you can round up the GPA Value 3.676 to 3.7.</p>
+      <hr>
+      <p class="question"><strong>2. What is the best tool to round the GPA?</strong></p>
+      <p class="answer">GPA Rounding calculator is the best tool to round off the GPA and it is available on <a
+          href="https://roundingcalculator.guru/">Roundingcalculator.guru</a></p>
+      <hr>
+      <p class="question"><strong>3. How to use GPA Rounding Calculator?</strong></p>
+      <p class="answer">Rounding the GPA can be done easily by using calculator. simply insert the values in the
+        allocated fields and click the blue color calculate button and see the answer in fraction of seconds.</p>
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+  var fist_input = document.getElementById("inlineFormInputGroup").value;
+  function validateNumber(elem) {
+      console.log(elem)
+      if (validNumber.test(elem.value)) {
+          fist_input = elem.value;
+      } else {
+          elem.value = fist_input;
+      }
+  }
+</script>
+
+<script>
+  function myFunction() {
+
+      document.getElementsByName("inp")[0].value = "";
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result1").innerHTML = "";
+      
+  }
+</script>
+
+
+{%endblock%}

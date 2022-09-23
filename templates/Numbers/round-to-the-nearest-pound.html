@@ -1,0 +1,268 @@
+{%extends 'base/numbers_base2.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static\images\logo\Rounding-Calculator-icon.svg" type="icon">
+<!--  Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="/static/style2.css">
+{%endblock%}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Round to the Nearest Pound | Rounding Numbers to the Nearest Pound</title>
+<meta name="description"
+    content="Round to the Nearest Pound Calculator displays the value you entered to the nearest pound in seconds. Know Rounding of Numbers to the Nearest Pound by hand." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Round to the Nearest Pound | Rounding Numbers to the Nearest Pound" />
+<meta property="og:description"
+    content="Round to the Nearest Pound Calculator displays the value you entered to the nearest pound in seconds. Know Rounding of Numbers to the Nearest Pound by hand." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Pound.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Round to the Nearest Pound | Rounding Numbers to the Nearest Pound" />
+<meta name="twitter:description"
+    content="Round to the Nearest Pound Calculator displays the value you entered to the nearest pound in seconds. Know Rounding of Numbers to the Nearest Pound by hand." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Pound.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Round to the Nearest Pound | Rounding Numbers to the Nearest Pound" />
+<meta property='og:image'
+    content="https://onlinecalculator.guru/static/images/Numbers/Round-to-the-Nearest-Pound.jpeg" />
+<meta property='og:description'
+    content="Round to the Nearest Pound Calculator displays the value you entered to the nearest pound in seconds. Know Rounding of Numbers to the Nearest Pound by hand." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script
+    type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        How to Round to the Nearest Pound?
+        ","acceptedAnswer": {"@type": "Answer","text":" For a Number Check the value of its tenths and is it is >=5 increase the pounds value in ones place by 1 and remove all the digits after the decimal point."}	}, {"@type": "Question","name":"2. 
+        What is £30 Rounded to the Nearest Pound?
+        ","acceptedAnswer": {"@type": "Answer","text":" As the £30.00 has zero in tenths place after the decimal point and you can do nothing. Thus, £30 rounded to the nearest pound remains the same."}	}, {"@type": "Question","name":"3. 
+        How to use Round to the Nearest Pound Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Simply provide the input value in the input provision and click on the calculate button to get the value rounded to the nearest pound in a matter of seconds."}	}, {"@type": "Question","name":"4. 
+        Which website offers the best Round to the Nearest Pound Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Onlinecalculator.guru provides the best Round to the Nearest Pound Calculator to make your calculations simple and easy."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Round to the Nearest Pound</h1>
+        </div>
+        <div class="card-body">
+            <p>Round to the Nearest Pound Calculator is a free online tool that displays the rounded value of the
+                nearest pound. You can make your calculations quite faster using this calculator and get the output in a
+                fraction of seconds. Enter the input value in the input field of the calculator and click on the
+                calculate button to get the value rounded to the nearest pound.</p>
+            <div class="box">
+                <form method="POST">{% csrf_token %}
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            <label for="input1">Round:</label>
+                        </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            {%if input1%}
+                            <input name="input1" id="input1" value="{{input1}}" class="nmbr_real real" type="text"
+                                title="real number" maxlength="15" autofocus required />
+                            {%else%}
+                            <input name="input1" id="input1" value="43572" class="nmbr_real real" type="text"
+                                title="real number" maxlength="15" autofocus required />
+                            {%endif%}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell pl-3">
+                            <label for="input2">Round to: </label>
+                        </div>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                        <div class="cell">
+                            {%if input2%}
+                            <select name="input2" id="input2" class="year" style="padding: 5px;">
+                                <optgroup label="Whole Number Places">
+                                    {%if "-" in input2%}
+                                    <option value="{{input2}}" selected>{{opt_tag}}</option>
+                                    {%endif%}
+                                    <option value="-8">Million Pounds</option>
+                                    <option value="-7">Hundred Thousand Pounds</option>
+                                    <option value="-6">Ten Thousand Pounds</option>
+                                    <option value="-5">Thousand Pounds</option>
+                                    <option value="-4">Hundred Pounds</option>
+                                    <option value="-3">Ten Pounds</option>
+                                    <option value="-2">Five Pounds</option>
+                                    <option value="-1">Two Pounds</option>
+                                    <option value="0">Pound</option>
+                                </optgroup>
+                                <optgroup label="Decimal Places">
+                                    {%if "-" not in input2%}
+                                    <option value="{{input2}}" selected>{{opt_tag}}</option>
+                                    {%endif%}
+                                    <option value="1">Twenty Pence</option>
+                                    <option value="2">Ten Pence</option>
+                                    <option value="3">Five Pence</option>
+                                    <option value="4">Two Pence</option>
+                                    <option value="5">Penny</option>
+                                </optgroup>
+                            </select>
+                            {%else%}
+                            <select name="input2" id="input2" class="year" style="padding: 5px;">
+                                <optgroup label="Whole Number Places">
+                                    <option value="-8">Million Pounds</option>
+                                    <option value="-7">Hundred Thousand Pounds</option>
+                                    <option value="-6">Ten Thousand Pounds</option>
+                                    <option value="-5">Thousand Pounds</option>
+                                    <option value="-4">Hundred Pounds</option>
+                                    <option value="-3">Ten Pounds</option>
+                                    <option value="-2" selected>Five Pounds</option>
+                                    <option value="-1">Two Pounds</option>
+                                    <option value="0">Pound</option>
+                                </optgroup>
+                                <optgroup label="Decimal Places">
+                                    <option value="1">Twenty Pence</option>
+                                    <option value="2">Ten Pence</option>
+                                    <option value="3">Five Pence</option>
+                                    <option value="4">Two Pence</option>
+                                    <option value="5">Penny</option>
+                                </optgroup>
+                            </select>
+                            {%endif%}
+                            <script>
+                                var map = {};
+                                $('#input2 option').each(function () {
+                                    if (map[this.value]) {
+                                        $(this).remove()
+                                    }
+                                    map[this.value] = true;
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="col-auto mt-2 ml-3">
+                        <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                    </div>
+                </form>
+                {%if detailStep%}
+                <hr>
+                <p><strong>Answer:</strong></p>
+                <div style="text-align: center;">
+                    {% autoescape off %}
+                    {{detailStep}}
+                    {%endautoescape%}
+                </div>
+                <hr>
+                {%endif%}
+            </div>
+            {% autoescape off %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="alert alert-danger">{{message}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {%endautoescape%}
+            <br>
+            <p>Related Calculators:</p>
+            <ul>
+                <li><a href="/round-to-the-nearest-cent/">Round to the Nearest Cent</a></li>
+
+                <li><a href="/round-to-the-nearest-25-cents/">Round to the Nearest 25 Cent</a></li>
+                <li><a href="/round-to-the-nearest-dollar/">Round to the Nearest Dollar</a></li>
+                <li><a href="/round-to-the-nearest-euro-calculator/">Round to the Nearest Euro</a></li>
+                <li><a href="/round-to-the-nearest-japanese-yen-calculator/">Round to the Nearest Yens</a></li>
+
+            </ul>
+            <p><strong>Round to the Nearest Pound: </strong>Are you searching for what does Nearest Pound Mean? This
+                article is going to be of great help as we have covered everything about Rounding to the Nearest Pound,
+                Procedure to do so, etc. Check out the Solved Examples we have included in the further sections and
+                learn the method used to solve them. Get a good grip on the concept and solve the problems much faster
+                during your work.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="h2">How to Round to the Nearest Pound?</h2>
+        </div>
+        <div class="card-body">
+            <p>Follow the below-mentioned steps to Round an Amount to the Nearest Pound easily. Refer to them right
+                ahead and make your calculations simple. They are as under</p>
+            <ul>
+                <li>In order to round an amount to the nearest pound check the value of its tenths.</li>
+                <li>If the value is greater than or equal to 5 increase the value in pound's ones place by 1 and then
+                    remove all the digits and the decimal point.</li>
+                <li>If the value is less than or equal to 4 simply remove all the digits next to the decimal separator
+                    along with"."</li>
+            </ul>
+            <p><strong>Example</strong></p>
+            <p>Question : Round £9.56 to the Nearest Pound?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Given Amount £9.56</p>
+            <p>Check for the tenths place in the amount given</p>
+            <p>As it is 5 increase the value in pound's ones place by 1 and remove all the digits after the decimal
+                point.</p>
+            <p>£9.56 rounded to the nearest pound is £10.</p>
+            <!-- <img src="{% static 'images/Numbers/Round-to-the-Nearest-Pound.jpeg' %}" alt='Round to the Nearest Pound'> -->
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">FAQs on Round to the Nearest Pound</h3>
+        </div>
+        <div class="card-body">
+            <!-- Question & Answer Starts --->
+            <p class="question"><strong>1. How to Round to the Nearest Pound?</strong></p>
+            <p class="answer">For a Number Check the value of its tenths and is it is &gt;=5 increase the pound's value
+                in ones place by 1 and remove all the digits after the decimal point.</p>
+            <hr>
+            <p class="question"><strong>2. What is £30 Rounded to the Nearest Pound?</strong></p>
+            <p class="answer">As the £30.00 has zero in tenths place after the decimal point and you can do nothing.
+                Thus, £30 rounded to the nearest pound remains the same.</p>
+            <hr>
+            <p class="question"><strong>3. How to use Round to the Nearest Pound Calculator?</strong></p>
+            <p class="answer">Simply provide the input value in the input provision and click on the calculate button to
+                get the value rounded to the nearest pound in a matter of seconds.</p>
+            <hr>
+            <p class="question"><strong>4. Which website offers the best Round to the Nearest Pound Calculator?</strong>
+            </p>
+            <p class="answer"><a
+                href="https://roundingcalculator.guru/">roundingcalculator.guru</a> provides the best Round
+                to the Nearest Pound Calculator to make your calculations simple and easy.</p>
+            <hr>
+        </div>
+    </div>
+</div>
+{%endblock%}
